@@ -859,3 +859,40 @@ html.js .belir.icerde {
    ------------------------------------------------------------ */
 html[data-lang="tr"] body [lang="en"],
 html[data-lang="en"] body [lang="tr"] { display: none; }
+
+/* ------------------------------------------------------------
+   dokunma hedefleri
+   ------------------------------------------------------------
+   Ölçüm: telefonda 32 hedefin 25'i 48 pikselin altındaydı, TR ile EN
+   arasında sıfır boşluk vardı. Parmakla ıskalamaya yol açıyor.
+
+   Blok bilerek dosyanın en sonunda: ortasına koyduğumda `.sosyal a`
+   gibi sonradan tanımlanan kurallar bunları eziyordu ve simgeler
+   42 pikselde kalmıştı.
+
+   Yükseklik telefonda serbest — üst bar zaten 70 piksel. Genişlik
+   320 pikselde sıkışıyor, o yüzden büyütme 361 pikselden açılıyor.
+   ------------------------------------------------------------ */
+
+@media (max-width: 700px) and (min-width: 361px) {
+  .dugme { min-height: 48px; }
+  .dil button { min-height: 48px; min-width: 48px; }
+  .menu-dugme { width: 3rem; height: 3rem; }
+  .marka { min-height: 48px; min-width: 48px; }
+  .gezinti a { min-height: 48px; display: flex; align-items: center; }
+  .sosyal a { width: 3rem; height: 3rem; }
+  .sss summary { padding-block: 1.5rem; }
+
+  /* Alt bilgideki bağlantılar satır içi olduğu için yüksekliği
+     16 pikselde kalıyordu; blok yapıp dolgu veriliyor. */
+  .alt__ic a { display: inline-block; padding-block: 0.85rem; }
+}
+
+@media (max-width: 360px) {
+  .dugme { min-height: 44px; }
+  .dil button { min-height: 44px; }
+  .menu-dugme { width: 2.75rem; height: 2.75rem; }
+  .marka { min-height: 44px; }
+  .sosyal a { width: 2.75rem; height: 2.75rem; }
+  .alt__ic a { display: inline-block; padding-block: 0.7rem; }
+}
