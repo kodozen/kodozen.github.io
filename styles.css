@@ -386,9 +386,7 @@ html.js .vitrin__yerlesim { transition: transform 0.12s linear; }
 /* Masaüstü kadraj geniş, mobil kadraj onun sağ alt köşesine biner. */
 .vitrin__yerlesim { position: relative; }
 .vitrin__mobil { position: absolute; right: -1rem; bottom: -2.5rem; width: 21%; max-width: 12rem; }
-@media (max-width: 720px) {
-  .vitrin__mobil { position: static; width: 58%; margin: -3.5rem auto 0; }
-}
+
 
 /* ------------------------------------------------------------
    kanıt şeridi
@@ -895,4 +893,55 @@ html[data-lang="en"] body [lang="tr"] { display: none; }
   .marka { min-height: 44px; }
   .sosyal a { width: 2.75rem; height: 2.75rem; }
   .alt__ic a { display: inline-block; padding-block: 0.7rem; }
+}
+
+/* ------------------------------------------------------------
+   telefonda hiyerarşi ters çevriliyor
+   ------------------------------------------------------------
+   Ölçüm: 390 piksellik ekranda masaüstü ekran görüntüsü 1440 pikseli
+   361'e sıkıştırıyordu — %25 ölçek, yazılar okunmuyor. Telefon
+   görüntüsü ise iş kartlarında 108 piksele düşüyordu.
+
+   Telefondan bakan kişinin merak ettiği şey sitenin telefonda nasıl
+   göründüğü. O yüzden roller değişiyor: telefon karesi öne ve büyüğe,
+   masaüstü karesi arkaya ve küçüğe geçiyor. İkisi de duruyor —
+   masaüstünde çalıştığı da görünsün.
+   ------------------------------------------------------------ */
+
+@media (max-width: 700px) {
+  .vitrin__yerlesim,
+  .is__gorsel {
+    position: relative;
+    display: flex; justify-content: center;
+    padding-top: 2.5rem; padding-right: 26%;
+  }
+
+  /* Masaüstü karesi arkaya: küçülüyor, sağ üste kayıyor, hafif soluyor. */
+  .vitrin .cerceve--masaustu,
+  .is__gorsel .cerceve--masaustu {
+    position: absolute; z-index: 0;
+    top: 0; right: 0; left: auto;
+    width: 62%; opacity: 0.55;
+  }
+  .vitrin .cerceve--masaustu .cerceve__cubuk,
+  .is__gorsel .cerceve--masaustu .cerceve__cubuk { padding: 0.4rem 0.5rem; }
+  .vitrin .cerceve--masaustu .cerceve__adres,
+  .is__gorsel .cerceve--masaustu .cerceve__adres { display: none; }
+
+  /* Telefon karesi öne ve büyüğe. */
+  .vitrin__mobil,
+  .is__gorsel .cerceve--mobil {
+    position: relative; z-index: 1;
+    right: auto; bottom: auto;
+    width: 100%; max-width: 15rem; margin: 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .vitrin__yerlesim,
+  .is__gorsel { padding-right: 20%; }
+  .vitrin .cerceve--masaustu,
+  .is__gorsel .cerceve--masaustu { width: 56%; }
+  .vitrin__mobil,
+  .is__gorsel .cerceve--mobil { max-width: 13rem; }
 }
