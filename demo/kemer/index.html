@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="tr" data-lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kemer · Lokal İzmir</title>
+<meta name="description" content="Alsancak'ın arka sokaklarında, kiremit rengi duvarların ve kristal avizenin altında kurulan bir sofra. Bir lokal sofrası.">
+<meta name="theme-color" content="#1B0F0C">
+<meta property="og:type" content="restaurant">
+<meta property="og:title" content="Kemer · Lokal İzmir">
+<meta property="og:description" content="Kiremit rengi duvarlar, kristal avize, beyaz keten. Alsancak.">
+<meta property="og:image" content="img/ocak.jpg">
+<meta property="og:locale" content="tr_TR">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=Karla:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=3">
+<script>document.documentElement.classList.add("js");</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Kemer — Bir lokal sofrası",
+  "servesCuisine": ["Türk", "Meyhane"],
+  "priceRange": "₺₺₺",
+  "telephone": "+90 542 624 24 68",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Alsancak",
+    "addressRegion": "İzmir",
+    "addressCountry": "TR"
+  },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "74" }
+}
+</script>
+</head>
+
+<body>
+<a class="skip" href="#ana"><span lang="tr">İçeriğe geç</span><span lang="en">Skip to content</span></a>
+
+<header class="ust-bar" id="ustbar">
+  <a class="marka" href="#ana"><span class="marka__ilk">KEMER </span><b>LOKAL</b></a>
+  <nav class="gezinti" aria-label="Ana">
+    <a class="gizlenir" href="#salon"><span lang="tr">Salon</span><span lang="en">The room</span></a>
+    <a class="gizlenir" href="#sofra"><span lang="tr">Sofra</span><span lang="en">The table</span></a>
+    <a class="gizlenir" href="#ziyaret"><span lang="tr">Ziyaret</span><span lang="en">Visit</span></a>
+    <div class="dil" role="group" aria-label="Dil / Language">
+      <button type="button" data-dil="tr" aria-pressed="true">TR</button>
+      <button type="button" data-dil="en" aria-pressed="false">EN</button>
+    </div>
+    <a class="dugme" href="#ayirt"><span lang="tr">Masa ayırt</span><span lang="en">Book a table</span></a>
+  </nav>
+</header>
+
+<main id="ana">
+
+  <!-- ============ giriş ============ -->
+  <section class="giris" aria-roledescription="carousel" aria-label="Kemer'den görüntüler">
+    <div class="giris__sahne">
+      <figure class="giris__kare" data-etkin="true">
+        <picture><source type="image/webp" srcset="img/ocak.webp"><img src="img/ocak.jpg"
+          alt="Mermer şömine, yaldızlı ayna ve porselen vazolar." fetchpriority="high"></picture>
+      </figure>
+      <figure class="giris__kare">
+        <picture><source type="image/webp" srcset="img/sofra.webp"><img src="img/sofra.jpg"
+          alt="Beyaz örtü üzerinde mavi desenli tabaklarda mezeler." loading="lazy"></picture>
+      </figure>
+      <figure class="giris__kare">
+        <picture><source type="image/webp" srcset="img/mezetabagi.webp"><img src="img/mezetabagi.jpg"
+          alt="Tek tabakta toplanmış meze çeşitleri." loading="lazy"></picture>
+      </figure>
+      <figure class="giris__kare">
+        <picture><source type="image/webp" srcset="img/meze.webp"><img src="img/meze.jpg"
+          alt="Haydari, zeytinyağlılar ve yanında bir şişe." loading="lazy"></picture>
+      </figure>
+    </div>
+
+    <div class="giris__perde"></div>
+
+    <div class="giris__kilit">
+      <h1 class="giris__ad">KEMER<em>Lokal</em></h1>
+      <p class="giris__yer">Lokal · İzmir</p>
+      <div class="giris__eylem">
+        <a class="dugme" href="#ayirt"><span lang="tr">Masa ayırt</span><span lang="en">Book a table</span></a>
+        <a class="dugme dugme--bos" href="#sofra"><span lang="tr">Sofrayı gör</span><span lang="en">See the table</span></a>
+      </div>
+    </div>
+
+    <button class="giris__ok giris__ok--geri" type="button" data-adim="-1" aria-label="Önceki görsel">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true"><path d="M15 4 7 12l8 8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <button class="giris__ok giris__ok--ileri" type="button" data-adim="1" aria-label="Sonraki görsel">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true"><path d="m9 4 8 8-8 8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+
+    <div class="giris__noktalar" role="group" aria-label="Görsel seçimi">
+      <button type="button" data-git="0" aria-current="true" aria-label="1. görsel"></button>
+      <button type="button" data-git="1" aria-label="2. görsel"></button>
+      <button type="button" data-git="2" aria-label="3. görsel"></button>
+      <button type="button" data-git="3" aria-label="4. görsel"></button>
+    </div>
+  </section>
+
+  <!-- ============ salon ============ -->
+  <section class="serit" id="salon">
+    <div class="kabuk ikili">
+      <div class="belir">
+        <picture><source type="image/webp" srcset="img/ocak-sq.webp 1000w, img/ocak-sq-sm.webp 700w" sizes="(max-width:800px) 100vw, 46vw"><img src="img/ocak-sq-sm.jpg" loading="lazy"
+          alt="Şöminenin üstündeki ayna, kiremit rengi duvar ve Lokal tabelası."></picture>
+      </div>
+      <div class="okuma belir">
+        <span class="ust"><span lang="tr">Salon</span><span lang="en">The room</span></span>
+        <h2 style="font-size:var(--s-3)">
+          <span lang="tr">Böyle salonlar artık az kaldı.</span>
+          <span lang="en">There are not many rooms like this left.</span>
+        </h2>
+        <p style="margin-top:1.4rem">
+          <span lang="tr">Kiremit rengi duvarlar, tavanda kristal avize, kemerli geçitler ve ağır perdeler. Masalar beyaz keten örtülü, tabaklar mavi desenli. Sofra bu salonun ölçüsünde kurulur — aceleye gelmez.</span>
+          <span lang="en">Terracotta walls, a crystal chandelier, arched openings and heavy curtains. White linen on the tables, blue-patterned china on the linen. The table is set to the measure of the room, and the room is in no hurry.</span>
+        </p>
+        <p>
+          <span lang="tr">Alsancak'ın arka sokaklarında, eski bir konağın zemin katında.</span>
+          <span lang="en">On Alsancak, inside the ground floor of an old townhouse.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="cizgi">
+
+  <!-- ============ sofranın sırası ============ -->
+  <section class="serit">
+    <div class="kabuk">
+      <div class="okuma belir">
+        <span class="ust"><span lang="tr">Sofranın sırası</span><span lang="en">How the table runs</span></span>
+        <h2 style="font-size:var(--s-3)">
+          <span lang="tr">Dört perdelik bir akşam</span>
+          <span lang="en">An evening in four acts</span>
+        </h2>
+        <p style="margin-top:1.4rem">
+          <span lang="tr">Tabaklar ortaya gelir, sıra bozulmaz. Masa ne kadar kalabalıksa sofra o kadar uzar.</span>
+          <span lang="en">Plates land in the middle and the order holds. The bigger the table, the longer the evening.</span>
+        </p>
+      </div>
+
+      <ol class="gece-akis">
+        <li class="belir">
+          <span class="saat">01</span>
+          <div>
+            <h3><span lang="tr">Mezeler</span><span lang="en">Mezes</span></h3>
+            <p><span lang="tr">Mavi desenli tabaklarda, masanın ortasına yayılır.</span>
+               <span lang="en">On blue-patterned china, spread across the middle of the table.</span></p>
+          </div>
+        </li>
+        <li class="belir">
+          <span class="saat">02</span>
+          <div>
+            <h3><span lang="tr">Ara sıcaklar</span><span lang="en">Hot plates</span></h3>
+            <p><span lang="tr">Mutfaktan sıcak sıcak gelir; rakı bu sırada devreye girer.</span>
+               <span lang="en">Straight from the kitchen, still steaming — this is where the rakı starts.</span></p>
+          </div>
+        </li>
+        <li class="belir">
+          <span class="saat">03</span>
+          <div>
+            <h3><span lang="tr">Ana yemek</span><span lang="en">The main</span></h3>
+            <p><span lang="tr">Ağır ateşte pişmiş et, tencerede geldiği gibi paylaşılır.</span>
+               <span lang="en">Slow-cooked meat, shared straight from the pot it came in.</span></p>
+          </div>
+        </li>
+        <li class="belir">
+          <span class="saat">04</span>
+          <div>
+            <h3><span lang="tr">Tatlı</span><span lang="en">Dessert</span></h3>
+            <p><span lang="tr">Sofra dağılmadan, kahveyle birlikte.</span>
+               <span lang="en">Before the table breaks up, with coffee alongside.</span></p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ sofra ============ -->
+  <section class="serit serit--koyu" id="sofra">
+    <div class="kabuk">
+      <div class="okuma belir">
+        <span class="ust"><span lang="tr">Sofra</span><span lang="en">The spread</span></span>
+        <h2 style="font-size:var(--s-3)">
+          <span lang="tr">Masanın ortası boş kalmaz</span>
+          <span lang="en">The middle of the table never empties</span>
+        </h2>
+      </div>
+
+      <div class="sofra belir">
+        <figure><picture><source type="image/webp" srcset="img/sofra-sq.webp 1000w, img/sofra-sq-sm.webp 700w" sizes="(max-width:760px) 100vw, 58vw"><img src="img/sofra-sq-sm.jpg" loading="lazy" alt="Beyaz örtü üzerinde mavi desenli tabaklarda mezeler."></picture></figure>
+        <figure><picture><source type="image/webp" srcset="img/kavurma-sq.webp 1000w, img/kavurma-sq-sm.webp 700w" sizes="(max-width:760px) 50vw, 40vw"><img src="img/kavurma-sq-sm.jpg" loading="lazy" alt="Beyaz kâsede ağır ateşte pişmiş et."></picture></figure>
+        <figure><picture><source type="image/webp" srcset="img/meze-sq.webp 1000w, img/meze-sq-sm.webp 700w" sizes="(max-width:760px) 50vw, 32vw"><img src="img/meze-sq-sm.jpg" loading="lazy" alt="Meze tabakları ve rakı şişesi."></picture></figure>
+        <figure><picture><source type="image/webp" srcset="img/ciger-sq.webp 1000w, img/ciger-sq-sm.webp 700w" sizes="(max-width:760px) 50vw, 32vw"><img src="img/ciger-sq-sm.jpg" loading="lazy" alt="Ciğer ve yanında lavaş."></picture></figure>
+        <figure><picture><source type="image/webp" srcset="img/mezetabagi-sq.webp 1000w, img/mezetabagi-sq-sm.webp 700w" sizes="(max-width:760px) 50vw, 32vw"><img src="img/mezetabagi-sq-sm.jpg" loading="lazy" alt="Kırmızı kareli örtü üzerinde meze tabağı."></picture></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ mutfak: açık şerit ============ -->
+  <section class="serit serit--acik">
+    <div class="kabuk ikili">
+      <div class="belir">
+        <picture><source type="image/webp" srcset="img/sef-sq.webp 1000w, img/sef-sq-sm.webp 700w" sizes="(max-width:800px) 100vw, 46vw"><img src="img/sef-sq-sm.jpg" loading="lazy"
+          alt="Mutfakta bir tabağı elle bitiren aşçı."></picture>
+      </div>
+      <div class="okuma belir">
+        <span class="ust"><span lang="tr">Mutfak</span><span lang="en">The kitchen</span></span>
+        <h2 style="font-size:var(--s-3)">
+          <span lang="tr">Tabak elle bitiyor</span>
+          <span lang="en">The plate is finished by hand</span>
+        </h2>
+        <p style="margin-top:1.4rem">
+          <span lang="tr">Sonuncu dokunuş mutfakta, tabak salona çıkmadan yapılıyor. Bu ölçekte bir yerde her tabağı aynı elin bitirmesi mümkün — ve burada öyle oluyor.</span>
+          <span lang="en">The last touch happens in the kitchen, before the plate leaves for the room. At this size, one pair of hands can finish every plate — and here they do.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ puan ============ -->
+  <section class="serit">
+    <div class="kabuk">
+      <div class="belir" style="display:flex;flex-wrap:wrap;gap:1.6rem 3rem;align-items:flex-end;justify-content:space-between">
+        <div class="okuma" style="flex:1 1 22rem">
+          <span class="ust"><span lang="tr">Misafirler</span><span lang="en">Guests</span></span>
+          <h2 style="font-size:var(--s-3)">
+            <span lang="tr">Gelenler bir daha geliyor</span>
+            <span lang="en">People come back</span>
+          </h2>
+          <p style="margin-top:1.3rem">
+            <span lang="tr">Google'daki değerlendirmelerin ortalaması beşe çok yakın. Bu ölçekte bir yer için alışılmış bir puan değil.</span>
+            <span lang="en">The Google average sits very close to five — unusual for a room this size.</span>
+          </p>
+        </div>
+        <p class="puan">
+          <span class="puan__sayi">4,9</span>
+          <span class="puan__alt"><span lang="tr">56 Google değerlendirmesi</span><span lang="en">56 Google reviews</span></span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ziyaret ============ -->
+  <section class="serit serit--koyu" id="ziyaret">
+    <div class="kabuk ziyaret">
+      <div class="belir">
+        <span class="ust"><span lang="tr">Ziyaret</span><span lang="en">Visit</span></span>
+        <h2 style="font-size:var(--s-3);margin-bottom:2.2rem">
+          <span lang="tr">Alsancak, İzmir</span>
+          <span lang="en">Alsancak, İzmir</span>
+        </h2>
+
+        <ul class="bilgiler">
+          <li>
+            <span class="k"><span lang="tr">Adres</span><span lang="en">Address</span></span>
+            <span class="d">
+              Alsancak, İzmir
+              
+            </span>
+          </li>
+          <li>
+            <span class="k"><span lang="tr">Saatler</span><span lang="en">Hours</span></span>
+            <!-- NOT: Google yalnızca 16:00 açılışını veriyor; kapanış saati teyit edilmeli. -->
+            <span class="d">
+              <span lang="tr">16:00'dan itibaren</span><span lang="en">From 16:00</span>
+              <small><span lang="tr">Akşam yemeği servisi</span><span lang="en">Dinner service</span></small>
+            </span>
+          </li>
+          <li>
+            <span class="k"><span lang="tr">Telefon</span><span lang="en">Phone</span></span>
+            <span class="d"><a href="tel:+905426242468">0542 624 24 68</a></span>
+          </li>
+          <li>
+            <span class="k">WhatsApp</span>
+            <span class="d"><a href="https://wa.me/905426242468" target="_blank" rel="noopener"><span lang="tr">Yazarak ayırtın</span><span lang="en">Message us</span></a></span>
+          </li>
+        </ul>
+
+        <p style="font-size:var(--s--1)">
+          <span lang="tr">Kalabalık sofralar ve özel günler için önceden aramanızı öneririz.</span>
+          <span lang="en">For larger tables and special occasions, please call ahead.</span>
+        </p>
+      </div>
+
+      <div class="ayirt belir" id="ayirt">
+        <span class="ust"><span lang="tr">Masa ayırt</span><span lang="en">Book a table</span></span>
+        <h2 style="font-size:var(--s-2);margin-bottom:1.6rem">
+          <span lang="tr">Talebinizi bize iletin</span>
+          <span lang="en">Send us your request</span>
+        </h2>
+
+        <form id="ayirt-form" novalidate>
+          <div class="alan">
+            <label for="ad"><span lang="tr">Ad soyad</span><span lang="en">Full name</span></label>
+            <input id="ad" name="ad" type="text" autocomplete="name" required>
+          </div>
+          <div class="alan-satir">
+            <div class="alan">
+              <label for="tarih"><span lang="tr">Tarih</span><span lang="en">Date</span></label>
+              <input id="tarih" name="tarih" type="date" required>
+            </div>
+            <div class="alan">
+              <label for="saat"><span lang="tr">Saat</span><span lang="en">Time</span></label>
+              <input id="saat" name="saat" type="time" value="19:30" step="900" required>
+            </div>
+          </div>
+          <div class="alan-satir">
+            <div class="alan">
+              <label for="kisi"><span lang="tr">Kişi sayısı</span><span lang="en">Guests</span></label>
+              <select id="kisi" name="kisi">
+                <option>2</option><option>3</option><option selected>4</option>
+                <option>5</option><option>6</option><option>8</option>
+                <option>10</option><option value="10+">10+</option>
+              </select>
+            </div>
+            <div class="alan">
+              <label for="tel"><span lang="tr">Telefonunuz</span><span lang="en">Your phone</span></label>
+              <input id="tel" name="tel" type="tel" autocomplete="tel" required>
+            </div>
+          </div>
+          <div class="alan">
+            <label for="not"><span lang="tr">Eklemek istedikleriniz</span><span lang="en">Anything we should know</span></label>
+            <textarea id="not" name="not" rows="3"
+              data-yt-tr="Özel gün, kalabalık masa, oturma tercihi…"
+              data-yt-en="A special occasion, a big table, a seating preference…"></textarea>
+          </div>
+          <div class="ayirt__eylem">
+            <button class="dugme" type="submit">
+              <span lang="tr">WhatsApp'tan gönder</span><span lang="en">Send via WhatsApp</span>
+            </button>
+            <a class="dugme dugme--bos" href="tel:+905426242468">
+              <span lang="tr">Ara</span><span lang="en">Call</span>
+            </a>
+          </div>
+          <p class="ayirt__alt">
+            <span lang="tr">Rezervasyonunuz, biz dönüş yapana kadar kesinleşmez.</span>
+            <span lang="en">A booking isn't confirmed until we reply.</span>
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="altbilgi">
+  <div class="kabuk">
+    <div class="altbilgi__satir">
+      <a class="marka" href="#ana"><span class="marka__ilk">KEMER </span><b>LOKAL</b></a>
+      <nav class="altbilgi__linkler" aria-label="Alt">
+        <a href="#salon"><span lang="tr">Salon</span><span lang="en">The room</span></a>
+        <a href="#sofra"><span lang="tr">Sofra</span><span lang="en">The table</span></a>
+        <a href="#ziyaret"><span lang="tr">Ziyaret</span><span lang="en">Visit</span></a>
+        <a href="tel:+905426242468">0542 624 24 68</a>
+      </nav>
+    </div>
+    <p class="altbilgi__ince">
+      © <span id="yil">2026</span> Kemer — Bir lokal sofrası · Alsancak, İzmir
+    </p>
+  </div>
+</footer>
+
+<script src="app.js?v=3"></script>
+</body>
+</html>

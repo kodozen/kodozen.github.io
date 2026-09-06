@@ -1,0 +1,861 @@
+/* ============================================================
+   Kodozen — web tasarım stüdyosu
+   ------------------------------------------------------------
+   Palet doğrudan logodan türetildi. Logo mavi→turkuaz bir degrade
+   taşıyor; eski sitenin nötr siyahı (#070707) o mavinin altında
+   yabancı duruyordu, logo sayfaya yapıştırılmış gibi görünüyordu.
+   Zemin hafif mavi-siyaha çekildi (#0B0D12), böylece logo sayfaya
+   ait oldu. Ayrıca eski sitede hiç vurgu rengi yoktu — her şey
+   beyaz ve griydi, jenerik durmasının asıl sebebi buydu.
+   ============================================================ */
+
+:root {
+  /* --- zemin --- */
+  --zemin: #0b0d12;
+  --zemin-2: #10131b;
+  --yuzey: #161a24;
+  --yuzey-2: #1d222e;
+
+  /* --- çizgi --- */
+  --cizgi: rgba(255, 255, 255, 0.08);
+  --cizgi-2: rgba(255, 255, 255, 0.16);
+
+  /* --- yazı --- */
+  --metin: #edf1f7;
+  --soluk: #939daf;
+
+  /* --- vurgu: logonun üç durağı --- */
+  --indigo: #647ae3;
+  --mavi: #3498d6;
+  --turkuaz: #12bdcb;
+  --vurgu: #35b7d8;
+  --gecis: linear-gradient(135deg, #647ae3 0%, #3498d6 52%, #12bdcb 100%);
+
+  /* --- ölçek --- */
+  --s-1: clamp(0.82rem, 0.79rem + 0.14vw, 0.9rem);
+  --s0: clamp(0.96rem, 0.92rem + 0.2vw, 1.06rem);
+  --s1: clamp(1.15rem, 1.06rem + 0.42vw, 1.4rem);
+  --s2: clamp(1.45rem, 1.24rem + 1.02vw, 2.1rem);
+  --s3: clamp(1.9rem, 1.42rem + 2.36vw, 3.4rem);
+  --s4: clamp(2.4rem, 1.5rem + 4.4vw, 5.2rem);
+
+  --kabuk: 74rem;
+  --yay: cubic-bezier(0.22, 0.68, 0.32, 1);
+}
+
+/* ------------------------------------------------------------
+   temel
+   ------------------------------------------------------------ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--zemin);
+  color: var(--metin);
+  font: 400 var(--s0)/1.7 "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-feature-settings: "cv05", "ss03";
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Yükseklik `auto` olmazsa <img> üzerindeki width/height öznitelikleri
+   sunum ipucu olarak yüksekliği sabitler; genişlik daralınca görsel gerilir. */
+img, svg, video { max-width: 100%; height: auto; display: block; }
+
+a { color: inherit; }
+
+h1, h2, h3 { margin: 0; line-height: 1.08; letter-spacing: -0.022em; font-weight: 700; }
+p { margin: 0; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+
+::selection { background: var(--turkuaz); color: #06212a; }
+
+:focus-visible {
+  outline: 2px solid var(--turkuaz);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+.atla {
+  position: absolute; left: -9999px;
+  background: var(--turkuaz); color: #06212a;
+  padding: 0.7rem 1.1rem; border-radius: 6px; font-weight: 600; z-index: 99;
+}
+.atla:focus { left: 1rem; top: 1rem; }
+
+.gizli {
+  position: absolute; width: 1px; height: 1px;
+  margin: -1px; padding: 0; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* ------------------------------------------------------------
+   yerleşim
+   ------------------------------------------------------------ */
+
+.kabuk { width: min(100% - 2.4rem, var(--kabuk)); margin-inline: auto; }
+@media (max-width: 560px) { .kabuk { width: min(100% - 1.8rem, var(--kabuk)); } }
+
+.blok { padding: clamp(4.5rem, 9vw, 8.5rem) 0; }
+.blok--ince { padding: clamp(3rem, 5vw, 4.5rem) 0; }
+.blok--yuzey { background: var(--zemin-2); }
+
+.ust-yazi {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-size: var(--s-1); font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--soluk); margin-bottom: 1.1rem;
+}
+.ust-yazi::before {
+  content: ""; width: 1.6rem; height: 1px;
+  background: var(--gecis); flex: none;
+}
+
+.blok-basi { max-width: 46rem; margin-bottom: clamp(2.6rem, 5vw, 4rem); }
+.blok-basi h2 { font-size: var(--s3); }
+.blok-basi p { color: var(--soluk); margin-top: 1.1rem; font-size: var(--s1); }
+
+/* ------------------------------------------------------------
+   üst bar
+   ------------------------------------------------------------ */
+
+.ust {
+  position: sticky; top: 0; z-index: 40;
+  background: color-mix(in srgb, var(--zemin) 86%, transparent);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s var(--yay), background 0.3s var(--yay);
+}
+.ust[data-kaydi="true"] {
+  border-bottom-color: var(--cizgi);
+  background: color-mix(in srgb, var(--zemin) 94%, transparent);
+}
+.ust__ic {
+  display: flex; align-items: center; gap: 1.2rem;
+  min-height: 4.4rem; padding-block: 0.7rem;
+}
+
+.marka { display: flex; align-items: center; gap: 0.62rem; text-decoration: none; margin-right: auto; }
+.marka__im {
+  width: 1.85rem; height: 1.85rem; border-radius: 0.52rem;
+  background: var(--gecis); flex: none;
+  display: grid; place-items: center;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 6px 18px -8px var(--mavi);
+}
+.marka__im svg { width: 62%; height: 62%; }
+.marka__ad {
+  font-weight: 700; font-size: 1.02rem;
+  letter-spacing: 0.13em; text-transform: uppercase;
+}
+
+.gezinti { display: flex; align-items: center; gap: 1.7rem; }
+.gezinti a {
+  text-decoration: none; color: var(--soluk); font-size: var(--s-1); font-weight: 500;
+  transition: color 0.2s var(--yay);
+}
+.gezinti a:hover { color: var(--metin); }
+
+/* --- mobil menü -----------------------------------------------------------
+   Önce bağlantılar dar ekranda tamamen gizleniyordu; telefonda sayfada
+   gezinmenin hiçbir yolu kalmıyor, yalnızca "Bize ulaşın" düğmesi duruyordu.
+
+   Düğme yalnızca `html.js` varken görünüyor: JavaScript çalışmazsa çalışmayan
+   bir düğme bırakmak yerine bağlantılar sarmalanan bir satır olarak açık kalıyor.
+   -------------------------------------------------------------------------- */
+.menu-dugme {
+  display: none; width: 2.75rem; height: 2.75rem; flex: none;
+  align-items: center; justify-content: center;
+  background: none; border: 1px solid var(--cizgi-2); border-radius: 0.7rem;
+  cursor: pointer; padding: 0; color: var(--metin);
+}
+.menu-dugme__cizgi,
+.menu-dugme__cizgi::before,
+.menu-dugme__cizgi::after {
+  display: block; width: 1.05rem; height: 2px; border-radius: 2px;
+  background: currentColor; transition: transform 0.25s var(--yay), opacity 0.2s var(--yay);
+}
+.menu-dugme__cizgi { position: relative; }
+.menu-dugme__cizgi::before,
+.menu-dugme__cizgi::after { content: ""; position: absolute; left: 0; }
+.menu-dugme__cizgi::before { top: -0.36rem; }
+.menu-dugme__cizgi::after { top: 0.36rem; }
+
+.ust[data-menu="acik"] .menu-dugme__cizgi { background: transparent; }
+.ust[data-menu="acik"] .menu-dugme__cizgi::before { transform: translateY(0.36rem) rotate(45deg); }
+.ust[data-menu="acik"] .menu-dugme__cizgi::after { transform: translateY(-0.36rem) rotate(-45deg); }
+
+/* 320 px'te başlıkta üç öğe (marka + menü + çağrı düğmesi) yan yana sığmıyordu;
+   "Bize ulaşın" 340 pikselde kalıp 20 piksel taşma yaratıyordu. Bu genişlikte
+   marka yazısı düşüyor, logo karesi tek başına zaten tanınıyor. */
+@media (max-width: 430px) {
+  .ust__ic { gap: 0.6rem; }
+  .marka__ad { display: none; }
+}
+
+@media (max-width: 940px) {
+  html.js .menu-dugme { display: inline-flex; }
+
+  /* JavaScript yoksa: sarmalanan satır, hep görünür. */
+  .gezinti { flex-wrap: wrap; gap: 0.7rem 1.3rem; order: 3; width: 100%; padding-bottom: 0.4rem; }
+
+  html.js .gezinti {
+    order: 0; width: auto; padding: 0;
+    position: absolute; left: 0; right: 0; top: 100%;
+    flex-direction: column; align-items: stretch; gap: 0;
+    background: var(--zemin-2); border-bottom: 1px solid var(--cizgi);
+    display: none;
+  }
+  html.js .ust[data-menu="acik"] .gezinti { display: flex; }
+  html.js .gezinti a {
+    padding: 0.95rem 1.2rem; font-size: var(--s0);
+    border-top: 1px solid var(--cizgi);
+  }
+}
+
+/* ------------------------------------------------------------
+   dil
+   ------------------------------------------------------------
+   Seçiciler `body` ile başlamak zorunda: dil değişince kök elemana
+   da lang yazılıyor, çıplak [lang="en"] <html>'in kendisiyle eşleşip
+   sayfanın tamamını gizliyordu.
+   ------------------------------------------------------------ */
+
+body [lang="en"] { display: none; }
+html[data-lang="en"] body [lang="en"] { display: revert; }
+html[data-lang="en"] body [lang="tr"] { display: none; }
+
+.dil {
+  display: flex; flex: none; align-items: center;
+  border: 1px solid var(--cizgi-2); border-radius: 999px;
+  overflow: hidden; background: rgba(255, 255, 255, 0.02);
+}
+.dil button {
+  border: 0; background: none; cursor: pointer; color: var(--soluk);
+  font: 600 0.72rem/1 "Inter", system-ui, sans-serif;
+  letter-spacing: 0.08em; padding: 0.55rem 0.62rem;
+  transition: color 0.2s var(--yay), background 0.2s var(--yay);
+}
+.dil button:hover { color: var(--metin); }
+.dil button[aria-pressed="true"] {
+  background: var(--gecis); color: #05161d; font-weight: 700;
+}
+
+/* ------------------------------------------------------------
+   düğmeler
+   ------------------------------------------------------------ */
+
+.dugme {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  padding: 0.78rem 1.4rem; border-radius: 999px;
+  font: 600 var(--s-1)/1 "Inter", system-ui, sans-serif;
+  letter-spacing: 0.02em; text-decoration: none; border: 1px solid transparent;
+  cursor: pointer;
+  /* Dar ekranda ikiye kırılıp eğri duruyordu — önceki bir projede yaşandı. */
+  white-space: nowrap;
+  transition: transform 0.2s var(--yay), box-shadow 0.25s var(--yay),
+              background 0.25s var(--yay), border-color 0.25s var(--yay);
+}
+.dugme--dolu {
+  background: var(--gecis); color: #05161d; font-weight: 700;
+  box-shadow: 0 10px 30px -14px var(--mavi);
+}
+.dugme--dolu:hover { transform: translateY(-2px); box-shadow: 0 16px 34px -14px var(--mavi); }
+.dugme--bos { border-color: var(--cizgi-2); color: var(--metin); }
+.dugme--bos:hover { border-color: var(--turkuaz); color: var(--turkuaz); }
+.dugme--kucuk { padding: 0.6rem 1.05rem; }
+
+/* ------------------------------------------------------------
+   giriş
+   ------------------------------------------------------------ */
+
+.giris { position: relative; padding: clamp(3.4rem, 7vw, 6rem) 0 clamp(3rem, 6vw, 5rem); overflow: hidden; }
+
+/* Arka plan videosu gelene kadar duran degrade. Video eklendiğinde
+   .giris__fon > video onun üstüne biner, bu katman poster görevi görür. */
+.giris__fon {
+  position: absolute; inset: -20% -10% auto; height: 130%;
+  z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(46rem 30rem at 22% 8%, rgba(100, 122, 227, 0.2), transparent 62%),
+    radial-gradient(38rem 26rem at 84% 34%, rgba(18, 189, 203, 0.15), transparent 60%);
+}
+.giris__fon video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.5; }
+
+/* Video açıkken yazının altını koruyan perde. Işık şeritlerinin tepe
+   parlaklığı 250/255 — beyaz başlık doğrudan üstlerine düşerse okunmaz.
+   Soldan sağa açılan bant metnin durduğu tarafı karartıyor, dikey bant da
+   üstteki barla alttaki bölümün birleşme yerini yumuşatıyor. */
+.giris__fon[data-video="acik"]::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(100deg,
+      var(--zemin) 4%,
+      color-mix(in srgb, var(--zemin) 70%, transparent) 44%,
+      transparent 82%),
+    linear-gradient(to bottom,
+      var(--zemin) 0%, transparent 22%,
+      transparent 58%, var(--zemin) 100%);
+}
+@media (max-width: 760px) {
+  /* Dar ekranda metin tam ortada duruyor, yatay bant işe yaramıyor. */
+  .giris__fon[data-video="acik"]::after {
+    background: linear-gradient(to bottom,
+      var(--zemin) 0%,
+      color-mix(in srgb, var(--zemin) 55%, transparent) 34%,
+      color-mix(in srgb, var(--zemin) 55%, transparent) 56%,
+      var(--zemin) 100%);
+  }
+}
+
+.giris__ic { position: relative; z-index: 1; }
+
+.giris__rozet {
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  padding: 0.42rem 0.9rem 0.42rem 0.55rem; border-radius: 999px;
+  border: 1px solid var(--cizgi-2); background: rgba(255, 255, 255, 0.03);
+  font-size: var(--s-1); font-weight: 500; color: var(--soluk);
+  margin-bottom: 1.6rem;
+}
+.giris__nokta { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--turkuaz); flex: none; }
+
+.giris h1 { font-size: var(--s4); max-width: 17ch; }
+.giris h1 em {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-style: italic; font-weight: 400; letter-spacing: -0.01em;
+  background: var(--gecis); -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+}
+.giris__alt { margin-top: 1.5rem; max-width: 52ch; color: var(--soluk); font-size: var(--s1); }
+.giris__eylem { margin-top: 2.2rem; display: flex; flex-wrap: wrap; gap: 0.8rem; }
+
+/* ------------------------------------------------------------
+   vitrin — cihaz çerçeveleri
+   ------------------------------------------------------------ */
+
+/* Vitrin kaydırmayla doğruluyor: sayfa açıldığında ekranlar hafifçe geriye
+   yatık duruyor, aşağı indikçe okuyucuya dönüyorlar. 3B burada süs değil —
+   döndürülen şey işin kendisi, soyut bir nesne değil. */
+.vitrin { position: relative; margin-top: clamp(3rem, 6vw, 5rem); perspective: 1500px; }
+.vitrin__yerlesim {
+  transform: rotateX(var(--egim, 0deg)) translateZ(0);
+  transform-origin: 50% 92%;
+}
+html.js .vitrin__yerlesim { transition: transform 0.12s linear; }
+
+.cerceve { border-radius: 0.85rem; overflow: hidden; background: var(--yuzey); border: 1px solid var(--cizgi-2); }
+.cerceve img { width: 100%; }
+
+.cerceve--masaustu { box-shadow: 0 40px 90px -40px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(255, 255, 255, 0.04); }
+.cerceve__cubuk {
+  display: flex; align-items: center; gap: 0.4rem;
+  padding: 0.62rem 0.85rem; background: var(--yuzey-2);
+  border-bottom: 1px solid var(--cizgi);
+}
+.cerceve__cubuk i { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--cizgi-2); flex: none; }
+.cerceve__adres {
+  margin-left: 0.6rem; flex: 1 1 auto; min-width: 0;
+  font-size: 0.68rem; letter-spacing: 0.04em; color: var(--soluk);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+
+.cerceve--mobil {
+  border-radius: 1.5rem; border-width: 5px; border-color: var(--yuzey-2);
+  box-shadow: 0 30px 70px -30px rgba(0, 0, 0, 0.95);
+}
+
+/* Giriş çerçevesinin ekranı: duran kare altta durur, video onun üstüne
+   biner. Böylece video yüklenene kadar boşluk görünmüyor, dosya hiç
+   yoksa da sayfa eksiksiz kalıyor. */
+.cerceve__ekran { position: relative; line-height: 0; }
+.cerceve__ekran video {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; opacity: 0;
+  transition: opacity 0.6s var(--yay);
+}
+.cerceve--vitrin[data-video="acik"] .cerceve__ekran video { opacity: 1; }
+
+/* Adres çubuğundaki yazı kesme anlarında değişiyor; sıçrayarak değil
+   yumuşayarak geçsin. */
+.cerceve__adres { transition: opacity 0.25s var(--yay); }
+.cerceve--vitrin[data-gecis="true"] .cerceve__adres { opacity: 0; }
+
+/* Masaüstü kadraj geniş, mobil kadraj onun sağ alt köşesine biner. */
+.vitrin__yerlesim { position: relative; }
+.vitrin__mobil { position: absolute; right: -1rem; bottom: -2.5rem; width: 21%; max-width: 12rem; }
+@media (max-width: 720px) {
+  .vitrin__mobil { position: static; width: 58%; margin: -3.5rem auto 0; }
+}
+
+/* ------------------------------------------------------------
+   kanıt şeridi
+   ------------------------------------------------------------ */
+
+/* ------------------------------------------------------------
+   yöntem — renk nereden geldi
+   ------------------------------------------------------------
+   Burada önce dört kutuluk bir rakam şeridi vardı. Rakam şeridi
+   ancak rakamlar etkileyiciyse çalışıyor; yeni bir stüdyoda "5
+   tamamlanmış site" yazmak ziyaretçiye "sadece beş mi?" dedirtiyor.
+   İçerik iki kez değiştirildi ama sorun içerikte değil biçimdeydi.
+
+   Yerine işin kendi hikâyesi kondu: her paletin hangi fotoğraftan
+   çıkarıldığı. Şeritteki altı haneli kodlar uydurma değil — o
+   fotoğrafların baskın renkleri ölçülerek bulundu.
+   ------------------------------------------------------------ */
+
+.renk-basi { max-width: 42rem; margin-bottom: clamp(2.2rem, 4vw, 3.2rem); }
+.renk-basi h2 { font-size: var(--s2); }
+.renk-basi p { color: var(--soluk); margin-top: 0.9rem; }
+
+.renkler {
+  display: grid; gap: clamp(1rem, 2vw, 1.6rem);
+  grid-template-columns: repeat(5, 1fr);
+}
+@media (max-width: 1000px) { .renkler { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 620px) { .renkler { grid-template-columns: repeat(2, 1fr); } }
+
+.renk { margin: 0; }
+.renk__kare {
+  border-radius: 0.8rem 0.8rem 0 0; overflow: hidden;
+  border: 1px solid var(--cizgi); border-bottom: 0;
+  line-height: 0;
+}
+.renk__kare img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+
+/* Palet fotoğrafın hemen altına yapışık duruyor: renklerin oradan
+   döküldüğü okunsun diye arada boşluk bırakılmadı. */
+.renk__palet {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--cizgi); border-top: 0;
+  border-radius: 0 0 0.8rem 0.8rem; overflow: hidden;
+}
+.renk__palet li { display: flex; flex-direction: column; }
+.renk__palet i { display: block; height: 2.4rem; }
+.renk__palet code {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 0.68rem; letter-spacing: 0.01em;
+  color: var(--soluk); text-align: center;
+  padding: 0.45rem 0 0.5rem; background: var(--zemin-2);
+}
+
+.renk figcaption { margin-top: 0.9rem; }
+.renk figcaption b { display: block; font-size: var(--s0); font-weight: 600; }
+.renk figcaption > span { display: block; margin-top: 0.15rem; font-size: var(--s-1); color: var(--soluk); }
+
+@media (max-width: 420px) {
+  .renk__palet code { font-size: 0.62rem; }
+  .renk__palet i { height: 1.9rem; }
+}
+
+/* ------------------------------------------------------------
+   işler
+   ------------------------------------------------------------ */
+
+.isler { display: grid; gap: clamp(2.5rem, 5vw, 4.5rem); }
+
+.is {
+  display: grid; gap: clamp(1.6rem, 4vw, 3.4rem); align-items: center;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+}
+
+/* --- yapışkan yığın -------------------------------------------------------
+   Geniş ekranda her iş kartı üst barın altına yapışıyor, bir sonraki kart
+   üzerine kayarak biniyor. Böylece beş iş uzun bir liste gibi akıp gitmiyor;
+   her biri sırayla tek başına ekranı tutuyor.
+
+   Yalnızca kartın ekrana sığdığı genişlikte açılıyor: dar ekranda kartlar
+   dikey yığıldığı için çok uzuyorlar ve yapışkanlık ters teper.
+   -------------------------------------------------------------------------- */
+@media (min-width: 1000px) and (min-height: 660px) {
+  .isler { gap: 2rem; }
+  .is {
+    position: sticky; top: 6.5rem;
+    background: var(--zemin-2);
+    border: 1px solid var(--cizgi);
+    border-radius: 1.3rem;
+    padding: clamp(1.8rem, 3vw, 2.6rem);
+    transform-origin: 50% 0;
+    box-shadow: 0 -24px 70px -34px rgba(0, 0, 0, 0.95);
+    will-change: transform, filter;
+  }
+  /* Kademeli üst mesafe: üst üste binerken alttakinin kenarı görünsün. */
+  .is:nth-child(2) { top: 7.6rem; }
+  .is:nth-child(3) { top: 8.7rem; }
+  .is:nth-child(4) { top: 9.8rem; }
+  .is:nth-child(5) { top: 10.9rem; }
+  /* Son kartın altında yığının çözülmesi için biraz yol bırakılıyor. */
+  .isler::after { content: ""; display: block; height: 30vh; }
+
+  /* Ölçek doğrudan `transform` ile değil değişkenle veriliyor: beliriş
+     animasyonu da aynı özelliği kullanıyor, satır içi stil yazsaydım
+     kart hiç belirmeden yerine oturuyordu. Yalnızca belirmiş kartlar
+     yığın ölçeğini alıyor. */
+  html.js .is.icerde {
+    transform: scale(var(--yigin-olcek, 1));
+    transition: opacity 0.7s var(--yay), transform 0.15s linear, filter 0.15s linear;
+  }
+}
+.is:nth-child(even) .is__gorsel { order: 2; }
+@media (max-width: 860px) {
+  .is { grid-template-columns: 1fr; }
+  .is:nth-child(even) .is__gorsel { order: 0; }
+}
+
+.is__gorsel { position: relative; }
+.is__gorsel .cerceve--mobil { position: absolute; right: -0.8rem; bottom: -1.6rem; width: 22%; }
+@media (max-width: 500px) { .is__gorsel .cerceve--mobil { width: 30%; right: -0.4rem; bottom: -1.2rem; } }
+
+.is__etiket {
+  display: inline-block; font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--soluk);
+  border: 1px solid var(--cizgi-2); border-radius: 999px; padding: 0.28rem 0.7rem;
+  margin-bottom: 1rem;
+}
+.is__ad { font-size: var(--s2); }
+.is__tur { color: var(--vurgu); font-size: var(--s-1); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.5rem; }
+.is__ozet { color: var(--soluk); margin-top: 1.1rem; }
+.is__liste { margin-top: 1.3rem; display: grid; gap: 0.55rem; }
+.is__liste li { position: relative; padding-left: 1.35rem; font-size: var(--s-1); color: var(--soluk); }
+.is__liste li::before {
+  content: ""; position: absolute; left: 0; top: 0.62em;
+  width: 0.45rem; height: 0.45rem; border-radius: 50%; background: var(--turkuaz);
+}
+.is__eylem { margin-top: 1.8rem; display: flex; flex-wrap: wrap; gap: 0.7rem; }
+
+/* ------------------------------------------------------------
+   kayan bant
+   ------------------------------------------------------------
+   Yazı sağdan sola akıyor, önünde bir kart duruyor. Akış kusursuz
+   dönsün diye içerik birebir iki kez yazılıyor ve şerit tam yarısı
+   kadar kaydırılıyor — ikinci kopya birincinin bittiği yeri tuttuğu
+   için dikiş görünmüyor.
+   ------------------------------------------------------------ */
+
+.bant-blok {
+  position: relative;
+  padding: clamp(3rem, 7vw, 6rem) 0;
+  overflow: hidden;
+  /* Kart en fazla 34rem geniş ve 16:9, yani 19,125rem yüksek. Blok
+     bundan alçak kalırsa `overflow: hidden` kartın altını kesiyordu —
+     ilk denemede tam 9 piksel kırpılmıştı. Asgari yükseklik karta
+     dört parmak pay bırakıyor. */
+  min-height: 24rem;
+  display: flex; flex-direction: column; justify-content: center;
+}
+
+.bant { display: flex; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
+.bant__akis { display: flex; width: max-content; }
+html.js .bant__akis { animation: bant-kay 46s linear infinite; }
+.bant__grup { display: flex; align-items: center; gap: 2.2rem; padding-right: 2.2rem; }
+
+.bant__grup span,
+.bant__grup i {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-style: normal; font-weight: 400;
+  font-size: clamp(3rem, 9vw, 7rem); line-height: 1.05;
+  color: rgba(255, 255, 255, 0.07);
+  white-space: nowrap; letter-spacing: -0.01em;
+}
+.bant__grup i { color: rgba(53, 183, 216, 0.16); }
+
+@keyframes bant-kay { to { transform: translateX(-50%); } }
+
+/* Kart bandın üstünde ortada durur; JavaScript video bulursa açılır. */
+.bant__kart {
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(58%, 34rem); aspect-ratio: 16 / 9;
+  border-radius: 1.1rem; overflow: hidden;
+  background: var(--yuzey);
+  border: 1px solid var(--cizgi-2);
+  box-shadow: 0 40px 90px -34px rgba(0, 0, 0, 0.95);
+}
+.bant__kart[hidden] { display: none; }
+.bant__kart video { width: 100%; height: 100%; object-fit: cover; }
+
+@media (prefers-reduced-motion: reduce) {
+  html.js .bant__akis { animation: none; }
+}
+
+/* ------------------------------------------------------------
+   süreç
+   ------------------------------------------------------------ */
+
+.surec { display: grid; gap: 1px; grid-template-columns: repeat(4, 1fr); background: var(--cizgi); border: 1px solid var(--cizgi); border-radius: 0.9rem; overflow: hidden; }
+.surec li { background: var(--zemin); padding: clamp(1.6rem, 3vw, 2.4rem); }
+.surec b { display: block; font-size: var(--s-1); font-weight: 700; color: var(--turkuaz); letter-spacing: 0.14em; margin-bottom: 0.9rem; }
+.surec h3 { font-size: var(--s1); margin-bottom: 0.6rem; }
+.surec p { font-size: var(--s-1); color: var(--soluk); }
+@media (max-width: 900px) { .surec { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .surec { grid-template-columns: 1fr; } }
+
+/* ------------------------------------------------------------
+   hizmetler
+   ------------------------------------------------------------ */
+
+.hizmetler { display: grid; gap: 1.1rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+.hizmet {
+  background: var(--zemin-2); border: 1px solid var(--cizgi);
+  border-radius: 0.9rem; padding: clamp(1.5rem, 3vw, 2rem);
+  transition: border-color 0.25s var(--yay), transform 0.25s var(--yay);
+}
+.hizmet:hover { border-color: var(--cizgi-2); transform: translateY(-3px); }
+.hizmet__im {
+  width: 2.4rem; height: 2.4rem; border-radius: 0.62rem; margin-bottom: 1.1rem;
+  display: grid; place-items: center;
+  background: rgba(53, 183, 216, 0.12); color: var(--turkuaz);
+  border: 1px solid rgba(53, 183, 216, 0.25);
+}
+.hizmet__im svg { width: 1.2rem; height: 1.2rem; }
+.hizmet h3 { font-size: var(--s1); margin-bottom: 0.6rem; }
+.hizmet p { font-size: var(--s-1); color: var(--soluk); }
+.hizmet__sira { display: none; }
+
+/* ------------------------------------------------------------
+   kadran — kaydırdıkça dönen hizmet listesi
+   ------------------------------------------------------------
+   Solda büyük bir daire yayı duruyor, üzerinde 01–05 numaraları.
+   Sayfa bu bölümden geçerken yay dönüyor, sabit işaretçiye gelen
+   numaranın hizmeti sağda beliriyor.
+
+   Varsayılan hâli sıradan bir kart ızgarası. Kadran yalnızca
+   JavaScript çalışıyorsa, ekran yeterince genişse ve kullanıcı
+   hareket istiyorsa devreye giriyor — `data-etkin` yazısını da
+   JavaScript koyuyor. Böylece hiçbir durumda beş hizmetten biri
+   bile gizli kalmıyor.
+   ------------------------------------------------------------ */
+
+.kadran__disk, .kadran__im { display: none; }
+
+html.js .kadran[data-etkin="true"] { position: relative; height: 460vh; }
+
+html.js .kadran[data-etkin="true"] .kadran__sahne {
+  position: sticky; top: 0; height: 100vh;
+  display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  align-items: center; gap: clamp(2rem, 5vw, 5rem);
+  overflow: hidden;
+}
+
+html.js .kadran[data-etkin="true"] .kadran__disk,
+html.js .kadran[data-etkin="true"] .kadran__im { display: block; }
+
+/* Disk sahnenin solundan taşıyor; sahnedeki overflow onu kesiyor,
+   yay ekranın dışından geliyormuş gibi duruyor. */
+.kadran__disk {
+  position: absolute; z-index: 0;
+  width: 52rem; aspect-ratio: 1;
+  left: -26rem; top: 50%;
+  margin-top: -26rem;
+  transform: rotate(var(--aci, 0deg));
+  transition: transform 0.75s var(--yay);
+}
+.kadran__yay {
+  position: absolute; inset: 0; border-radius: 50%;
+  border: 1px solid var(--cizgi);
+}
+
+/* Numara önce açısına döndürülüp sonra yarıçap kadar dışa itiliyor;
+   böylece yayın üstüne oturuyor ve yayla birlikte eğiliyor. */
+.kadran__no {
+  position: absolute; left: 50%; top: 50%;
+  font-size: 1.5rem; font-weight: 600; letter-spacing: -0.03em;
+  color: var(--soluk); opacity: 0.28;
+  font-variant-numeric: tabular-nums;
+  /* Eksen sol üst köşede olmalı: öğe zaten dairenin tam merkezine
+     yerleştirildi, varsayılan "kendi merkezi" ekseni numaraları yayın
+     dışına kaydırıyor ve işaretçiyle hizalanmıyorlardı. */
+  transform-origin: 0 0;
+  transform: rotate(calc(var(--n) * 21deg - 42deg)) translateX(23.4rem) translate(-50%, -50%);
+  transition: opacity 0.5s var(--yay), color 0.5s var(--yay);
+}
+/* Sırayı `data-no` veriyor. Önce nth-of-type kullanmıştım: yay da bir
+   <span> olduğu için sırayı bir kaydırıyor, beşinci numara ise hiç değer
+   alamayıp dönüşümü geçersiz kılıyordu. */
+.kadran__no[data-no="0"] { --n: 0; }
+.kadran__no[data-no="1"] { --n: 1; }
+.kadran__no[data-no="2"] { --n: 2; }
+.kadran__no[data-no="3"] { --n: 3; }
+.kadran__no[data-no="4"] { --n: 4; }
+.kadran__no[data-etkin="true"] { opacity: 1; color: var(--turkuaz); }
+
+/* Sabit işaretçi: dönmüyor, aktif konumu gösteriyor. */
+.kadran__im {
+  position: absolute; z-index: 1;
+  left: calc(21.7rem - 0.3rem); top: 50%;
+  width: 0.6rem; height: 0.6rem; margin-top: -0.3rem;
+  border-radius: 50%; background: var(--turkuaz);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--turkuaz) 16%, transparent);
+}
+
+/* Hizmetler üst üste duruyor, aktif olan beliriyor. */
+html.js .kadran[data-etkin="true"] .hizmetler {
+  position: relative; display: block; grid-column: 2;
+  min-height: 20rem; z-index: 1;
+}
+html.js .kadran[data-etkin="true"] .hizmet {
+  position: absolute; left: 0; top: 0; width: 100%;
+  background: none; border: 0; padding: 0; transform: translateY(20px);
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.55s var(--yay), transform 0.55s var(--yay);
+}
+html.js .kadran[data-etkin="true"] .hizmet[data-etkin="true"] {
+  opacity: 1; transform: none; pointer-events: auto;
+}
+html.js .kadran[data-etkin="true"] .hizmet:hover { transform: none; }
+html.js .kadran[data-etkin="true"] .hizmet h3 {
+  font-size: var(--s3); margin-bottom: 1rem;
+}
+html.js .kadran[data-etkin="true"] .hizmet p { font-size: var(--s1); max-width: 34ch; }
+html.js .kadran[data-etkin="true"] .hizmet__im { width: 3rem; height: 3rem; margin-bottom: 1.4rem; }
+html.js .kadran[data-etkin="true"] .hizmet__im svg { width: 1.5rem; height: 1.5rem; }
+html.js .kadran[data-etkin="true"] .hizmet__sira {
+  display: block; font-size: var(--s-1); font-weight: 600;
+  letter-spacing: 0.2em; color: var(--turkuaz); margin-bottom: 0.7rem;
+}
+
+/* ------------------------------------------------------------
+   kurucu
+   ------------------------------------------------------------ */
+
+.kurucu { display: grid; gap: clamp(2rem, 5vw, 4rem); grid-template-columns: minmax(0, 15rem) minmax(0, 1fr); align-items: center; }
+@media (max-width: 760px) { .kurucu { grid-template-columns: 1fr; } }
+.kurucu__im {
+  aspect-ratio: 1; border-radius: 1.1rem; display: grid; place-items: center;
+  background: var(--gecis); box-shadow: 0 26px 60px -30px var(--mavi);
+}
+.kurucu__im span { font-size: clamp(3rem, 9vw, 4.6rem); font-weight: 800; color: #05161d; letter-spacing: -0.05em; }
+.kurucu h2 { font-size: var(--s2); }
+.kurucu__rol { color: var(--turkuaz); font-size: var(--s-1); font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; margin-top: 0.5rem; }
+.kurucu p { color: var(--soluk); margin-top: 1.2rem; }
+
+/* ------------------------------------------------------------
+   sss
+   ------------------------------------------------------------ */
+
+.sss { display: grid; gap: 0; border-top: 1px solid var(--cizgi); }
+.sss details { border-bottom: 1px solid var(--cizgi); }
+.sss summary {
+  cursor: pointer; list-style: none; padding: 1.3rem 2.5rem 1.3rem 0;
+  font-weight: 600; font-size: var(--s1); position: relative;
+  transition: color 0.2s var(--yay);
+}
+.sss summary::-webkit-details-marker { display: none; }
+.sss summary:hover { color: var(--turkuaz); }
+.sss summary::after {
+  content: ""; position: absolute; right: 0.35rem; top: 50%;
+  width: 0.62rem; height: 0.62rem; margin-top: -0.42rem;
+  border-right: 2px solid var(--soluk); border-bottom: 2px solid var(--soluk);
+  transform: rotate(45deg); transition: transform 0.25s var(--yay), border-color 0.25s var(--yay);
+}
+.sss details[open] summary::after { transform: rotate(-135deg); border-color: var(--turkuaz); }
+.sss p { padding: 0 2.5rem 1.5rem 0; color: var(--soluk); }
+
+/* ------------------------------------------------------------
+   iletişim
+   ------------------------------------------------------------ */
+
+.iletisim {
+  border: 1px solid var(--cizgi-2); border-radius: 1.2rem;
+  padding: clamp(2.2rem, 5vw, 4rem); text-align: center;
+  background:
+    radial-gradient(34rem 20rem at 50% -10%, rgba(53, 183, 216, 0.14), transparent 65%),
+    var(--zemin-2);
+}
+.iletisim h2 { font-size: var(--s3); }
+.iletisim p { color: var(--soluk); margin-top: 1rem; max-width: 42ch; margin-inline: auto; }
+.iletisim__eylem { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; }
+
+.sosyal { margin-top: 2.4rem; display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; }
+.sosyal a {
+  width: 2.6rem; height: 2.6rem; border-radius: 50%;
+  display: grid; place-items: center; color: var(--soluk);
+  border: 1px solid var(--cizgi); text-decoration: none;
+  transition: color 0.2s var(--yay), border-color 0.2s var(--yay), transform 0.2s var(--yay);
+}
+.sosyal a:hover { color: var(--turkuaz); border-color: var(--turkuaz); transform: translateY(-2px); }
+.sosyal svg { width: 1.05rem; height: 1.05rem; }
+
+/* ------------------------------------------------------------
+   alt bilgi
+   ------------------------------------------------------------ */
+
+.alt { border-top: 1px solid var(--cizgi); padding: 2.4rem 0 3rem; }
+.alt__ic { display: flex; flex-wrap: wrap; gap: 1rem 2rem; align-items: center; justify-content: space-between; }
+.alt p, .alt a { font-size: var(--s-1); color: var(--soluk); }
+.alt a { text-decoration: none; }
+.alt a:hover { color: var(--turkuaz); }
+.alt__yasal { margin-top: 1.8rem; font-size: 0.78rem; color: #6b7385; max-width: 62ch; line-height: 1.65; }
+
+/* ------------------------------------------------------------
+   vaka sayfası
+   ------------------------------------------------------------ */
+
+.geri { display: inline-flex; align-items: center; gap: 0.45rem; text-decoration: none; color: var(--soluk); font-size: var(--s-1); font-weight: 500; }
+.geri:hover { color: var(--turkuaz); }
+
+.vaka__bas { padding: clamp(2.5rem, 6vw, 4.5rem) 0 clamp(2rem, 4vw, 3rem); }
+.vaka__bas h1 { font-size: var(--s4); margin-top: 1.4rem; }
+.vaka__tur { color: var(--vurgu); font-size: var(--s-1); font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 0.8rem; }
+
+.kunye { display: grid; gap: 1px; grid-template-columns: repeat(4, 1fr); background: var(--cizgi); border-block: 1px solid var(--cizgi); margin: clamp(2rem, 4vw, 3rem) 0; }
+.kunye div { background: var(--zemin); padding: 1.3rem 1.1rem; }
+.kunye dt { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--soluk); }
+.kunye dd { margin: 0.45rem 0 0; font-weight: 600; font-size: var(--s-1); }
+@media (max-width: 760px) { .kunye { grid-template-columns: repeat(2, 1fr); } }
+
+.yazi { max-width: 44rem; }
+.yazi h2 { font-size: var(--s2); margin-top: clamp(2.4rem, 5vw, 3.4rem); }
+.yazi h2:first-child { margin-top: 0; }
+.yazi p { color: var(--soluk); margin-top: 1.1rem; }
+.yazi ul { margin-top: 1.1rem; display: grid; gap: 0.6rem; }
+.yazi ul li { position: relative; padding-left: 1.35rem; color: var(--soluk); }
+.yazi ul li::before { content: ""; position: absolute; left: 0; top: 0.66em; width: 0.45rem; height: 0.45rem; border-radius: 50%; background: var(--turkuaz); }
+.yazi strong { color: var(--metin); font-weight: 600; }
+
+.uyari {
+  margin-top: clamp(2.4rem, 5vw, 3.4rem);
+  border: 1px solid var(--cizgi); border-left: 2px solid var(--turkuaz);
+  border-radius: 0 0.7rem 0.7rem 0; padding: 1.3rem 1.5rem;
+  background: var(--zemin-2); font-size: var(--s-1); color: var(--soluk);
+}
+
+/* ------------------------------------------------------------
+   beliriş
+   ------------------------------------------------------------
+   `html.js` koşulu şart: JavaScript çalışmazsa ya da
+   IntersectionObserver hiç tetiklenmezse sayfa boş kalmasın.
+   ------------------------------------------------------------ */
+
+html.js .belir { opacity: 0; transform: translateY(22px); }
+html.js .belir.icerde {
+  opacity: 1; transform: none;
+  transition: opacity 0.7s var(--yay), transform 0.7s var(--yay);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js .belir { opacity: 1; transform: none; transition: none; }
+  .dugme:hover, .hizmet:hover, .sosyal a:hover { transform: none; }
+  /* Hareket istenmiyorsa yığın ve eğim tamamen kapanır. */
+  .is { position: static !important; transform: none !important; filter: none !important; }
+  .isler::after { display: none !important; }
+  .vitrin__yerlesim { transform: none !important; transition: none !important; }
+}
+
+/* ------------------------------------------------------------
+   dil — emniyet kuralı
+   ------------------------------------------------------------
+   Yukarıdaki `body [lang="en"]` kuralının özgüllüğü (0,2,0); daha
+   özgül bir `display` kuralı onu yenebiliyor. `.renk figcaption span`
+   (0,2,1) tam bunu yaptı ve Türkçe modunda beş İngilizce satır
+   ekranda kaldı.
+
+   Bu kural hem daha özgül (0,2,2) hem dosyanın en sonunda: eşitlik
+   durumlarını da kazanıyor. Yeni bir bölüm eklendiğinde aynı hatanın
+   tekrarlamasını engelliyor.
+   ------------------------------------------------------------ */
+html[data-lang="tr"] body [lang="en"],
+html[data-lang="en"] body [lang="tr"] { display: none; }

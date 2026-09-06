@@ -1,0 +1,17 @@
+# İç notlar — üretim brief'leri, prompt'lar
+uretim-brief.md
+
+# Geçici çalışma dosyaları
+_*
+*.zip
+
+# İşletim sistemi
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# İç sunum notları — depoya ve yayına girmemeli
+SUNUM.md
+demo/**/SUNUM.md
+demo/**/README.md
+**/gorsel-brief.md

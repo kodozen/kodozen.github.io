@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ARDIN, sen çıktıktan sonra konuşan koku</title>
+<meta name="description" content="ARDIN, oud, amber ve deri üzerine kurulu bir ekstre parfüm. Tende 8 ila 12 saat. Yanında 2 ml deneme şişesi.">
+<meta name="theme-color" content="#13100F">
+<!-- DEPLOY STEP: og:url ve og:image yayına alınırken canlı adresle değiştirilecek -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="ARDIN, sen çıktıktan sonra konuşan koku">
+<meta property="og:description" content="Oud, amber ve deri. Tende 8 ila 12 saat. Yanında 2 ml deneme şişesi.">
+<meta property="og:url" content="https://ORNEK-ADRES/">
+<meta property="og:image" content="https://ORNEK-ADRES/assets/hero-ending.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20fill='%2313100F'/%3E%3Cpath%20d='M16%205v13'%20stroke='%23C55A2B'%20stroke-width='2.4'%20stroke-linecap='round'/%3E%3Ccircle%20cx='16'%20cy='24.5'%20r='3'%20fill='%23C55A2B'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Karla:wght@400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   ARDIN, tek dosya. Değişkenler, sonra düzen, sonra hareket.
+   ============================================================ */
+:root{
+  --canvas:#13100F;
+  --panel:#1C1613;
+  --panel-2:#241C18;
+  --accent:#C55A2B;
+  --accent-hover:#DE6E3C;
+  --accent-muted:#5C3320;
+  --line:#3A2E27;
+  --text-primary:#EFE7DA;
+  --text-secondary:#A2948A;
+  --tshadow:0 1px 2px rgba(5,4,8,.95),0 3px 12px rgba(5,4,8,.78),0 10px 44px rgba(5,4,8,.8);
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --ease-soft:cubic-bezier(.4,.14,.3,1);
+  --display:"Marcellus",Georgia,serif;
+  --body:"Karla",system-ui,sans-serif;
+  --mono:"DM Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html,body{overflow-x:hidden;overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--canvas);color:var(--text-primary);
+  font-family:var(--body);font-size:17px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.08;margin:0;letter-spacing:.005em}
+p{margin:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip{position:absolute;left:12px;top:-60px;z-index:200;background:var(--accent);color:#140F0C;
+  padding:10px 16px;border-radius:6px;font-family:var(--mono);font-size:13px;transition:top .25s var(--ease)}
+.skip:focus{top:12px}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-secondary)}
+
+/* ---------- sabit ortam katmanı: sayfa tek bir mekân gibi okunsun ---------- */
+.env{position:fixed;inset:0;z-index:0;pointer-events:none}
+.env::before{content:"";position:absolute;inset:-20%;
+  background:radial-gradient(ellipse 50% 40% at 22% 18%,rgba(197,90,43,.10),transparent 62%),
+             radial-gradient(ellipse 44% 46% at 82% 76%,rgba(120,60,140,.07),transparent 64%);
+  animation:envdrift 96s var(--ease-soft) -22s infinite alternate}
+.env::after{content:"";position:absolute;inset:0;opacity:.30;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E")}
+@keyframes envdrift{
+  0%{transform:translate3d(-2%,-1%,0) scale(1.02)}
+  100%{transform:translate3d(2.5%,2%,0) scale(1.07)}
+}
+
+/* ---------- üst çubuk ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:80;display:flex;align-items:center;gap:28px;
+  padding:20px clamp(18px,4vw,52px);
+  transition:background .5s var(--ease),backdrop-filter .5s var(--ease),padding .5s var(--ease),border-color .5s var(--ease);
+  border-bottom:1px solid transparent}
+.nav.stuck{background:rgba(19,16,15,.82);backdrop-filter:blur(14px);padding-top:13px;padding-bottom:13px;border-bottom-color:var(--line)}
+.brand{font-family:var(--display);font-size:19px;letter-spacing:.34em;text-decoration:none;
+  text-shadow:var(--tshadow);white-space:nowrap}
+.brand .dot{color:var(--accent)}
+.nav-links{margin-left:auto;display:flex;align-items:center;gap:clamp(14px,2.4vw,32px)}
+.nav-links a{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+  text-decoration:none;color:var(--text-secondary);transition:color .35s var(--ease);text-shadow:0 1px 6px rgba(5,4,8,.9)}
+.nav-links a:hover{color:var(--text-primary)}
+@media (max-width:640px){.nav-links .hide-s{display:none}}
+
+/* ---------- butonlar ---------- */
+.btn{display:inline-block;font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;
+  text-decoration:none;padding:14px 26px;border-radius:2px;text-shadow:none;
+  background:var(--accent);color:#140F0C;border:1px solid var(--accent);
+  transition:background .4s var(--ease),transform .4s var(--ease),box-shadow .4s var(--ease);
+  box-shadow:0 0 0 rgba(197,90,43,0)}
+.btn:hover{background:var(--accent-hover);border-color:var(--accent-hover);transform:translateY(-2px);
+  box-shadow:0 10px 30px rgba(197,90,43,.26)}
+.btn.ghost{background:transparent;color:var(--text-primary);border-color:#6B584D}
+.btn.ghost:hover{border-color:var(--accent);color:var(--accent-hover);box-shadow:none}
+/* görüntünün üstündeki hayalet buton kendi kenarlığını taşımalı, ince çizgi orada kaybolur */
+.band .btn.ghost{border-color:rgba(239,231,218,.52);background:rgba(9,7,12,.34);backdrop-filter:blur(6px)}
+.band .btn.ghost:hover{border-color:var(--accent-hover);background:rgba(9,7,12,.5)}
+.btn.small{padding:10px 18px;font-size:12px}
+@media (pointer:coarse){.btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center}}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{position:relative;height:560vh;z-index:1}
+.stage{position:sticky;top:0;height:100vh;overflow:hidden;background:#0C0A09}
+.poster{position:absolute;inset:0;background-size:cover;background-position:center;
+  background-color:#0C0A09;transition:opacity 1.1s var(--ease)}
+#hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  opacity:0;transition:opacity .9s var(--ease);will-change:transform;transform:translateZ(0)}
+.stage.video-ready #hero-video{opacity:1}
+.stage.video-failed #hero-video{display:none}
+.scrim{position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 120% 90% at 50% 45%,rgba(10,8,14,0) 35%,rgba(10,8,14,.62) 100%)}
+.vignette{position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(to bottom,rgba(8,6,10,.55),rgba(8,6,10,0) 22%,rgba(8,6,10,0) 68%,rgba(8,6,10,.72))}
+/* final ışıklı geldi, o yüzden oturma anında sahne bütün olarak kararır:
+   gece çöker, yazı rahatlar, alttaki karanlık sayfaya geçiş kesilmez */
+.settle-dim{position:absolute;inset:0;pointer-events:none;background:#0B0908;opacity:0;z-index:4}
+
+/* yükleme halkası */
+.ring{position:absolute;right:clamp(18px,4vw,52px);bottom:clamp(18px,4vw,44px);width:46px;height:46px;
+  color:var(--accent);opacity:.85;transform:rotate(-90deg);z-index:6}
+.ring circle{transition:stroke-dashoffset .18s linear}
+.cue{position:absolute;left:50%;bottom:clamp(18px,4vw,40px);transform:translateX(-50%);z-index:6;
+  display:flex;flex-direction:column;align-items:center;gap:8px;pointer-events:none}
+.cue span{font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--text-secondary)}
+.cue i{display:block;width:1px;height:34px;background:linear-gradient(to bottom,var(--accent),transparent);
+  animation:cuepulse 3.4s var(--ease-soft) -.8s infinite}
+@keyframes cuepulse{0%,100%{opacity:.25;transform:scaleY(.6)}50%{opacity:.9;transform:scaleY(1)}}
+.stage.past .cue{opacity:0;transition:opacity .5s var(--ease)}
+
+/* ---------- bantlar ---------- */
+.bands{position:absolute;inset:0;z-index:5}
+.band{position:absolute;inset:0;display:flex;align-items:center;opacity:0;
+  text-shadow:var(--tshadow);will-change:opacity}
+.band::before{content:"";position:absolute;inset:-6%;pointer-events:none;
+  opacity:calc(.25 + .75*var(--k,1));
+  background:radial-gradient(ellipse var(--sw,44%) var(--sh,58%) at var(--sx,26%) var(--sy,50%),
+    rgba(5,4,8,.70) 0%,rgba(5,4,8,.46) 46%,rgba(5,4,8,0) 76%)}
+.band .inner{position:relative;z-index:2;padding:0 clamp(18px,4vw,52px);width:min(620px,44vw)}
+.band[data-side="left"] .inner{margin-right:auto}
+.band[data-side="right"] .inner{margin-left:auto}
+/* ch ölçüsü metnin kendi elemanında durur, kapsayıcıda değil: kapsayıcıda gövde
+   fontuna göre ölçülür ve başlık üç satıra kırılır */
+.band .cap{font-family:var(--display);font-size:clamp(30px,3.5vw,54px);line-height:1.1;margin:0;max-width:15ch}
+.band .sub{margin-top:16px;color:var(--text-primary);font-size:clamp(15px,1.25vw,19px);opacity:.86;max-width:26ch}
+.band .tag{margin-bottom:14px}
+
+/* dördüncü bant, oturma anı */
+.band.settle{align-items:flex-start}
+/* oturma bandı en parlak bölgenin üstünde durur, o yüzden perdesi daha derin */
+.band.settle::before{background:radial-gradient(ellipse 72% 48% at 50% 27%,
+  rgba(5,4,8,.84) 0%,rgba(5,4,8,.62) 44%,rgba(5,4,8,0) 78%)}
+.band.settle .inner{width:min(760px,80vw);margin:0 auto;padding-top:15vh;text-align:center}
+.band.settle .word-mark{font-family:var(--display);font-size:clamp(34px,6vw,84px);letter-spacing:.16em;
+  margin:0 0 18px;padding-left:.16em;white-space:nowrap}
+.band.settle .sub{font-size:clamp(16px,1.5vw,22px);opacity:.92;margin:0 auto;max-width:34ch}
+.band.settle .cta-row{margin-top:30px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;
+  opacity:var(--kb,1);transform:translateY(calc((1 - var(--kb,1))*14px))}
+
+/* ---------- metin bölme ve girişler ---------- */
+.w{display:inline-block;white-space:pre}
+.c{display:inline-block;will-change:transform,opacity}
+/* (a) dağılma: mürekkebin dağılmasını yankılar */
+[data-entrance="scatter"] .c{
+  --kc:clamp(0,(var(--k,0) - var(--th,0))*2.6,1);opacity:var(--kc);
+  transform:translate(calc((1 - var(--kc))*var(--jx,0px)),calc((1 - var(--kc))*var(--jy,0px)))
+            rotate(calc((1 - var(--kc))*var(--jr,0deg)))}
+/* (f) aşağı sürüklenme: inişi yankılar */
+[data-entrance="drift"] .w{
+  --kc:clamp(0,(var(--k,0) - var(--th,0))*2.8,1);opacity:var(--kc);
+  transform:translateY(calc((1 - var(--kc))*-26px))}
+/* (c) bulanıktan keskine: merceğin netlenmesini yankılar */
+[data-entrance="focus"] .fx{position:relative;display:block}
+[data-entrance="focus"] .fx .soft{position:absolute;inset:0;filter:blur(11px);opacity:calc(1 - var(--k,0));
+  pointer-events:none}
+[data-entrance="focus"] .fx .sharp{opacity:var(--k,0)}
+/* (e) kelime kelime yükselme: varışı yankılar */
+[data-entrance="rise"] .w{
+  --kc:clamp(0,(var(--k,0) - var(--th,0))*3,1);opacity:var(--kc);
+  transform:translateY(calc((1 - var(--kc))*18px))}
+.band .sub{opacity:calc(var(--ks,1)*.9);transform:translateY(calc((1 - var(--ks,1))*10px))}
+.band.settle .sub{opacity:calc(var(--ks,1)*.92)}
+
+/* ============================================================
+   SABİT HERO (telefon, dikey tablet, azaltılmış hareket)
+   ============================================================ */
+.static-hero{display:none;position:relative;min-height:100svh;z-index:1;
+  align-items:flex-end;padding:0 clamp(18px,6vw,52px) clamp(48px,10vh,90px)}
+/* karartma düz gri perdeyle değil, parlaklık filtresiyle yapılır:
+   sarıyı grinin altına koymak rengi zeytin yeşiline çeviriyor, filtre tonu koruyor */
+.static-hero .bg{position:absolute;inset:0;background-size:cover;background-position:50% 30%;
+  background-color:#0C0A09;filter:brightness(.88)}
+/* sabit hero, masaüstündeki oturma anıyla aynı gece tonunda dursun:
+   final karesi ışıklı geldiği için karartma buradan yapılır */
+.static-hero .bg::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(9,7,8,.62) 0%,rgba(9,7,8,.10) 26%,rgba(9,7,8,.58) 60%,rgba(9,7,8,.93) 88%)}
+.static-hero .inner{position:relative;z-index:2;text-shadow:var(--tshadow);max-width:min(560px,88%)}
+.static-hero .hero-title{font-family:var(--display);line-height:1.08;font-size:clamp(34px,9vw,52px);
+  margin:0 0 16px;max-width:14ch}
+.static-hero .sub{color:var(--text-primary);opacity:.88;margin-bottom:26px;max-width:30ch}
+@media (max-width:720px),(orientation:portrait) and (max-width:1024px),
+       (orientation:portrait) and (pointer:coarse),
+       (orientation:landscape) and (pointer:coarse) and (max-height:560px),
+       (prefers-reduced-motion:reduce){
+  .hero{display:none}
+  .static-hero{display:flex}
+}
+@media (max-height:560px){.cue{display:none}}
+
+/* ============================================================
+   İMZA ÖĞESİ: iz çizgisi
+   ============================================================ */
+.flow{position:relative;z-index:2}
+.trace{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:3;overflow:visible}
+.trace path{fill:none;stroke:var(--accent-muted);stroke-width:1.4;stroke-linecap:round;
+  filter:drop-shadow(0 0 7px rgba(197,90,43,.32))}
+.trace .head{fill:var(--accent);opacity:.9;filter:drop-shadow(0 0 9px rgba(197,90,43,.7))}
+@media (max-width:900px){.trace{display:none}}
+
+/* ============================================================
+   BÖLÜMLER
+   ============================================================ */
+section{position:relative;z-index:2}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(18px,5vw,52px)}
+.eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:22px}
+.eyebrow i{display:block;width:34px;height:1px;background:var(--accent);opacity:.7}
+
+/* --- 01 manifesto: iki sütun, görsel sağda --- */
+.manifesto{padding:clamp(90px,15vh,170px) 0 clamp(70px,11vh,130px)}
+.manifesto .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,72px);align-items:center}
+.manifesto h2{font-size:clamp(30px,4.2vw,58px);max-width:15ch}
+.manifesto p{margin-top:24px;color:var(--text-secondary);max-width:44ch}
+.manifesto .shot{position:relative;border-radius:3px;overflow:hidden;background:var(--panel)}
+.manifesto .shot img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5}
+.manifesto .shot::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(200deg,rgba(197,90,43,.12),transparent 46%)}
+.manifesto .shot figcaption{position:absolute;left:16px;bottom:14px;z-index:2}
+/* iz motifi: sayfanın imza çizgisinin küçük yankısı, göze girince kendini çizer */
+.iz-mark{display:block;margin-top:38px;width:170px;height:78px;overflow:visible}
+.iz-mark path{fill:none;stroke:var(--accent);stroke-width:1.3;stroke-linecap:round;
+  stroke-dasharray:var(--l,300);stroke-dashoffset:var(--l,300);
+  filter:drop-shadow(0 0 6px rgba(197,90,43,.35));
+  transition:stroke-dashoffset 2.6s var(--ease) .35s}
+.rev.in .iz-mark path{stroke-dashoffset:0}
+.iz-mark circle{fill:var(--accent);opacity:0;transition:opacity .7s var(--ease) 2.4s}
+.rev.in .iz-mark circle{opacity:.92}
+@media (max-width:900px){.manifesto .grid{grid-template-columns:1fr;gap:34px}
+  .manifesto .shot img{aspect-ratio:16/11}}
+
+/* --- 02 bilek testi: tek sütun, ortalanmış, etkileşimli --- */
+.wrist{padding:clamp(70px,11vh,130px) 0;text-align:center;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(28,22,19,.5),transparent 60%)}
+.wrist .eyebrow{justify-content:center}
+.wrist h2{font-size:clamp(28px,3.6vw,48px)}
+.wrist .lede{margin:18px auto 0;color:var(--text-secondary);max-width:38ch}
+.holder{margin:44px auto 0;width:min(520px,86vw)}
+.hold-btn{position:relative;width:100%;height:72px;border-radius:3px;cursor:pointer;
+  background:var(--panel);border:1px solid var(--line);color:var(--text-primary);
+  font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;
+  overflow:hidden;transition:border-color .4s var(--ease)}
+.hold-btn:hover{border-color:var(--accent-muted)}
+.hold-btn .fill{position:absolute;left:0;top:0;bottom:0;width:100%;transform-origin:left center;
+  transform:scaleX(var(--p,0));background:linear-gradient(90deg,rgba(197,90,43,.30),rgba(197,90,43,.14))}
+.hold-btn .lbl{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;gap:12px;height:100%}
+.hold-btn .clock{color:var(--accent);font-variant-numeric:tabular-nums}
+.layers{margin-top:26px;display:grid;gap:12px;text-align:left}
+.layer{display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start;
+  padding:18px 20px;border-radius:3px;background:var(--panel);border:1px solid var(--line);
+  opacity:calc(.18 + .82*var(--lk,0));
+  transform:translateY(calc((1 - var(--lk,0))*10px));
+  transition:opacity .5s var(--ease),transform .5s var(--ease),border-color .5s var(--ease)}
+.layer.lit{border-color:var(--accent-muted)}
+.layer .glyph{width:44px;height:44px}
+.layer .glyph circle,.layer .glyph path{stroke:var(--accent);fill:none;stroke-width:1.2;
+  opacity:calc(.35 + .65*var(--lk,0))}
+.layer h3{font-size:19px;margin-bottom:4px}
+.layer p{color:var(--text-secondary);font-size:15px}
+@media (max-width:560px){.layer{grid-template-columns:32px 1fr;gap:12px;padding:15px 15px}
+  .layer .glyph{width:32px;height:32px}}
+
+/* --- 03 kalıcılık: geniş görsel bandı + üç sayı --- */
+.stay{padding:clamp(80px,13vh,150px) 0}
+.stay .band-img{position:relative;height:clamp(220px,34vh,380px);border-radius:3px;overflow:hidden;margin-bottom:clamp(34px,6vh,64px)}
+.stay .band-img img{width:100%;height:100%;object-fit:cover}
+/* başlığın oturduğu sol yarı, reçinenin parlak kenarına denk geldiği için daha derin kararır */
+.stay .band-img::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(14,11,10,.94) 2%,rgba(14,11,10,.74) 38%,rgba(14,11,10,.26) 66%,rgba(14,11,10,.62) 100%)}
+.stay .band-img .over{position:absolute;left:clamp(18px,4vw,46px);bottom:clamp(16px,3vh,34px);z-index:2;
+  text-shadow:var(--tshadow)}
+.stay .band-img h2{font-size:clamp(28px,4vw,52px)}
+.stay .cols{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(28px,5vw,68px);align-items:center}
+.stay p.lede{color:var(--text-secondary);max-width:46ch}
+.stats{display:grid;gap:2px;background:var(--line);border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.stat{background:var(--canvas);padding:20px 22px;display:flex;align-items:baseline;gap:14px}
+.stat b{font-family:var(--display);font-size:clamp(26px,3vw,38px);font-weight:400;color:var(--accent);
+  min-width:4.6ch}
+.stat span{color:var(--text-secondary);font-size:15px}
+@media (max-width:900px){.stay .cols{grid-template-columns:1fr;gap:30px}}
+
+/* --- 04 önce kokla: görsel solda, metin sağda --- */
+.sample{padding:clamp(70px,11vh,130px) 0;background:linear-gradient(180deg,transparent,rgba(28,22,19,.55))}
+.sample .grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(28px,5vw,72px);align-items:center}
+.sample .shot{border-radius:3px;overflow:hidden;background:var(--panel)}
+/* height:auto olmadan HTML'deki height niteliği aspect-ratio'yu ezer ve görsel devleşir */
+.sample .shot img{width:100%;height:auto;aspect-ratio:5/4;object-fit:cover}
+.sample h2{font-size:clamp(28px,3.8vw,50px);max-width:16ch}
+.sample p{margin-top:22px;color:var(--text-secondary);max-width:44ch}
+.sample .marks{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px}
+.sample .marks span{font-family:var(--mono);font-size:12px;letter-spacing:.1em;
+  padding:8px 14px;border:1px solid var(--line);border-radius:2px;color:var(--text-secondary)}
+@media (max-width:900px){.sample .grid{grid-template-columns:1fr;gap:30px}
+  .sample .shot{order:2}}
+
+/* --- 05 sorular --- */
+.faq{padding:clamp(80px,13vh,150px) 0}
+.faq .head{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(24px,5vw,64px);align-items:end;margin-bottom:clamp(30px,5vh,54px)}
+.faq h2{font-size:clamp(28px,3.8vw,50px)}
+.faq .head p{color:var(--text-secondary);max-width:40ch}
+.qa{border-top:1px solid var(--line)}
+.qa details{border-bottom:1px solid var(--line)}
+.qa summary{list-style:none;cursor:pointer;padding:22px 0;display:flex;align-items:baseline;gap:18px;
+  font-family:var(--display);font-size:clamp(18px,2vw,24px);transition:color .35s var(--ease)}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary:hover{color:var(--accent-hover)}
+.qa summary .n{font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.1em;min-width:3ch}
+.qa summary .mk{margin-left:auto;width:14px;height:14px;position:relative;flex:none;align-self:center}
+.qa summary .mk::before,.qa summary .mk::after{content:"";position:absolute;background:var(--accent);
+  transition:transform .45s var(--ease),opacity .45s var(--ease)}
+.qa summary .mk::before{left:0;top:6.5px;width:14px;height:1px}
+.qa summary .mk::after{left:6.5px;top:0;width:1px;height:14px}
+.qa details[open] summary .mk::after{transform:rotate(90deg);opacity:0}
+.qa .ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s var(--ease)}
+.qa details[open] .ans{grid-template-rows:1fr}
+.qa .ans>div{overflow:hidden}
+.qa .ans p{color:var(--text-secondary);padding:0 0 24px 0;max-width:58ch;margin-left:calc(3ch + 18px)}
+@media (max-width:900px){.faq .head{grid-template-columns:1fr;gap:18px}
+  .qa .ans p{margin-left:0}}
+
+/* --- 06 son çağrı --- */
+.close{padding:clamp(90px,16vh,180px) 0 clamp(70px,12vh,140px);text-align:center;
+  border-top:1px solid var(--line)}
+.close h2{font-size:clamp(32px,5.4vw,72px);max-width:18ch;margin:0 auto}
+.close .sub{margin:22px auto 0;color:var(--text-secondary);max-width:34ch}
+.close .btn{margin-top:38px}
+.close .fine{margin-top:18px;font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--text-secondary)}
+
+/* --- alt bilgi --- */
+footer{border-top:1px solid var(--line);padding:44px 0 56px;background:rgba(12,10,9,.6)}
+footer .row{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:baseline;justify-content:space-between}
+footer .disclose{color:var(--text-secondary);font-size:14px;max-width:52ch}
+footer .brand{font-size:16px}
+
+/* ---------- giriş koreografisi ---------- */
+.rev .part{opacity:0;transform:translateY(22px);
+  transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rev.in .part{opacity:1;transform:none}
+.rev.in .part:nth-child(1){transition-delay:0s}
+.rev.in .part:nth-child(2){transition-delay:.09s}
+.rev.in .part:nth-child(3){transition-delay:.18s}
+.rev.in .part:nth-child(4){transition-delay:.27s}
+.rev.in .part:nth-child(5){transition-delay:.36s}
+.rev.done .part,.rev.done .part:nth-child(1),.rev.done .part:nth-child(2),
+.rev.done .part:nth-child(3),.rev.done .part:nth-child(4),.rev.done .part:nth-child(5){transition-delay:0s!important}
+.fade{opacity:0;transform:translateY(18px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.fade.in{opacity:1;transform:none}
+
+/* her bölümde bir canlı öğe, fısıltı seviyesinde */
+.spark{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--accent);
+  opacity:.0;pointer-events:none}
+.live .spark{animation:float 13s var(--ease-soft) infinite}
+.live .spark:nth-of-type(2){animation-duration:17s;animation-delay:-6s}
+.live .spark:nth-of-type(3){animation-duration:21s;animation-delay:-11s}
+@keyframes float{
+  0%{opacity:0;transform:translateY(14px) scale(.7)}
+  22%{opacity:.5}
+  70%{opacity:.34}
+  100%{opacity:0;transform:translateY(-56px) scale(1.15)}
+}
+body.paused *,body.paused *::before,body.paused *::after{animation-play-state:paused!important}
+
+/* ---------- azaltılmış hareket ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important;transition-delay:0s!important}
+  .rev .part,.fade{opacity:1!important;transform:none!important}
+  .iz-mark path{stroke-dashoffset:0!important}
+  .iz-mark circle{opacity:.92!important}
+  .layer{opacity:1!important;transform:none!important}
+  .env::before{transform:none}
+  .cue{display:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">İçeriğe geç</a>
+<div class="env" aria-hidden="true"></div>
+
+<nav class="nav" id="nav">
+  <a class="brand" href="#top">ARDIN<span class="dot">.</span></a>
+  <div class="nav-links">
+    <a class="hide-s" href="#koku">Koku</a>
+    <a class="hide-s" href="#kalicilik">Kalıcılık</a>
+    <a class="hide-s" href="#sorular">Sorular</a>
+    <a class="btn small" href="#satin-al">Şişeyi gör</a>
+  </div>
+</nav>
+
+<main id="main" tabindex="-1">
+<span id="top"></span>
+<!-- tek h1, her ekranda erişilebilirlik ağacında: hero başlıkları ekrana göre gizlenip
+     açıldığı için başlık hiyerarşisi onlara emanet edilmez -->
+<h1 class="sr-only">ARDIN, sen çıktıktan sonra konuşan koku</h1>
+
+<!-- ============ KAYDIRMALI HERO ============ -->
+<section class="hero" id="hero" aria-label="ARDIN tanıtımı">
+  <div class="stage" id="stage">
+    <div class="poster" id="poster" aria-hidden="true"></div>
+    <video id="hero-video" preload="none" muted playsinline aria-hidden="true" tabindex="-1"></video>
+    <div class="scrim" aria-hidden="true"></div>
+    <div class="vignette" aria-hidden="true"></div>
+    <div class="settle-dim" id="settle-dim" aria-hidden="true"></div>
+
+    <div class="bands" id="bands">
+      <div class="band" data-a="0" data-b="0.23" data-side="left" data-entrance="drift"
+           style="--sx:27%;--sy:50%;--sw:42%;--sh:56%">
+        <div class="inner">
+          <p class="mono tag">01 / İZ</p>
+          <p class="cap" data-split="word" data-text="Yarım saat sonra hâlâ orada mı?"></p>
+        </div>
+      </div>
+
+      <div class="band" data-a="0.26" data-b="0.49" data-side="right" data-entrance="scatter" data-spread="0.42"
+           style="--sx:74%;--sy:50%;--sw:42%;--sh:56%">
+        <div class="inner">
+          <p class="cap" data-split="char" data-text="Çoğu koku uçar."></p>
+          <p class="sub">Bu, tene iner.</p>
+        </div>
+      </div>
+
+      <div class="band" data-a="0.52" data-b="0.75" data-side="left" data-entrance="focus"
+           style="--sx:27%;--sy:50%;--sw:42%;--sh:56%">
+        <div class="inner">
+          <p class="cap fx" data-focus="Değdiği yerde açılır."></p>
+          <p class="sub">Oud, amber, deri.</p>
+        </div>
+      </div>
+
+      <div class="band settle" data-a="0.78" data-b="1" data-entrance="rise">
+        <div class="inner">
+          <p class="word-mark">ARDIN</p>
+          <p class="sub">Sen çıktıktan sonra konuşan koku.</p>
+          <div class="cta-row">
+            <a class="btn" href="#satin-al">Şişeyi gör</a>
+            <a class="btn ghost" href="#koku">Kokuyu oku</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <svg class="ring" id="ring" viewBox="0 0 48 48" aria-hidden="true">
+      <circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="3"
+              stroke-dasharray="126" style="stroke-dashoffset:var(--ld,126)"/>
+    </svg>
+    <div class="cue" id="cue" aria-hidden="true"><span>Aşağı</span><i></i></div>
+  </div>
+</section>
+
+<!-- ============ SABİT HERO (telefon, azaltılmış hareket) ============ -->
+<section class="static-hero" id="static-hero" aria-label="ARDIN">
+  <div class="bg" id="static-bg" aria-hidden="true"></div>
+  <div class="inner">
+    <p class="mono" style="margin-bottom:14px">Ekstre parfüm / 50 ml</p>
+    <p class="hero-title">Sen çıktıktan sonra konuşan koku.</p>
+    <p class="sub">ARDIN. Oud, amber ve deri. Gece için yazılmış bir parça.</p>
+    <a class="btn" href="#satin-al">Şişeyi gör</a>
+  </div>
+</section>
+
+<div class="flow" id="flow">
+<svg class="trace" id="trace" aria-hidden="true"><path id="trace-path"/><circle class="head" id="trace-head" r="3" cx="-99" cy="-99"/></svg>
+
+<!-- ============ 01 MANİFESTO ============ -->
+<section class="manifesto live" id="iz">
+  <span class="spark" style="left:8%;top:30%"></span>
+  <span class="spark" style="left:41%;top:64%"></span>
+  <div class="wrap grid">
+    <div class="rev">
+      <div class="part eyebrow"><i></i><span class="mono">01 / İZ</span></div>
+      <h2 class="part">Koku, sen gittikten sonra konuşur.</h2>
+      <p class="part">Bir parfümün işi, sen odadayken değil, sen odadan çıktıktan sonra başlar. Kapı kapanır, sen yoksun, koku hâlâ orada. ARDIN bunun için yazıldı.</p>
+      <svg class="iz-mark part" viewBox="0 0 170 78" aria-hidden="true">
+        <path d="M6 66 C 44 66, 30 14, 72 14 S 116 62, 152 30"/>
+        <circle cx="152" cy="30" r="3.4"/>
+      </svg>
+    </div>
+    <figure class="shot fade" style="margin:0">
+      <img src="assets/sise.jpg" alt="ARDIN şişesi, karanlık taşın üzerinde amber ışıkta" width="1200" height="1600" loading="lazy">
+      <figcaption class="mono">50 ml ekstre</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 02 BİLEK TESTİ ============ -->
+<section class="wrist live" id="koku">
+  <span class="spark" style="left:18%;top:24%"></span>
+  <span class="spark" style="left:78%;top:58%"></span>
+  <div class="wrap">
+    <div class="rev">
+      <div class="part eyebrow"><i></i><span class="mono">02 / TENDE</span><i></i></div>
+      <h2 class="part">Bilek testi</h2>
+      <p class="part lede">Parmağını basılı tut. Koku tende nasıl açılıyorsa öyle açılır.</p>
+    </div>
+    <div class="holder">
+      <button class="hold-btn" id="hold" aria-describedby="hold-help">
+        <span class="fill" aria-hidden="true"></span>
+        <span class="lbl"><span id="hold-label">Basılı tut</span><span class="clock" id="hold-clock">00:00</span></span>
+      </button>
+      <p id="hold-help" class="sr-only">Düğmeyi basılı tutunca kokunun üç aşaması sırayla açılır. Bırakınca geri kapanır.</p>
+      <div class="layers" id="layers">
+        <div class="layer" data-th="0.06">
+          <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="7"/><path d="M22 4v7M22 33v7M4 22h7M33 22h7"/></svg>
+          <div><h3>İlk 15 dakika</h3><p>Bergamot, karabiber, tarçın kabuğu.</p></div>
+        </div>
+        <div class="layer" data-th="0.42">
+          <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="12"/><circle cx="22" cy="22" r="4"/></svg>
+          <div><h3>İkinci saat</h3><p>Oud, tütsü, kuru gül.</p></div>
+        </div>
+        <div class="layer" data-th="0.78">
+          <svg class="glyph" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="16"/><path d="M8 30c6-4 22-4 28 0"/></svg>
+          <div><h3>Sekizinci saatten sonra</h3><p>Amber, deri, sedir.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 KALICILIK ============ -->
+<section class="stay live" id="kalicilik">
+  <span class="spark" style="left:66%;top:18%"></span>
+  <div class="wrap">
+    <div class="band-img fade">
+      <img src="assets/malzeme.jpg" alt="Oud talaşı, amber reçine ve deri, karanlık taş üzerinde" width="1920" height="1080" loading="lazy">
+      <div class="over">
+        <div class="eyebrow"><i></i><span class="mono">03 / KALICILIK</span></div>
+        <h2>Yarım saatte uçmaz.</h2>
+      </div>
+    </div>
+    <div class="cols">
+      <p class="lede fade">Ekstre yoğunluğu yüzde 24. Oud, amber ve deri, tene tutunan üç notadır. Ölçtüğümüz aralık tende 8 ila 12 saat, kumaşta daha uzun.</p>
+      <div class="stats rev">
+        <div class="stat part"><b>%24</b><span>ekstre yoğunluğu</span></div>
+        <div class="stat part"><b>8-12</b><span>saat tende</span></div>
+        <div class="stat part"><b>50</b><span>mililitre, koyu cam şişe</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 ÖNCE KOKLA ============ -->
+<section class="sample live" id="numune">
+  <span class="spark" style="left:12%;top:70%"></span>
+  <div class="wrap grid">
+    <figure class="shot fade" style="margin:0">
+      <img src="assets/ipek.jpg" alt="Koyu ipek kumaş üzerinde amber ışık izi" width="1600" height="1280" loading="lazy">
+    </figure>
+    <div class="rev">
+      <div class="part eyebrow"><i></i><span class="mono">04 / ÖNCE KOKLA</span></div>
+      <h2 class="part">Ekrandan koku alınmıyor. Biliyoruz.</h2>
+      <p class="part">O yüzden önce 2 ml deneme şişesi gönderiyoruz. Beğenmezsen büyük şişeyi hiç açmadan geri gönder, parası iade edilir. Risk bizde kalsın.</p>
+      <div class="part marks">
+        <span>2 ml deneme şişesi</span><span>14 gün iade</span><span>Kargo bizden</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 SORULAR ============ -->
+<section class="faq" id="sorular">
+  <div class="wrap">
+    <div class="head rev">
+      <h2 class="part">Sorular</h2>
+      <p class="part">Bize en çok sorulanlar ve dosdoğru cevapları. Süslemedik.</p>
+    </div>
+    <div class="qa fade">
+      <details>
+        <summary><span class="n">01</span>Tende herkeste aynı mı kokuyor?<span class="mk" aria-hidden="true"></span></summary>
+        <div class="ans"><div><p>Hayır. Amber ve deri ten ısısına göre değişir. Bu yüzden 2 ml deneme şişesini önce göndeririz.</p></div></div>
+      </details>
+      <details>
+        <summary><span class="n">02</span>Ağır bir koku mu?<span class="mk" aria-hidden="true"></span></summary>
+        <div class="ans"><div><p>Yakın mesafede yoğun, uzakta yumuşak. İki sıkım günlük kullanım için yeter, dört sıkım gece içindir.</p></div></div>
+      </details>
+      <details>
+        <summary><span class="n">03</span>Kışlık mı, yazlık mı?<span class="mk" aria-hidden="true"></span></summary>
+        <div class="ans"><div><p>Soğukta daha uzun tutar. Yazın akşam saatleri için iki sıkım yeterli.</p></div></div>
+      </details>
+      <details>
+        <summary><span class="n">04</span>Kutusu açılmışsa iade alınıyor mu?<span class="mk" aria-hidden="true"></span></summary>
+        <div class="ans"><div><p>Deneme şişesi zaten senin. Büyük şişe açılmadıysa 14 gün içinde iade alınır.</p></div></div>
+      </details>
+      <details>
+        <summary><span class="n">05</span>Kaç yıl dayanır?<span class="mk" aria-hidden="true"></span></summary>
+        <div class="ans"><div><p>Işık almayan serin bir yerde 5 yıl. Kutusunda sakla, banyoda değil.</p></div></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 SON ÇAĞRI ============ -->
+<section class="close live" id="satin-al">
+  <span class="spark" style="left:30%;top:26%"></span>
+  <span class="spark" style="left:70%;top:52%"></span>
+  <div class="wrap rev">
+    <h2 class="part">Arkanda ne bıraktığın senin seçimin.</h2>
+    <p class="part sub">50 ml ekstre. Yanında 2 ml deneme şişesi.</p>
+    <!-- Demo: sipariş düğmesi Kodozen'in WhatsApp'ına düşüyor. -->
+    <div class="part"><a class="btn" id="buy" target="_blank" rel="noopener"
+      href="https://wa.me/905426242468?text=Merhaba%2C%20ARDIN%20sipari%C5%9F%20etmek%20istiyorum.">WhatsApp'tan sipariş ver</a></div>
+    <p class="part fine">Buton WhatsApp'ı hazır mesajla açar. Türkiye içi kargo bizden, 14 gün iade.</p>
+  </div>
+</section>
+</div><!-- /flow -->
+</main>
+
+<footer>
+  <div class="wrap row">
+    <span class="brand">ARDIN<span class="dot">.</span></span>
+    <p class="disclose">ARDIN kurgu bir markadır. Bu site bir tasarım çalışmasıdır ve görselleri yapay zeka ile üretilmiştir.</p>
+    <a class="btn ghost small" href="#satin-al">Şişeyi gör</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+'use strict';
+
+/* ============================================================
+   0. Ortak yardımcılar
+   ============================================================ */
+var clamp=function(v,lo,hi){return Math.min(hi,Math.max(lo,v));};
+var smoothstep=function(p,e0,e1){var t=clamp((p-e0)/(e1-e0),0,1);return t*t*(3-2*t);};
+function rng(seed){var s=seed>>>0;return function(){s=(s*1664525+1013904223)>>>0;return s/4294967296;};}
+
+var stage=document.getElementById('stage');
+var video=document.getElementById('hero-video');
+var poster=document.getElementById('poster');
+var staticBg=document.getElementById('static-bg');
+var ring=document.getElementById('ring');
+var cue=document.getElementById('cue');
+var hero=document.getElementById('hero');
+var nav=document.getElementById('nav');
+
+var dimEl=document.getElementById('settle-dim');
+var lastDim=-1;
+var VIDEO_URL='assets/hero-scrub.mp4';
+var VIDEO_BYTES=7095838;          /* Content-Length gelmezse kullanılacak gerçek boyut */
+var POSTER_URL='assets/hero-poster.jpg';
+/* telefon hero'sunda videonun son karesi değil şişenin kendi dikey karesi durur:
+   dikey ekranda 16:9 kare tam ortasından kırpılıyor ve ürün hiç görünmüyordu */
+var STATIC_URL='assets/sise.jpg';
+
+/* ============================================================
+   1. Metin bölme (tohumlu, her yüklemede aynı)
+   ============================================================ */
+function splitInto(el,mode,spread){
+  var text=el.getAttribute('data-text')||'';
+  el.textContent='';
+  var sr=document.createElement('span');
+  sr.className='sr-only';sr.textContent=text;
+  el.appendChild(sr);
+  var vis=document.createElement('span');
+  vis.setAttribute('aria-hidden','true');
+  var words=text.split(' ');
+  var r=rng(20260821);
+  var chars=text.replace(/ /g,'').length,ci=0;
+  for(var i=0;i<words.length;i++){
+    var w=document.createElement('span');w.className='w';
+    if(mode==='word'){
+      w.style.setProperty('--th',(i/Math.max(1,words.length))*0.5);
+      w.textContent=words[i];
+    }else{
+      for(var j=0;j<words[i].length;j++){
+        var c=document.createElement('span');c.className='c';
+        c.textContent=words[i][j];
+        var th=(spread?(ci/Math.max(1,chars))*spread:0)+r()*0.30;
+        c.style.setProperty('--th',Math.min(0.62,th));
+        c.style.setProperty('--jx',((r()-0.5)*54).toFixed(1)+'px');
+        c.style.setProperty('--jy',((r()-0.5)*44).toFixed(1)+'px');
+        c.style.setProperty('--jr',((r()-0.5)*26).toFixed(1)+'deg');
+        w.appendChild(c);ci++;
+      }
+    }
+    vis.appendChild(w);
+    if(i<words.length-1)vis.appendChild(document.createTextNode(' '));
+  }
+  el.appendChild(vis);
+}
+
+function buildFocus(el){
+  var text=el.getAttribute('data-focus')||'';
+  el.textContent='';
+  var sr=document.createElement('span');sr.className='sr-only';sr.textContent=text;
+  el.appendChild(sr);
+  var soft=document.createElement('span');soft.className='soft';soft.setAttribute('aria-hidden','true');soft.textContent=text;
+  var sharp=document.createElement('span');sharp.className='sharp';sharp.setAttribute('aria-hidden','true');sharp.textContent=text;
+  el.appendChild(soft);el.appendChild(sharp);
+}
+
+var bandEls=[].slice.call(document.querySelectorAll('.band'));
+var bands=bandEls.map(function(el,i){
+  var split=el.querySelector('[data-split]');
+  if(split)splitInto(split,split.getAttribute('data-split'),parseFloat(el.getAttribute('data-spread'))||0);
+  var fx=el.querySelector('[data-focus]');
+  if(fx)buildFocus(fx);
+  var wm=el.querySelector('.word-mark');
+  if(wm&&!wm.getAttribute('data-built')){
+    wm.setAttribute('data-built','1');
+    var t=wm.textContent;wm.textContent='';
+    var sr=document.createElement('span');sr.className='sr-only';sr.textContent=t;wm.appendChild(sr);
+    var vis=document.createElement('span');vis.setAttribute('aria-hidden','true');
+    for(var k=0;k<t.length;k++){
+      var w=document.createElement('span');w.className='w';w.textContent=t[k];
+      w.style.setProperty('--th',(k/t.length)*0.45);
+      vis.appendChild(w);
+    }
+    wm.appendChild(vis);
+  }
+  return {
+    el:el,
+    a:parseFloat(el.getAttribute('data-a')),
+    b:parseFloat(el.getAttribute('data-b')),
+    ramp:parseFloat(el.getAttribute('data-ramp'))||0,
+    first:i===0,last:i===bandEls.length-1,
+    op:-1,k:-1
+  };
+});
+
+/* ============================================================
+   2. Kaydırma ilerlemesi, lerp, kapılı seek
+   ============================================================ */
+var target=0,shown=0,rafId=null,lastTick=0,heroOnScreen=true,scrubOn=false;
+var loadK=0,loadStart=0;
+
+function heroProgress(){
+  var r=hero.getBoundingClientRect();
+  var range=hero.offsetHeight-window.innerHeight;
+  if(range<=0)return 0;
+  return clamp(-r.top/range,0,1);
+}
+
+var seekBusy=false,pendingTime=null;
+function requestSeek(t){
+  if(!video.duration||isNaN(video.duration))return;
+  if(seekBusy){pendingTime=t;return;}
+  seekBusy=true;
+  try{video.currentTime=t;}catch(e){seekBusy=false;}
+}
+video.addEventListener('seeked',function(){
+  seekBusy=false;
+  if(pendingTime!==null){var t=pendingTime;pendingTime=null;requestSeek(t);}
+});
+video.addEventListener('error',function(){seekBusy=false;pendingTime=null;failVideo();});
+
+function tick(now){
+  var dt=Math.min(100,now-(lastTick||now));
+  lastTick=now;
+  var k=0.16;
+  shown+=(target-shown)*(1-Math.pow(1-k,dt/16.667));
+  var settled=Math.abs(target-shown)<0.0005;
+  if(settled){shown=target;}
+  if(loadStart&&loadK<1){
+    loadK=clamp((now-loadStart)/1100,0,1);
+  }
+  requestSeek(shown*(video.duration||0));
+  updateCaptions(shown);
+  if(settled&&loadK>=1){rafId=null;lastTick=0;}
+  else{rafId=requestAnimationFrame(tick);}
+}
+function onScroll(){
+  target=heroProgress();
+  if(rafId===null&&heroOnScreen)rafId=requestAnimationFrame(tick);
+}
+
+/* ============================================================
+   3. Bantlar: yalnızca değişimde DOM yazımı
+   ============================================================ */
+function updateCaptions(p){
+  for(var i=0;i<bands.length;i++){
+    var bd=bands[i],a=bd.a,b=bd.b;
+    var f=Math.min(0.02,(b-a)/3);
+    var inOp=bd.first?1:smoothstep(p,a,a+f);
+    var outOp=bd.last?1:(1-smoothstep(p,b-f,b));
+    var op=inOp*outOp;
+    if(p<a-0.06||p>b+0.06)op=0;
+    var ramp=bd.ramp||Math.min(0.025,(b-a)*0.35);
+    var kk=clamp((p-a)/ramp,0,1);
+    if(bd.first)kk=Math.max(kk,loadK);
+    if(Math.abs(op-bd.op)>0.004){
+      bd.op=op;bd.el.style.opacity=op.toFixed(3);
+      bd.el.style.visibility=op<0.004?'hidden':'visible';
+    }
+    if(Math.abs(kk-bd.k)>0.008){
+      bd.k=kk;
+      bd.el.style.setProperty('--k',kk.toFixed(3));
+      bd.el.style.setProperty('--ks',clamp((kk-0.42)*2.2,0,1).toFixed(3));
+      bd.el.style.setProperty('--kb',clamp((kk-0.62)*2.6,0,1).toFixed(3));
+    }
+  }
+  var dim=smoothstep(p,0.68,0.95)*0.60;
+  if(Math.abs(dim-lastDim)>0.004){lastDim=dim;dimEl.style.opacity=dim.toFixed(3);}
+  var past=p>0.06;
+  if(past!==stage.classList.contains('past'))stage.classList.toggle('past',past);
+}
+
+/* ============================================================
+   4. Videoyu Blob olarak indir, halka ilerlemeyi göstersin
+   ============================================================ */
+var started=false;
+function startBlobFetch(){
+  if(started)return;started=true;
+  loadHeroBlob().catch(failVideo);
+}
+function loadHeroBlob(){
+  var ctrl=new AbortController();
+  var watchdog=setTimeout(function(){ctrl.abort();},20000);
+  var opts={signal:ctrl.signal};
+  try{opts.priority='low';}catch(e){}
+  return fetch(VIDEO_URL,opts).then(function(res){
+    if(!res.ok||!res.body)throw new Error('video yok');
+    var total=Number(res.headers.get('Content-Length'))||VIDEO_BYTES;
+    var reader=res.body.getReader();
+    var chunks=[],got=0,lastRing=0;
+    function pump(){
+      return reader.read().then(function(r){
+        if(r.done)return;
+        clearTimeout(watchdog);
+        watchdog=setTimeout(function(){ctrl.abort();},20000);
+        chunks.push(r.value);got+=r.value.length;
+        var frac=Math.min(1,got/total);
+        var now=performance.now();
+        if(now-lastRing>100||frac===1){
+          lastRing=now;
+          ring.style.setProperty('--ld',Math.round(126*(1-frac)));
+        }
+        return pump();
+      });
+    }
+    return pump().then(function(){
+      clearTimeout(watchdog);
+      ring.style.setProperty('--ld',0);
+      ring.style.opacity='0';
+      video.src=URL.createObjectURL(new Blob(chunks,{type:'video/mp4'}));
+      video.load();
+      video.addEventListener('canplay',function(){
+        requestSeek(heroProgress()*video.duration);
+        stage.classList.add('video-ready');
+      },{once:true});
+    });
+  });
+}
+function failVideo(){
+  if(stage.classList.contains('video-failed'))return;
+  stage.classList.add('video-failed');
+  ring.style.opacity='0';
+}
+
+function initHeroOnce(){
+  if(initHeroOnce.done)return;initHeroOnce.done=true;
+  poster.style.backgroundImage="url('"+POSTER_URL+"')";
+  var img=new Image();
+  img.onload=startBlobFetch;img.onerror=startBlobFetch;
+  img.src=POSTER_URL;
+  setTimeout(startBlobFetch,4000);
+  loadStart=performance.now();
+}
+
+/* ============================================================
+   5. Beş kapı, canlı dinlenir
+   ============================================================ */
+var GATES=[
+  '(max-width: 720px)',
+  '(orientation: portrait) and (max-width: 1024px)',
+  '(orientation: portrait) and (pointer: coarse)',
+  '(orientation: landscape) and (pointer: coarse) and (max-height: 560px)',
+  '(prefers-reduced-motion: reduce)'
+];
+function enableScrub(){
+  if(scrubOn)return;scrubOn=true;
+  initHeroOnce();
+  window.addEventListener('scroll',onScroll,{passive:true});
+  bands.forEach(function(b){b.op=-1;b.k=-1;});
+  unpinFinalStates();
+  updateCaptions(heroProgress());
+  onScroll();
+}
+function disableScrub(){
+  if(!scrubOn)return;scrubOn=false;
+  window.removeEventListener('scroll',onScroll);
+  if(rafId!==null){cancelAnimationFrame(rafId);rafId=null;}
+}
+function applyHeroMode(){
+  var gated=GATES.some(function(q){return matchMedia(q).matches;});
+  if(gated)disableScrub();else enableScrub();
+}
+var MQLS=GATES.map(function(q){return matchMedia(q);});
+MQLS.forEach(function(m){
+  if(m.addEventListener)m.addEventListener('change',applyHeroMode);
+  else if(m.addListener)m.addListener(applyHeroMode);
+});
+
+/* sabit hero görseli yalnızca kapılı taraf yüklesin */
+function initStatic(){
+  if(initStatic.done)return;initStatic.done=true;
+  staticBg.style.backgroundImage="url('"+STATIC_URL+"')";
+}
+function staticNeeded(){return GATES.some(function(q){return matchMedia(q).matches;});}
+if(staticNeeded())initStatic();
+MQLS.forEach(function(m){
+  if(m.addEventListener)m.addEventListener('change',function(){if(staticNeeded())initStatic();});
+});
+
+if('IntersectionObserver' in window){
+  new IntersectionObserver(function(es){
+    heroOnScreen=es[0].isIntersecting;
+    if(heroOnScreen&&scrubOn&&rafId===null)rafId=requestAnimationFrame(tick);
+  },{rootMargin:'10px'}).observe(hero);
+}
+
+/* ============================================================
+   6. İz çizgisi: imza öğesi
+   ============================================================ */
+var flow=document.getElementById('flow');
+var trace=document.getElementById('trace');
+var tracePath=document.getElementById('trace-path');
+var traceHead=document.getElementById('trace-head');
+var traceLen=0,traceMax=0,tracePinned=false;
+
+function buildTrace(){
+  if(!flow||!trace)return;
+  var w=flow.offsetWidth,h=flow.offsetHeight;
+  if(!w||!h)return;
+  trace.setAttribute('viewBox','0 0 '+w+' '+h);
+  trace.setAttribute('width',w);trace.setAttribute('height',h);
+  /* çizgi içeriğin dışındaki boşlukta yürür, metnin üstünden geçmez */
+  var wrapEl=flow.querySelector('.wrap');
+  var gut=wrapEl?clamp(wrapEl.getBoundingClientRect().left*0.46,15,74):20;
+  /* dar bir kıvrım, geniş bir kavis değil: iz sayfanın kenarında yürür */
+  var amp=Math.min(70,gut*0.9);
+  var fr=flow.getBoundingClientRect();
+  var ids=['iz','koku','kalicilik','numune','sorular'];
+  var xs=[gut,gut+amp,gut,gut+amp,gut];
+  var pts=[[w*0.5,0]];
+  for(var i=0;i<ids.length;i++){
+    var s=document.getElementById(ids[i]);
+    if(!s)continue;
+    var r=s.getBoundingClientRect();
+    pts.push([xs[i%xs.length],r.top-fr.top+r.height*0.5]);
+  }
+  /* çizgi son başlığın altına indikten sonra ortaya kıvrılır, başlığın üstünden geçmez */
+  var buy=document.getElementById('buy');
+  if(buy){
+    var by=buy.getBoundingClientRect().top-fr.top;
+    pts.push([gut,by-96]);
+    pts.push([w*0.5,by-26]);
+  }else pts.push([w*0.5,h-8]);
+  var d='M '+pts[0][0].toFixed(1)+' '+pts[0][1].toFixed(1);
+  for(var j=1;j<pts.length;j++){
+    var p0=pts[j-1],p1=pts[j];
+    var my=(p0[1]+p1[1])/2;
+    d+=' C '+p0[0].toFixed(1)+' '+my.toFixed(1)+', '+p1[0].toFixed(1)+' '+my.toFixed(1)+', '+p1[0].toFixed(1)+' '+p1[1].toFixed(1);
+  }
+  tracePath.setAttribute('d',d);
+  traceLen=tracePath.getTotalLength();
+  tracePath.style.strokeDasharray=traceLen;
+  tracePath.style.strokeDashoffset=tracePinned?0:traceLen*(1-traceMax);
+  drawTrace();
+}
+function traceProgress(){
+  var r=flow.getBoundingClientRect();
+  var start=window.innerHeight*0.86;
+  var span=r.height-window.innerHeight*0.3;
+  if(span<=0)return 1;
+  return clamp((start-r.top)/span,0,1);
+}
+var lastTraceDraw=-1;
+function drawTrace(){
+  if(!traceLen||tracePinned)return;
+  var p=traceProgress();
+  if(p>traceMax)traceMax=p;              /* iz geri silinmez, arkanda kalır */
+  if(Math.abs(traceMax-lastTraceDraw)<0.002)return;
+  lastTraceDraw=traceMax;
+  tracePath.style.strokeDashoffset=(traceLen*(1-traceMax)).toFixed(1);
+  var pt=tracePath.getPointAtLength(traceLen*traceMax);
+  traceHead.setAttribute('cx',pt.x.toFixed(1));
+  traceHead.setAttribute('cy',pt.y.toFixed(1));
+  traceHead.style.opacity=traceMax>0.004&&traceMax<0.999?'0.9':'0';
+}
+
+/* ============================================================
+   7. Bilek testi: basılı tut
+   ============================================================ */
+var hold=document.getElementById('hold');
+var holdLabel=document.getElementById('hold-label');
+var holdClock=document.getElementById('hold-clock');
+var layerEls=[].slice.call(document.querySelectorAll('.layer'));
+var hp=0,holding=false,holdRaf=null,holdLast=0,lastClock='',lastLabel='',lastClockAt=0;
+
+function holdFrame(now){
+  var dt=Math.min(80,now-(holdLast||now));holdLast=now;
+  hp=clamp(hp+(holding?dt/2400:-dt/1500),0,1);
+  hold.style.setProperty('--p',hp.toFixed(3));
+  for(var i=0;i<layerEls.length;i++){
+    var th=parseFloat(layerEls[i].getAttribute('data-th'));
+    var lk=clamp((hp-th)/0.2,0,1);
+    layerEls[i].style.setProperty('--lk',lk.toFixed(3));
+    var lit=lk>0.6;
+    if(lit!==layerEls[i].classList.contains('lit'))layerEls[i].classList.toggle('lit',lit);
+  }
+  var mins=Math.round(hp*480);
+  var txt=('0'+Math.floor(mins/60)).slice(-2)+':'+('0'+(mins%60)).slice(-2);
+  /* 10Hz kısıtı, ama uç değerler her zaman yazılır ki sayaç 08:00'de kapansın */
+  if(txt!==lastClock&&(now-lastClockAt>100||hp===1||hp===0)){lastClock=txt;lastClockAt=now;holdClock.textContent=txt;}
+  var lbl=hp>0.99?'Tamam':(holding?'Açılıyor':'Basılı tut');
+  if(lbl!==lastLabel){lastLabel=lbl;holdLabel.textContent=lbl;}
+  if((holding&&hp<1)||(!holding&&hp>0))holdRaf=requestAnimationFrame(holdFrame);
+  else{holdRaf=null;holdLast=0;}
+}
+function holdStart(e){
+  if(e&&e.type==='pointerdown'&&e.button!==0)return;
+  holding=true;if(holdRaf===null)holdRaf=requestAnimationFrame(holdFrame);
+}
+function holdEnd(){holding=false;if(holdRaf===null)holdRaf=requestAnimationFrame(holdFrame);}
+if(hold){
+  hold.addEventListener('pointerdown',function(e){e.preventDefault();holdStart(e);});
+  ['pointerup','pointercancel','pointerleave'].forEach(function(ev){hold.addEventListener(ev,holdEnd);});
+  hold.addEventListener('keydown',function(e){
+    if(e.key===' '||e.key==='Enter'){e.preventDefault();holdStart();}
+  });
+  hold.addEventListener('keyup',function(e){
+    if(e.key===' '||e.key==='Enter')holdEnd();
+  });
+  hold.addEventListener('blur',holdEnd);
+}
+
+/* ============================================================
+   8. Girişler, üst çubuk, duraklatma
+   ============================================================ */
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(en){
+      if(!en.isIntersecting)return;
+      en.target.classList.add('in');
+      io.unobserve(en.target);
+      setTimeout(function(){en.target.classList.add('done');},1400);
+    });
+  },{rootMargin:'-8% 0px -12% 0px'});
+  [].slice.call(document.querySelectorAll('.rev,.fade')).forEach(function(el){io.observe(el);});
+
+  var liveIo=new IntersectionObserver(function(es){
+    es.forEach(function(en){en.target.classList.toggle('live',en.isIntersecting);});
+  },{rootMargin:'20% 0px 20% 0px'});
+  [].slice.call(document.querySelectorAll('.live')).forEach(function(el){liveIo.observe(el);});
+}
+
+var navStuck=false;
+function onPageScroll(){
+  var s=window.scrollY>24;
+  if(s!==navStuck){navStuck=s;nav.classList.toggle('stuck',s);}
+  drawTrace();
+}
+window.addEventListener('scroll',onPageScroll,{passive:true});
+
+document.addEventListener('visibilitychange',function(){
+  document.body.classList.toggle('paused',document.hidden);
+});
+
+/* ============================================================
+   9. Azaltılmış hareket, iki yönlü
+   ============================================================ */
+function pinToFinalStates(){
+  tracePinned=true;
+  if(traceLen)tracePath.style.strokeDashoffset='0';
+  traceHead.style.opacity='0';
+  hp=1;holding=false;
+  if(holdRaf!==null){cancelAnimationFrame(holdRaf);holdRaf=null;}
+  if(hold){
+    hold.style.setProperty('--p','1');
+    holdLabel.textContent='Tamam';holdClock.textContent='08:00';
+  }
+  layerEls.forEach(function(l){l.style.setProperty('--lk','1');l.classList.add('lit');});
+  [].slice.call(document.querySelectorAll('.rev,.fade')).forEach(function(el){
+    el.classList.add('in');el.classList.add('done');
+  });
+}
+function unpinFinalStates(){
+  tracePinned=false;
+  lastTraceDraw=-1;lastDim=-1;
+  if(traceLen)tracePath.style.strokeDashoffset=(traceLen*(1-traceMax)).toFixed(1);
+  if(hold){hold.style.removeProperty('--p');}
+  hp=0;lastLabel='';lastClock='';
+  layerEls.forEach(function(l){l.style.setProperty('--lk','0');l.classList.remove('lit');});
+  if(holdLabel)holdLabel.textContent='Basılı tut';
+  if(holdClock)holdClock.textContent='00:00';
+  drawTrace();
+}
+var rm=matchMedia('(prefers-reduced-motion: reduce)');
+function onRM(e){
+  if(e.matches)pinToFinalStates();
+  else{applyHeroMode();unpinFinalStates();}
+}
+if(rm.addEventListener)rm.addEventListener('change',onRM);
+else if(rm.addListener)rm.addListener(onRM);
+
+/* ============================================================
+   10. Başlat
+   ============================================================ */
+[].slice.call(document.querySelectorAll('.iz-mark path')).forEach(function(p){
+  try{p.style.setProperty('--l',Math.ceil(p.getTotalLength()));}catch(e){}
+});
+
+var resizeT=null;
+window.addEventListener('resize',function(){
+  clearTimeout(resizeT);
+  resizeT=setTimeout(function(){buildTrace();if(scrubOn)onScroll();},180);
+});
+window.addEventListener('load',function(){buildTrace();});
+
+applyHeroMode();
+if(rm.matches)pinToFinalStates();
+buildTrace();
+onPageScroll();
+})();
+</script>
+</body>
+</html>

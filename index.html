@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="tr" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kodozen · Web Tasarım Stüdyosu</title>
+<meta name="description" content="İzmir'de web tasarım stüdyosu. Kurumsal, e-ticaret, portfolyo ve rezervasyon siteleri, sosyal medya yönetimi. Örnek işlerimizi açıp gezebilirsiniz.">
+<meta name="theme-color" content="#0b0d12">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kodozen · Web Tasarım Stüdyosu">
+<meta property="og:description" content="Fikrinizi web sitesine dönüştürüyoruz. Örnek işlerimiz gerçekten çalışan siteler — açıp gezebilirsiniz.">
+<meta property="og:image" content="img/avlu-masaustu.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Sayfa JavaScript'siz de tam okunur kalsın diye: .belir kuralları
+     yalnızca html.js varken uygulanır, bu satır da onu erkenden yazar. -->
+<script>document.documentElement.className = "js";</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=21">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Kodozen",
+  "description": "Web tasarım stüdyosu — kurumsal, e-ticaret, portfolyo ve rezervasyon siteleri, sosyal medya yönetimi.",
+  "founder": { "@type": "Person", "name": "Mert Pehlivan" },
+  "areaServed": "TR",
+  "telephone": "+90 542 624 24 68",
+  "address": { "@type": "PostalAddress", "addressLocality": "İzmir", "addressCountry": "TR" },
+  "sameAs": [
+    "https://instagram.com/kodozen.studio",
+    "https://facebook.com/kodozen.studio",
+    "https://tiktok.com/@kodozen.studio",
+    "https://x.com/kodozenstudio"
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="atla" href="#ana"><span lang="tr">İçeriğe geç</span><span lang="en">Skip to content</span></a>
+
+<header class="ust" id="ustbar">
+  <div class="kabuk ust__ic">
+    <a class="marka" href="#ana" aria-label="Kodozen ana sayfa">
+      <span class="marka__im" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#05161d" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9.5 18 20 6.5"/></svg>
+      </span>
+      <span class="marka__ad">Kodozen</span>
+    </a>
+    <nav class="gezinti" id="ana-menu" aria-label="Ana menü">
+      <a href="#isler"><span lang="tr">İşler</span><span lang="en">Work</span></a>
+      <a href="#surec"><span lang="tr">Süreç</span><span lang="en">Process</span></a>
+      <a href="#hizmetler"><span lang="tr">Hizmetler</span><span lang="en">Services</span></a>
+      <a href="#kurucu"><span lang="tr">Hakkımızda</span><span lang="en">About</span></a>
+      <a href="#sss"><span lang="tr">SSS</span><span lang="en">FAQ</span></a>
+      <a href="#iletisim"><span lang="tr">İletişim</span><span lang="en">Contact</span></a>
+    </nav>
+    <div class="dil" role="group" aria-label="Dil / Language">
+      <button type="button" data-dil="tr" aria-pressed="true">TR</button>
+      <button type="button" data-dil="en" aria-pressed="false">EN</button>
+    </div>
+    <button class="menu-dugme" type="button" aria-expanded="false" aria-controls="ana-menu">
+      <span class="gizli"><span lang="tr">Menü</span><span lang="en">Menu</span></span>
+      <span class="menu-dugme__cizgi" aria-hidden="true"></span>
+    </button>
+    <a class="dugme dugme--dolu dugme--kucuk" href="#iletisim"><span lang="tr">Bize ulaşın</span><span lang="en">Get in touch</span></a>
+  </div>
+</header>
+
+<main id="ana">
+
+  <!-- ============ giriş ============ -->
+  <section class="giris">
+    <!-- Arka plan videosu geldiğinde buraya <video> girecek; o zamana kadar
+         degrade katmanı poster görevi görüyor, boş kalmıyor. -->
+    <div class="giris__fon" data-video="bekliyor" aria-hidden="true"></div>
+
+    <div class="kabuk giris__ic">
+      <p class="giris__rozet"><span class="giris__nokta"></span> <span lang="tr">İzmir · Web tasarım stüdyosu</span><span lang="en">İzmir · Web design studio</span></p>
+      <h1><span lang="tr">Fikrinizi</span><span lang="en">I turn ideas</span> <em><span lang="tr">web sitesine</span><span lang="en">into websites</span></em> <span lang="tr">dönüştürüyoruz</span></h1>
+      <p class="giris__alt">
+        <span lang="tr">Hazır tema kurmuyoruz; her site sıfırdan tasarlanıyor. Aşağıdaki beş örnek ekran görüntüsü değil — açıp gezebilirsiniz.</span><span lang="en">No off-the-shelf themes; every site is designed from scratch. The five examples below aren't screenshots — open them and click around.</span>
+      </p>
+      <div class="giris__eylem">
+        <a class="dugme dugme--dolu" href="#isler"><span lang="tr">İşleri gör</span><span lang="en">See the work</span></a>
+        <a class="dugme dugme--bos" href="https://wa.me/905426242468?text=Merhaba%2C%20Kodozen%20ile%20bir%20web%20sitesi%20projesi%20konu%C5%9Fmak%20istiyorum." target="_blank" rel="noopener"><span lang="tr">WhatsApp'tan yazın</span><span lang="en">Message on WhatsApp</span></a>
+      </div>
+
+      <div class="vitrin belir">
+        <div class="vitrin__yerlesim">
+          <!-- Çerçevenin içine, dosya varsa ve hareket isteniyorsa, beş demo
+               sitesinin 4K kaydırma videosu JavaScript ile giriyor. Video yoksa
+               ya da oynatılamıyorsa aşağıdaki duran kare olduğu gibi kalıyor. -->
+          <div class="cerceve cerceve--masaustu cerceve--vitrin" data-video="bekliyor">
+            <div class="cerceve__cubuk" aria-hidden="true">
+              <i></i><i></i><i></i>
+              <span class="cerceve__adres" data-adres>avlu — bahçe restoranı</span>
+            </div>
+            <div class="cerceve__ekran">
+              <picture>
+                <source type="image/webp" srcset="img/avlu-masaustu.webp">
+                <img src="img/avlu-masaustu.jpg" width="1440" height="900"
+                     alt="Avlu bahçe restoranı sitesinin masaüstü görünümü: cam çatı altındaki avlu fotoğrafı üzerinde altın renkli başlık." fetchpriority="high">
+              </picture>
+            </div>
+          </div>
+          <div class="cerceve cerceve--mobil vitrin__mobil">
+            <picture>
+              <source type="image/webp" srcset="img/avlu-mobil.webp">
+              <img src="img/avlu-mobil.jpg" width="780" height="1688"
+                   alt="Aynı sitenin telefon görünümü." loading="lazy">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ yöntem: renk ============
+       Rakam şeridinin yerine geçti. Beş işin birbirine benzememesinin
+       gerçek sebebi bu: her paletin nereden geldiği tek tek gösteriliyor.
+       Renkler uydurulmadı — aşağıdaki altı haneli kodlar bu fotoğrafların
+       kendisinden örneklendi. -->
+  <section class="blok--ince" id="yontem">
+    <div class="kabuk">
+      <div class="renk-basi belir">
+        <p class="ust-yazi"><span lang="tr">Yöntem</span><span lang="en">Method</span></p>
+        <h2><span lang="tr">Renkleri seçmiyoruz, mekândan çıkarıyoruz</span><span lang="en">We don't pick colours. We take them from the room.</span></h2>
+        <p>
+          <span lang="tr">Her paletin bir kaynağı var: bir tabak, bir duvar, bir ışık. Beş işin birbirine benzememesinin sebebi bu.</span><span lang="en">Every palette has a source: a plate, a wall, a light. That's why no two of these look alike.</span>
+        </p>
+      </div>
+      <div class="renkler belir">
+        <figure class="renk">
+          <div class="renk__kare">
+            <picture>
+              <source type="image/webp" srcset="img/renk-avlu.webp">
+              <img src="img/renk-avlu.jpg" width="520" height="520" loading="lazy"
+                   alt="Avlu için rengin çıkarıldığı fotoğraf: Tabağın sırı.">
+            </picture>
+          </div>
+          <ul class="renk__palet">
+            <li><i style="background:#0C313D"></i><code>#0C313D</code></li>
+            <li><i style="background:#215E68"></i><code>#215E68</code></li>
+            <li><i style="background:#478182"></i><code>#478182</code></li>
+          </ul>
+          <figcaption>
+            <b>Avlu</b>
+            <span><span lang="tr">Tabağın sırı</span><span lang="en">The glaze on a plate</span></span>
+          </figcaption>
+        </figure>
+        <figure class="renk">
+          <div class="renk__kare">
+            <picture>
+              <source type="image/webp" srcset="img/renk-ardin.webp">
+              <img src="img/renk-ardin.jpg" width="520" height="520" loading="lazy"
+                   alt="Ardın için rengin çıkarıldığı fotoğraf: Şişenin içindeki mürekkep.">
+            </picture>
+          </div>
+          <ul class="renk__palet">
+            <li><i style="background:#371604"></i><code>#371604</code></li>
+            <li><i style="background:#7F3504"></i><code>#7F3504</code></li>
+            <li><i style="background:#AA5408"></i><code>#AA5408</code></li>
+          </ul>
+          <figcaption>
+            <b>Ardın</b>
+            <span><span lang="tr">Şişenin içindeki mürekkep</span><span lang="en">Ink inside the bottle</span></span>
+          </figcaption>
+        </figure>
+        <figure class="renk">
+          <div class="renk__kare">
+            <picture>
+              <source type="image/webp" srcset="img/renk-sakiz.webp">
+              <img src="img/renk-sakiz.jpg" width="520" height="520" loading="lazy"
+                   alt="Sakız için rengin çıkarıldığı fotoğraf: Masaların keteni.">
+            </picture>
+          </div>
+          <ul class="renk__palet">
+            <li><i style="background:#2F281C"></i><code>#2F281C</code></li>
+            <li><i style="background:#907A5F"></i><code>#907A5F</code></li>
+            <li><i style="background:#D7C4A3"></i><code>#D7C4A3</code></li>
+          </ul>
+          <figcaption>
+            <b>Sakız</b>
+            <span><span lang="tr">Masaların keteni</span><span lang="en">Linen on the tables</span></span>
+          </figcaption>
+        </figure>
+        <figure class="renk">
+          <div class="renk__kare">
+            <picture>
+              <source type="image/webp" srcset="img/renk-atolye.webp">
+              <img src="img/renk-atolye.jpg" width="520" height="520" loading="lazy"
+                   alt="Atölye için rengin çıkarıldığı fotoğraf: Atölyenin ışığı.">
+            </picture>
+          </div>
+          <ul class="renk__palet">
+            <li><i style="background:#0C212F"></i><code>#0C212F</code></li>
+            <li><i style="background:#28546F"></i><code>#28546F</code></li>
+            <li><i style="background:#A5C2D3"></i><code>#A5C2D3</code></li>
+          </ul>
+          <figcaption>
+            <b>Atölye</b>
+            <span><span lang="tr">Atölyenin ışığı</span><span lang="en">The light in the workshop</span></span>
+          </figcaption>
+        </figure>
+        <figure class="renk">
+          <div class="renk__kare">
+            <picture>
+              <source type="image/webp" srcset="img/renk-kemer.webp">
+              <img src="img/renk-kemer.jpg" width="520" height="520" loading="lazy"
+                   alt="Kemer için rengin çıkarıldığı fotoğraf: Salonun duvarı.">
+            </picture>
+          </div>
+          <ul class="renk__palet">
+            <li><i style="background:#692D19"></i><code>#692D19</code></li>
+            <li><i style="background:#B3A28C"></i><code>#B3A28C</code></li>
+            <li><i style="background:#D7C9B2"></i><code>#D7C9B2</code></li>
+          </ul>
+          <figcaption>
+            <b>Kemer</b>
+            <span><span lang="tr">Salonun duvarı</span><span lang="en">The wall of the room</span></span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ işler ============ -->
+  <section class="blok" id="isler">
+    <div class="kabuk">
+      <div class="blok-basi belir">
+        <p class="ust-yazi"><span lang="tr">İşler</span><span lang="en">Work</span></p>
+        <h2><span lang="tr">Beş iş, beş ayrı kimlik</span><span lang="en">Five projects, five separate identities</span></h2>
+        <p>
+          <span lang="tr">Restoran, parfüm, oto servis. Beşi de kendi işinden çıkarılmış bir palet ve kendi kurgusuyla ayrı ayrı tasarlandı.</span><span lang="en">A restaurant, a perfume brand, a car service. Each one designed separately, with a palette drawn from its own trade.</span>
+        </p>
+      </div>
+
+      <div class="isler">
+
+        <!-- --- avlu --- -->
+        <article class="is belir">
+          <div class="is__gorsel">
+            <div class="cerceve cerceve--masaustu">
+              <div class="cerceve__cubuk" aria-hidden="true"><i></i><i></i><i></i><span class="cerceve__adres">avlu</span></div>
+              <picture><source type="image/webp" srcset="img/avlu-masaustu.webp">
+                <img src="img/avlu-masaustu.jpg" width="1440" height="900" alt="Avlu sitesinin masaüstü görünümü." loading="lazy"></picture>
+            </div>
+            <div class="cerceve cerceve--mobil">
+              <picture><source type="image/webp" srcset="img/avlu-mobil.webp">
+                <img src="img/avlu-mobil.jpg" width="780" height="1688" alt="Avlu sitesinin telefon görünümü." loading="lazy"></picture>
+            </div>
+          </div>
+          <div>
+            <span class="is__etiket"><span lang="tr">Tasarım çalışması</span><span lang="en">Design study</span></span>
+            <h3 class="is__ad">Avlu</h3>
+            <p class="is__tur"><span lang="tr">Bahçe restoranı · Ayrı menü sayfası</span><span lang="en">Courtyard restaurant · Separate menu page</span></p>
+            <p class="is__ozet">
+              <span lang="tr">Sokaktan görünmeyen, cam çatı altında bir avlusu olan bir restoran. Sitenin bütün kurgusu bu gizliliğin üzerine kuruldu.</span><span lang="en">A restaurant you can't see from the street, with a courtyard under a glass roof. The whole site is built on that hiddenness.</span>
+            </p>
+            <ul class="is__liste">
+              <li><span lang="tr">54 yemek ve 13 şaraplık ayrı menü sayfası</span><span lang="en">A separate menu page: 54 dishes, 13 wines</span></li>
+              <li><span lang="tr">Ana sayfada tek bir fiyat yok — menüye tıklamayı teşvik ediyor</span><span lang="en">Not a single price on the home page — that's what drives people into the menu</span></li>
+              <li><span lang="tr">Menüdeki yemeğe tıklayınca fotoğrafı açılıyor</span><span lang="en">Tap a dish in the menu and its photo opens</span></li>
+              <li><span lang="tr">Rezervasyon formu doğrudan WhatsApp mesajı kuruyor</span><span lang="en">The booking form composes a WhatsApp message directly</span></li>
+            </ul>
+            <div class="is__eylem">
+              <a class="dugme dugme--dolu dugme--kucuk" href="demo/avlu/" target="_blank" rel="noopener"><span lang="tr">Siteyi aç</span><span lang="en">Open the site</span></a>
+              <a class="dugme dugme--bos dugme--kucuk" href="is/avlu.html"><span lang="tr">Nasıl yapıldı</span><span lang="en">How it was made</span></a>
+            </div>
+          </div>
+        </article>
+        <!-- --- ardin --- -->
+        <article class="is belir">
+          <div class="is__gorsel">
+            <div class="cerceve cerceve--masaustu">
+              <div class="cerceve__cubuk" aria-hidden="true"><i></i><i></i><i></i><span class="cerceve__adres">ardin</span></div>
+              <picture><source type="image/webp" srcset="img/ardin-masaustu.webp">
+                <img src="img/ardin-masaustu.jpg" width="1440" height="900" alt="Ardın sitesinin masaüstü görünümü." loading="lazy"></picture>
+            </div>
+            <div class="cerceve cerceve--mobil">
+              <picture><source type="image/webp" srcset="img/ardin-mobil.webp">
+                <img src="img/ardin-mobil.jpg" width="780" height="1688" alt="Ardın sitesinin telefon görünümü." loading="lazy"></picture>
+            </div>
+          </div>
+          <div>
+            <span class="is__etiket"><span lang="tr">Konsept marka</span><span lang="en">Concept brand</span></span>
+            <h3 class="is__ad">Ardın</h3>
+            <p class="is__tur"><span lang="tr">Parfüm markası · Kaydırmalı anlatım</span><span lang="en">Perfume brand · Scroll-driven narrative</span></p>
+            <p class="is__ozet">
+              <span lang="tr">Bir parfüm markası için, tek bir itirazın üzerine kurulmuş bir site: ekrandan koku alınmıyor. Sayfa bunu saklamıyor, başlık yapıyor.</span><span lang="en">A site built on a single objection: you can't smell through a screen. The page doesn't hide that — it makes it the headline.</span>
+            </p>
+            <ul class="is__liste">
+              <li><span lang="tr">Kaydırdıkça oynayan video — sayfa ilerledikçe kare kare akıyor</span><span lang="en">A video that plays as you scroll — frame by frame, at your pace</span></li>
+              <li><span lang="tr">&ldquo;Ekrandan koku alınmıyor. Biliyoruz.&rdquo; bölümü itirazı karşılıyor</span><span lang="en">The &ldquo;You can't smell through a screen. We know.&rdquo; section meets the objection head on</span></li>
+              <li><span lang="tr">Bilek testi: kokunun saat saat nasıl değiştiğini anlatıyor</span><span lang="en">A wrist test: how the scent changes hour by hour</span></li>
+              <li><span lang="tr">Sipariş doğrudan WhatsApp'a bağlanıyor</span><span lang="en">Ordering runs straight through WhatsApp</span></li>
+            </ul>
+            <div class="is__eylem">
+              <a class="dugme dugme--dolu dugme--kucuk" href="demo/ardin/" target="_blank" rel="noopener"><span lang="tr">Siteyi aç</span><span lang="en">Open the site</span></a>
+              <a class="dugme dugme--bos dugme--kucuk" href="is/ardin.html"><span lang="tr">Nasıl yapıldı</span><span lang="en">How it was made</span></a>
+            </div>
+          </div>
+        </article>
+        <!-- --- sakız --- -->
+        <article class="is belir">
+          <div class="is__gorsel">
+            <div class="cerceve cerceve--masaustu">
+              <div class="cerceve__cubuk" aria-hidden="true"><i></i><i></i><i></i><span class="cerceve__adres">sakiz</span></div>
+              <picture><source type="image/webp" srcset="img/sakiz-masaustu.webp">
+                <img src="img/sakiz-masaustu.jpg" width="1440" height="900" alt="Sakız meyhane sitesinin masaüstü görünümü." loading="lazy"></picture>
+            </div>
+            <div class="cerceve cerceve--mobil">
+              <picture><source type="image/webp" srcset="img/sakiz-mobil.webp">
+                <img src="img/sakiz-mobil.jpg" width="780" height="1688" alt="Sakız sitesinin telefon görünümü." loading="lazy"></picture>
+            </div>
+          </div>
+          <div>
+            <span class="is__etiket"><span lang="tr">Tasarım çalışması</span><span lang="en">Design study</span></span>
+            <h3 class="is__ad">Sakız</h3>
+            <p class="is__tur"><span lang="tr">Meyhane · Gece kurgusu</span><span lang="en">Meyhane · Built around the evening</span></p>
+            <p class="is__ozet">
+              <span lang="tr">Kalabalık, sıcak ve geç saatlere kadar açık bir meyhane. Site de öyle: akşamın dört perdesini sırayla anlatan bir akış üzerine kurulu.</span><span lang="en">A crowded, warm meyhane that stays open late. So is the site: a flow that tells the evening in four acts.</span>
+            </p>
+            <ul class="is__liste">
+              <li><span lang="tr">Düzensiz on iki sütunluk fotoğraf ızgarası — sofra hissi</span><span lang="en">An irregular twelve-column photo grid — the feel of a laid table</span></li>
+              <li><span lang="tr">Koyu zemini kesen açık keten bandı, gözü dinlendiriyor</span><span lang="en">A pale linen band cutting through the dark, to rest the eye</span></li>
+              <li><span lang="tr">Menü sayfası hazır; fiyatlar işletmeden gelince dolacak</span><span lang="en">The menu page is built; prices go in once the owner supplies them</span></li>
+            </ul>
+            <div class="is__eylem">
+              <a class="dugme dugme--dolu dugme--kucuk" href="demo/sakiz/" target="_blank" rel="noopener"><span lang="tr">Siteyi aç</span><span lang="en">Open the site</span></a>
+              <a class="dugme dugme--bos dugme--kucuk" href="is/sakiz.html"><span lang="tr">Nasıl yapıldı</span><span lang="en">How it was made</span></a>
+            </div>
+          </div>
+        </article>
+        <!-- --- atolye --- -->
+        <article class="is belir">
+          <div class="is__gorsel">
+            <div class="cerceve cerceve--masaustu">
+              <div class="cerceve__cubuk" aria-hidden="true"><i></i><i></i><i></i><span class="cerceve__adres">atolye</span></div>
+              <picture><source type="image/webp" srcset="img/atolye-masaustu.webp">
+                <img src="img/atolye-masaustu.jpg" width="1440" height="900" alt="Atölye sitesinin masaüstü görünümü." loading="lazy"></picture>
+            </div>
+            <div class="cerceve cerceve--mobil">
+              <picture><source type="image/webp" srcset="img/atolye-mobil.webp">
+                <img src="img/atolye-mobil.jpg" width="780" height="1688" alt="Atölye sitesinin telefon görünümü." loading="lazy"></picture>
+            </div>
+          </div>
+          <div>
+            <span class="is__etiket"><span lang="tr">Tasarım çalışması</span><span lang="en">Design study</span></span>
+            <h3 class="is__ad">Atölye</h3>
+            <p class="is__tur"><span lang="tr">Oto servis · Kurumsal</span><span lang="en">Car service · Corporate</span></p>
+            <p class="is__ozet">
+              <span lang="tr">Alman marka araçlara bakan bir sanayi sitesi servisi. Sitenin tamamı tek bir sorunun cevabı: aracımı kime bırakıyorum?</span><span lang="en">A workshop servicing German cars. The whole site answers one question: who am I leaving my car with?</span>
+            </p>
+            <ul class="is__liste">
+              <li><span lang="tr">&ldquo;Parça değiştirerek arıza aranmaz&rdquo; — teknik duruş başlık oldu</span><span lang="en">&ldquo;You don't diagnose a fault by swapping parts&rdquo; — a technical stance became the headline</span></li>
+              <li><span lang="tr">Fiyat vermeden önce ne yapıldığını anlatan ayrı bir bölüm</span><span lang="en">A section explaining what happens before a price is quoted</span></li>
+              <li><span lang="tr">Sık sorulan sorular, telefonda gerçekten sorulanlardan</span><span lang="en">An FAQ drawn from what people actually ask on the phone</span></li>
+              <li><span lang="tr">Garanti ve yol yardımı bilgisi öne çıkarıldı</span><span lang="en">Warranty and roadside assistance brought to the front</span></li>
+            </ul>
+            <div class="is__eylem">
+              <a class="dugme dugme--dolu dugme--kucuk" href="demo/atolye/" target="_blank" rel="noopener"><span lang="tr">Siteyi aç</span><span lang="en">Open the site</span></a>
+              <a class="dugme dugme--bos dugme--kucuk" href="is/atolye.html"><span lang="tr">Nasıl yapıldı</span><span lang="en">How it was made</span></a>
+            </div>
+          </div>
+        </article>
+        <!-- --- kemer --- -->
+        <article class="is belir">
+          <div class="is__gorsel">
+            <div class="cerceve cerceve--masaustu">
+              <div class="cerceve__cubuk" aria-hidden="true"><i></i><i></i><i></i><span class="cerceve__adres">kemer</span></div>
+              <picture><source type="image/webp" srcset="img/kemer-masaustu.webp">
+                <img src="img/kemer-masaustu.jpg" width="1440" height="900" alt="Kemer lokal sitesinin masaüstü görünümü." loading="lazy"></picture>
+            </div>
+            <div class="cerceve cerceve--mobil">
+              <picture><source type="image/webp" srcset="img/kemer-mobil.webp">
+                <img src="img/kemer-mobil.jpg" width="780" height="1688" alt="Kemer sitesinin telefon görünümü." loading="lazy"></picture>
+            </div>
+          </div>
+          <div>
+            <span class="is__etiket"><span lang="tr">Tasarım çalışması</span><span lang="en">Design study</span></span>
+            <h3 class="is__ad">Kemer</h3>
+            <p class="is__tur"><span lang="tr">Lokal · Tek sayfa</span><span lang="en">Members' club · Single page</span></p>
+            <p class="is__ozet">
+              <span lang="tr">Bir meyhane değil, köklü bir lokal. Kiremit rengi duvarlar, kristal avize, mavi desenli tabaklar — palet doğrudan salonun kendisinden alındı.</span><span lang="en">Not a meyhane but a long-established club. Terracotta walls, a crystal chandelier, blue-patterned china — the palette came straight from the room.</span>
+            </p>
+            <ul class="is__liste">
+              <li><span lang="tr">Renkler mekânın fotoğraflarından örneklendi, seçilmedi</span><span lang="en">The colours were sampled from photographs of the room, not chosen</span></li>
+              <li><span lang="tr">Tek sayfa: menü yayınlanmadığı için menü sayfası kurulmadı</span><span lang="en">Single page: no menu page, because the club publishes no menu</span></li>
+              <li><span lang="tr">Fotoğraflar kare oranına sabitlendi, sütunlar dengelendi</span><span lang="en">Photos locked to a square ratio, columns balanced</span></li>
+            </ul>
+            <div class="is__eylem">
+              <a class="dugme dugme--dolu dugme--kucuk" href="demo/kemer/" target="_blank" rel="noopener"><span lang="tr">Siteyi aç</span><span lang="en">Open the site</span></a>
+              <a class="dugme dugme--bos dugme--kucuk" href="is/kemer.html"><span lang="tr">Nasıl yapıldı</span><span lang="en">How it was made</span></a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ kayan bant ============
+       Arkada yavaşça kayan yazı, önünde bir kart. Kart içine 3B nesne
+       videosu JavaScript ile giriyor; dosya yoksa kart hiç açılmıyor ve
+       geriye yalnızca bant kalıyor — eksik bir kutu görünmüyor. -->
+  <section class="bant-blok" aria-label="Çalıştığımız alanlar">
+    <div class="bant" aria-hidden="true">
+      <div class="bant__akis">
+        <div class="bant__grup"><span><span lang="tr">Restoran</span><span lang="en">Restaurant</span></span><i aria-hidden="true">·</i><span><span lang="tr">Parfüm markası</span><span lang="en">Perfume brand</span></span><i aria-hidden="true">·</i><span><span lang="tr">Meyhane</span><span lang="en">Meyhane</span></span><i aria-hidden="true">·</i><span><span lang="tr">Oto servis</span><span lang="en">Car service</span></span><i aria-hidden="true">·</i><span><span lang="tr">Lokal</span><span lang="en">Members' club</span></span><i aria-hidden="true">·</i><span><span lang="tr">Kurumsal</span><span lang="en">Corporate</span></span><i aria-hidden="true">·</i><span><span lang="tr">E-ticaret</span><span lang="en">E-commerce</span></span><i aria-hidden="true">·</i><span><span lang="tr">Portfolyo</span><span lang="en">Portfolio</span></span><i aria-hidden="true">·</i></div>
+        <div class="bant__grup"><span><span lang="tr">Restoran</span><span lang="en">Restaurant</span></span><i aria-hidden="true">·</i><span><span lang="tr">Parfüm markası</span><span lang="en">Perfume brand</span></span><i aria-hidden="true">·</i><span><span lang="tr">Meyhane</span><span lang="en">Meyhane</span></span><i aria-hidden="true">·</i><span><span lang="tr">Oto servis</span><span lang="en">Car service</span></span><i aria-hidden="true">·</i><span><span lang="tr">Lokal</span><span lang="en">Members' club</span></span><i aria-hidden="true">·</i><span><span lang="tr">Kurumsal</span><span lang="en">Corporate</span></span><i aria-hidden="true">·</i><span><span lang="tr">E-ticaret</span><span lang="en">E-commerce</span></span><i aria-hidden="true">·</i><span><span lang="tr">Portfolyo</span><span lang="en">Portfolio</span></span><i aria-hidden="true">·</i></div>
+      </div>
+    </div>
+    <div class="bant__kart" data-bant-kart hidden></div>
+  </section>
+
+  <!-- ============ süreç ============ -->
+  <section class="blok blok--yuzey" id="surec">
+    <div class="kabuk">
+      <div class="blok-basi belir">
+        <p class="ust-yazi"><span lang="tr">Süreç</span><span lang="en">Process</span></p>
+        <h2><span lang="tr">İlk mesajdan yayına dört adım</span><span lang="en">Four steps from first message to launch</span></h2>
+        <p><span lang="tr">İlk görüşme ve teklif ücretsiz. Ne yapacağımızı konuşmadan iş başlamıyor.</span><span lang="en">The first conversation and the quote are free. Nothing starts before we've agreed what we're making.</span></p>
+      </div>
+      <ol class="surec belir">
+        <li>
+          <b>01</b><h3><span lang="tr">Görüşme</span><span lang="en">Conversation</span></h3>
+          <p><span lang="tr">Ne istediğinizi konuşuyoruz. WhatsApp'tan birkaç dakika yeterli.</span><span lang="en">We talk through what you need. A few minutes on WhatsApp is enough.</span></p>
+        </li>
+        <li>
+          <b>02</b><h3><span lang="tr">Teklif</span><span lang="en">Quote</span></h3>
+          <p><span lang="tr">Kapsamı netleştirip size özel bir fiyat ve süre çıkarıyoruz. Bu aşama ücretsiz.</span><span lang="en">We pin down the scope and give you a price and a timeline. This stage costs nothing.</span></p>
+        </li>
+        <li>
+          <b>03</b><h3><span lang="tr">Tasarım</span><span lang="en">Design</span></h3>
+          <p><span lang="tr">Tasarımı hazırlayıp geliştiriyoruz. Ara halleri yol boyunca sizinle paylaşıyoruz.</span><span lang="en">We design and build it, sharing work in progress along the way.</span></p>
+        </li>
+        <li>
+          <b>04</b><h3><span lang="tr">Teslim</span><span lang="en">Handover</span></h3>
+          <p><span lang="tr">Siteniz yayına alınır. Sonrasındaki küçük düzenlemeler için de yanınızdayız.</span><span lang="en">Your site goes live. We stay available for the small changes that follow.</span></p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ hizmetler ============ -->
+  <section class="blok" id="hizmetler">
+    <div class="kabuk">
+      <div class="blok-basi belir">
+        <p class="ust-yazi"><span lang="tr">Hizmetler</span><span lang="en">Services</span></p>
+        <h2><span lang="tr">Neler yapıyoruz</span><span lang="en">What we do</span></h2>
+        <p><span lang="tr">Sektörünüz ne olursa olsun, ihtiyacınıza göre tasarlanmış bir site — ve isterseniz onu besleyen sosyal medya.</span><span lang="en">Whatever your trade, a site designed around your needs — and, if you want, the social media that feeds it.</span></p>
+      </div>
+      <!-- Kaydırdıkça dönen kadran. JavaScript devreye girip
+           data-etkin yazana kadar bu blok sıradan bir kart ızgarası;
+           böylece JavaScript kapalıyken beş hizmet de okunur kalıyor. -->
+      <div class="kadran belir" data-kadran>
+        <div class="kadran__sahne">
+      <div class="kadran__disk" aria-hidden="true">
+        <span class="kadran__yay"></span>
+        <span class="kadran__no" data-no="0">01</span>
+        <span class="kadran__no" data-no="1">02</span>
+        <span class="kadran__no" data-no="2">03</span>
+        <span class="kadran__no" data-no="3">04</span>
+        <span class="kadran__no" data-no="4">05</span>
+      </div>
+      <span class="kadran__im" aria-hidden="true"></span>
+          <div class="hizmetler">
+        <article class="hizmet" data-etkin="true">
+          <span class="hizmet__im" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
+          </span>
+          <p class="hizmet__sira" aria-hidden="true">01</p>
+          <h3><span lang="tr">Kurumsal siteler</span><span lang="en">Corporate sites</span></h3>
+          <p><span lang="tr">Markanızı doğru temsil eden, arama motorlarına uygun, hızlı açılan siteler.</span><span lang="en">Sites that represent your brand properly, work with search engines and open fast.</span></p>
+        </article>
+        <article class="hizmet">
+          <span class="hizmet__im" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 0 1-8 0"/></svg>
+          </span>
+          <p class="hizmet__sira" aria-hidden="true">02</p>
+          <h3><span lang="tr">E-ticaret</span><span lang="en">E-commerce</span></h3>
+          <p><span lang="tr">Ürün kataloğu, sepet ve güvenli ödeme altyapısıyla satışa hazır mağazalar.</span><span lang="en">Shops ready to sell, with a product catalogue, a cart and secure payment.</span></p>
+        </article>
+        <article class="hizmet">
+          <span class="hizmet__im" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-4.5-4.5L7 20"/></svg>
+          </span>
+          <p class="hizmet__sira" aria-hidden="true">03</p>
+          <h3><span lang="tr">Portfolyo ve kişisel siteler</span><span lang="en">Portfolio and personal sites</span></h3>
+          <p><span lang="tr">Fotoğrafçı, tasarımcı ve serbest çalışanlar için işini öne çıkaran siteler.</span><span lang="en">Sites that put the work first, for photographers, designers and freelancers.</span></p>
+        </article>
+        <article class="hizmet">
+          <span class="hizmet__im" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16h6"/></svg>
+          </span>
+          <p class="hizmet__sira" aria-hidden="true">04</p>
+          <h3><span lang="tr">Restoran ve rezervasyon</span><span lang="en">Restaurants and booking</span></h3>
+          <p><span lang="tr">QR uyumlu dijital menü ve WhatsApp'a bağlı rezervasyonla restoran siteleri.</span><span lang="en">Restaurant sites with a QR-ready digital menu and booking wired to WhatsApp.</span></p>
+        </article>
+        <article class="hizmet">
+          <span class="hizmet__im" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8z"/></svg>
+          </span>
+          <p class="hizmet__sira" aria-hidden="true">05</p>
+          <h3><span lang="tr">Sosyal medya yönetimi</span><span lang="en">Social media</span></h3>
+          <p><span lang="tr">Instagram, Facebook ve TikTok için içerik üretimi, gönderi tasarımı ve reels kurgusu — siteyle aynı görsel dilde.</span><span lang="en">Content, post design and reels for Instagram, Facebook and TikTok — in the same visual language as the site.</span></p>
+        </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ kurucu ============ -->
+  <section class="blok blok--yuzey" id="kurucu">
+    <div class="kabuk kurucu belir">
+      <div class="kurucu__im" aria-hidden="true"><span>MP</span></div>
+      <div>
+        <h2>Mert Pehlivan</h2>
+        <p class="kurucu__rol"><span lang="tr">Kurucu · Kodozen</span><span lang="en">Founder · Kodozen</span></p>
+        <p>
+          <span lang="tr">Web tasarımı tutkusuyla her projeye özenle yaklaşıyorum. Kodozen'i, fikirleri güçlü bir dijital kimliğe dönüştürmek için kurdum — kim ne isterse, o alana uygun bir web sitesi tasarlıyorum.</span><span lang="en">I come to every project with a real love for web design. I started Kodozen to turn ideas into a digital identity that holds up — whatever the trade, I design a site that fits it.</span>
+        </p>
+        <p>
+          <span lang="tr">Şablon kullanmıyorum. Her site elle yazılıyor; bu yüzden hepsi hızlı açılıyor, hepsi telefonda düzgün duruyor ve hiçbiri aylık abonelik gerektiren bir eklentiye bağlı değil.</span><span lang="en">I don't use templates. Every site is written by hand, which is why they open fast, hold up on a phone, and depend on no plugin that charges by the month.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ sss ============ -->
+  <section class="blok" id="sss">
+    <div class="kabuk">
+      <div class="blok-basi belir">
+        <p class="ust-yazi"><span lang="tr">SSS</span><span lang="en">FAQ</span></p>
+        <h2><span lang="tr">Sık sorulan sorular</span><span lang="en">Frequently asked questions</span></h2>
+      </div>
+      <div class="sss belir">
+        <details>
+          <summary><span lang="tr">Web sitesi ne kadar sürede tamamlanır?</span><span lang="en">How long does a website take?</span></summary>
+          <p><span lang="tr">Projenin kapsamına göre değişir. Basit bir tanıtım sitesi genellikle birkaç günde, daha kapsamlı e-ticaret veya rezervasyon sistemleri birkaç haftada tamamlanır. Teklif aşamasında net bir süre paylaşıyoruz.</span><span lang="en">It depends on the scope. A simple brochure site usually takes a few days; a fuller e-commerce or booking system takes a few weeks. We give you a firm timeline with the quote.</span></p>
+        </details>
+        <details>
+          <summary><span lang="tr">Fiyatlandırma nasıl belirleniyor?</span><span lang="en">How is pricing decided?</span></summary>
+          <p><span lang="tr">Sabit bir fiyat listesi yok. Sitenin kapsamına — sayfa sayısı, özel özellikler, e-ticaret veya rezervasyon gibi entegrasyonlar — göre size özel bir teklif hazırlıyoruz. İlk görüşme ve teklif tamamen ücretsiz.</span><span lang="en">There's no fixed price list. We quote against the scope — number of pages, custom features, integrations like e-commerce or booking. The first conversation and the quote are completely free.</span></p>
+        </details>
+        <details>
+          <summary><span lang="tr">Siteler mobil uyumlu mu?</span><span lang="en">Do the sites work on mobile?</span></summary>
+          <p><span lang="tr">Evet. Yukarıdaki beş örnek 320 piksel genişliğe kadar test edildi; o genişlikte bile yatay kaydırma çubuğu çıkmıyor. Örnekleri telefonunuzda açıp kendiniz de görebilirsiniz.</span><span lang="en">Yes. The five examples above were tested down to 320 pixels wide; even there, no horizontal scrollbar appears. Open them on your own phone and see.</span></p>
+        </details>
+        <details>
+          <summary><span lang="tr">Yayınlandıktan sonra destek alabilir miyim?</span><span lang="en">Is there support after launch?</span></summary>
+          <p><span lang="tr">Evet. Yayın sonrası küçük içerik güncellemeleri ve teknik destek için yanınızdayız; kapsamı teklif aşamasında birlikte netleştiriyoruz.</span><span lang="en">Yes. We stay available for small content updates and technical support; we agree the scope of that with the quote.</span></p>
+        </details>
+        <details>
+          <summary><span lang="tr">Alan adım veya hosting'im yok, ne yapmalıyım?</span><span lang="en">I have no domain or hosting. What now?</span></summary>
+          <p><span lang="tr">Sorun değil. Alan adı ve hosting seçiminde yol gösteriyor, kurulum sürecinde yanınızda oluyoruz.</span><span lang="en">Not a problem. We advise on choosing a domain and hosting, and stay with you through the setup.</span></p>
+        </details>
+        <details>
+          <summary><span lang="tr">Örneklerdeki işletmeler gerçek mi?</span><span lang="en">Are the businesses in the examples real?</span></summary>
+          <p><span lang="tr">Tasarımlar gerçek, isimler değil. Dördü gerçek bir işletmenin ihtiyacı üzerine baştan sona tasarlandı; henüz bir çalışma ilişkisi kurulmadığı için işletme adları, adresleri ve iletişim bilgileri portfolyoda değiştirildi. Ardın ise baştan konsept bir marka olarak kurgulandı.</span><span lang="en">The designs are real, the names are not. Four were built end to end for the actual needs of real businesses; since no working relationship was established, their names, addresses and contact details were changed for the portfolio. Ardın was a concept brand from the start.</span></p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ iletişim ============ -->
+  <section class="blok" id="iletisim">
+    <div class="kabuk">
+      <div class="iletisim belir">
+        <h2><span lang="tr">Projenizi konuşalım</span><span lang="en">Let's talk about your project</span></h2>
+        <p><span lang="tr">Fikrinizi anlatın, birlikte bakalım. İlk görüşme ücretsiz.</span><span lang="en">Tell us the idea and we'll look at it together. The first conversation is free.</span></p>
+        <div class="iletisim__eylem">
+          <a class="dugme dugme--dolu" href="https://wa.me/905426242468?text=Merhaba%2C%20Kodozen%20ile%20bir%20web%20sitesi%20projesi%20konu%C5%9Fmak%20istiyorum." target="_blank" rel="noopener"><span lang="tr">WhatsApp'tan yazın</span><span lang="en">Message on WhatsApp</span></a>
+          <a class="dugme dugme--bos" href="https://instagram.com/kodozen.studio" target="_blank" rel="noopener"><span lang="tr">Instagram'dan DM</span><span lang="en">DM on Instagram</span></a>
+        </div>
+        <div class="sosyal">
+          <a href="https://instagram.com/kodozen.studio" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          </a>
+          <a href="https://facebook.com/kodozen.studio" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://tiktok.com/@kodozen.studio" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+          </a>
+          <a href="https://x.com/kodozenstudio" target="_blank" rel="noopener" aria-label="X">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m4 4 16 16M20 4 4 20"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="alt">
+  <div class="kabuk">
+    <div class="alt__ic">
+      <p>© <span id="yil">2026</span> Kodozen · Mert Pehlivan</p>
+      <p><a href="https://wa.me/905426242468" target="_blank" rel="noopener">0542 624 24 68</a> · <a href="https://instagram.com/kodozen.studio" target="_blank" rel="noopener">@kodozen.studio</a></p>
+    </div>
+    <p class="alt__yasal">
+      <span lang="tr">Bu site ziyaretçilerinden form yoluyla veri toplamaz. Instagram, Facebook, TikTok, X veya WhatsApp üzerinden paylaştığınız bilgiler yalnızca talebinizi yanıtlamak için kullanılır, üçüncü taraflarla paylaşılmaz. 6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamındaki haklarınız için aynı kanallardan ulaşabilirsiniz.</span><span lang="en">This site collects no visitor data through forms. Anything you share via Instagram, Facebook, TikTok, X or WhatsApp is used only to answer your enquiry and is not passed to third parties. For your rights under Turkish data protection law (KVKK, no. 6698), reach us through the same channels.</span>
+    </p>
+  </div>
+</footer>
+
+<script src="app.js?v=21"></script>
+</body>
+</html>

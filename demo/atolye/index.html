@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atölye, İzmir. Mercedes-Benz, BMW, Mini ve Smart özel servisi</title>
+<meta name="description" content="Sanayi sitesinde 2004'ten beri Mercedes-Benz, BMW, Mini ve Smart bakım, tamir ve tuning. İşçilikte 6 ay garanti. 0542 624 24 68.">
+<meta name="theme-color" content="#141219">
+<!-- DEPLOY STEP: og:url ve og:image yayına alınırken canlı adresle değiştirilecek -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Atölye, İzmir. Mercedes-Benz, BMW, Mini ve Smart özel servisi">
+<meta property="og:description" content="Yirmi yıldır sadece dört marka. Sanayi sitesi. İşçilikte 6 ay garanti.">
+<meta property="og:url" content="https://atolye-oto.netlify.app/">
+<meta property="og:image" content="https://atolye-oto.netlify.app/assets/dukkan-1.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20fill='%23141219'/%3E%3Cpath%20d='M6%2020h20M6%2020v-4M26%2020v-4M16%2020v-6'%20stroke='%239FD4E6'%20stroke-width='2'%20stroke-linecap='round'/%3E%3Ccircle%20cx='16'%20cy='10'%20r='2.6'%20fill='%23C8372C'/%3E%3C/svg%3E">
+<!-- Arama motorlarının işletmeyi tanıması için yapılandırılmış veri.
+     Google adresi, telefonu ve saatleri buradan okur. DEPLOY STEP: url alanı canlı adresle değişecek. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoRepair",
+  "name": "Atölye",
+  "description": "Sanayi sitesinde 2004'ten beri Mercedes-Benz, BMW, Mini ve Smart bakım, tamir ve tuning.",
+  "url": "https://atolye-oto.netlify.app/",
+  "image": "https://atolye-oto.netlify.app/assets/dukkan-1.jpg",
+  "telephone": "+905426242468",
+  "founder": { "@type": "Person", "name": "Ömür Pehlivan" },
+  "foundingDate": "2004",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "413. Sokak No: 40, Kazımdirik, Sanayi sitesi",
+    "addressLocality": "İzmir",
+    "addressRegion": "İzmir",
+    "addressCountry": "TR"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": , "longitude":  },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+    "opens": "08:30",
+    "closes": "19:30"
+  }],
+  "areaServed": ["İzmir","Konak","Buca","Karabağlar","Karşıyaka"],
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Periyodik bakım" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Motor ve şanzıman tamiri" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Elektronik arıza teşhisi" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tuning ve performans" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Yol yardım" } }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow:wght@400;500&family=Barlow+Condensed:wght@600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   ATÖLYE, tek dosya.
+   Palet dükkanın gerçek gece fotoğraflarından örneklendi.
+   ============================================================ */
+:root{
+  --canvas:#141219;
+  --panel:#1C1A23;
+  --panel-2:#252230;
+  --line:#34303C;
+  --accent:#C8372C;
+  --accent-hover:#E04A3C;
+  --accent-muted:#5A2420;
+  --glow:#9FD4E6;
+  --text-primary:#E9ECF1;
+  --text-secondary:#98A0AC;
+  --tshadow:0 1px 2px rgba(6,6,10,.95),0 3px 12px rgba(6,6,10,.8),0 10px 44px rgba(6,6,10,.82);
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --ease-soft:cubic-bezier(.4,.14,.3,1);
+  --display:"Archivo Black",Impact,sans-serif;
+  --body:"Barlow",system-ui,sans-serif;
+  --cond:"Barlow Condensed",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{overflow-x:hidden;overflow-x:clip}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--canvas);color:var(--text-primary);
+  font-family:var(--body);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.04;margin:0;letter-spacing:-.01em}
+p{margin:0}
+:focus-visible{outline:2px solid var(--glow);outline-offset:3px;border-radius:2px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip{position:absolute;left:12px;top:-60px;z-index:200;background:var(--accent);color:#fff;
+  padding:10px 16px;border-radius:3px;font-family:var(--cond);font-size:15px;letter-spacing:.06em;
+  text-transform:uppercase;text-decoration:none;transition:top .25s var(--ease)}
+.skip:focus{top:12px}
+.tag{font-family:var(--cond);font-size:15px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--text-secondary)}
+
+/* ---------- sabit ortam katmanı ---------- */
+.env{position:fixed;inset:0;z-index:0;pointer-events:none}
+.env::before{content:"";position:absolute;inset:-20%;
+  background:radial-gradient(ellipse 46% 38% at 18% 12%,rgba(159,212,230,.075),transparent 62%),
+             radial-gradient(ellipse 42% 44% at 84% 78%,rgba(200,55,44,.055),transparent 64%);
+  animation:envdrift 96s var(--ease-soft) -30s infinite alternate}
+.env::after{content:"";position:absolute;inset:0;opacity:.26;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.4'/%3E%3C/svg%3E")}
+@keyframes envdrift{0%{transform:translate3d(-2%,-1%,0) scale(1.02)}100%{transform:translate3d(2%,2%,0) scale(1.07)}}
+
+/* ---------- üst çubuk ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:80;display:flex;align-items:center;gap:26px;
+  padding:18px clamp(16px,4vw,48px);border-bottom:1px solid transparent;
+  transition:background .5s var(--ease),backdrop-filter .5s var(--ease),padding .5s var(--ease),border-color .5s var(--ease)}
+.nav.stuck{background:rgba(20,18,25,.9);backdrop-filter:blur(14px);padding-top:12px;padding-bottom:12px;
+  border-bottom-color:var(--line)}
+.brand{font-family:var(--display);font-size:19px;letter-spacing:.02em;text-decoration:none;
+  text-shadow:var(--tshadow);white-space:nowrap}
+.brand em{font-style:normal;color:var(--accent)}
+.nav-links{margin-left:auto;display:flex;align-items:center;gap:clamp(12px,2.2vw,28px)}
+.nav-links a{font-family:var(--cond);font-size:16px;letter-spacing:.14em;text-transform:uppercase;
+  text-decoration:none;color:var(--text-secondary);transition:color .35s var(--ease);
+  text-shadow:0 1px 6px rgba(6,6,10,.9)}
+.nav-links a:hover{color:var(--text-primary)}
+@media (max-width:820px){.nav-links .hide-s{display:none}}
+
+/* ---------- butonlar ---------- */
+.btn{display:inline-block;font-family:var(--cond);font-size:17px;letter-spacing:.1em;
+  text-transform:uppercase;text-decoration:none;padding:13px 24px;border-radius:3px;
+  background:var(--accent);color:#fff;border:1px solid var(--accent);
+  transition:background .35s var(--ease),transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease);
+  box-shadow:0 0 0 rgba(200,55,44,0)}
+.btn:hover{background:var(--accent-hover);border-color:var(--accent-hover);transform:translateY(-2px);
+  box-shadow:0 10px 28px rgba(200,55,44,.3)}
+.btn.ghost{background:transparent;color:var(--text-primary);border-color:#6C6577}
+.btn.ghost:hover{border-color:var(--glow);color:var(--glow);box-shadow:none;background:rgba(159,212,230,.06)}
+.btn.small{padding:9px 16px;font-size:15px}
+@media (pointer:coarse){.btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center}}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{position:relative;height:560vh;z-index:1}
+.stage{position:sticky;top:0;height:100vh;overflow:hidden;background:#0B0A0E}
+.poster{position:absolute;inset:0;background-size:cover;background-position:center;background-color:#0B0A0E}
+#hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;
+  transition:opacity .9s var(--ease);will-change:transform;transform:translateZ(0)}
+.stage.video-ready #hero-video{opacity:1}
+.stage.video-failed #hero-video{display:none}
+.scrim{position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 120% 90% at 50% 45%,rgba(8,8,12,0) 35%,rgba(8,8,12,.6) 100%)}
+.vignette{position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(to bottom,rgba(8,8,12,.6),rgba(8,8,12,0) 24%,rgba(8,8,12,0) 66%,rgba(8,8,12,.75))}
+.settle-dim{position:absolute;inset:0;pointer-events:none;background:#0A0910;opacity:0;z-index:4}
+
+.ring{position:absolute;right:clamp(16px,4vw,48px);bottom:clamp(16px,4vw,40px);width:46px;height:46px;
+  color:var(--glow);opacity:.85;transform:rotate(-90deg);z-index:6}
+.ring circle{transition:stroke-dashoffset .18s linear}
+.cue{position:absolute;left:50%;bottom:clamp(16px,4vw,36px);transform:translateX(-50%);z-index:6;
+  display:flex;flex-direction:column;align-items:center;gap:8px;pointer-events:none}
+.cue span{font-family:var(--cond);font-size:14px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--text-secondary)}
+.cue i{display:block;width:1px;height:32px;background:linear-gradient(to bottom,var(--glow),transparent);
+  animation:cuepulse 3.4s var(--ease-soft) -.8s infinite}
+@keyframes cuepulse{0%,100%{opacity:.22;transform:scaleY(.6)}50%{opacity:.85;transform:scaleY(1)}}
+.stage.past .cue{opacity:0;transition:opacity .5s var(--ease)}
+
+/* ---------- bantlar ---------- */
+.bands{position:absolute;inset:0;z-index:5}
+.band{position:absolute;inset:0;display:flex;align-items:center;opacity:0;
+  text-shadow:var(--tshadow);will-change:opacity}
+.band::before{content:"";position:absolute;inset:-6%;pointer-events:none;
+  opacity:calc(.25 + .75*var(--k,1));
+  background:radial-gradient(ellipse var(--sw,44%) var(--sh,58%) at var(--sx,26%) var(--sy,50%),
+    rgba(6,6,10,.84) 0%,rgba(6,6,10,.58) 46%,rgba(6,6,10,0) 78%)}
+.band .inner{position:relative;z-index:2;padding:0 clamp(16px,4vw,48px);width:min(640px,46vw)}
+.band[data-side="left"] .inner{margin-right:auto}
+.band[data-side="right"] .inner{margin-left:auto}
+.band .cap{font-family:var(--display);font-size:clamp(28px,3.3vw,50px);line-height:1.06;margin:0;max-width:16ch}
+.band .sub{margin-top:14px;font-size:clamp(15px,1.2vw,19px);opacity:.9;max-width:30ch}
+.band .kick{margin-bottom:14px}
+
+.band.settle{align-items:flex-start}
+.band.settle::before{background:radial-gradient(ellipse 74% 48% at 50% 27%,
+  rgba(6,6,10,.84) 0%,rgba(6,6,10,.62) 44%,rgba(6,6,10,0) 78%)}
+.band.settle .inner{width:min(820px,86vw);margin:0 auto;padding-top:14vh;text-align:center}
+.band.settle .word-mark{font-family:var(--display);font-size:clamp(32px,5.6vw,76px);
+  letter-spacing:.01em;margin:0 0 16px;white-space:nowrap}
+.band.settle .word-mark em{font-style:normal;color:var(--accent)}
+.band.settle .sub{font-size:clamp(15px,1.35vw,21px);margin:0 auto;max-width:44ch}
+.band.settle .cta-row{margin-top:28px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;
+  opacity:var(--kb,1);transform:translateY(calc((1 - var(--kb,1))*14px))}
+.band .btn.ghost{border-color:rgba(233,236,241,.5);background:rgba(9,9,14,.34);backdrop-filter:blur(6px)}
+.band .btn.ghost:hover{border-color:var(--glow);background:rgba(9,9,14,.5)}
+
+/* ---------- metin bölme ve girişler ---------- */
+.w{display:inline-block;white-space:pre}
+.c{display:inline-block;will-change:transform,opacity}
+[data-entrance="scatter"] .c{
+  --kc:clamp(0,(var(--k,0) - var(--th,0))*2.6,1);opacity:var(--kc);
+  transform:translate(calc((1 - var(--kc))*var(--jx,0px)),calc((1 - var(--kc))*var(--jy,0px)))
+            rotate(calc((1 - var(--kc))*var(--jr,0deg)))}
+[data-entrance="drift"] .w{
+  --kc:clamp(0,(var(--k,0) - var(--th,0))*2.8,1);opacity:var(--kc);
+  transform:translateY(calc((1 - var(--kc))*-24px))}
+[data-entrance="focus"] .fx{position:relative;display:block}
+[data-entrance="focus"] .fx .soft{position:absolute;inset:0;filter:blur(11px);
+  opacity:calc(1 - var(--k,0));pointer-events:none}
+[data-entrance="focus"] .fx .sharp{opacity:var(--k,0)}
+[data-entrance="rise"] .w{
+  --kc:clamp(0,(var(--k,0) - var(--th,0))*3,1);opacity:var(--kc);
+  transform:translateY(calc((1 - var(--kc))*18px))}
+.band .sub{opacity:calc(var(--ks,1)*.9);transform:translateY(calc((1 - var(--ks,1))*10px))}
+
+/* ============================================================
+   SABİT HERO
+   ============================================================ */
+.static-hero{display:none;position:relative;min-height:100svh;z-index:1;
+  align-items:flex-end;padding:0 clamp(16px,6vw,48px) clamp(44px,9vh,84px)}
+.static-hero .bg{position:absolute;inset:0;background-size:cover;background-position:50% 46%;
+  background-color:#0B0A0E;filter:brightness(.72) saturate(.9)}
+.static-hero .bg::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(9,9,14,.72) 0%,rgba(9,9,14,.3) 30%,rgba(9,9,14,.72) 64%,rgba(9,9,14,.95) 92%)}
+.static-hero .inner{position:relative;z-index:2;text-shadow:var(--tshadow);max-width:min(560px,90%)}
+.static-hero .hero-title{font-family:var(--display);line-height:1.04;
+  font-size:clamp(32px,8.4vw,50px);margin:14px 0 14px;max-width:15ch}
+.static-hero .sub{color:var(--text-primary);opacity:.9;margin-bottom:24px;max-width:32ch}
+.static-hero .row{display:flex;gap:10px;flex-wrap:wrap}
+@media (max-width:820px),(orientation:portrait) and (max-width:1024px),
+       (orientation:portrait) and (pointer:coarse),
+       (orientation:landscape) and (pointer:coarse) and (max-height:560px),
+       (prefers-reduced-motion:reduce){
+  .hero{display:none}
+  .static-hero{display:flex}
+}
+@media (max-height:560px){.cue{display:none}}
+
+/* ============================================================
+   İMZA ÖĞESİ: ölçü çizgisi
+   ============================================================ */
+.flow{position:relative;z-index:2}
+.rule-line{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:3;overflow:visible}
+.rule-line .spine{fill:none;stroke:var(--glow);stroke-width:1;opacity:.55}
+.rule-line .tick{stroke:var(--glow);stroke-width:1;opacity:0;transition:opacity .5s var(--ease)}
+.rule-line .tick.on{opacity:.75}
+.rule-line text{font-family:var(--cond);font-size:13px;letter-spacing:.18em;fill:var(--glow);
+  opacity:0;transition:opacity .5s var(--ease)}
+.rule-line text.on{opacity:.65}
+.rule-line .head{fill:var(--accent);opacity:0}
+@media (max-width:1100px){.rule-line{display:none}}
+
+/* ============================================================
+   BÖLÜMLER
+   ============================================================ */
+section{position:relative;z-index:2}
+.wrap{max-width:1160px;margin:0 auto;padding:0 clamp(16px,5vw,48px)}
+.eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.eyebrow i{display:block;width:30px;height:1px;background:var(--accent);opacity:.85}
+
+/* --- 01 teşhis --- */
+.diag{padding:clamp(80px,13vh,150px) 0 clamp(64px,10vh,120px)}
+.diag .grid{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(26px,5vw,64px);align-items:center}
+.diag h2{font-size:clamp(28px,4vw,54px);max-width:14ch}
+.diag p{margin-top:22px;color:var(--text-secondary);max-width:46ch}
+.diag .shot{position:relative;border-radius:3px;overflow:hidden;background:var(--panel);
+  border:1px solid var(--line)}
+.diag .shot img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+
+/* --- atölye şeridi: dükkanın gerçek fotoğrafları --- */
+.yer{padding:clamp(56px,9vh,100px) 0;border-top:1px solid var(--line)}
+.yer .head{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+.yer h2{font-size:clamp(20px,2.2vw,28px)}
+.yer .head p{color:var(--text-secondary);font-size:15px}
+.yer .pair{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line);
+  border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.yer figure{margin:0;position:relative;background:var(--canvas)}
+.yer img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;filter:brightness(.94)}
+@media (max-width:760px){.yer .pair{grid-template-columns:1fr}}
+
+/* --- yorumlar --- */
+.rev-sec{padding:clamp(70px,11vh,130px) 0;border-top:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(28,26,35,.5),transparent 60%)}
+.rev-sec .head{margin-bottom:clamp(24px,4vh,40px)}
+.rev-sec h2{font-size:clamp(26px,3.4vw,44px)}
+.rev-sec .head p{margin-top:14px;color:var(--text-secondary);max-width:44ch}
+.rev-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:clamp(14px,2vw,20px)}
+.yorum{background:var(--panel);border:1px solid var(--line);border-radius:3px;
+  padding:clamp(24px,3vw,34px);display:flex;flex-direction:column;gap:18px}
+.yorum blockquote{margin:0;font-family:var(--display);font-size:clamp(18px,1.9vw,24px);
+  line-height:1.3;max-width:34ch}
+.yorum .yildiz{display:flex;gap:3px}
+.yorum .yildiz svg{width:16px;height:16px;fill:var(--accent)}
+.yorum .kim{margin-top:auto;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.yorum .kim b{font-size:16px;font-weight:500;font-family:var(--body)}
+.yorum .kim span{font-family:var(--cond);font-size:14px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--text-secondary)}
+.diag .shot figcaption{position:absolute;left:14px;bottom:12px;z-index:2;
+  background:rgba(10,10,15,.62);border:1px solid rgba(159,212,230,.22);border-radius:3px;
+  padding:6px 12px;backdrop-filter:blur(8px)}
+@media (max-width:900px){.diag .grid{grid-template-columns:1fr;gap:30px}}
+
+/* --- 02 dört marka --- */
+.brands{padding:clamp(64px,10vh,120px) 0;border-top:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(28,26,35,.55),transparent 62%)}
+.brands .head{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(22px,4vw,56px);align-items:end;
+  margin-bottom:clamp(28px,5vh,48px)}
+.brands h2{font-size:clamp(26px,3.4vw,44px)}
+.brands .head p{color:var(--text-secondary);max-width:44ch}
+.brand-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--line);
+  border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.bcard{background:var(--canvas);padding:26px 22px 24px;transition:background .4s var(--ease)}
+.bcard:hover{background:var(--panel)}
+.bcard b{display:block;font-family:var(--display);font-size:clamp(17px,1.5vw,21px);margin-bottom:10px}
+.bcard span{color:var(--text-secondary);font-size:15px;line-height:1.5;display:block}
+.bcard i{display:block;width:22px;height:2px;background:var(--accent);margin-bottom:16px;opacity:.9}
+@media (max-width:900px){.brands .head{grid-template-columns:1fr;gap:16px}
+  .brand-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.brand-grid{grid-template-columns:1fr}}
+
+/* --- 03 lift, etkileşimli --- */
+.lift{padding:clamp(70px,11vh,130px) 0;text-align:center;border-top:1px solid var(--line)}
+.lift .eyebrow{justify-content:center}
+.lift h2{font-size:clamp(26px,3.6vw,46px)}
+.lift .lede{margin:16px auto 0;color:var(--text-secondary);max-width:40ch}
+.rig{margin:38px auto 0;width:min(720px,92vw)}
+.rig svg{display:block;width:100%;height:auto;overflow:visible}
+.rig .ground{stroke:var(--line);stroke-width:2}
+.rig .post{stroke:var(--line);stroke-width:3;stroke-linecap:round}
+.rig .arm{stroke:var(--glow);stroke-width:3;stroke-linecap:round;opacity:.8}
+.rig .carbody{fill:none;stroke:var(--text-primary);stroke-width:2.2;stroke-linejoin:round}
+.rig .wheel{fill:none;stroke:var(--text-primary);stroke-width:2.2}
+.rig .lifted{transform:translateY(calc(var(--p,0) * -74px));transition:none}
+.rig .pt{opacity:calc(var(--lk,0));transition:opacity .35s var(--ease)}
+.rig .pt circle{fill:var(--accent)}
+.rig .pt line{stroke:var(--accent);stroke-width:1.4}
+.rig .pt text{font-family:var(--cond);font-size:15px;letter-spacing:.1em;fill:var(--text-primary)}
+.hold-btn{margin-top:26px;position:relative;width:min(460px,90vw);height:66px;border-radius:3px;
+  cursor:pointer;background:var(--panel);border:1px solid var(--line);color:var(--text-primary);
+  font-family:var(--cond);font-size:17px;letter-spacing:.16em;text-transform:uppercase;overflow:hidden;
+  transition:border-color .4s var(--ease)}
+.hold-btn:hover{border-color:var(--accent-muted)}
+.hold-btn .fill{position:absolute;left:0;top:0;bottom:0;width:100%;transform-origin:left center;
+  transform:scaleX(var(--p,0));background:linear-gradient(90deg,rgba(200,55,44,.34),rgba(200,55,44,.15))}
+.hold-btn .lbl{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;
+  gap:12px;height:100%}
+@media (pointer:coarse){.hold-btn{min-height:56px}}
+
+/* --- 04 ustalar --- */
+.crew{padding:clamp(70px,11vh,130px) 0;border-top:1px solid var(--line)}
+.crew .head{margin-bottom:clamp(26px,5vh,44px);max-width:52ch}
+.crew h2{font-size:clamp(26px,3.4vw,44px)}
+.crew .head p{margin-top:16px;color:var(--text-secondary)}
+.crew-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,22px)}
+.person{background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:26px 24px 24px;
+  transition:border-color .4s var(--ease),transform .4s var(--ease)}
+.person:hover{border-color:var(--accent-muted);transform:translateY(-3px)}
+.person svg{width:46px;height:46px;margin-bottom:18px}
+.person svg circle,.person svg path{stroke:var(--glow);fill:none;stroke-width:1.4;opacity:.85}
+.person b{display:block;font-family:var(--display);font-size:19px;margin-bottom:5px}
+.person span{color:var(--text-secondary);font-family:var(--cond);font-size:16px;letter-spacing:.14em;
+  text-transform:uppercase}
+.crew .note{margin-top:26px;color:var(--text-secondary);max-width:52ch}
+@media (max-width:820px){.crew-grid{grid-template-columns:1fr}}
+
+/* --- 05 tuning --- */
+.tuning{padding:clamp(70px,11vh,130px) 0;border-top:1px solid var(--line);
+  background:linear-gradient(180deg,transparent,rgba(28,26,35,.6))}
+.tuning .grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(26px,5vw,64px);align-items:center}
+.tuning .shot{border-radius:3px;overflow:hidden;border:1px solid var(--line);background:var(--panel)}
+.tuning .shot img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.tuning h2{font-size:clamp(26px,3.6vw,46px);max-width:14ch}
+.tuning p{margin-top:20px;color:var(--text-secondary);max-width:44ch}
+.tuning ul{margin:24px 0 0;padding:0;list-style:none;display:grid;gap:10px}
+.tuning li{display:flex;gap:12px;align-items:baseline;color:var(--text-secondary)}
+.tuning li::before{content:"";flex:none;width:14px;height:1px;background:var(--accent);
+  transform:translateY(-4px)}
+.tuning .todo{margin-top:22px;font-family:var(--cond);font-size:15px;letter-spacing:.1em;
+  color:var(--accent);border:1px dashed var(--accent-muted);border-radius:3px;padding:10px 14px;
+  display:inline-block;text-transform:uppercase}
+@media (max-width:900px){.tuning .grid{grid-template-columns:1fr;gap:28px}
+  .tuning .shot{order:2}}
+
+/* --- 06 yol yardım --- */
+.road{padding:clamp(64px,10vh,120px) 0;border-top:1px solid var(--line)}
+.road .box{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,56px);align-items:center;
+  background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:clamp(26px,4vw,44px)}
+.road h2{font-size:clamp(24px,3vw,38px)}
+.road p{margin-top:14px;color:var(--text-secondary);max-width:44ch}
+.road .zones{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.road .zones span{font-family:var(--cond);font-size:16px;letter-spacing:.1em;padding:7px 13px;
+  border:1px solid var(--line);border-radius:3px;color:var(--text-secondary)}
+.road .act{text-align:right}
+@media (max-width:820px){.road .box{grid-template-columns:1fr}.road .act{text-align:left}}
+
+/* --- 07 sorular --- */
+.faq{padding:clamp(70px,11vh,130px) 0;border-top:1px solid var(--line)}
+.faq .head{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(22px,4vw,56px);align-items:end;
+  margin-bottom:clamp(26px,4vh,44px)}
+.faq h2{font-size:clamp(26px,3.4vw,44px)}
+.faq .head p{color:var(--text-secondary);max-width:40ch}
+.qa{border-top:1px solid var(--line)}
+.qa details{border-bottom:1px solid var(--line)}
+.qa summary{list-style:none;cursor:pointer;padding:20px 0;display:flex;align-items:baseline;gap:16px;
+  font-family:var(--display);font-size:clamp(16px,1.6vw,20px);transition:color .35s var(--ease)}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary:hover{color:var(--glow)}
+.qa summary .n{font-family:var(--cond);font-size:15px;color:var(--accent);letter-spacing:.1em;min-width:3ch}
+.qa summary .mk{margin-left:auto;width:14px;height:14px;position:relative;flex:none;align-self:center}
+.qa summary .mk::before,.qa summary .mk::after{content:"";position:absolute;background:var(--accent);
+  transition:transform .45s var(--ease),opacity .45s var(--ease)}
+.qa summary .mk::before{left:0;top:6.5px;width:14px;height:1px}
+.qa summary .mk::after{left:6.5px;top:0;width:1px;height:14px}
+.qa details[open] summary .mk::after{transform:rotate(90deg);opacity:0}
+.qa .ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s var(--ease)}
+.qa details[open] .ans{grid-template-rows:1fr}
+.qa .ans>div{overflow:hidden}
+.qa .ans p{color:var(--text-secondary);padding:0 0 22px 0;max-width:60ch;margin-left:calc(3ch + 16px)}
+@media (max-width:900px){.faq .head{grid-template-columns:1fr;gap:16px}.qa .ans p{margin-left:0}}
+
+/* --- 08 iletişim --- */
+.contact{padding:clamp(80px,13vh,150px) 0 clamp(60px,9vh,110px);border-top:1px solid var(--line)}
+.contact h2{font-size:clamp(30px,4.6vw,62px);max-width:16ch}
+.contact .lede{margin-top:18px;color:var(--text-secondary);max-width:44ch}
+.contact .acts{margin-top:34px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.contact .btn{font-size:19px;padding:16px 28px}
+.contact .facts{margin-top:clamp(34px,6vh,56px);display:grid;grid-template-columns:repeat(3,1fr);
+  gap:2px;background:var(--line);border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.contact .fact{background:var(--canvas);padding:22px 22px 20px}
+.contact .fact b{display:block;font-family:var(--cond);font-size:15px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--text-secondary);margin-bottom:8px}
+.contact .fact span{display:block;line-height:1.5}
+/* canlı açık/kapalı göstergesi: saat İstanbul saatine göre hesaplanır */
+.durum{margin-top:12px;display:flex!important;align-items:center;gap:8px;
+  font-family:var(--cond);font-size:16px;letter-spacing:.1em;text-transform:uppercase}
+.durum i{width:8px;height:8px;border-radius:50%;background:var(--text-secondary);flex:none}
+.durum em{font-style:normal;color:var(--text-secondary)}
+.durum.acik i{background:#4CC38A;box-shadow:0 0 10px rgba(76,195,138,.7)}
+.durum.acik em{color:#8FE0B8}
+@media (max-width:820px){.contact .facts{grid-template-columns:1fr}}
+
+footer{border-top:1px solid var(--line);padding:40px 0 52px;background:rgba(11,10,14,.6)}
+footer .row{display:flex;flex-wrap:wrap;gap:18px 40px;align-items:baseline;justify-content:space-between}
+footer .brand{font-size:16px}
+footer .legal{color:var(--text-secondary);font-size:14px;max-width:60ch;line-height:1.55}
+footer .meta{color:var(--text-secondary);font-family:var(--cond);font-size:15px;letter-spacing:.1em}
+
+/* ---------- giriş koreografisi ---------- */
+.rev .part{opacity:0;transform:translateY(20px);
+  transition:opacity .85s var(--ease),transform .85s var(--ease)}
+.rev.in .part{opacity:1;transform:none}
+.rev.in .part:nth-child(1){transition-delay:0s}
+.rev.in .part:nth-child(2){transition-delay:.08s}
+.rev.in .part:nth-child(3){transition-delay:.16s}
+.rev.in .part:nth-child(4){transition-delay:.24s}
+.rev.in .part:nth-child(5){transition-delay:.32s}
+.rev.done .part,.rev.done .part:nth-child(1),.rev.done .part:nth-child(2),
+.rev.done .part:nth-child(3),.rev.done .part:nth-child(4),.rev.done .part:nth-child(5){transition-delay:0s!important}
+.fade{opacity:0;transform:translateY(16px);transition:opacity .95s var(--ease),transform .95s var(--ease)}
+.fade.in{opacity:1;transform:none}
+
+.spark{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--glow);opacity:0;
+  pointer-events:none}
+.live .spark{animation:float 15s var(--ease-soft) infinite}
+.live .spark:nth-of-type(2){animation-duration:19s;animation-delay:-7s}
+.live .spark:nth-of-type(3){animation-duration:23s;animation-delay:-13s}
+@keyframes float{0%{opacity:0;transform:translateY(12px) scale(.7)}22%{opacity:.4}70%{opacity:.28}
+  100%{opacity:0;transform:translateY(-52px) scale(1.1)}}
+body.paused *,body.paused *::before,body.paused *::after{animation-play-state:paused!important}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important;transition-delay:0s!important}
+  .rev .part,.fade{opacity:1!important;transform:none!important}
+  .rig .pt{opacity:1!important}
+  .rule-line .tick,.rule-line text{opacity:.7!important}
+  .cue{display:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">İçeriğe geç</a>
+<div class="env" aria-hidden="true"></div>
+
+<nav class="nav" id="nav">
+  <a class="brand" href="#top">ATÖLYE<em>.</em></a>
+  <div class="nav-links">
+    <a class="hide-s" href="#dort-marka">Servis</a>
+    <a class="hide-s" href="#ustalar">Ustalar</a>
+    <a class="hide-s" href="#tuning">Tuning</a>
+    <a class="hide-s" href="#sorular">Sorular</a>
+    <a class="btn small" href="tel:+905426242468">0542 624 24 68</a>
+  </div>
+</nav>
+
+<main id="main" tabindex="-1">
+<span id="top"></span>
+<h1 class="sr-only">Atölye, İzmir. Mercedes-Benz, BMW, Mini ve Smart özel servisi</h1>
+
+<!-- ============ KAYDIRMALI HERO ============ -->
+<section class="hero" id="hero" aria-label="Atölye tanıtımı">
+  <div class="stage" id="stage">
+    <div class="poster" id="poster" aria-hidden="true"></div>
+    <video id="hero-video" preload="none" muted playsinline aria-hidden="true" tabindex="-1"></video>
+    <div class="scrim" aria-hidden="true"></div>
+    <div class="vignette" aria-hidden="true"></div>
+    <div class="settle-dim" id="settle-dim" aria-hidden="true"></div>
+
+    <div class="bands" id="bands">
+      <div class="band" data-a="0" data-b="0.23" data-side="left" data-entrance="drift"
+           style="--sx:27%;--sy:50%;--sw:42%;--sh:56%">
+        <div class="inner">
+          <p class="tag kick">01 / FİYAT</p>
+          <p class="cap" data-split="word" data-text="Arıza aynı arıza."></p>
+          <p class="sub">Fiyat neden bu kadar farklı?</p>
+        </div>
+      </div>
+
+      <div class="band" data-a="0.26" data-b="0.49" data-side="right" data-entrance="scatter" data-spread="0.4"
+           style="--sx:74%;--sy:50%;--sw:42%;--sh:56%">
+        <div class="inner">
+          <p class="cap" data-split="char" data-text="Parça değiştirmek kolay."></p>
+          <p class="sub">Arızayı bulmak zor.</p>
+        </div>
+      </div>
+
+      <div class="band" data-a="0.52" data-b="0.75" data-side="left" data-entrance="focus"
+           style="--sx:27%;--sy:50%;--sw:42%;--sh:56%">
+        <div class="inner">
+          <p class="cap fx" data-focus="Yirmi yıldır sadece dört marka."></p>
+          <p class="sub">Mercedes-Benz, BMW, Mini, Smart.</p>
+        </div>
+      </div>
+
+      <div class="band settle" data-a="0.78" data-b="1" data-entrance="rise">
+        <div class="inner">
+          <p class="word-mark">ATÖLYE<em>.</em></p>
+          <p class="sub">Sanayi sitesinde 2004'ten beri. İşçilikte 6 ay garanti.</p>
+          <div class="cta-row">
+            <a class="btn" href="tel:+905426242468">Hemen ara</a>
+            <a class="btn ghost" href="https://wa.me/905426242468?text=Merhaba%2C%20arac%C4%B1m%20i%C3%A7in%20randevu%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <svg class="ring" id="ring" viewBox="0 0 48 48" aria-hidden="true">
+      <circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="3"
+              stroke-dasharray="126" style="stroke-dashoffset:var(--ld,126)"/>
+    </svg>
+    <div class="cue" id="cue" aria-hidden="true"><span>Aşağı</span><i></i></div>
+  </div>
+</section>
+
+<!-- ============ SABİT HERO ============ -->
+<section class="static-hero" id="static-hero" aria-label="Atölye">
+  <div class="bg" id="static-bg" aria-hidden="true"></div>
+  <div class="inner">
+    <p class="tag">SANAYİ SİTESİ / 2004'TEN BERİ</p>
+    <p class="hero-title">Arızayı bilen tamir eder.</p>
+    <p class="sub">Mercedes-Benz, BMW, Mini ve Smart. Yirmi yıldır sadece bu dört marka.</p>
+    <div class="row">
+      <a class="btn" href="tel:+905426242468">Hemen ara</a>
+      <a class="btn ghost" href="https://wa.me/905426242468?text=Merhaba%2C%20arac%C4%B1m%20i%C3%A7in%20randevu%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<div class="flow" id="flow">
+<svg class="rule-line" id="rule" aria-hidden="true">
+  <path id="spine" class="spine"/>
+  <g id="ticks"></g>
+  <circle class="head" id="rule-head" r="3.4" cx="-99" cy="-99"/>
+</svg>
+
+<!-- ============ 01 TEŞHİS ============ -->
+<section class="diag live" id="teshis">
+  <span class="spark" style="left:9%;top:28%"></span>
+  <span class="spark" style="left:44%;top:66%"></span>
+  <div class="wrap grid">
+    <div class="rev">
+      <div class="part eyebrow"><i></i><span class="tag">01 / TEŞHİS</span></div>
+      <h2 class="part">Parça değiştirerek arıza aranmaz.</h2>
+      <p class="part">Bir arıza için üç parça değiştirilirse ikisinin parası boşa gitmiştir. Yirmi yıldır aynı dört markaya bakan bir usta, sesi duyunca nereye bakacağını bilir. Fiyat farkı buradan çıkar, parçadan değil.</p>
+    </div>
+    <figure class="shot fade" style="margin:0">
+      <img src="assets/alet.jpg" alt="Atölyede düzenli asılmış anahtar takımı ve tezgahta duran cırcır anahtar" width="1600" height="893" loading="lazy">
+      <figcaption class="tag">DOĞRU ALET, DOĞRU TEŞHİS</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 02 DÖRT MARKA ============ -->
+<section class="brands live" id="dort-marka">
+  <span class="spark" style="left:74%;top:22%"></span>
+  <div class="wrap">
+    <div class="head rev">
+      <div class="part">
+        <div class="eyebrow"><i></i><span class="tag">02 / DÖRT MARKA</span></div>
+        <h2>Her marka bakılmaz.</h2>
+      </div>
+      <p class="part">Sanayide "her marka" yazan çok tabela var. Biz dört marka yazıyoruz, çünkü bir motoru tanımak yıllar alıyor.</p>
+    </div>
+    <div class="brand-grid fade">
+      <div class="bcard"><i></i><b>Mercedes-Benz</b><span>Bakım, motor, şanzıman, elektronik arıza ve kaporta öncesi teşhis.</span></div>
+      <div class="bcard"><i></i><b>BMW</b><span>Periyodik bakım, motor ve şanzıman işleri, yağ kaçağı, elektronik arıza.</span></div>
+      <div class="bcard"><i></i><b>Mini</b><span>Bakım, debriyaj ve şanzıman, süspansiyon, motor arızaları.</span></div>
+      <div class="bcard"><i></i><b>Smart</b><span>Bakım, otomatik şanzıman ayarı, motor ve elektrik arızaları.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 LİFT, ETKİLEŞİMLİ ============ -->
+<section class="lift live" id="lift">
+  <span class="spark" style="left:16%;top:24%"></span>
+  <span class="spark" style="left:80%;top:60%"></span>
+  <div class="wrap">
+    <div class="rev">
+      <div class="part eyebrow" style="justify-content:center"><i></i><span class="tag">03 / ÖNCE BAKARIZ</span><i></i></div>
+      <h2 class="part">Fiyat vermeden önce altına bakarız.</h2>
+      <p class="part lede">Butonu basılı tut. Lift kalkarken bakılan üç yer sırayla görünür.</p>
+    </div>
+    <div class="rig" id="rig">
+      <svg viewBox="0 0 720 300" role="img" aria-label="Lift üzerinde yükselen araç ve kontrol edilen üç nokta">
+        <line class="ground" x1="40" y1="272" x2="680" y2="272"/>
+        <line class="post" x1="150" y1="272" x2="150" y2="248"/>
+        <line class="post" x1="570" y1="272" x2="570" y2="248"/>
+        <g class="lifted" id="lifted">
+          <line class="arm" x1="120" y1="248" x2="230" y2="248"/>
+          <line class="arm" x1="490" y1="248" x2="600" y2="248"/>
+          <path class="carbody" d="M110 232 Q110 210 134 206 L212 196 L268 158 Q276 150 290 149 L446 149 Q462 150 472 158 L524 196 L594 205 Q616 209 616 230 L616 240 L110 240 Z"/>
+          <circle class="wheel" cx="204" cy="240" r="30"/>
+          <circle class="wheel" cx="520" cy="240" r="30"/>
+          <!-- kontrol noktaları araçla birlikte kalkar ve liftin açtığı boşluğu gösterir -->
+          <g class="pt" id="pt1" style="--lk:0">
+            <circle cx="204" cy="242" r="4.5"/>
+            <line x1="204" y1="246" x2="204" y2="268"/>
+            <text x="204" y="284" text-anchor="middle">SÜSPANSİYON</text>
+          </g>
+          <g class="pt" id="pt2" style="--lk:0">
+            <circle cx="520" cy="242" r="4.5"/>
+            <line x1="520" y1="246" x2="520" y2="268"/>
+            <text x="520" y="284" text-anchor="middle">FREN</text>
+          </g>
+          <g class="pt" id="pt3" style="--lk:0">
+            <circle cx="362" cy="242" r="4.5"/>
+            <line x1="362" y1="246" x2="362" y2="292"/>
+            <text x="362" y="308" text-anchor="middle">YAĞ SIZINTISI</text>
+          </g>
+        </g>
+      </svg>
+      <button class="hold-btn" id="hold" aria-describedby="hold-help">
+        <span class="fill" aria-hidden="true"></span>
+        <span class="lbl"><span id="hold-label">Basılı tut</span></span>
+      </button>
+      <p id="hold-help" class="sr-only">Düğmeyi basılı tutunca lift kalkar ve kontrol edilen üç nokta sırayla görünür. Bırakınca lift iner.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 USTALAR ============ -->
+<section class="crew live" id="ustalar">
+  <span class="spark" style="left:12%;top:66%"></span>
+  <div class="wrap">
+    <div class="head rev">
+      <div class="part eyebrow"><i></i><span class="tag">04 / USTALAR</span></div>
+      <h2 class="part">Aracını kime bıraktığını bil.</h2>
+      <p class="part">Atölye'da üç kişi çalışıyor. Aracını hep aynı usta alır, iş bitene kadar da o takip eder.</p>
+    </div>
+    <div class="crew-grid rev">
+      <div class="person part">
+        <svg viewBox="0 0 46 46" aria-hidden="true"><circle cx="23" cy="23" r="16"/><path d="M23 7v8M23 31v8M7 23h8M31 23h8"/></svg>
+        <b>Ömür Pehlivan</b><span>İşletme sahibi</span>
+      </div>
+      <div class="person part">
+        <svg viewBox="0 0 46 46" aria-hidden="true"><circle cx="23" cy="23" r="16"/><circle cx="23" cy="23" r="6"/></svg>
+        <b>Orhan Mermer</b><span>Usta</span>
+      </div>
+      <div class="person part">
+        <svg viewBox="0 0 46 46" aria-hidden="true"><circle cx="23" cy="23" r="16"/><path d="M10 30c7-6 19-6 26 0"/></svg>
+        <b>Cenk Karaçelik</b><span>Usta</span>
+      </div>
+    </div>
+    <p class="note fade">Yetkili serviste aracına bakan tekniker her seferinde değişir. Burada değişmez.</p>
+  </div>
+</section>
+
+<!-- ============ ATÖLYE ŞERİDİ, GERÇEK FOTOĞRAFLAR ============ -->
+<section class="yer" id="atolye">
+  <div class="wrap">
+    <div class="head fade">
+      <h2>Atölye.</h2>
+      <p>Sanayi sitesi, akşam. Yer burası, başka yer değil.</p>
+    </div>
+    <div class="pair fade">
+      <figure><img src="assets/dukkan-1.jpg" alt="Atölye dükkanının önü, akşam" width="1600" height="1200" loading="lazy"></figure>
+      <figure><img src="assets/dukkan-2.jpg" alt="Atölye atölyesinin içi, akşam" width="1600" height="1200" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 TUNING ============ -->
+<section class="tuning live" id="tuning">
+  <span class="spark" style="left:88%;top:34%"></span>
+  <div class="wrap grid">
+    <figure class="shot fade" style="margin:0">
+      <img src="assets/motor.jpg" alt="Soğuk atölye ışığında motor detayı" width="1600" height="1200" loading="lazy">
+    </figure>
+    <div class="rev">
+      <div class="part eyebrow"><i></i><span class="tag">05 / TUNING</span></div>
+      <h2 class="part">Aynı araç, daha fazlası.</h2>
+      <p class="part">Bakım ve tamirin dışında performans işi de yapıyoruz. Aynı ustalar, aynı dört marka.</p>
+      <ul class="part">
+        <li>Yazılım ve motor ayarı</li>
+        <li>Egzoz ve emme tarafı</li>
+        <li>Süspansiyon ve fren üst modele geçiş</li>
+        <li>Jant, lastik ve yol ayarı</li>
+      </ul>
+      <div class="part" style="margin-top:26px"><a class="btn ghost" href="tel:+905426242468">Tuning için ara</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 YOL YARDIM ============ -->
+<section class="road live" id="yol-yardim">
+  <div class="wrap">
+    <div class="box rev">
+      <div class="part">
+        <div class="eyebrow"><i></i><span class="tag">06 / YOLDA KALDIYSAN</span></div>
+        <h2>Beş ilçeye yol yardım.</h2>
+        <p>Araç çalışmıyorsa yerinden aldırırız. Yolda beklerken tamirci aramakla uğraşma, tek numara yeter.</p>
+        <div class="zones">
+          <span>İzmir</span><span>Konak</span><span>Buca</span><span>Karabağlar</span><span>Karşıyaka</span>
+        </div>
+      </div>
+      <div class="part act"><a class="btn" href="tel:+905426242468">Hemen ara</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 07 SORULAR ============ -->
+<section class="faq" id="sorular">
+  <div class="wrap">
+    <div class="head rev">
+      <div class="part">
+        <div class="eyebrow"><i></i><span class="tag">07 / SORULAR</span></div>
+        <h2>Telefonda en çok sorulanlar.</h2>
+      </div>
+      <p class="part">Cevapları burada yazıyor, aramadan önce okuyabilirsin.</p>
+    </div>
+    <div class="qa fade">
+      <details>
+        <summary><span class="n">01</span>Orijinal parça mı takıyorsunuz?<span class="mk" aria-hidden="true"></span></summary>
+        <div class="ans"><div><p>İkisi de var, seçim senin. Orijinal parçayı orijinal fiyatına, yan sanayiyi yan sanayi fiyatına takarız. Hangisinin takıldığı faturada yazar. Bulunamayan parçayı 21 gün içinde getirtiyoruz.</p></div></div>
+      </details>
+      <details>
+        <summary><span class="n">02</span>Söktüğünüz parçayı görebilir miyim?<span class="mk" aria-hidden="true"></span></summary>
+        <div class="ans"><div><p>Evet. Değişen her parçayı sana veririz, istemezsen biz atarız. Sorman bile gerekmez.</p></div></div>
+      </details>
+      <details>
+        <summary><span class="n">03</span>İşçiliğin garantisi var mı?<span class="mk" aria-hidden="true"></span></summary>
+        <div class="ans"><div><p>Yaptığımız işçilik 6 ay garantilidir. Aynı arıza tekrarlarsa aracı tekrar alırız, ikinci kez işçilik almayız.</p></div></div>
+      </details>
+      <details>
+        <summary><span class="n">04</span>Aracımın fabrika garantisi bozulur mu?<span class="mk" aria-hidden="true"></span></summary>
+        <div class="ans"><div><p>Garanti süresi devam eden araçlarda bakımın yetkili serviste yapılması gerekir. Aracın garantisi bittiyse özel serviste bakım yaptırmak bir şeyi etkilemez.</p></div></div>
+      </details>
+      <details>
+        <summary><span class="n">05</span>Fiyatı önden söylüyor musunuz?<span class="mk" aria-hidden="true"></span></summary>
+        <div class="ans"><div><p>Arıza belli olduktan sonra fiyatı söyleriz. Sen onaylamadan işe başlamayız.</p></div></div>
+      </details>
+      <details>
+        <summary><span class="n">06</span>Randevu gerekiyor mu?<span class="mk" aria-hidden="true"></span></summary>
+        <div class="ans"><div><p>Gelmeden önce ara. Lift boşsa aynı gün alırız, doluysa sana gün veririz. Boşuna yol gelmiş olmazsın.</p></div></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 08 YORUMLAR, gerçek Google yorumları ============ -->
+<section class="rev-sec" id="yorumlar">
+  <div class="wrap">
+    <div class="head rev">
+      <div class="part eyebrow"><i></i><span class="tag">08 / YORUMLAR</span></div>
+      <h2 class="part">Müşterilerimiz ne diyor.</h2>
+      <p class="part">Google'a yazılmış gerçek yorumlar. Adları da kendi yazdıkları gibi duruyor.</p>
+    </div>
+    <div class="rev-grid fade">
+      <figure class="yorum">
+        <div class="yildiz" aria-label="5 üzerinden 5 yıldız">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.4 4.7 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.4 4.7 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.4 4.7 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.4 4.7 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.4 4.7 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+        </div>
+        <blockquote>Güvenilir, işinin ehli ve arkasında duran temiz işçilik. 5 yıldır arabamın bakımlarını yaptırıyorum, çok memnunum, herkese tavsiye ediyorum.</blockquote>
+        <figcaption class="kim"><b>Kamil İşeri</b><span>Google yorumu</span></figcaption>
+      </figure>
+      <figure class="yorum">
+        <div class="yildiz" aria-label="5 üzerinden 5 yıldız">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.4 4.7 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.4 4.7 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.4 4.7 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.4 4.7 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.4 4.7 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+        </div>
+        <blockquote>Çok uzun zamandan beri tanıdığım, özellikle de Mercedes ve BMW konusunda uzman servis.</blockquote>
+        <figcaption class="kim"><b>Burhan Coşkunerler</b><span>Google yorumu</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 09 İLETİŞİM ============ -->
+<section class="contact live" id="iletisim">
+  <span class="spark" style="left:28%;top:28%"></span>
+  <span class="spark" style="left:72%;top:56%"></span>
+  <div class="wrap rev">
+    <div class="part eyebrow"><i></i><span class="tag">09 / İLETİŞİM</span></div>
+    <h2 class="part">Arıza büyümeden ara.</h2>
+    <p class="part lede">Sesini duyduğun bir arıza, beklediğin her gün pahalılaşır. Bir telefon yeter, ne olduğunu söyleriz.</p>
+    <div class="part acts">
+      <a class="btn" href="tel:+905426242468">0542 624 24 68</a>
+      <a class="btn ghost" href="https://wa.me/905426242468?text=Merhaba%2C%20arac%C4%B1m%20i%C3%A7in%20randevu%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp'tan yaz</a>
+      <!-- Doğrudan yol tarifi: işletmenin haritadaki gerçek koordinatı -->
+      <span>Yol tarifi al</span>
+    </div>
+    <div class="facts part">
+      <div class="fact"><b>Adres</b><span><span>413. Sokak No: 40, Kazımdirik<br>İzmir</span></span></div>
+      <div class="fact"><b>Çalışma saatleri</b><span>Pazartesi - Cumartesi<br>08.30 - 19.30, pazar kapalı</span>
+        <span class="durum" id="durum" hidden><i></i><em id="durum-yazi"></em></span></div>
+      <div class="fact"><b>Telefon</b><span>0542 624 24 68, Ömür Pehlivan<br>Sabit hat: 0542 624 24 68</span></div>
+    </div>
+  </div>
+</section>
+</div><!-- /flow -->
+</main>
+
+<footer>
+  <div class="wrap row">
+    <span class="brand">ATÖLYE<em style="font-style:normal;color:var(--accent)">.</em></span>
+    <p class="legal">Atölye bağımsız bir özel servistir. Mercedes-Benz, BMW, Mini ve Smart markalarının yetkili servisi değildir ve bu markalarla bağlantılı değildir. Marka isimleri yalnızca hizmet verilen araçları belirtmek için kullanılmıştır.</p>
+    <span class="meta">Ömür Pehlivan / 2004'ten beri</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+'use strict';
+
+var clamp=function(v,lo,hi){return Math.min(hi,Math.max(lo,v));};
+var smoothstep=function(p,e0,e1){var t=clamp((p-e0)/(e1-e0),0,1);return t*t*(3-2*t);};
+function rng(seed){var s=seed>>>0;return function(){s=(s*1664525+1013904223)>>>0;return s/4294967296;};}
+
+var stage=document.getElementById('stage');
+var video=document.getElementById('hero-video');
+var poster=document.getElementById('poster');
+var staticBg=document.getElementById('static-bg');
+var ring=document.getElementById('ring');
+var hero=document.getElementById('hero');
+var nav=document.getElementById('nav');
+var dimEl=document.getElementById('settle-dim');
+var lastDim=-1;
+
+var VIDEO_URL='assets/hero-scrub.mp4';
+var VIDEO_BYTES=3367176;               /* Content-Length gelmezse kullanılacak gerçek boyut */
+var POSTER_URL='assets/hero-poster.jpg';
+var STATIC_URL='assets/dukkan-1.jpg';  /* telefonda gerçek dükkan görünür */
+
+/* ---------- metin bölme ---------- */
+function splitInto(el,mode,spread){
+  var text=el.getAttribute('data-text')||'';
+  el.textContent='';
+  var sr=document.createElement('span');sr.className='sr-only';sr.textContent=text;el.appendChild(sr);
+  var vis=document.createElement('span');vis.setAttribute('aria-hidden','true');
+  var words=text.split(' ');var r=rng(20260824);
+  var chars=text.replace(/ /g,'').length,ci=0;
+  for(var i=0;i<words.length;i++){
+    var w=document.createElement('span');w.className='w';
+    if(mode==='word'){
+      w.style.setProperty('--th',(i/Math.max(1,words.length))*0.5);
+      w.textContent=words[i];
+    }else{
+      for(var j=0;j<words[i].length;j++){
+        var c=document.createElement('span');c.className='c';c.textContent=words[i][j];
+        var th=(spread?(ci/Math.max(1,chars))*spread:0)+r()*0.30;
+        c.style.setProperty('--th',Math.min(0.62,th));
+        c.style.setProperty('--jx',((r()-0.5)*50).toFixed(1)+'px');
+        c.style.setProperty('--jy',((r()-0.5)*42).toFixed(1)+'px');
+        c.style.setProperty('--jr',((r()-0.5)*24).toFixed(1)+'deg');
+        w.appendChild(c);ci++;
+      }
+    }
+    vis.appendChild(w);
+    if(i<words.length-1)vis.appendChild(document.createTextNode(' '));
+  }
+  el.appendChild(vis);
+}
+function buildFocus(el){
+  var text=el.getAttribute('data-focus')||'';
+  el.textContent='';
+  var sr=document.createElement('span');sr.className='sr-only';sr.textContent=text;el.appendChild(sr);
+  var soft=document.createElement('span');soft.className='soft';soft.setAttribute('aria-hidden','true');soft.textContent=text;
+  var sharp=document.createElement('span');sharp.className='sharp';sharp.setAttribute('aria-hidden','true');sharp.textContent=text;
+  el.appendChild(soft);el.appendChild(sharp);
+}
+
+var bandEls=[].slice.call(document.querySelectorAll('.band'));
+var bands=bandEls.map(function(el,i){
+  var split=el.querySelector('[data-split]');
+  if(split)splitInto(split,split.getAttribute('data-split'),parseFloat(el.getAttribute('data-spread'))||0);
+  var fx=el.querySelector('[data-focus]');
+  if(fx)buildFocus(fx);
+  var wm=el.querySelector('.word-mark');
+  if(wm&&!wm.getAttribute('data-built')){
+    wm.setAttribute('data-built','1');
+    var t=wm.textContent;wm.textContent='';
+    var sr=document.createElement('span');sr.className='sr-only';sr.textContent=t;wm.appendChild(sr);
+    var vis=document.createElement('span');vis.setAttribute('aria-hidden','true');
+    var parts=t.split(' ');
+    for(var k=0;k<parts.length;k++){
+      var w=document.createElement('span');w.className='w';w.textContent=parts[k];
+      w.style.setProperty('--th',(k/parts.length)*0.45);
+      vis.appendChild(w);
+      if(k<parts.length-1)vis.appendChild(document.createTextNode(' '));
+    }
+    wm.appendChild(vis);
+  }
+  return {el:el,a:parseFloat(el.getAttribute('data-a')),b:parseFloat(el.getAttribute('data-b')),
+    ramp:parseFloat(el.getAttribute('data-ramp'))||0,
+    first:i===0,last:i===bandEls.length-1,op:-1,k:-1};
+});
+
+/* ---------- kaydırma, lerp, kapılı seek ---------- */
+var target=0,shown=0,rafId=null,lastTick=0,heroOnScreen=true,scrubOn=false;
+var loadK=0,loadStart=0;
+
+function heroProgress(){
+  var r=hero.getBoundingClientRect();
+  var range=hero.offsetHeight-window.innerHeight;
+  if(range<=0)return 0;
+  return clamp(-r.top/range,0,1);
+}
+var seekBusy=false,pendingTime=null;
+function requestSeek(t){
+  if(!video.duration||isNaN(video.duration))return;
+  if(seekBusy){pendingTime=t;return;}
+  seekBusy=true;
+  try{video.currentTime=t;}catch(e){seekBusy=false;}
+}
+video.addEventListener('seeked',function(){
+  seekBusy=false;
+  if(pendingTime!==null){var t=pendingTime;pendingTime=null;requestSeek(t);}
+});
+video.addEventListener('error',function(){seekBusy=false;pendingTime=null;failVideo();});
+
+function tick(now){
+  var dt=Math.min(100,now-(lastTick||now));lastTick=now;
+  var k=0.16;
+  shown+=(target-shown)*(1-Math.pow(1-k,dt/16.667));
+  var settled=Math.abs(target-shown)<0.0005;
+  if(settled)shown=target;
+  if(loadStart&&loadK<1)loadK=clamp((now-loadStart)/1100,0,1);
+  requestSeek(shown*(video.duration||0));
+  updateCaptions(shown);
+  if(settled&&loadK>=1){rafId=null;lastTick=0;}
+  else rafId=requestAnimationFrame(tick);
+}
+function onScroll(){
+  target=heroProgress();
+  if(rafId===null&&heroOnScreen)rafId=requestAnimationFrame(tick);
+}
+
+function updateCaptions(p){
+  for(var i=0;i<bands.length;i++){
+    var bd=bands[i],a=bd.a,b=bd.b;
+    var f=Math.min(0.02,(b-a)/3);
+    var op=(bd.first?1:smoothstep(p,a,a+f))*(bd.last?1:(1-smoothstep(p,b-f,b)));
+    if(p<a-0.06||p>b+0.06)op=0;
+    var ramp=bd.ramp||Math.min(0.025,(b-a)*0.35);
+    var kk=clamp((p-a)/ramp,0,1);
+    if(bd.first)kk=Math.max(kk,loadK);
+    if(Math.abs(op-bd.op)>0.004){
+      bd.op=op;bd.el.style.opacity=op.toFixed(3);
+      bd.el.style.visibility=op<0.004?'hidden':'visible';
+    }
+    if(Math.abs(kk-bd.k)>0.008){
+      bd.k=kk;
+      bd.el.style.setProperty('--k',kk.toFixed(3));
+      bd.el.style.setProperty('--ks',clamp((kk-0.42)*2.2,0,1).toFixed(3));
+      bd.el.style.setProperty('--kb',clamp((kk-0.62)*2.6,0,1).toFixed(3));
+    }
+  }
+  var dim=smoothstep(p,0.68,0.95)*0.55;
+  if(Math.abs(dim-lastDim)>0.004){lastDim=dim;dimEl.style.opacity=dim.toFixed(3);}
+  var past=p>0.06;
+  if(past!==stage.classList.contains('past'))stage.classList.toggle('past',past);
+}
+
+/* ---------- video ---------- */
+var started=false;
+function startBlobFetch(){if(started)return;started=true;loadHeroBlob().catch(failVideo);}
+function loadHeroBlob(){
+  var ctrl=new AbortController();
+  var watchdog=setTimeout(function(){ctrl.abort();},20000);
+  var opts={signal:ctrl.signal};
+  try{opts.priority='low';}catch(e){}
+  return fetch(VIDEO_URL,opts).then(function(res){
+    if(!res.ok||!res.body)throw new Error('video yok');
+    var total=Number(res.headers.get('Content-Length'))||VIDEO_BYTES;
+    var reader=res.body.getReader();var chunks=[],got=0,lastRing=0;
+    function pump(){
+      return reader.read().then(function(r){
+        if(r.done)return;
+        clearTimeout(watchdog);
+        watchdog=setTimeout(function(){ctrl.abort();},20000);
+        chunks.push(r.value);got+=r.value.length;
+        var frac=Math.min(1,got/total);var now=performance.now();
+        if(now-lastRing>100||frac===1){lastRing=now;ring.style.setProperty('--ld',Math.round(126*(1-frac)));}
+        return pump();
+      });
+    }
+    return pump().then(function(){
+      clearTimeout(watchdog);
+      ring.style.setProperty('--ld',0);ring.style.opacity='0';
+      video.src=URL.createObjectURL(new Blob(chunks,{type:'video/mp4'}));
+      video.load();
+      video.addEventListener('canplay',function(){
+        requestSeek(heroProgress()*video.duration);
+        stage.classList.add('video-ready');
+      },{once:true});
+    });
+  });
+}
+function failVideo(){
+  if(stage.classList.contains('video-failed'))return;
+  stage.classList.add('video-failed');ring.style.opacity='0';
+}
+function initHeroOnce(){
+  if(initHeroOnce.done)return;initHeroOnce.done=true;
+  poster.style.backgroundImage="url('"+POSTER_URL+"')";
+  var img=new Image();img.onload=startBlobFetch;img.onerror=startBlobFetch;img.src=POSTER_URL;
+  setTimeout(startBlobFetch,4000);
+  loadStart=performance.now();
+}
+
+/* ---------- beş kapı ---------- */
+var GATES=[
+  '(max-width: 820px)',
+  '(orientation: portrait) and (max-width: 1024px)',
+  '(orientation: portrait) and (pointer: coarse)',
+  '(orientation: landscape) and (pointer: coarse) and (max-height: 560px)',
+  '(prefers-reduced-motion: reduce)'
+];
+function enableScrub(){
+  if(scrubOn)return;scrubOn=true;
+  initHeroOnce();
+  window.addEventListener('scroll',onScroll,{passive:true});
+  bands.forEach(function(b){b.op=-1;b.k=-1;});
+  unpinFinalStates();
+  updateCaptions(heroProgress());
+  onScroll();
+}
+function disableScrub(){
+  if(!scrubOn)return;scrubOn=false;
+  window.removeEventListener('scroll',onScroll);
+  if(rafId!==null){cancelAnimationFrame(rafId);rafId=null;}
+}
+function applyHeroMode(){
+  if(GATES.some(function(q){return matchMedia(q).matches;}))disableScrub();else enableScrub();
+}
+var MQLS=GATES.map(function(q){return matchMedia(q);});
+MQLS.forEach(function(m){
+  if(m.addEventListener)m.addEventListener('change',applyHeroMode);
+  else if(m.addListener)m.addListener(applyHeroMode);
+});
+function initStatic(){
+  if(initStatic.done)return;initStatic.done=true;
+  staticBg.style.backgroundImage="url('"+STATIC_URL+"')";
+}
+function staticNeeded(){return GATES.some(function(q){return matchMedia(q).matches;});}
+if(staticNeeded())initStatic();
+MQLS.forEach(function(m){
+  if(m.addEventListener)m.addEventListener('change',function(){if(staticNeeded())initStatic();});
+});
+if('IntersectionObserver' in window){
+  new IntersectionObserver(function(es){
+    heroOnScreen=es[0].isIntersecting;
+    if(heroOnScreen&&scrubOn&&rafId===null)rafId=requestAnimationFrame(tick);
+  },{rootMargin:'10px'}).observe(hero);
+}
+
+/* ============================================================
+   İMZA ÖĞESİ: ölçü çizgisi
+   ============================================================ */
+var flow=document.getElementById('flow');
+var rule=document.getElementById('rule');
+var spine=document.getElementById('spine');
+var ticksG=document.getElementById('ticks');
+var ruleHead=document.getElementById('rule-head');
+var spineLen=0,ruleMax=0,rulePinned=false,tickList=[];
+var SEC=[['teshis','01'],['dort-marka','02'],['lift','03'],['ustalar','04'],
+         ['tuning','05'],['yol-yardim','06'],['sorular','07'],['yorumlar','08'],
+         ['iletisim','09']];
+
+function buildRule(){
+  if(!flow||!rule)return;
+  var w=flow.offsetWidth,h=flow.offsetHeight;
+  if(!w||!h)return;
+  rule.setAttribute('viewBox','0 0 '+w+' '+h);
+  rule.setAttribute('width',w);rule.setAttribute('height',h);
+  var wrapEl=flow.querySelector('.wrap');
+  var gut=wrapEl?clamp(wrapEl.getBoundingClientRect().left*0.42,16,64):24;
+  var fr=flow.getBoundingClientRect();
+  spine.setAttribute('d','M '+gut.toFixed(1)+' 0 L '+gut.toFixed(1)+' '+(h-4).toFixed(1));
+  spineLen=spine.getTotalLength();
+  spine.style.strokeDasharray=spineLen;
+  spine.style.strokeDashoffset=rulePinned?0:spineLen*(1-ruleMax);
+  ticksG.textContent='';
+  tickList=[];
+  SEC.forEach(function(s){
+    var el=document.getElementById(s[0]);
+    if(!el)return;
+    var r=el.getBoundingClientRect();
+    var y=r.top-fr.top+56;
+    var ln=document.createElementNS('http://www.w3.org/2000/svg','line');
+    ln.setAttribute('class','tick');
+    ln.setAttribute('x1',gut);ln.setAttribute('y1',y);
+    ln.setAttribute('x2',gut+16);ln.setAttribute('y2',y);
+    var tx=document.createElementNS('http://www.w3.org/2000/svg','text');
+    tx.setAttribute('x',gut);tx.setAttribute('y',y-10);tx.textContent=s[1];
+    ticksG.appendChild(ln);ticksG.appendChild(tx);
+    tickList.push({y:y,ln:ln,tx:tx,on:false});
+  });
+  drawRule();
+}
+function ruleProgress(){
+  var r=flow.getBoundingClientRect();
+  var start=window.innerHeight*0.9;
+  var span=r.height-window.innerHeight*0.25;
+  if(span<=0)return 1;
+  return clamp((start-r.top)/span,0,1);
+}
+var lastRuleDraw=-1;
+function drawRule(){
+  if(!spineLen||rulePinned)return;
+  var p=ruleProgress();
+  if(p>ruleMax)ruleMax=p;                 /* ölçü çizgisi geri silinmez */
+  if(Math.abs(ruleMax-lastRuleDraw)<0.002)return;
+  lastRuleDraw=ruleMax;
+  spine.style.strokeDashoffset=(spineLen*(1-ruleMax)).toFixed(1);
+  var drawn=spineLen*ruleMax;
+  var pt=spine.getPointAtLength(drawn);
+  ruleHead.setAttribute('cx',pt.x.toFixed(1));
+  ruleHead.setAttribute('cy',pt.y.toFixed(1));
+  ruleHead.style.opacity=ruleMax>0.004&&ruleMax<0.999?'0.9':'0';
+  for(var i=0;i<tickList.length;i++){
+    var t=tickList[i];var on=drawn>=t.y;
+    if(on!==t.on){t.on=on;t.ln.classList.toggle('on',on);t.tx.classList.toggle('on',on);}
+  }
+}
+
+/* ============================================================
+   LİFT: basılı tut
+   ============================================================ */
+var hold=document.getElementById('hold');
+var holdLabel=document.getElementById('hold-label');
+var lifted=document.getElementById('lifted');
+var rigEl=document.getElementById('rig');
+var pts=[document.getElementById('pt1'),document.getElementById('pt2'),document.getElementById('pt3')];
+var PT_TH=[0.30,0.58,0.86];
+var hp=0,holding=false,holdRaf=null,holdLast=0,lastLabel='';
+
+function applyLift(p){
+  if(hold)hold.style.setProperty('--p',p.toFixed(4));
+  if(lifted)lifted.style.setProperty('--p',p.toFixed(4));
+  for(var i=0;i<pts.length;i++){
+    if(!pts[i])continue;
+    pts[i].style.setProperty('--lk',clamp((p-PT_TH[i])/0.12,0,1).toFixed(3));
+  }
+  var lbl=p>0.99?'Lift yukarıda':(p>0?'Kalkıyor':'Basılı tut');
+  if(lbl!==lastLabel){lastLabel=lbl;if(holdLabel)holdLabel.textContent=lbl;}
+}
+function holdFrame(now){
+  var dt=Math.min(80,now-(holdLast||now));holdLast=now;
+  hp=clamp(hp+(holding?dt/2300:-dt/1400),0,1);
+  applyLift(hp);
+  if((holding&&hp<1)||(!holding&&hp>0))holdRaf=requestAnimationFrame(holdFrame);
+  else{holdRaf=null;holdLast=0;}
+}
+function holdStart(e){
+  if(e&&e.type==='pointerdown'&&e.button!==0)return;
+  holding=true;if(holdRaf===null)holdRaf=requestAnimationFrame(holdFrame);
+}
+function holdEnd(){holding=false;if(holdRaf===null)holdRaf=requestAnimationFrame(holdFrame);}
+if(hold){
+  hold.addEventListener('pointerdown',function(e){e.preventDefault();holdStart(e);});
+  ['pointerup','pointercancel','pointerleave'].forEach(function(ev){hold.addEventListener(ev,holdEnd);});
+  hold.addEventListener('keydown',function(e){if(e.key===' '||e.key==='Enter'){e.preventDefault();holdStart();}});
+  hold.addEventListener('keyup',function(e){if(e.key===' '||e.key==='Enter')holdEnd();});
+  hold.addEventListener('blur',holdEnd);
+}
+
+/* ============================================================
+   Canlı açık/kapalı göstergesi
+   Saat ziyaretçinin cihazına değil İstanbul saatine göre hesaplanır,
+   yoksa yurt dışındaki bir telefon yanlış bilgi gösterir.
+   ============================================================ */
+(function(){
+  var el=document.getElementById('durum'),yazi=document.getElementById('durum-yazi');
+  if(!el||!yazi||!window.Intl)return;
+  var GUN=['pazar','pazartesi','salı','çarşamba','perşembe','cuma','cumartesi'];
+  function istanbul(){
+    var parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Istanbul',
+      weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+    var o={};parts.forEach(function(p){o[p.type]=p.value;});
+    var map={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};
+    return {g:map[o.weekday],dk:parseInt(o.hour,10)*60+parseInt(o.minute,10)};
+  }
+  function guncelle(){
+    var t;
+    try{t=istanbul();}catch(e){return;}
+    if(t.g===undefined)return;
+    var ac=8*60+30, kap=19*60+30;
+    var acik=t.g>=1&&t.g<=6&&t.dk>=ac&&t.dk<kap;
+    el.hidden=false;
+    el.classList.toggle('acik',acik);
+    if(acik){
+      yazi.textContent='Şu an açık, 19.30\'a kadar';
+    }else{
+      var sonraki;
+      if(t.g===0)sonraki='pazartesi';
+      else if(t.g===6&&t.dk>=kap)sonraki='pazartesi';
+      else if(t.dk<ac)sonraki='bugün';
+      else sonraki='yarın';
+      yazi.textContent='Şu an kapalı, '+sonraki+' 08.30\'da açılıyor';
+    }
+  }
+  guncelle();
+  setInterval(guncelle,60000);
+})();
+
+/* ---------- girişler, üst çubuk, duraklatma ---------- */
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(en){
+      if(!en.isIntersecting)return;
+      en.target.classList.add('in');io.unobserve(en.target);
+      setTimeout(function(){en.target.classList.add('done');},1400);
+    });
+  },{rootMargin:'-8% 0px -12% 0px'});
+  [].slice.call(document.querySelectorAll('.rev,.fade')).forEach(function(el){io.observe(el);});
+  var liveIo=new IntersectionObserver(function(es){
+    es.forEach(function(en){en.target.classList.toggle('live',en.isIntersecting);});
+  },{rootMargin:'20% 0px 20% 0px'});
+  [].slice.call(document.querySelectorAll('.live')).forEach(function(el){liveIo.observe(el);});
+}
+var navStuck=false;
+function onPageScroll(){
+  var s=window.scrollY>24;
+  if(s!==navStuck){navStuck=s;nav.classList.toggle('stuck',s);}
+  drawRule();
+}
+window.addEventListener('scroll',onPageScroll,{passive:true});
+document.addEventListener('visibilitychange',function(){
+  document.body.classList.toggle('paused',document.hidden);
+});
+
+/* ---------- azaltılmış hareket, iki yönlü ---------- */
+function pinToFinalStates(){
+  rulePinned=true;
+  if(spineLen)spine.style.strokeDashoffset='0';
+  ruleHead.style.opacity='0';
+  tickList.forEach(function(t){t.on=true;t.ln.classList.add('on');t.tx.classList.add('on');});
+  hp=1;holding=false;
+  if(holdRaf!==null){cancelAnimationFrame(holdRaf);holdRaf=null;}
+  applyLift(1);
+  [].slice.call(document.querySelectorAll('.rev,.fade')).forEach(function(el){
+    el.classList.add('in');el.classList.add('done');
+  });
+}
+function unpinFinalStates(){
+  rulePinned=false;lastRuleDraw=-1;lastDim=-1;
+  if(spineLen)spine.style.strokeDashoffset=(spineLen*(1-ruleMax)).toFixed(1);
+  hp=0;lastLabel='';applyLift(0);
+  drawRule();
+}
+var rm=matchMedia('(prefers-reduced-motion: reduce)');
+function onRM(e){
+  if(e.matches)pinToFinalStates();
+  else{applyHeroMode();unpinFinalStates();}
+}
+if(rm.addEventListener)rm.addEventListener('change',onRM);
+else if(rm.addListener)rm.addListener(onRM);
+
+/* ---------- başlat ---------- */
+var resizeT=null;
+window.addEventListener('resize',function(){
+  clearTimeout(resizeT);
+  resizeT=setTimeout(function(){buildRule();if(scrubOn)onScroll();},180);
+});
+window.addEventListener('load',function(){buildRule();});
+applyHeroMode();
+if(rm.matches)pinToFinalStates();
+buildRule();
+onPageScroll();
+})();
+</script>
+</body>
+</html>
