@@ -385,7 +385,7 @@ html.js .vitrin__yerlesim { transition: transform 0.12s linear; }
 
 /* Masaüstü kadraj geniş, mobil kadraj onun sağ alt köşesine biner. */
 .vitrin__yerlesim { position: relative; }
-.vitrin__mobil { position: absolute; right: -1rem; bottom: -2.5rem; width: 21%; max-width: 12rem; }
+.vitrin__mobil { position: absolute; right: 0; bottom: 0; width: 21%; max-width: 12rem; }
 
 
 /* ------------------------------------------------------------
@@ -504,8 +504,12 @@ html.js .vitrin__yerlesim { transition: transform 0.12s linear; }
 }
 
 .is__gorsel { position: relative; }
-.is__gorsel .cerceve--mobil { position: absolute; right: -0.8rem; bottom: -1.6rem; width: 22%; }
-@media (max-width: 500px) { .is__gorsel .cerceve--mobil { width: 30%; right: -0.4rem; bottom: -1.2rem; } }
+/* Telefon karesi kartın dışına taşmıyor.
+   Önce `bottom: -1.6rem` ile aşağı sarkıyordu; yapışkan yığında bir
+   sonraki kart üstüne binip alt kısmını düz bir çizgiyle kesiyordu ve
+   fotoğraf yarım kalmış gibi duruyordu. Artık kartın içinde bitiyor. */
+.is__gorsel .cerceve--mobil { position: absolute; right: 0; bottom: 0; width: 22%; }
+@media (max-width: 500px) { .is__gorsel .cerceve--mobil { width: 30%; } }
 
 .is__etiket {
   display: inline-block; font-size: 0.72rem; font-weight: 600;
