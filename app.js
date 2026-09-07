@@ -305,9 +305,38 @@
            "atolye — car service", "kemer — members' club"]
     };
 
+    var SLUG = ["avlu", "ardin", "sakiz", "atolye", "kemer"];
+
     var ekran = cerceve.querySelector(".cerceve__ekran");
     var adres = cerceve.querySelector("[data-adres]");
     if (!ekran || !adres) return;
+
+    /* Telefon karesi masaüstü videosuyla birlikte değişiyor. Önce sabit
+       Avlu görüntüsü duruyordu; video Kemer'i gösterirken telefonda Avlu
+       kalıyor, ikisi ayrı şeylermiş gibi duruyordu. */
+    var telefonKare = document.querySelector(".vitrin__mobil");
+    var telefonImg = document.querySelector("[data-telefon]");
+    var telefonKaynak = document.querySelector("[data-telefon-kaynak]");
+
+    // Değişimde boşluk görünmesin diye kareler önden indiriliyor.
+    function telefonOnYukle() {
+      SLUG.forEach(function (sl) {
+        var im = new Image();
+        im.src = "img/" + sl + "-mobil.webp";
+      });
+    }
+
+    function telefonDegistir(sl) {
+      if (!telefonImg || !telefonKare) return;
+      if (telefonImg.dataset.slug === sl) return;
+      telefonImg.dataset.slug = sl;
+      telefonKare.dataset.degisiyor = "true";
+      setTimeout(function () {
+        if (telefonKaynak) telefonKaynak.srcset = "img/" + sl + "-mobil.webp";
+        telefonImg.src = "img/" + sl + "-mobil.jpg";
+        telefonKare.dataset.degisiyor = "false";
+      }, 280);
+    }
 
     /* Yalnızca geniş ekranda indiriliyor. Dosya 2,3 MB; telefonda çerçeve
        zaten küçülüyor, duran kare aynı işi görüyor ve mobil veriyi
@@ -344,11 +373,14 @@
         sonIndeks = i;
         // Önce soldur, yazıyı değiştir, sonra geri getir.
         cerceve.dataset.gecis = "true";
+        telefonDegistir(SLUG[i]);
         setTimeout(function () {
           adres.textContent = liste[i];
           cerceve.dataset.gecis = "false";
         }, 250);
       });
+
+      telefonOnYukle();
 
       var oynat = video.play();
       if (oynat && oynat.then) {

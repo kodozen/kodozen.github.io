@@ -949,3 +949,9 @@ html[data-lang="en"] body [lang="tr"] { display: none; }
   .vitrin__mobil,
   .is__gorsel .cerceve--mobil { max-width: 13rem; }
 }
+
+/* Giriş vitrininde telefon karesi, masaüstü videosuyla aynı anda
+   değişiyor. Sert geçiş sıçrama gibi duruyordu; kısa bir solma
+   ikisini aynı hareketin parçası gibi gösteriyor. */
+.vitrin__mobil img { transition: opacity 0.28s var(--yay); }
+.vitrin__mobil[data-degisiyor="true"] img { opacity: 0; }
