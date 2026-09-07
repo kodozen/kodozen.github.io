@@ -955,3 +955,159 @@ html[data-lang="en"] body [lang="tr"] { display: none; }
    ikisini aynı hareketin parçası gibi gösteriyor. */
 .vitrin__mobil img { transition: opacity 0.28s var(--yay); }
 .vitrin__mobil[data-degisiyor="true"] img { opacity: 0; }
+
+/* ------------------------------------------------------------
+   nefes alan degrade
+   ------------------------------------------------------------
+   İki renk katmanı, birbirinden kaymış ve düzensiz aralıklı
+   opaklık eğrileriyle üst üste soluyor. Düzensizlik önemli:
+   eşit aralıklı bir eğri nabız gibi atıyor, göze makine gibi
+   geliyor. Süreler de farklı (19s / 23s) — böylece ikisi
+   hiçbir zaman aynı ana geri dönmüyor.
+
+   Kaynakta bunun için iki webp dosyası yükleniyordu; burada
+   aynı iş radial-gradient ile yapılıyor, tek bir dosya inmiyor.
+   ------------------------------------------------------------ */
+
+.nefes {
+  position: absolute; inset: 0; z-index: 0;
+  overflow: hidden; pointer-events: none;
+  border-radius: inherit;
+}
+.nefes i { position: absolute; inset: -25%; display: block; will-change: opacity, transform; }
+
+.nefes i:first-child {
+  background:
+    radial-gradient(38rem 26rem at 24% 26%, rgba(100, 122, 227, 0.26), transparent 62%),
+    radial-gradient(30rem 22rem at 78% 68%, rgba(18, 189, 203, 0.20), transparent 60%);
+  animation: nefes-bir 19s ease-in-out infinite;
+}
+.nefes i:last-child {
+  background:
+    radial-gradient(34rem 24rem at 72% 20%, rgba(52, 152, 214, 0.24), transparent 60%),
+    radial-gradient(40rem 28rem at 16% 78%, rgba(100, 122, 227, 0.18), transparent 64%);
+  animation: nefes-iki 23s ease-in-out infinite;
+}
+
+@keyframes nefes-bir {
+  0%   { opacity: 1;    transform: translate3d(0, 0, 0) scale(1); }
+  22%  { opacity: 0.55; transform: translate3d(2%, -1.5%, 0) scale(1.06); }
+  45%  { opacity: 0.24; transform: translate3d(-1%, 2%, 0) scale(1.02); }
+  68%  { opacity: 0.72; transform: translate3d(-2.5%, 0.5%, 0) scale(1.08); }
+  100% { opacity: 1;    transform: translate3d(0, 0, 0) scale(1); }
+}
+@keyframes nefes-iki {
+  0%   { opacity: 0.2;  transform: translate3d(0, 0, 0) scale(1.05); }
+  22%  { opacity: 0.8;  transform: translate3d(-2%, 1.5%, 0) scale(1); }
+  45%  { opacity: 1;    transform: translate3d(1.5%, -2%, 0) scale(1.07); }
+  68%  { opacity: 0.45; transform: translate3d(2%, 0, 0) scale(1.01); }
+  100% { opacity: 0.2;  transform: translate3d(0, 0, 0) scale(1.05); }
+}
+
+/* Katmanın bulunduğu bölümler: içerik üstte kalmalı. */
+#iletisim, .bant-blok { position: relative; overflow: hidden; }
+#iletisim > .kabuk, .bant-blok > .bant, .bant-blok > .bant__kart { position: relative; z-index: 1; }
+
+/* Katmanlara :first-child / :last-child ile animasyon verildi; burada
+   aynı özgüllüğü kullanmak şart. Yalnızca ".nefes i" yazmak yetmiyor —
+   0,1,1 kalıyor ve 0,2,0'lık kurala yeniliyor, animasyon duracağına
+   olduğu gibi devam ediyor. */
+@media (prefers-reduced-motion: reduce) {
+  .nefes i:first-child,
+  .nefes i:last-child { animation: none; }
+  .nefes i:last-child { opacity: 0.55; }
+}
+
+/* ------------------------------------------------------------
+   başlıkta kelime yükselmesi
+   ------------------------------------------------------------
+   Her kelime aşağıdan yükselip hedefini biraz aşıyor, sonra
+   yerine oturuyor. Aşma payı olmadan hareket asansör gibi
+   duruyor; %9'luk aşma ona ağırlık hissi veriyor.
+
+   overflow gizli olduğu için "ğ" ve "y" gibi alt uzantılar
+   kesiliyordu — alttaki padding onlara yer açıyor, negatif
+   margin de satır aralığını eski haline getiriyor.
+   ------------------------------------------------------------ */
+
+html.js .yuk {
+  display: inline-block; overflow: hidden; vertical-align: bottom;
+  padding-bottom: 0.16em; margin-bottom: -0.16em;
+}
+html.js .yuk > i {
+  display: inline-block; font-style: inherit;
+  animation: yuksel 0.85s var(--yay) both;
+  animation-delay: calc(var(--s, 0) * 65ms);
+}
+@keyframes yuksel {
+  0%   { opacity: 0; transform: translateY(115%); }
+  35%  { opacity: 1; }
+  58%  { transform: translateY(-9%); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+/* Başlıktaki degradeli kelimeler.
+   `background-clip: text` yalnızca kendi satır içi kutusundaki
+   yazıya işliyor; kelime kılıfı `inline-block` olduğu için ayrı
+   bir kutu sayılıyor ve kırpmanın dışında kalıyor. Sonuç: yazı
+   saydam, arkasında da degrade yok — "web sitesine" büsbütün
+   kayboluyordu. Degradeyi kelimenin kendisine vermek gerekiyor. */
+html.js .giris h1 em .yuk > i {
+  background: var(--gecis);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js .yuk > i { animation: none; }
+}
+
+/* ------------------------------------------------------------
+   düğmedeki ok
+   ------------------------------------------------------------
+   Aynı ok maskesi iki kez seriliyor: biri ortada durur, öteki
+   solda bekler. İmleç geldiğinde birincisi sağdan çıkar,
+   ikincisi soldan gelip yerine oturur. Tek bir sözde eleman
+   yetiyor, HTML'e hiçbir şey eklenmiyor.
+   ------------------------------------------------------------ */
+
+.dugme--dolu {
+  --ok: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E");
+}
+.dugme--dolu::after {
+  content: ""; flex: none;
+  width: 0.95em; height: 0.95em;
+  background: currentColor;
+  -webkit-mask-image: var(--ok), var(--ok);
+          mask-image: var(--ok), var(--ok);
+  -webkit-mask-size: 100% 100%, 100% 100%;
+          mask-size: 100% 100%, 100% 100%;
+  -webkit-mask-repeat: no-repeat, no-repeat;
+          mask-repeat: no-repeat, no-repeat;
+  -webkit-mask-position: 0 50%, -1.2em 50%;
+          mask-position: 0 50%, -1.2em 50%;
+  transition: -webkit-mask-position 0.45s var(--yay), mask-position 0.45s var(--yay);
+}
+.dugme--dolu:hover::after,
+.dugme--dolu:focus-visible::after {
+  -webkit-mask-position: 1.2em 50%, 0 50%;
+          mask-position: 1.2em 50%, 0 50%;
+}
+@media (prefers-reduced-motion: reduce) {
+  .dugme--dolu::after { transition: none; }
+}
+
+/* Şerit kaydırmaya da tepki veriyor: bölümden geçerken yazı
+   kendi hızının üstüne biraz daha kayıyor. Sürükleme grupların
+   üstünde duruyor — kayma animasyonu üst kutuda olduğu için
+   ikisi çakışmıyor, ek eleman da gerekmiyor. */
+.bant__grup { transform: translateX(var(--kaydir, 0)); }
+
+/* İki düğmenin hemen üstündeki satır. Ana paragraftan bir tık
+   küçük ve mavi: bir kenar notu gibi okunması gerekiyor, ikinci
+   bir vaat gibi değil. */
+.iletisim p.iletisim__ima {
+  font-size: var(--s-1);
+  color: var(--turkuaz);
+  margin-top: 0.7rem;
+  max-width: 46ch;
+}

@@ -54,6 +54,56 @@
   dilUygula(kayitliDil);
 
   /* ----------------------------------------------------------
+     başlıkta kelime yükselmesi
+     ------------------------------------------------------------
+     [data-yukselt] taşıyan başlığın her kelimesi ayrı bir kılıfa
+     giriyor; yükselme animasyonunu CSS yapıyor, burada yalnızca
+     kelimeler ayrılıp sıra numarası veriliyor.
+
+     Sayaç dil başına ayrı tutuluyor. Tek sayaçla İngilizce
+     kelimeler Türkçelerin ardından numaralanıyor, İngilizce
+     başlık üçte bir saniye geç başlıyordu — oysa ekranda hep
+     tek dil var, ikisi de sıfırdan başlamalı.
+
+     Bölme yalnızca metin düğümlerine dokunuyor; lang taşıyan
+     kutular yerinde kaldığı için dil değiştirme aynen çalışıyor.
+     Üstelik gizli kutuda animasyon işlemiyor: dil değişince
+     yeni başlık yükselerek geliyor.
+     ---------------------------------------------------------- */
+  function yukselt(kutu) {
+    if (!window.NodeFilter || !document.createTreeWalker) return;
+    var sayac = {};
+    var gezgin = document.createTreeWalker(kutu, NodeFilter.SHOW_TEXT, null);
+    var dugumler = [], d;
+    while ((d = gezgin.nextNode())) { if (d.nodeValue.trim()) dugumler.push(d); }
+
+    dugumler.forEach(function (metin) {
+      var ana = metin.parentNode.closest && metin.parentNode.closest("[lang]");
+      // <html lang> de eşleşiyor; kutunun dışına çıkan eşleşme sayılmıyor.
+      var anahtar = ana && kutu.contains(ana) ? ana.getAttribute("lang") : "-";
+      if (!(anahtar in sayac)) sayac[anahtar] = 0;
+
+      var yigin = document.createDocumentFragment();
+      metin.nodeValue.split(/(\s+)/).forEach(function (parca) {
+        if (!parca) return;
+        if (!parca.trim()) { yigin.appendChild(document.createTextNode(parca)); return; }
+        var kilif = document.createElement("span");
+        kilif.className = "yuk";
+        var ic = document.createElement("i");
+        ic.textContent = parca;
+        ic.style.setProperty("--s", sayac[anahtar]++);
+        kilif.appendChild(ic);
+        yigin.appendChild(kilif);
+      });
+      metin.parentNode.replaceChild(yigin, metin);
+    });
+  }
+
+  if (!sakin.matches) {
+    document.querySelectorAll("[data-yukselt]").forEach(yukselt);
+  }
+
+  /* ----------------------------------------------------------
      üst barın kaydırma durumu
      ---------------------------------------------------------- */
   var ustbar = document.getElementById("ustbar");
@@ -161,6 +211,7 @@
     if (sakin.matches) return;
 
     var yerlesim = document.querySelector(".vitrin__yerlesim");
+    var serit = document.querySelector(".bant");
     var kartlar = [].slice.call(document.querySelectorAll(".is"));
     var genis = window.matchMedia("(min-width: 1000px) and (min-height: 660px)");
 
@@ -199,6 +250,18 @@
 
       /* 3 — kadran (aşağıda tanımlı; işlev bildirimi yukarı taşınır) */
       kadranCiz();
+
+      /* 4 — şerit sürüklenmesi
+         Şerit kendi hızıyla zaten kayıyor; buradaki pay kaydırmaya
+         bağlı. Bölüm ekranın altından girip üstünden çıkana kadar
+         yazı 9rem yol alıyor, yani sayfa dururken hareket de
+         duruyor. Sürükleme gruplara veriliyor: kayma animasyonu
+         üst kutuda, ikisi aynı transform'a yazsa çakışırlardı. */
+      if (serit) {
+        var b = serit.getBoundingClientRect();
+        var gecis = kelepce((ekran - b.top) / (ekran + b.height));
+        serit.style.setProperty("--kaydir", ((gecis - 0.5) * -9).toFixed(2) + "rem");
+      }
     }
 
     function istek() {
