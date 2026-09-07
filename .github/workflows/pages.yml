@@ -1,0 +1,53 @@
+# Siteyi GitHub Pages'e yayınlar.
+#
+# Çok dilli sayfalar depoda durmaz; her push'ta tools/build-i18n.py tarafından
+# sözlüklerden üretilir. Depo önce _site/ içine kopyalanır, üretim orada
+# yapılır — böylece kaynak ağaç temiz kalır.
+#
+# ÖNEMLİ: Bu akışın devreye girmesi için depo ayarlarında
+# Settings → Pages → Build and deployment → Source = "GitHub Actions"
+# seçilmelidir. Aksi hâlde Pages, dalı doğrudan yayınlamayı sürdürür ve
+# üretilen /en/ sayfaları yayına çıkmaz.
+
+name: Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Çeviri sayfalarını üret
+        run: |
+          mkdir -p _site
+          rsync -a --exclude '.git' --exclude '_site' ./ _site/
+          python3 tools/build-i18n.py _site
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr" data-lang="tr">
+<html lang="tr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,8 +15,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=Karla:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=3">
-<script>document.documentElement.classList.add("js");</script>
+<link rel="stylesheet" href="styles.css?v=4">
+<script src="i18n/i18n.js?v=4"></script>
 
 <script type="application/ld+json">
 {
@@ -38,19 +38,16 @@
 </head>
 
 <body>
-<a class="skip" href="#ana"><span lang="tr">İçeriğe geç</span><span lang="en">Skip to content</span></a>
+<a class="skip" href="#ana"><span data-i18n="icerige-gec">İçeriğe geç</span></a>
 
 <header class="ust-bar" id="ustbar">
   <a class="marka" href="#ana"><span class="marka__ilk">KEMER </span><b>LOKAL</b></a>
   <nav class="gezinti" aria-label="Ana">
-    <a class="gizlenir" href="#salon"><span lang="tr">Salon</span><span lang="en">The room</span></a>
-    <a class="gizlenir" href="#sofra"><span lang="tr">Sofra</span><span lang="en">The table</span></a>
-    <a class="gizlenir" href="#ziyaret"><span lang="tr">Ziyaret</span><span lang="en">Visit</span></a>
-    <div class="dil" role="group" aria-label="Dil / Language">
-      <button type="button" data-dil="tr" aria-pressed="true">TR</button>
-      <button type="button" data-dil="en" aria-pressed="false">EN</button>
-    </div>
-    <a class="dugme" href="#ayirt"><span lang="tr">Masa ayırt</span><span lang="en">Book a table</span></a>
+    <a class="gizlenir" href="#salon"><span data-i18n="salon">Salon</span></a>
+    <a class="gizlenir" href="#sofra"><span data-i18n="sofra">Sofra</span></a>
+    <a class="gizlenir" href="#ziyaret"><span data-i18n="ziyaret">Ziyaret</span></a>
+    <div class="dil" role="group" aria-label="Dil / Language" data-i18n-switch></div>
+    <a class="dugme" href="#ayirt"><span data-i18n="masa-ayirt">Masa ayırt</span></a>
   </nav>
 </header>
 
@@ -83,8 +80,8 @@
       <h1 class="giris__ad">KEMER<em>Lokal</em></h1>
       <p class="giris__yer">Lokal · İzmir</p>
       <div class="giris__eylem">
-        <a class="dugme" href="#ayirt"><span lang="tr">Masa ayırt</span><span lang="en">Book a table</span></a>
-        <a class="dugme dugme--bos" href="#sofra"><span lang="tr">Sofrayı gör</span><span lang="en">See the table</span></a>
+        <a class="dugme" href="#ayirt"><span data-i18n="masa-ayirt">Masa ayırt</span></a>
+        <a class="dugme dugme--bos" href="#sofra"><span data-i18n="sofrayi-gor">Sofrayı gör</span></a>
       </div>
     </div>
 
@@ -111,18 +108,15 @@
           alt="Şöminenin üstündeki ayna, kiremit rengi duvar ve Lokal tabelası."></picture>
       </div>
       <div class="okuma belir">
-        <span class="ust"><span lang="tr">Salon</span><span lang="en">The room</span></span>
+        <span class="ust"><span data-i18n="salon">Salon</span></span>
         <h2 style="font-size:var(--s-3)">
-          <span lang="tr">Böyle salonlar artık az kaldı.</span>
-          <span lang="en">There are not many rooms like this left.</span>
+          <span data-i18n="boyle-salonlar-artik-az-kaldi">Böyle salonlar artık az kaldı.</span>
         </h2>
         <p style="margin-top:1.4rem">
-          <span lang="tr">Kiremit rengi duvarlar, tavanda kristal avize, kemerli geçitler ve ağır perdeler. Masalar beyaz keten örtülü, tabaklar mavi desenli. Sofra bu salonun ölçüsünde kurulur — aceleye gelmez.</span>
-          <span lang="en">Terracotta walls, a crystal chandelier, arched openings and heavy curtains. White linen on the tables, blue-patterned china on the linen. The table is set to the measure of the room, and the room is in no hurry.</span>
+          <span data-i18n="kiremit-rengi-duvarlar-tavanda-kristal">Kiremit rengi duvarlar, tavanda kristal avize, kemerli geçitler ve ağır perdeler. Masalar beyaz keten örtülü, tabaklar mavi desenli. Sofra bu salonun ölçüsünde kurulur — aceleye gelmez.</span>
         </p>
         <p>
-          <span lang="tr">Alsancak'ın arka sokaklarında, eski bir konağın zemin katında.</span>
-          <span lang="en">On Alsancak, inside the ground floor of an old townhouse.</span>
+          <span data-i18n="alsancak-in-arka-sokaklarinda-eski-bir">Alsancak'ın arka sokaklarında, eski bir konağın zemin katında.</span>
         </p>
       </div>
     </div>
@@ -134,14 +128,12 @@
   <section class="serit">
     <div class="kabuk">
       <div class="okuma belir">
-        <span class="ust"><span lang="tr">Sofranın sırası</span><span lang="en">How the table runs</span></span>
+        <span class="ust"><span data-i18n="sofranin-sirasi">Sofranın sırası</span></span>
         <h2 style="font-size:var(--s-3)">
-          <span lang="tr">Dört perdelik bir akşam</span>
-          <span lang="en">An evening in four acts</span>
+          <span data-i18n="dort-perdelik-bir-aksam">Dört perdelik bir akşam</span>
         </h2>
         <p style="margin-top:1.4rem">
-          <span lang="tr">Tabaklar ortaya gelir, sıra bozulmaz. Masa ne kadar kalabalıksa sofra o kadar uzar.</span>
-          <span lang="en">Plates land in the middle and the order holds. The bigger the table, the longer the evening.</span>
+          <span data-i18n="tabaklar-ortaya-gelir-sira-bozulmaz-masa-ne">Tabaklar ortaya gelir, sıra bozulmaz. Masa ne kadar kalabalıksa sofra o kadar uzar.</span>
         </p>
       </div>
 
@@ -149,33 +141,29 @@
         <li class="belir">
           <span class="saat">01</span>
           <div>
-            <h3><span lang="tr">Mezeler</span><span lang="en">Mezes</span></h3>
-            <p><span lang="tr">Mavi desenli tabaklarda, masanın ortasına yayılır.</span>
-               <span lang="en">On blue-patterned china, spread across the middle of the table.</span></p>
+            <h3><span data-i18n="mezeler">Mezeler</span></h3>
+            <p><span data-i18n="mavi-desenli-tabaklarda-masanin-ortasina">Mavi desenli tabaklarda, masanın ortasına yayılır.</span></p>
           </div>
         </li>
         <li class="belir">
           <span class="saat">02</span>
           <div>
-            <h3><span lang="tr">Ara sıcaklar</span><span lang="en">Hot plates</span></h3>
-            <p><span lang="tr">Mutfaktan sıcak sıcak gelir; rakı bu sırada devreye girer.</span>
-               <span lang="en">Straight from the kitchen, still steaming — this is where the rakı starts.</span></p>
+            <h3><span data-i18n="ara-sicaklar">Ara sıcaklar</span></h3>
+            <p><span data-i18n="mutfaktan-sicak-sicak-gelir-raki-bu-sirada">Mutfaktan sıcak sıcak gelir; rakı bu sırada devreye girer.</span></p>
           </div>
         </li>
         <li class="belir">
           <span class="saat">03</span>
           <div>
-            <h3><span lang="tr">Ana yemek</span><span lang="en">The main</span></h3>
-            <p><span lang="tr">Ağır ateşte pişmiş et, tencerede geldiği gibi paylaşılır.</span>
-               <span lang="en">Slow-cooked meat, shared straight from the pot it came in.</span></p>
+            <h3><span data-i18n="ana-yemek">Ana yemek</span></h3>
+            <p><span data-i18n="agir-ateste-pismis-et-tencerede-geldigi">Ağır ateşte pişmiş et, tencerede geldiği gibi paylaşılır.</span></p>
           </div>
         </li>
         <li class="belir">
           <span class="saat">04</span>
           <div>
-            <h3><span lang="tr">Tatlı</span><span lang="en">Dessert</span></h3>
-            <p><span lang="tr">Sofra dağılmadan, kahveyle birlikte.</span>
-               <span lang="en">Before the table breaks up, with coffee alongside.</span></p>
+            <h3><span data-i18n="tatli">Tatlı</span></h3>
+            <p><span data-i18n="sofra-dagilmadan-kahveyle-birlikte">Sofra dağılmadan, kahveyle birlikte.</span></p>
           </div>
         </li>
       </ol>
@@ -186,10 +174,9 @@
   <section class="serit serit--koyu" id="sofra">
     <div class="kabuk">
       <div class="okuma belir">
-        <span class="ust"><span lang="tr">Sofra</span><span lang="en">The spread</span></span>
+        <span class="ust"><span data-i18n="sofra-2">Sofra</span></span>
         <h2 style="font-size:var(--s-3)">
-          <span lang="tr">Masanın ortası boş kalmaz</span>
-          <span lang="en">The middle of the table never empties</span>
+          <span data-i18n="masanin-ortasi-bos-kalmaz">Masanın ortası boş kalmaz</span>
         </h2>
       </div>
 
@@ -211,14 +198,12 @@
           alt="Mutfakta bir tabağı elle bitiren aşçı."></picture>
       </div>
       <div class="okuma belir">
-        <span class="ust"><span lang="tr">Mutfak</span><span lang="en">The kitchen</span></span>
+        <span class="ust"><span data-i18n="mutfak">Mutfak</span></span>
         <h2 style="font-size:var(--s-3)">
-          <span lang="tr">Tabak elle bitiyor</span>
-          <span lang="en">The plate is finished by hand</span>
+          <span data-i18n="tabak-elle-bitiyor">Tabak elle bitiyor</span>
         </h2>
         <p style="margin-top:1.4rem">
-          <span lang="tr">Sonuncu dokunuş mutfakta, tabak salona çıkmadan yapılıyor. Bu ölçekte bir yerde her tabağı aynı elin bitirmesi mümkün — ve burada öyle oluyor.</span>
-          <span lang="en">The last touch happens in the kitchen, before the plate leaves for the room. At this size, one pair of hands can finish every plate — and here they do.</span>
+          <span data-i18n="sonuncu-dokunus-mutfakta-tabak-salona">Sonuncu dokunuş mutfakta, tabak salona çıkmadan yapılıyor. Bu ölçekte bir yerde her tabağı aynı elin bitirmesi mümkün — ve burada öyle oluyor.</span>
         </p>
       </div>
     </div>
@@ -229,19 +214,17 @@
     <div class="kabuk">
       <div class="belir" style="display:flex;flex-wrap:wrap;gap:1.6rem 3rem;align-items:flex-end;justify-content:space-between">
         <div class="okuma" style="flex:1 1 22rem">
-          <span class="ust"><span lang="tr">Misafirler</span><span lang="en">Guests</span></span>
+          <span class="ust"><span data-i18n="misafirler">Misafirler</span></span>
           <h2 style="font-size:var(--s-3)">
-            <span lang="tr">Gelenler bir daha geliyor</span>
-            <span lang="en">People come back</span>
+            <span data-i18n="gelenler-bir-daha-geliyor">Gelenler bir daha geliyor</span>
           </h2>
           <p style="margin-top:1.3rem">
-            <span lang="tr">Google'daki değerlendirmelerin ortalaması beşe çok yakın. Bu ölçekte bir yer için alışılmış bir puan değil.</span>
-            <span lang="en">The Google average sits very close to five — unusual for a room this size.</span>
+            <span data-i18n="google-daki-degerlendirmelerin-ortalamasi">Google'daki değerlendirmelerin ortalaması beşe çok yakın. Bu ölçekte bir yer için alışılmış bir puan değil.</span>
           </p>
         </div>
         <p class="puan">
           <span class="puan__sayi">4,9</span>
-          <span class="puan__alt"><span lang="tr">56 Google değerlendirmesi</span><span lang="en">56 Google reviews</span></span>
+          <span class="puan__alt"><span data-i18n="56-google-degerlendirmesi">56 Google değerlendirmesi</span></span>
         </p>
       </div>
     </div>
@@ -251,69 +234,66 @@
   <section class="serit serit--koyu" id="ziyaret">
     <div class="kabuk ziyaret">
       <div class="belir">
-        <span class="ust"><span lang="tr">Ziyaret</span><span lang="en">Visit</span></span>
+        <span class="ust"><span data-i18n="ziyaret">Ziyaret</span></span>
         <h2 style="font-size:var(--s-3);margin-bottom:2.2rem">
-          <span lang="tr">Alsancak, İzmir</span>
-          <span lang="en">Alsancak, İzmir</span>
+          <span data-i18n="alsancak-izmir">Alsancak, İzmir</span>
         </h2>
 
         <ul class="bilgiler">
           <li>
-            <span class="k"><span lang="tr">Adres</span><span lang="en">Address</span></span>
+            <span class="k"><span data-i18n="adres">Adres</span></span>
             <span class="d">
               Alsancak, İzmir
               
             </span>
           </li>
           <li>
-            <span class="k"><span lang="tr">Saatler</span><span lang="en">Hours</span></span>
+            <span class="k"><span data-i18n="saatler">Saatler</span></span>
             <!-- NOT: Google yalnızca 16:00 açılışını veriyor; kapanış saati teyit edilmeli. -->
             <span class="d">
-              <span lang="tr">16:00'dan itibaren</span><span lang="en">From 16:00</span>
-              <small><span lang="tr">Akşam yemeği servisi</span><span lang="en">Dinner service</span></small>
+              <span data-i18n="16-00-dan-itibaren">16:00'dan itibaren</span>
+              <small><span data-i18n="aksam-yemegi-servisi">Akşam yemeği servisi</span></small>
             </span>
           </li>
           <li>
-            <span class="k"><span lang="tr">Telefon</span><span lang="en">Phone</span></span>
+            <span class="k"><span data-i18n="telefon">Telefon</span></span>
             <span class="d"><a href="tel:+905426242468">0542 624 24 68</a></span>
           </li>
           <li>
             <span class="k">WhatsApp</span>
-            <span class="d"><a href="https://wa.me/905426242468" target="_blank" rel="noopener"><span lang="tr">Yazarak ayırtın</span><span lang="en">Message us</span></a></span>
+            <span class="d"><a href="https://wa.me/905426242468" target="_blank" rel="noopener"><span data-i18n="yazarak-ayirtin">Yazarak ayırtın</span></a></span>
           </li>
         </ul>
 
         <p style="font-size:var(--s--1)">
-          <span lang="tr">Kalabalık sofralar ve özel günler için önceden aramanızı öneririz.</span>
-          <span lang="en">For larger tables and special occasions, please call ahead.</span>
+          <span data-i18n="kalabalik-sofralar-ve-ozel-gunler-icin">Kalabalık sofralar ve özel günler için önceden aramanızı öneririz.</span>
         </p>
       </div>
 
       <div class="ayirt belir" id="ayirt">
-        <span class="ust"><span lang="tr">Masa ayırt</span><span lang="en">Book a table</span></span>
+        <span class="ust"><span data-i18n="masa-ayirt">Masa ayırt</span></span>
         <h2 style="font-size:var(--s-2);margin-bottom:1.6rem">
-          <span lang="tr">Talebinizi bize iletin</span>
-          <span lang="en">Send us your request</span>
+          <span data-i18n="talebinizi-bize-iletin">Talebinizi bize iletin</span>
         </h2>
 
         <form id="ayirt-form" novalidate>
           <div class="alan">
-            <label for="ad"><span lang="tr">Ad soyad</span><span lang="en">Full name</span></label>
+            <label for="ad"><span data-i18n="ad-soyad">Ad soyad</span></label>
             <input id="ad" name="ad" type="text" autocomplete="name" required>
           </div>
           <div class="alan-satir">
             <div class="alan">
-              <label for="tarih"><span lang="tr">Tarih</span><span lang="en">Date</span></label>
+              <label for="tarih"><span data-i18n="tarih">Tarih</span></label>
               <input id="tarih" name="tarih" type="date" required>
             </div>
             <div class="alan">
-              <label for="saat"><span lang="tr">Saat</span><span lang="en">Time</span></label>
+              <label for="saat"><span data-i18n="saat">Saat</span></label>
               <input id="saat" name="saat" type="time" value="19:30" step="900" required>
             </div>
           </div>
           <div class="alan-satir">
             <div class="alan">
-              <label for="kisi"><span lang="tr">Kişi sayısı</span><span lang="en">Guests</span></label>
+              <label for="kisi"><span data-i18n="kisi-sayisi">Kişi sayısı</span></label>
               <select id="kisi" name="kisi">
                 <option>2</option><option>3</option><option selected>4</option>
                 <option>5</option><option>6</option><option>8</option>
@@ -321,27 +301,26 @@
               </select>
             </div>
             <div class="alan">
-              <label for="tel"><span lang="tr">Telefonunuz</span><span lang="en">Your phone</span></label>
+              <label for="tel"><span data-i18n="telefonunuz">Telefonunuz</span></label>
               <input id="tel" name="tel" type="tel" autocomplete="tel" required>
             </div>
           </div>
           <div class="alan">
-            <label for="not"><span lang="tr">Eklemek istedikleriniz</span><span lang="en">Anything we should know</span></label>
+            <label for="not"><span data-i18n="eklemek-istedikleriniz">Eklemek istedikleriniz</span></label>
             <textarea id="not" name="not" rows="3"
-              data-yt-tr="Özel gün, kalabalık masa, oturma tercihi…"
-              data-yt-en="A special occasion, a big table, a seating preference…"></textarea>
+              placeholder="Özel gün, kalabalık masa, oturma tercihi…"
+              data-i18n-attr="placeholder:ph-not"></textarea>
           </div>
           <div class="ayirt__eylem">
             <button class="dugme" type="submit">
-              <span lang="tr">WhatsApp'tan gönder</span><span lang="en">Send via WhatsApp</span>
+              <span data-i18n="whatsapp-tan-gonder">WhatsApp'tan gönder</span>
             </button>
             <a class="dugme dugme--bos" href="tel:+905426242468">
-              <span lang="tr">Ara</span><span lang="en">Call</span>
+              <span data-i18n="ara">Ara</span>
             </a>
           </div>
           <p class="ayirt__alt">
-            <span lang="tr">Rezervasyonunuz, biz dönüş yapana kadar kesinleşmez.</span>
-            <span lang="en">A booking isn't confirmed until we reply.</span>
+            <span data-i18n="rezervasyonunuz-biz-donus-yapana-kadar">Rezervasyonunuz, biz dönüş yapana kadar kesinleşmez.</span>
           </p>
         </form>
       </div>
@@ -355,9 +334,9 @@
     <div class="altbilgi__satir">
       <a class="marka" href="#ana"><span class="marka__ilk">KEMER </span><b>LOKAL</b></a>
       <nav class="altbilgi__linkler" aria-label="Alt">
-        <a href="#salon"><span lang="tr">Salon</span><span lang="en">The room</span></a>
-        <a href="#sofra"><span lang="tr">Sofra</span><span lang="en">The table</span></a>
-        <a href="#ziyaret"><span lang="tr">Ziyaret</span><span lang="en">Visit</span></a>
+        <a href="#salon"><span data-i18n="salon">Salon</span></a>
+        <a href="#sofra"><span data-i18n="sofra">Sofra</span></a>
+        <a href="#ziyaret"><span data-i18n="ziyaret">Ziyaret</span></a>
         <a href="tel:+905426242468">0542 624 24 68</a>
       </nav>
     </div>
@@ -367,6 +346,6 @@
   </div>
 </footer>
 
-<script src="app.js?v=3"></script>
+<script src="app.js?v=4"></script>
 </body>
 </html>

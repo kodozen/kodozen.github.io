@@ -62,9 +62,11 @@ a { color: inherit; }
 .skip:focus { left: 0; }
 
 /* iki dil */
-body [lang="en"] { display: none; }
-html[data-lang="en"] body [lang="en"] { display: revert; }
-html[data-lang="en"] body [lang="tr"] { display: none; }
+/* Metinler artık data-i18n anahtarlarıyla JS tarafından yazılıyor.
+   Varsayılan dışında bir dil seçiliyken sözlük yüklenene kadar gövde
+   gizlenir; yoksa önce Türkçe görünüp sonra çevrilirdi. Açılış betiği
+   2 sn sonra bu özniteliği her hâlükârda kaldırır. */
+html[data-i18n-bekle] body { visibility: hidden; }
 
 /* ---------- tipografi ---------- */
 
@@ -155,13 +157,13 @@ p:last-child { margin-bottom: 0; }
 }
 
 .dil { display: inline-flex; border: 1px solid var(--ortu-faint); border-radius: 999px; overflow: hidden; }
-.dil button {
-  appearance: none; border: 0; background: transparent; color: var(--ortu-dim);
+.dil a {
+  appearance: none; border: 0; text-decoration: none; background: transparent; color: var(--ortu-dim);
   font: inherit; font-size: var(--s--1); letter-spacing: 0.1em;
   display: flex; align-items: center; min-height: 42px; padding: 0 0.75rem;
   line-height: 1; cursor: pointer; transition: background 0.25s var(--ease), color 0.25s var(--ease);
 }
-.dil button[aria-pressed="true"] { background: var(--pirinc); color: var(--gece); }
+.dil a[aria-current="true"] { background: var(--pirinc); color: var(--gece); }
 
 /* ---------- düğme ---------- */
 

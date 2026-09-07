@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr" data-lang="tr">
+<html lang="tr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,50 +9,45 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=Karla:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=5">
-<script>document.documentElement.classList.add("js");</script>
+<link rel="stylesheet" href="styles.css?v=6">
+<script src="i18n/i18n.js?v=6"></script>
 </head>
 
 <body data-sayfa="menu">
-<a class="skip" href="#ana"><span lang="tr">İçeriğe geç</span><span lang="en">Skip to content</span></a>
+<a class="skip" href="#ana"><span data-i18n="icerige-gec">İçeriğe geç</span></a>
 
 <header class="ust-bar" id="ustbar">
   <a class="marka" href="index.html"><span class="marka__ilk">ALSANCAK </span><b>SAKIZ</b></a>
   <nav class="gezinti" aria-label="Ana">
-    <a href="index.html"><span lang="tr">Ana sayfa</span><span lang="en">Home</span></a>
-    <a class="gizlenir" href="index.html#salon"><span lang="tr">Mekân</span><span lang="en">The room</span></a>
-    <a class="gizlenir" href="index.html#ziyaret"><span lang="tr">Ziyaret</span><span lang="en">Visit</span></a>
-    <div class="dil" role="group" aria-label="Dil / Language">
-      <button type="button" data-dil="tr" aria-pressed="true">TR</button>
-      <button type="button" data-dil="en" aria-pressed="false">EN</button>
-    </div>
-    <a class="dugme" href="index.html#ayirt"><span lang="tr">Masa ayırt</span><span lang="en">Book a table</span></a>
+    <a href="index.html"><span data-i18n="ana-sayfa">Ana sayfa</span></a>
+    <a class="gizlenir" href="index.html#salon"><span data-i18n="mekan">Mekân</span></a>
+    <a class="gizlenir" href="index.html#ziyaret"><span data-i18n="ziyaret">Ziyaret</span></a>
+    <div class="dil" role="group" aria-label="Dil / Language" data-i18n-switch></div>
+    <a class="dugme" href="index.html#ayirt"><span data-i18n="masa-ayirt">Masa ayırt</span></a>
   </nav>
 </header>
 
 <main id="ana">
   <div class="kabuk">
     <div class="menu-bas">
-      <span class="ust"><span lang="tr">Menü</span><span lang="en">Menu</span></span>
+      <span class="ust"><span data-i18n="menu">Menü</span></span>
       <h1>
-        <span lang="tr">Önce dolap,<br>sonra sofra</span>
-        <span lang="en">The counter first,<br>then the table</span>
+        <span data-i18n="once-dolap-sonra-sofra">Önce dolap,<br>sonra sofra</span>
       </h1>
       <p class="giris-metni">
-        <span lang="tr">Mezeler dolaptan seçilir ve gün gün değişir. Aşağıdaki liste sofranın omurgası; o akşam dolapta ne varsa servis ekibimiz size söyler.</span>
-        <span lang="en">The mezes are chosen from the counter and change daily. The list below is the backbone; the team will tell you what's behind the glass tonight.</span>
+        <span data-i18n="mezeler-dolaptan-secilir-ve-gun-gun-degisir">Mezeler dolaptan seçilir ve gün gün değişir. Aşağıdaki liste sofranın omurgası; o akşam dolapta ne varsa servis ekibimiz size söyler.</span>
       </p>
     </div>
   </div>
 
   <nav class="menu-gez" aria-label="Menü bölümleri">
     <ul>
-      <li><a href="#acilis"><span lang="tr">Açılış</span><span lang="en">To open</span></a></li>
-      <li><a href="#mezeler"><span lang="tr">Mezeler</span><span lang="en">Mezes</span></a></li>
-      <li><a href="#arasicak"><span lang="tr">Ara sıcaklar</span><span lang="en">Hot plates</span></a></li>
-      <li><a href="#izgara"><span lang="tr">Izgara</span><span lang="en">From the grill</span></a></li>
-      <li><a href="#fix"><span lang="tr">Fix menü</span><span lang="en">Set menu</span></a></li>
-      <li><a href="#icecek"><span lang="tr">İçecekler</span><span lang="en">Drinks</span></a></li>
+      <li><a href="#acilis"><span data-i18n="acilis">Açılış</span></a></li>
+      <li><a href="#mezeler"><span data-i18n="mezeler-2">Mezeler</span></a></li>
+      <li><a href="#arasicak"><span data-i18n="ara-sicaklar-2">Ara sıcaklar</span></a></li>
+      <li><a href="#izgara"><span data-i18n="izgara">Izgara</span></a></li>
+      <li><a href="#fix"><span data-i18n="fix-menu">Fix menü</span></a></li>
+      <li><a href="#icecek"><span data-i18n="icecekler">İçecekler</span></a></li>
     </ul>
   </nav>
 
@@ -61,8 +56,8 @@
     <section class="bolum" id="acilis">
       <div class="bolum__bas">
         <div class="bolum__yazi">
-          <h2><span lang="tr">Açılış</span><span lang="en">To open</span></h2>
-          <p class="bolum__giris"><span lang="tr">Siz oturur oturmaz gelir, istenmeden.</span><span lang="en">It arrives the moment you sit, unasked.</span></p>
+          <h2><span data-i18n="acilis">Açılış</span></h2>
+          <p class="bolum__giris"><span data-i18n="siz-oturur-oturmaz-gelir-istenmeden">Siz oturur oturmaz gelir, istenmeden.</span></p>
         </div>
         <div class="bolum__disk">
           <picture><source type="image/webp" srcset="img/ekmek-sq-sm.webp"><img src="img/ekmek-sq-sm.jpg" loading="lazy" alt="Sepette sıcak ekmek."></picture>
@@ -71,10 +66,10 @@
       <div class="yemekler">
         <article class="yemek">
           <h3 class="yemek__ad">
-            <span lang="tr">Zeytinyağlı Tabağı ve Ekmek</span><span lang="en">Sakız Oil Plate and Bread</span>
+            <span data-i18n="zeytinyagli-tabagi-ve-ekmek">Zeytinyağlı Tabağı ve Ekmek</span>
             <button class="bakis" type="button" data-bakis="ekmek" aria-label="Ekmek fotoğrafı"><picture><source type="image/webp" srcset="img/ekmek-sq-sm.webp"><img src="img/ekmek-sq-sm.jpg" alt="" loading="lazy" decoding="async"></picture></button>
           </h3>
-          <p class="yemek__not"><span lang="tr">Mevsimin zeytinyağlıları ve sıcak ekmek.</span><span lang="en">The season's sakiz-oil dishes with warm bread.</span></p>
+          <p class="yemek__not"><span data-i18n="mevsimin-zeytinyaglilari-ve-sicak-ekmek">Mevsimin zeytinyağlıları ve sıcak ekmek.</span></p>
         </article>
       </div>
     </section>
@@ -82,8 +77,8 @@
     <section class="bolum" id="mezeler">
       <div class="bolum__bas">
         <div class="bolum__yazi">
-          <h2><span lang="tr">Mezeler</span><span lang="en">Mezes</span></h2>
-          <p class="bolum__giris"><span lang="tr">Kapıdaki dolaptan gözle seçilir. İçerik mevsime göre değişir.</span><span lang="en">Chosen by eye from the counter by the door. Contents change with the season.</span></p>
+          <h2><span data-i18n="mezeler-2">Mezeler</span></h2>
+          <p class="bolum__giris"><span data-i18n="kapidaki-dolaptan-gozle-secilir-icerik">Kapıdaki dolaptan gözle seçilir. İçerik mevsime göre değişir.</span></p>
         </div>
         <div class="bolum__disk">
           <picture><source type="image/webp" srcset="img/mezeler-sq-sm.webp"><img src="img/mezeler-sq-sm.jpg" loading="lazy" alt="Meze tabakları."></picture>
@@ -92,17 +87,17 @@
       <div class="yemekler">
         <article class="yemek">
           <h3 class="yemek__ad">
-            <span lang="tr">Girit Mezesi</span><span lang="en">Girit Meze</span>
-            <span class="rozet rozet--bos"><span lang="tr">Çok sevilen</span><span lang="en">Loved</span></span>
+            <span data-i18n="girit-mezesi">Girit Mezesi</span>
+            <span class="rozet rozet--bos"><span data-i18n="cok-sevilen">Çok sevilen</span></span>
           </h3>
-          <p class="yemek__not"><span lang="tr">Misafirlerin en çok andığı meze.</span><span lang="en">The meze guests mention most.</span></p>
+          <p class="yemek__not"><span data-i18n="misafirlerin-en-cok-andigi-meze">Misafirlerin en çok andığı meze.</span></p>
         </article>
         <article class="yemek">
           <h3 class="yemek__ad">
-            <span lang="tr">Meze Tabağı</span><span lang="en">Meze Selection</span>
+            <span data-i18n="meze-tabagi">Meze Tabağı</span>
             <button class="bakis" type="button" data-bakis="mezeler" aria-label="Meze tabağı fotoğrafı"><picture><source type="image/webp" srcset="img/mezeler-sq-sm.webp"><img src="img/mezeler-sq-sm.jpg" alt="" loading="lazy" decoding="async"></picture></button>
           </h3>
-          <p class="yemek__not"><span lang="tr">Masadaki kişi sayısına göre kurulur.</span><span lang="en">Built to the size of the table.</span></p>
+          <p class="yemek__not"><span data-i18n="masadaki-kisi-sayisina-gore-kurulur">Masadaki kişi sayısına göre kurulur.</span></p>
         </article>
       </div>
     </section>
@@ -110,8 +105,8 @@
     <section class="bolum" id="arasicak">
       <div class="bolum__bas">
         <div class="bolum__yazi">
-          <h2><span lang="tr">Ara Sıcaklar</span><span lang="en">Hot Plates</span></h2>
-          <p class="bolum__giris"><span lang="tr">Rakı bu bölümde devreye girer.</span><span lang="en">This is where the rakı starts.</span></p>
+          <h2><span data-i18n="ara-sicaklar-3">Ara Sıcaklar</span></h2>
+          <p class="bolum__giris"><span data-i18n="raki-bu-bolumde-devreye-girer">Rakı bu bölümde devreye girer.</span></p>
         </div>
         <div class="bolum__disk">
           <picture><source type="image/webp" srcset="img/tulum-sq-sm.webp"><img src="img/tulum-sq-sm.jpg" loading="lazy" alt="Susamlı çıtır tulum peyniri."></picture>
@@ -120,22 +115,22 @@
       <div class="yemekler">
         <article class="yemek">
           <h3 class="yemek__ad">
-            <span lang="tr">Susamlı Çıtır Tulum Peyniri</span><span lang="en">Sesame-Crusted Tulum Cheese</span>
-            <span class="rozet rozet--bos"><span lang="tr">Çok sevilen</span><span lang="en">Loved</span></span>
+            <span data-i18n="susamli-citir-tulum-peyniri">Susamlı Çıtır Tulum Peyniri</span>
+            <span class="rozet rozet--bos"><span data-i18n="cok-sevilen">Çok sevilen</span></span>
             <button class="bakis" type="button" data-bakis="tulum" aria-label="Susamlı çıtır tulum peyniri fotoğrafı"><picture><source type="image/webp" srcset="img/tulum-sq-sm.webp"><img src="img/tulum-sq-sm.jpg" alt="" loading="lazy" decoding="async"></picture></button>
           </h3>
-          <p class="yemek__not"><span lang="tr">Susama bulanıp kızartılır, yanında iki sosla gelir.</span><span lang="en">Rolled in sesame and fried, served with two dips.</span></p>
+          <p class="yemek__not"><span data-i18n="susama-bulanip-kizartilir-yaninda-iki-sosla">Susama bulanıp kızartılır, yanında iki sosla gelir.</span></p>
         </article>
         <article class="yemek">
           <h3 class="yemek__ad">
-            <span lang="tr">Kalamar</span><span lang="en">Calamari</span>
+            <span data-i18n="kalamar">Kalamar</span>
             <button class="bakis" type="button" data-bakis="kalamar" aria-label="Kalamar fotoğrafı"><picture><source type="image/webp" srcset="img/kalamar-sq-sm.webp"><img src="img/kalamar-sq-sm.jpg" alt="" loading="lazy" decoding="async"></picture></button>
           </h3>
-          <p class="yemek__not"><span lang="tr">Limon ve yeşillikle.</span><span lang="en">With lemon and greens.</span></p>
+          <p class="yemek__not"><span data-i18n="limon-ve-yesillikle">Limon ve yeşillikle.</span></p>
         </article>
         <article class="yemek">
-          <h3 class="yemek__ad"><span lang="tr">Ciğer Tava</span><span lang="en">Pan-Fried Liver</span></h3>
-          <p class="yemek__not"><span lang="tr">Sarımsak taneleriyle.</span><span lang="en">With whole cloves of garlic.</span></p>
+          <h3 class="yemek__ad"><span data-i18n="ciger-tava">Ciğer Tava</span></h3>
+          <p class="yemek__not"><span data-i18n="sarimsak-taneleriyle">Sarımsak taneleriyle.</span></p>
         </article>
       </div>
     </section>
@@ -143,8 +138,8 @@
     <section class="bolum" id="izgara">
       <div class="bolum__bas">
         <div class="bolum__yazi">
-          <h2><span lang="tr">Izgara</span><span lang="en">From the Grill</span></h2>
-          <p class="bolum__giris"><span lang="tr">Gecenin geç saatinde, sofra kurulduktan sonra.</span><span lang="en">Late in the night, once the table is set.</span></p>
+          <h2><span data-i18n="izgara-2">Izgara</span></h2>
+          <p class="bolum__giris"><span data-i18n="gecenin-gec-saatinde-sofra-kurulduktan-sonra">Gecenin geç saatinde, sofra kurulduktan sonra.</span></p>
         </div>
         <div class="bolum__disk">
           <picture><source type="image/webp" srcset="img/izgara-sq-sm.webp"><img src="img/izgara-sq-sm.jpg" loading="lazy" alt="Izgara tabağı."></picture>
@@ -154,14 +149,14 @@
         <article class="yemek">
           <h3 class="yemek__ad">
             Adana
-            <span class="rozet"><span lang="tr">Popüler</span><span lang="en">Popular</span></span>
+            <span class="rozet"><span data-i18n="populer">Popüler</span></span>
             <button class="bakis" type="button" data-bakis="izgara" aria-label="Izgara fotoğrafı"><picture><source type="image/webp" srcset="img/izgara-sq-sm.webp"><img src="img/izgara-sq-sm.jpg" alt="" loading="lazy" decoding="async"></picture></button>
           </h3>
         </article>
         <article class="yemek">
           <h3 class="yemek__ad">
-            <span lang="tr">Uykuluk</span><span lang="en">Sweetbreads</span>
-            <span class="rozet"><span lang="tr">Popüler</span><span lang="en">Popular</span></span>
+            <span data-i18n="uykuluk">Uykuluk</span>
+            <span class="rozet"><span data-i18n="populer">Popüler</span></span>
           </h3>
         </article>
       </div>
@@ -170,8 +165,8 @@
     <section class="bolum" id="fix">
       <div class="bolum__bas">
         <div class="bolum__yazi">
-          <h2><span lang="tr">Fix Menü</span><span lang="en">Set Menu</span></h2>
-          <p class="bolum__giris"><span lang="tr">Kalabalık sofralar ve özel günler için. Açılıştan tatlıya kadar sıra bozulmaz.</span><span lang="en">For big tables and special nights — from the opening plate to dessert.</span></p>
+          <h2><span data-i18n="fix-menu-2">Fix Menü</span></h2>
+          <p class="bolum__giris"><span data-i18n="kalabalik-sofralar-ve-ozel-gunler-icin">Kalabalık sofralar ve özel günler için. Açılıştan tatlıya kadar sıra bozulmaz.</span></p>
         </div>
         <div class="bolum__disk">
           <picture><source type="image/webp" srcset="img/raki-sq-sm.webp"><img src="img/raki-sq-sm.jpg" loading="lazy" alt="Rakı sofrası."></picture>
@@ -179,8 +174,8 @@
       </div>
       <div class="yemekler">
         <article class="yemek">
-          <h3 class="yemek__ad"><span lang="tr">Fix Menü</span><span lang="en">Set Menu</span></h3>
-          <p class="yemek__not"><span lang="tr">Açılış, mezeler, ara sıcaklar, ana yemek ve tatlı. Kişi başı fiyat için lütfen bize yazın.</span><span lang="en">Opening plate, mezes, hot plates, a main and dessert. Please ask us for the per-person price.</span></p>
+          <h3 class="yemek__ad"><span data-i18n="fix-menu-2">Fix Menü</span></h3>
+          <p class="yemek__not"><span data-i18n="acilis-mezeler-ara-sicaklar-ana-yemek-ve">Açılış, mezeler, ara sıcaklar, ana yemek ve tatlı. Kişi başı fiyat için lütfen bize yazın.</span></p>
         </article>
       </div>
     </section>
@@ -188,25 +183,24 @@
     <section class="bolum" id="icecek">
       <div class="bolum__bas">
         <div class="bolum__yazi">
-          <h2><span lang="tr">İçecekler</span><span lang="en">Drinks</span></h2>
-          <p class="bolum__giris"><span lang="tr">Meyhanenin kendi düzeni: rakı, şarap ve yanında bol buz.</span><span lang="en">The meyhane's own order: rakı, wine and plenty of ice.</span></p>
+          <h2><span data-i18n="icecekler">İçecekler</span></h2>
+          <p class="bolum__giris"><span data-i18n="meyhanenin-kendi-duzeni-raki-sarap-ve">Meyhanenin kendi düzeni: rakı, şarap ve yanında bol buz.</span></p>
         </div>
       </div>
       <div class="yemekler">
-        <article class="yemek"><h3 class="yemek__ad"><span lang="tr">Rakı</span><span lang="en">Rakı</span></h3></article>
-        <article class="yemek"><h3 class="yemek__ad"><span lang="tr">Şarap</span><span lang="en">Wine</span></h3></article>
-        <article class="yemek"><h3 class="yemek__ad"><span lang="tr">Bira</span><span lang="en">Beer</span></h3></article>
-        <article class="yemek"><h3 class="yemek__ad"><span lang="tr">Alkolsüz</span><span lang="en">Soft drinks</span></h3></article>
+        <article class="yemek"><h3 class="yemek__ad"><span data-i18n="raki">Rakı</span></h3></article>
+        <article class="yemek"><h3 class="yemek__ad"><span data-i18n="sarap">Şarap</span></h3></article>
+        <article class="yemek"><h3 class="yemek__ad"><span data-i18n="bira">Bira</span></h3></article>
+        <article class="yemek"><h3 class="yemek__ad"><span data-i18n="alkolsuz">Alkolsüz</span></h3></article>
       </div>
     </section>
 
     <p class="menu-not">
-      <span lang="tr">Bu liste, restoranın Google kaydından ve misafir yorumlarından derlendi; tam menü ve fiyatlar restorandan alınıp yerleştirilecektir. Alerjiniz varsa siparişten önce bize söyleyin.</span>
-      <span lang="en">This list was compiled from the restaurant's Google listing and guest reviews; the full menu and prices will be supplied by the restaurant. Tell us about allergies before you order.</span>
+      <span data-i18n="bu-liste-restoranin-google-kaydindan-ve">Bu liste, restoranın Google kaydından ve misafir yorumlarından derlendi; tam menü ve fiyatlar restorandan alınıp yerleştirilecektir. Alerjiniz varsa siparişten önce bize söyleyin.</span>
     </p>
 
     <p style="padding-bottom:clamp(3rem,7vw,5rem)">
-      <a class="dugme" href="index.html#ayirt"><span lang="tr">Masa ayırt</span><span lang="en">Book a table</span></a>
+      <a class="dugme" href="index.html#ayirt"><span data-i18n="masa-ayirt">Masa ayırt</span></a>
     </p>
   </div>
 </main>
@@ -216,9 +210,9 @@
     <div class="altbilgi__satir">
       <a class="marka" href="index.html"><span class="marka__ilk">ALSANCAK </span><b>SAKIZ</b></a>
       <nav class="altbilgi__linkler" aria-label="Alt">
-        <a href="index.html"><span lang="tr">Ana sayfa</span><span lang="en">Home</span></a>
-        <a href="index.html#salon"><span lang="tr">Mekân</span><span lang="en">The room</span></a>
-        <a href="index.html#ziyaret"><span lang="tr">Ziyaret</span><span lang="en">Visit</span></a>
+        <a href="index.html"><span data-i18n="ana-sayfa">Ana sayfa</span></a>
+        <a href="index.html#salon"><span data-i18n="mekan">Mekân</span></a>
+        <a href="index.html#ziyaret"><span data-i18n="ziyaret">Ziyaret</span></a>
       </nav>
     </div>
     <p class="altbilgi__ince">© <span id="yil">2026</span> Sakız Meyhane · Alsancak, Alsancak, İzmir, Konak / İzmir</p>
@@ -240,6 +234,6 @@
   </div>
 </div>
 
-<script src="app.js?v=5"></script>
+<script src="app.js?v=6"></script>
 </body>
 </html>

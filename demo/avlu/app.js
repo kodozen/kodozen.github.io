@@ -1,44 +1,20 @@
 /* Avlu — sayfa davranışları
-   Dil, başlık çubuğu, kaydırmada beliriş ve rezervasyon talebi. */
+   Başlık çubuğu, kaydırmada beliriş ve rezervasyon talebi. */
 
 (function () {
   "use strict";
 
+  /* Üretilen çeviri sayfaları bir alt klasörde durur;
+     JS içinde kurulan görsel yolları bu önekle çözülür. */
+  var KOK = window.KOK || "";
+
   var root = document.documentElement;
 
-  /* ---------- dil ---------- */
+  /* ---------- dil ----------
+     Sözlükler ve dil listesi i18n/ klasöründe; kurulum <head> içinde
+     i18n/i18n.js ile yapılıyor. Burada yalnızca uygulama tetikleniyor. */
 
-  var STRINGS = {
-    tr: { title: "Avlu · Alsancak, İzmir", menuTitle: "Menü · Avlu" },
-    en: { title: "Avlu · Alsancak, İzmir", menuTitle: "Menu · Avlu" }
-  };
-
-  function applyLang(lang) {
-    root.setAttribute("data-lang", lang);
-    root.setAttribute("lang", lang);
-
-    document.querySelectorAll("[data-set-lang]").forEach(function (b) {
-      b.setAttribute("aria-pressed", String(b.dataset.setLang === lang));
-    });
-
-    // yer tutucular öznitelikte durur, dil değişince güncellenir
-    document.querySelectorAll("[data-ph-tr]").forEach(function (el) {
-      el.setAttribute("placeholder", el.dataset["ph" + (lang === "en" ? "En" : "Tr")] || "");
-    });
-
-    var isMenu = document.body.dataset.page === "menu";
-    document.title = STRINGS[lang][isMenu ? "menuTitle" : "title"];
-
-    try { localStorage.setItem("bg-lang", lang); } catch (e) { /* gizli sekme */ }
-  }
-
-  document.querySelectorAll("[data-set-lang]").forEach(function (b) {
-    b.addEventListener("click", function () { applyLang(b.dataset.setLang); });
-  });
-
-  var saved;
-  try { saved = localStorage.getItem("bg-lang"); } catch (e) { saved = null; }
-  applyLang(saved === "en" || saved === "tr" ? saved : "tr");
+  if (window.I18N) window.I18N.baslat();
 
   /* ---------- giriş görselleri ---------- */
 
@@ -239,18 +215,10 @@
       var clean = name.cloneNode(true);
       clean.querySelectorAll(".dish__peek, .tag").forEach(function (n) { n.remove(); });
 
-      // alt metin için yalnızca o an görünen dil; iki dil birleşince
-      // "Kuzu Boyun TandırSlow-fired Lamb Neck" gibi okunuyordu
-      var solo = clean.cloneNode(true);
-      var lang = root.getAttribute("data-lang");
-      solo.querySelectorAll("[lang]").forEach(function (n) {
-        if (n.getAttribute("lang") !== lang) n.remove();
-      });
-
-      vWebp.srcset = "img/" + img + ".webp";
-      vImg.src = "img/" + img + ".jpg";
-      vImg.alt = solo.textContent.replace(/\s+/g, " ").trim();
-      vName.innerHTML = clean.innerHTML;      // iki dil de kalır, CSS seçer
+      vWebp.srcset = KOK + "img/" + img + ".webp";
+      vImg.src = KOK + "img/" + img + ".jpg";
+      vImg.alt = clean.textContent.replace(/\s+/g, " ").trim();
+      vName.innerHTML = clean.innerHTML;
       vNote.innerHTML = note ? note.innerHTML : "";
       vNote.hidden = !note;
       vPrice.textContent = price ? price.textContent.trim() : "";
@@ -306,7 +274,7 @@
       if (!form.reportValidity()) return;
 
       var d = new FormData(form);
-      var lang = root.getAttribute("data-lang");
+      var t = window.I18N ? window.I18N.t : function (k, v) { return v; };
 
       var tarih = d.get("tarih") || "";
       if (tarih) {
@@ -314,22 +282,16 @@
         tarih = p[2] + "." + p[1] + "." + p[0];
       }
 
-      var lines = lang === "en"
-        ? ["Reservation request — Avlu", "",
-           "Name: " + d.get("ad"),
-           "Date: " + tarih,
-           "Time: " + d.get("saat"),
-           "Guests: " + d.get("kisi"),
-           "Phone: " + d.get("tel")]
-        : ["Rezervasyon talebi — Avlu", "",
-           "Ad soyad: " + d.get("ad"),
-           "Tarih: " + tarih,
-           "Saat: " + d.get("saat"),
-           "Kişi: " + d.get("kisi"),
-           "Telefon: " + d.get("tel")];
+      /* Etiketler sözlükten gelir; yeni dil eklenince bu blok değişmez. */
+      var lines = [t("mail-baslik", "Rezervasyon talebi — Avlu"), "",
+        t("mail-ad", "Ad soyad") + ": " + d.get("ad"),
+        t("mail-tarih", "Tarih") + ": " + tarih,
+        t("mail-saat", "Saat") + ": " + d.get("saat"),
+        t("mail-kisi", "Kişi") + ": " + d.get("kisi"),
+        t("mail-tel", "Telefon") + ": " + d.get("tel")];
 
       var note = (d.get("not") || "").trim();
-      if (note) lines.push((lang === "en" ? "Note: " : "Not: ") + note);
+      if (note) lines.push(t("mail-not", "Not") + ": " + note);
 
       if (ENDPOINT) {
         fetch(ENDPOINT, {

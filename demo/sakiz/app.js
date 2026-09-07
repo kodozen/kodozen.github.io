@@ -3,35 +3,17 @@
 (function () {
   "use strict";
 
+  /* Üretilen çeviri sayfaları bir alt klasörde durur;
+     JS içinde kurulan görsel yolları bu önekle çözülür. */
+  var KOK = window.KOK || "";
+
   var kok = document.documentElement;
 
-  /* ---------- dil ---------- */
+  /* ---------- dil ----------
+     Sözlükler ve dil listesi i18n/ klasöründe; kurulum <head> içinde
+     i18n/i18n.js ile yapılıyor. Burada yalnızca uygulama tetikleniyor. */
 
-  var BASLIK = {
-    tr: { ana: "Sakız Meyhane · İzmir", menu: "Menü · Sakız" },
-    en: { ana: "Sakız Meyhane · İzmir", menu: "Menu · Sakız" }
-  };
-
-  function dilUygula(d) {
-    kok.setAttribute("data-lang", d);
-    kok.setAttribute("lang", d);
-    document.querySelectorAll("[data-dil]").forEach(function (b) {
-      b.setAttribute("aria-pressed", String(b.dataset.dil === d));
-    });
-    document.querySelectorAll("[data-yt-tr]").forEach(function (el) {
-      el.setAttribute("placeholder", el.dataset["yt" + (d === "en" ? "En" : "Tr")] || "");
-    });
-    document.title = BASLIK[d][document.body.dataset.sayfa === "menu" ? "menu" : "ana"];
-    try { localStorage.setItem("sakiz-dil", d); } catch (e) { /* gizli sekme */ }
-  }
-
-  document.querySelectorAll("[data-dil]").forEach(function (b) {
-    b.addEventListener("click", function () { dilUygula(b.dataset.dil); });
-  });
-
-  var kayitli;
-  try { kayitli = localStorage.getItem("sakiz-dil"); } catch (e) { kayitli = null; }
-  dilUygula(kayitli === "en" || kayitli === "tr" ? kayitli : "tr");
+  if (window.I18N) window.I18N.baslat();
 
   /* ---------- giriş görselleri ---------- */
 
@@ -149,16 +131,9 @@
       var temiz = ad.cloneNode(true);
       temiz.querySelectorAll(".bakis, .rozet").forEach(function (n) { n.remove(); });
 
-      // alt metinde yalnızca o an görünen dil kalsın
-      var tek = temiz.cloneNode(true);
-      var dil = kok.getAttribute("data-lang");
-      tek.querySelectorAll("[lang]").forEach(function (n) {
-        if (n.getAttribute("lang") !== dil) n.remove();
-      });
-
-      gWebp.srcset = "img/" + g + ".webp";
-      gGorsel.src = "img/" + g + ".jpg";
-      gGorsel.alt = tek.textContent.replace(/\s+/g, " ").trim();
+      gWebp.srcset = KOK + "img/" + g + ".webp";
+      gGorsel.src = KOK + "img/" + g + ".jpg";
+      gGorsel.alt = temiz.textContent.replace(/\s+/g, " ").trim();
       gAd.innerHTML = temiz.innerHTML;
       gNot.innerHTML = not ? not.innerHTML : "";
       gNot.hidden = !not;
@@ -207,21 +182,21 @@
       if (!form.reportValidity()) return;
 
       var d = new FormData(form);
-      var dil = kok.getAttribute("data-lang");
+      var c = window.I18N ? window.I18N.t : function (k, v) { return v; };
 
       var tarih = d.get("tarih") || "";
       if (tarih) { var p = tarih.split("-"); tarih = p[2] + "." + p[1] + "." + p[0]; }
 
-      var satirlar = dil === "en"
-        ? ["Reservation request — Sakız", "",
-           "Name: " + d.get("ad"), "Date: " + tarih, "Time: " + d.get("saat"),
-           "Guests: " + d.get("kisi"), "Phone: " + d.get("tel")]
-        : ["Rezervasyon talebi — Sakız", "",
-           "Ad soyad: " + d.get("ad"), "Tarih: " + tarih, "Saat: " + d.get("saat"),
-           "Kişi: " + d.get("kisi"), "Telefon: " + d.get("tel")];
+      /* Etiketler sözlükten gelir; yeni dil eklenince bu blok değişmez. */
+      var satirlar = [c("mail-baslik", "Rezervasyon talebi — Sakız"), "",
+        c("mail-ad", "Ad soyad") + ": " + d.get("ad"),
+        c("mail-tarih", "Tarih") + ": " + tarih,
+        c("mail-saat", "Saat") + ": " + d.get("saat"),
+        c("mail-kisi", "Kişi") + ": " + d.get("kisi"),
+        c("mail-tel", "Telefon") + ": " + d.get("tel")];
 
       var not = (d.get("not") || "").trim();
-      if (not) satirlar.push((dil === "en" ? "Note: " : "Not: ") + not);
+      if (not) satirlar.push(c("mail-not", "Not") + ": " + not);
 
       if (UCNOKTA) {
         fetch(UCNOKTA, { method: "POST", headers: { Accept: "application/json" }, body: d })

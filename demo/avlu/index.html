@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr" data-lang="tr">
+<html lang="tr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,8 +16,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Archivo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=12">
-<script>document.documentElement.classList.add("js");</script>
+<link rel="stylesheet" href="styles.css?v=13">
+<script src="i18n/i18n.js?v=13"></script>
 
 
 <script type="application/ld+json">
@@ -40,21 +40,18 @@
 </head>
 
 <body>
-<a class="skip" href="#main"><span lang="tr">İçeriğe geç</span><span lang="en">Skip to content</span></a>
+<a class="skip" href="#main"><span data-i18n="icerige-gec">İçeriğe geç</span></a>
 
 <header class="masthead" id="masthead">
   <a class="masthead__mark" href="#main" aria-label="Avlu">
     <img src="img/logo-bone.png" alt="Avlu" width="443" height="104">
   </a>
   <nav class="masthead__nav" aria-label="Ana">
-    <a href="menu.html"><span lang="tr">Menü</span><span lang="en">Menu</span></a>
-    <a class="is-optional" href="#avlu"><span lang="tr">Mekân</span><span lang="en">The room</span></a>
-    <a class="is-optional" href="#ziyaret"><span lang="tr">Ziyaret</span><span lang="en">Visit</span></a>
-    <div class="lang" role="group" aria-label="Dil / Language">
-      <button type="button" data-set-lang="tr" aria-pressed="true">TR</button>
-      <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
-    </div>
-    <a class="btn" href="#rezervasyon"><span lang="tr">Masa ayırt</span><span lang="en">Book a table</span></a>
+    <a href="menu.html"><span data-i18n="menu">Menü</span></a>
+    <a class="is-optional" href="#avlu"><span data-i18n="mekan">Mekân</span></a>
+    <a class="is-optional" href="#ziyaret"><span data-i18n="ziyaret">Ziyaret</span></a>
+    <div class="lang" role="group" aria-label="Dil / Language" data-i18n-switch></div>
+    <a class="btn" href="#rezervasyon"><span data-i18n="masa-ayirt">Masa ayırt</span></a>
   </nav>
 </header>
 
@@ -124,7 +121,7 @@
       <h1 class="hero__wordmark">AVLU</h1>
       <p class="hero__place">Alsancak · İzmir</p>
       <div class="hero__cta">
-        <a class="btn" href="#rezervasyon"><span lang="tr">Masa ayırt</span><span lang="en">Book a table</span></a>
+        <a class="btn" href="#rezervasyon"><span data-i18n="masa-ayirt">Masa ayırt</span></a>
       </div>
     </div>
 
@@ -169,18 +166,15 @@
       </div>
 
       <div class="prose reveal">
-        <span class="eyebrow"><span lang="tr">Avlu</span><span lang="en">The courtyard</span></span>
+        <span class="eyebrow"><span data-i18n="avlu">Avlu</span></span>
         <h2 class="lede" style="font-family:'Fraunces',Georgia,serif; font-size:var(--step-2); line-height:1.15; margin-bottom:1.5rem;">
-          <span lang="tr">Kapıyı bilmeyen önünden geçer.</span>
-          <span lang="en">Miss the door and you walk right past us.</span>
+          <span data-i18n="kapiyi-bilmeyen-onunden-gecer">Kapıyı bilmeyen önünden geçer.</span>
         </h2>
         <p>
-          <span lang="tr">Avlu, Alsancak'ın arka sokaklarında, kolayca geçip gidebileceğiniz bir kapının ardında. İçeri girdiğinizde sokak biter: cam çatının altında bir avlu, ortasında zeytin ağacı, akşam ışığı yapraklardan süzülerek masalara düşer.</span>
-          <span lang="en">Avlu sits on a back street in Alsancak, behind a door most people walk straight past. Step through and the street ends: a courtyard under a glass roof, an olive tree at its centre, evening light filtering through the leaves onto the tables.</span>
+          <span data-i18n="avlu-alsancak-in-arka-sokaklarinda-kolayca">Avlu, Alsancak'ın arka sokaklarında, kolayca geçip gidebileceğiniz bir kapının ardında. İçeri girdiğinizde sokak biter: cam çatının altında bir avlu, ortasında zeytin ağacı, akşam ışığı yapraklardan süzülerek masalara düşer.</span>
         </p>
         <p>
-          <span lang="tr">Salon bilinçli olarak küçük. Cuma akşamları boş masa bulmak zordur — bunu bir övünç değil, bir uyarı olarak yazıyoruz.</span>
-          <span lang="en">The room is deliberately small. On a Friday night there is rarely a free table — we mention it as a warning, not a boast.</span>
+          <span data-i18n="salon-bilincli-olarak-kucuk-cuma-aksamlari">Salon bilinçli olarak küçük. Cuma akşamları boş masa bulmak zordur — bunu bir övünç değil, bir uyarı olarak yazıyoruz.</span>
         </p>
       </div>
     </div>
@@ -192,60 +186,53 @@
   <section class="band">
     <div class="shell">
       <div class="prose reveal">
-        <span class="eyebrow"><span lang="tr">Sofranın sırası</span><span lang="en">How dinner runs</span></span>
+        <span class="eyebrow"><span data-i18n="sofranin-sirasi">Sofranın sırası</span></span>
         <h2 style="font-size:var(--step-3);">
-          <span lang="tr">Beş adımda bir akşam</span>
-          <span lang="en">An evening, in five moves</span>
+          <span data-i18n="bes-adimda-bir-aksam">Beş adımda bir akşam</span>
         </h2>
         <p style="margin-top:1.5rem;">
-          <span lang="tr">Avlu'da yemek paylaşılarak yenir. Tabaklar ortaya gelir, sıra bozulmaz, acele edilmez.</span>
-          <span lang="en">Dinner here is shared. Plates land in the middle of the table, in this order, and nobody hurries.</span>
+          <span data-i18n="avlu-da-yemek-paylasilarak-yenir-tabaklar">Avlu'da yemek paylaşılarak yenir. Tabaklar ortaya gelir, sıra bozulmaz, acele edilmez.</span>
         </p>
       </div>
 
       <ol class="course-list">
         <li class="course reveal">
           <div>
-            <h3 class="course__name"><span lang="tr">Ekşi maya ve zeytin</span><span lang="en">Sourdough and olives</span></h3>
+            <h3 class="course__name"><span data-i18n="eksi-maya-ve-zeytin">Ekşi maya ve zeytin</span></h3>
             <p class="course__body">
-              <span lang="tr">Siz oturur oturmaz gelir, istenmeden. Kendi fırınımızın ekşi maya ekmeği ve tadımlık zeytin.</span>
-              <span lang="en">It arrives the moment you sit down, unasked: our own sourdough and a small dish of olives.</span>
+              <span data-i18n="siz-oturur-oturmaz-gelir-istenmeden-kendi">Siz oturur oturmaz gelir, istenmeden. Kendi fırınımızın ekşi maya ekmeği ve tadımlık zeytin.</span>
             </p>
           </div>
         </li>
         <li class="course reveal">
           <div>
-            <h3 class="course__name"><span lang="tr">Başlangıçlar</span><span lang="en">To begin</span></h3>
+            <h3 class="course__name"><span data-i18n="baslangiclar">Başlangıçlar</span></h3>
             <p class="course__body">
-              <span lang="tr">Tekmil favalı ciğer, incirli sıcak humus, acılı baharat sosuna bulanmış lolipop kanatlar. İkiye de üçe de yeter.</span>
-              <span lang="en">Liver with fava, warm hummus with fig, lollipop wings in hot spiced sauce. Enough for two, or three.</span>
+              <span data-i18n="tekmil-favali-ciger-incirli-sicak-humus">Tekmil favalı ciğer, incirli sıcak humus, acılı baharat sosuna bulanmış lolipop kanatlar. İkiye de üçe de yeter.</span>
             </p>
           </div>
         </li>
         <li class="course reveal">
           <div>
-            <h3 class="course__name"><span lang="tr">Taze makarna</span><span lang="en">Fresh pasta</span></h3>
+            <h3 class="course__name"><span data-i18n="taze-makarna">Taze makarna</span></h3>
             <p class="course__body">
-              <span lang="tr">Hamur her gün açılır. Culurgione peynir ve cevizle doldurulur, gnocchi tereyağında kızarır.</span>
-              <span lang="en">The dough is rolled daily. Culurgione filled with cheese and walnut; gnocchi crisped in butter.</span>
+              <span data-i18n="hamur-her-gun-acilir-culurgione-peynir-ve">Hamur her gün açılır. Culurgione peynir ve cevizle doldurulur, gnocchi tereyağında kızarır.</span>
             </p>
           </div>
         </li>
         <li class="course reveal">
           <div>
-            <h3 class="course__name"><span lang="tr">Ana yemek</span><span lang="en">The main</span></h3>
+            <h3 class="course__name"><span data-i18n="ana-yemek">Ana yemek</span></h3>
             <p class="course__body">
-              <span lang="tr">Ağır ateşin işi: on iki saatlik brisket, patlıcan püresi üstünde kuzu boyun tandır.</span>
-              <span lang="en">Slow fire does the work: twelve-hour brisket, lamb neck over smoked aubergine purée.</span>
+              <span data-i18n="agir-atesin-isi-on-iki-saatlik-brisket">Ağır ateşin işi: on iki saatlik brisket, patlıcan püresi üstünde kuzu boyun tandır.</span>
             </p>
           </div>
         </li>
         <li class="course reveal">
           <div>
-            <h3 class="course__name"><span lang="tr">Tatlı ve kahve</span><span lang="en">Dessert and coffee</span></h3>
+            <h3 class="course__name"><span data-i18n="tatli-ve-kahve">Tatlı ve kahve</span></h3>
             <p class="course__body">
-              <span lang="tr">Fındık crunch ya da vişne ganajlı cheesecake, yanında Türk kahvesi.</span>
-              <span lang="en">Hazelnut crunch or sour-cherry ganache cheesecake, with Turkish coffee alongside.</span>
+              <span data-i18n="findik-crunch-ya-da-visne-ganajli">Fındık crunch ya da vişne ganajlı cheesecake, yanında Türk kahvesi.</span>
             </p>
           </div>
         </li>
@@ -257,14 +244,12 @@
   <section class="band band--ink2" id="tabaklar">
     <div class="shell">
       <div class="prose reveal">
-        <span class="eyebrow"><span lang="tr">İmza tabaklar</span><span lang="en">Signature plates</span></span>
+        <span class="eyebrow"><span data-i18n="imza-tabaklar">İmza tabaklar</span></span>
         <h2 style="font-size:var(--step-3);">
-          <span lang="tr">Kars'ın kaşarı, Sardinya'nın hamuru</span>
-          <span lang="en">Cheese from Kars, dough from Sardinia</span>
+          <span data-i18n="kars-in-kasari-sardinya-nin-hamuru">Kars'ın kaşarı, Sardinya'nın hamuru</span>
         </h2>
         <p style="margin-top:1.5rem;">
-          <span lang="tr">Mutfak iki kaynaktan besleniyor: Anadolu'nun peyniri, tandırı, tahini; ve elde açılan İtalyan hamuru. İkisi aynı tabakta buluşuyor.</span>
-          <span lang="en">Two sources feed this kitchen: Anatolian cheese, tandır and tahini — and Italian dough rolled by hand. They meet on the same plate.</span>
+          <span data-i18n="mutfak-iki-kaynaktan-besleniyor-anadolu-nun">Mutfak iki kaynaktan besleniyor: Anadolu'nun peyniri, tandırı, tahini; ve elde açılan İtalyan hamuru. İkisi aynı tabakta buluşuyor.</span>
         </p>
       </div>
 
@@ -280,11 +265,10 @@
                    alt="Patlıcan püresi ve isli sebzeler üzerinde kuzu boyun tandır.">
             </picture>
           </div>
-          <p class="plate__label"><span lang="tr">Ana yemek</span><span lang="en">Main</span></p>
-          <h3 class="plate__name"><span lang="tr">Kuzu Boyun Tandır</span><span lang="en">Slow-fired Lamb Neck</span></h3>
+          <p class="plate__label"><span data-i18n="ana-yemek-2">Ana yemek</span></p>
+          <h3 class="plate__name"><span data-i18n="kuzu-boyun-tandir">Kuzu Boyun Tandır</span></h3>
           <p class="plate__note">
-            <span lang="tr">200 gramlık kuzu, ağır ateşte dağılana kadar. Altında patlıcan püresi, yanında isli sebzeler.</span>
-            <span lang="en">200g of lamb, cooked low until it falls apart, over aubergine purée with smoked vegetables.</span>
+            <span data-i18n="200-gramlik-kuzu-agir-ateste-dagilana-kadar">200 gramlık kuzu, ağır ateşte dağılana kadar. Altında patlıcan püresi, yanında isli sebzeler.</span>
           </p>
         </article>
 
@@ -298,11 +282,10 @@
                    alt="Mavi sırlı tabakta tandırlı taze makarna, roka ve rendelenmiş kaşar.">
             </picture>
           </div>
-          <p class="plate__label"><span lang="tr">Taze makarna</span><span lang="en">Fresh pasta</span></p>
-          <h3 class="plate__name"><span lang="tr">Tandırlı Makarna</span><span lang="en">Tandır Tagliatelle</span></h3>
+          <p class="plate__label"><span data-i18n="taze-makarna">Taze makarna</span></p>
+          <h3 class="plate__name"><span data-i18n="tandirli-makarna">Tandırlı Makarna</span></h3>
           <p class="plate__note">
-            <span lang="tr">Tandır etiyle taze tagliatelle, roka ve iki yıllık Kars kaşarı ile.</span>
-            <span lang="en">Hand-cut tagliatelle with slow-fired lamb, rocket and two-year-aged Kars kaşar.</span>
+            <span data-i18n="tandir-etiyle-taze-tagliatelle-roka-ve-iki">Tandır etiyle taze tagliatelle, roka ve iki yıllık Kars kaşarı ile.</span>
           </p>
         </article>
 
@@ -316,11 +299,10 @@
                    alt="Tereyağında kızarmış gnocchi, mantar ve peynir sosu.">
             </picture>
           </div>
-          <p class="plate__label"><span lang="tr">Taze makarna</span><span lang="en">Fresh pasta</span></p>
-          <h3 class="plate__name"><span lang="tr">Peynir Soslu Gnocchi</span><span lang="en">Gnocchi in Cheese Sauce</span></h3>
+          <p class="plate__label"><span data-i18n="taze-makarna">Taze makarna</span></p>
+          <h3 class="plate__name"><span data-i18n="peynir-soslu-gnocchi">Peynir Soslu Gnocchi</span></h3>
           <p class="plate__note">
-            <span lang="tr">Kars göğermiş ve eski kaşarla adaçaylı kremalı sos, mantar, tereyağında kızarmış gnocchi.</span>
-            <span lang="en">A sage cream of blue and aged Kars cheese, mushrooms, gnocchi crisped in butter.</span>
+            <span data-i18n="kars-gogermis-ve-eski-kasarla-adacayli">Kars göğermiş ve eski kaşarla adaçaylı kremalı sos, mantar, tereyağında kızarmış gnocchi.</span>
           </p>
         </article>
 
@@ -334,11 +316,10 @@
                    alt="Acılı baharat sosuyla harmanlanmış lolipop kanatlar ve sarımsaklı ekmek.">
             </picture>
           </div>
-          <p class="plate__label"><span lang="tr">Başlangıç</span><span lang="en">To begin</span></p>
-          <h3 class="plate__name"><span lang="tr">Lolipop Kanatlar</span><span lang="en">Lollipop Wings</span></h3>
+          <p class="plate__label"><span data-i18n="baslangic">Başlangıç</span></p>
+          <h3 class="plate__name"><span data-i18n="lolipop-kanatlar">Lolipop Kanatlar</span></h3>
           <p class="plate__note">
-            <span lang="tr">Acılı baharat sosuyla harmanlanmış kanatlar, yanında sarımsaklı ekmek dilimleri.</span>
-            <span lang="en">Wings tossed in hot spiced sauce, with slices of garlic bread.</span>
+            <span data-i18n="acili-baharat-sosuyla-harmanlanmis-kanatlar">Acılı baharat sosuyla harmanlanmış kanatlar, yanında sarımsaklı ekmek dilimleri.</span>
           </p>
         </article>
 
@@ -352,11 +333,10 @@
                    alt="Elde kapatılmış culurgione, peynir ve ceviz dolgulu.">
             </picture>
           </div>
-          <p class="plate__label"><span lang="tr">Kapalı makarna</span><span lang="en">Filled pasta</span></p>
+          <p class="plate__label"><span data-i18n="kapali-makarna">Kapalı makarna</span></p>
           <h3 class="plate__name">Culurgione</h3>
           <p class="plate__note">
-            <span lang="tr">Sardinya'nın el işi makarnası: taze peynir, ceviz ve fesleğen dolgulu, tek tek kapatılır.</span>
-            <span lang="en">Sardinia's hand-pleated parcels: fresh cheese, walnut and basil, closed one by one.</span>
+            <span data-i18n="sardinya-nin-el-isi-makarnasi-taze-peynir">Sardinya'nın el işi makarnası: taze peynir, ceviz ve fesleğen dolgulu, tek tek kapatılır.</span>
           </p>
         </article>
 
@@ -370,11 +350,10 @@
                    alt="Sebzeli darı üzerinde glaze somon.">
             </picture>
           </div>
-          <p class="plate__label"><span lang="tr">Ana yemek</span><span lang="en">Main</span></p>
-          <h3 class="plate__name"><span lang="tr">Glaze Somon</span><span lang="en">Glazed Salmon</span></h3>
+          <p class="plate__label"><span data-i18n="ana-yemek-2">Ana yemek</span></p>
+          <h3 class="plate__name"><span data-i18n="glaze-somon">Glaze Somon</span></h3>
           <p class="plate__note">
-            <span lang="tr">Derisi çıtır kalana kadar pişmiş somon, sebzeli darı üzerinde.</span>
-            <span lang="en">Salmon cooked until the skin crackles, set on millet with vegetables.</span>
+            <span data-i18n="derisi-citir-kalana-kadar-pismis-somon">Derisi çıtır kalana kadar pişmiş somon, sebzeli darı üzerinde.</span>
           </p>
         </article>
 
@@ -382,7 +361,7 @@
 
       <p style="margin-top:clamp(2.5rem,5vw,3.5rem);">
         <a class="btn btn--ghost" href="menu.html">
-          <span lang="tr">Menünün tamamı</span><span lang="en">The full menu</span>
+          <span data-i18n="menunun-tamami">Menünün tamamı</span>
         </a>
       </p>
     </div>
@@ -392,14 +371,12 @@
   <section class="band">
     <div class="shell">
       <div class="prose reveal">
-        <span class="eyebrow"><span lang="tr">Mutfağın haritası</span><span lang="en">Where it comes from</span></span>
+        <span class="eyebrow"><span data-i18n="mutfagin-haritasi">Mutfağın haritası</span></span>
         <h2 style="font-size:var(--step-3);">
-          <span lang="tr">Bir tabak kaç yerden gelir</span>
-          <span lang="en">How many places one plate takes</span>
+          <span data-i18n="bir-tabak-kac-yerden-gelir">Bir tabak kaç yerden gelir</span>
         </h2>
         <p style="margin-top:1.5rem;">
-          <span lang="tr">Peyniri getirtiyoruz, hamuru burada açıyoruz, ekmeği kendimiz mayalıyoruz. Listenin sonu her zaman aynı adres.</span>
-          <span lang="en">The cheese travels to us, the dough is rolled here, the bread is ours from the starter up. The list always ends at the same address.</span>
+          <span data-i18n="peyniri-getirtiyoruz-hamuru-burada-aciyoruz">Peyniri getirtiyoruz, hamuru burada açıyoruz, ekmeği kendimiz mayalıyoruz. Listenin sonu her zaman aynı adres.</span>
         </p>
       </div>
 
@@ -407,36 +384,31 @@
         <div class="ledger__row reveal">
           <p class="ledger__place">Kars</p>
           <p class="ledger__items">
-            <span lang="tr">İki yıllık kaşar, göğermiş peynir</span>
-            <span lang="en">Two-year-aged kaşar, blue cheese</span>
+            <span data-i18n="iki-yillik-kasar-gogermis-peynir">İki yıllık kaşar, göğermiş peynir</span>
           </p>
         </div>
         <div class="ledger__row reveal">
           <p class="ledger__place">Hatay</p>
           <p class="ledger__items">
-            <span lang="tr">Tereyağında kızartılan sıkma peyniri</span>
-            <span lang="en">Sıkma cheese, fried in butter</span>
+            <span data-i18n="tereyaginda-kizartilan-sikma-peyniri">Tereyağında kızartılan sıkma peyniri</span>
           </p>
         </div>
         <div class="ledger__row reveal">
-          <p class="ledger__place"><span lang="tr">Ege</span><span lang="en">The Aegean</span></p>
+          <p class="ledger__place"><span data-i18n="ege">Ege</span></p>
           <p class="ledger__items">
-            <span lang="tr">Zeytin, incir, semizotu, tulum loru</span>
-            <span lang="en">Olives, figs, purslane, tulum curd</span>
+            <span data-i18n="zeytin-incir-semizotu-tulum-loru">Zeytin, incir, semizotu, tulum loru</span>
           </p>
         </div>
         <div class="ledger__row reveal">
-          <p class="ledger__place"><span lang="tr">Sardinya</span><span lang="en">Sardinia</span></p>
+          <p class="ledger__place"><span data-i18n="sardinya">Sardinya</span></p>
           <p class="ledger__items">
-            <span lang="tr">Culurgione — tek tek elde kapatılan hamur</span>
-            <span lang="en">Culurgione — parcels pleated one by one</span>
+            <span data-i18n="culurgione-tek-tek-elde-kapatilan-hamur">Culurgione — tek tek elde kapatılan hamur</span>
           </p>
         </div>
         <div class="ledger__row ledger__row--here reveal">
-          <p class="ledger__place"><span lang="tr">Bu mutfak</span><span lang="en">This kitchen</span></p>
+          <p class="ledger__place"><span data-i18n="bu-mutfak">Bu mutfak</span></p>
           <p class="ledger__items">
-            <span lang="tr">Ekşi maya, bazlama, burger ekmeği — hepsi burada</span>
-            <span lang="en">Sourdough, bazlama, burger buns — all of it here</span>
+            <span data-i18n="eksi-maya-bazlama-burger-ekmegi-hepsi-burada">Ekşi maya, bazlama, burger ekmeği — hepsi burada</span>
           </p>
         </div>
       </div>
@@ -456,18 +428,15 @@
         </picture>
       </div>
       <div class="prose reveal">
-        <span class="eyebrow"><span lang="tr">Sır</span><span lang="en">The glaze</span></span>
+        <span class="eyebrow"><span data-i18n="sir">Sır</span></span>
         <h2 style="font-size:var(--step-3);">
-          <span lang="tr">Hiçbir tabak diğerinin aynısı değil</span>
-          <span lang="en">No two plates are the same</span>
+          <span data-i18n="hicbir-tabak-digerinin-aynisi-degil">Hiçbir tabak diğerinin aynısı değil</span>
         </h2>
         <p style="margin-top:1.5rem;">
-          <span lang="tr">Mutfaktan çıkan her tabak elde çekildi. Mavi sır fırında akar, dipte göllenir, kenarda incelir — bu yüzden iki tabak asla birbirinin kopyası olmaz.</span>
-          <span lang="en">Every plate that leaves this kitchen was thrown by hand. The blue glaze runs in the kiln, pools at the base and thins at the rim — which is why no two are ever copies.</span>
+          <span data-i18n="mutfaktan-cikan-her-tabak-elde-cekildi-mavi">Mutfaktan çıkan her tabak elde çekildi. Mavi sır fırında akar, dipte göllenir, kenarda incelir — bu yüzden iki tabak asla birbirinin kopyası olmaz.</span>
         </p>
         <p>
-          <span lang="tr">Yemeği bu yüzeye koymak bir tercih: çatal değdiğinde altından başka bir mavi çıkar.</span>
-          <span lang="en">Plating onto that surface is a choice: when the fork moves, a different blue appears beneath.</span>
+          <span data-i18n="yemegi-bu-yuzeye-koymak-bir-tercih-catal">Yemeği bu yüzeye koymak bir tercih: çatal değdiğinde altından başka bir mavi çıkar.</span>
         </p>
       </div>
     </div>
@@ -477,33 +446,31 @@
   <section class="band">
     <div class="shell">
       <div class="prose reveal">
-        <span class="eyebrow"><span lang="tr">Kadeh</span><span lang="en">By the glass</span></span>
+        <span class="eyebrow"><span data-i18n="kadeh">Kadeh</span></span>
         <h2 style="font-size:var(--step-3);">
-          <span lang="tr">Şişeyi açmadan da tadabilirsiniz</span>
-          <span lang="en">You don't have to commit to a bottle</span>
+          <span data-i18n="siseyi-acmadan-da-tadabilirsiniz">Şişeyi açmadan da tadabilirsiniz</span>
         </h2>
         <p style="margin-top:1.5rem;">
-          <span lang="tr">Listenin büyük kısmı Türkiye bağlarından. Dört şarabı kadeh kadeh açıyoruz; sofranın gidişine göre değiştirmek serbest.</span>
-          <span lang="en">Most of the list comes from Turkish vineyards. Four wines are poured by the glass, so you can change course with the table.</span>
+          <span data-i18n="listenin-buyuk-kismi-turkiye-baglarindan">Listenin büyük kısmı Türkiye bağlarından. Dört şarabı kadeh kadeh açıyoruz; sofranın gidişine göre değiştirmek serbest.</span>
         </p>
       </div>
 
       <div class="cellar reveal">
         <div class="cellar__item">
           <h3>Ezel Shiraz</h3>
-          <p><span lang="tr">Kırmızı · Shiraz</span><span lang="en">Red · Shiraz</span></p>
+          <p><span data-i18n="kirmizi-shiraz">Kırmızı · Shiraz</span></p>
         </div>
         <div class="cellar__item">
           <h3>Ezel Vaska</h3>
-          <p><span lang="tr">Kırmızı · Merlot</span><span lang="en">Red · Merlot</span></p>
+          <p><span data-i18n="kirmizi-merlot">Kırmızı · Merlot</span></p>
         </div>
         <div class="cellar__item">
           <h3>Ezel Saressa</h3>
-          <p><span lang="tr">Beyaz · Narince</span><span lang="en">White · Narince</span></p>
+          <p><span data-i18n="beyaz-narince">Beyaz · Narince</span></p>
         </div>
         <div class="cellar__item">
           <h3>Ezel Rosemingo</h3>
-          <p><span lang="tr">Rosé · Kalecik Karası</span><span lang="en">Rosé · Kalecik Karası</span></p>
+          <p><span data-i18n="rose-kalecik-karasi">Rosé · Kalecik Karası</span></p>
         </div>
       </div>
     </div>
@@ -516,37 +483,33 @@
     <div class="shell">
       <div class="reveal" style="display:flex; flex-wrap:wrap; gap:1.5rem 3rem; align-items:flex-end; justify-content:space-between;">
         <div class="prose" style="flex:1 1 22rem;">
-          <span class="eyebrow"><span lang="tr">Misafirler</span><span lang="en">Guests</span></span>
+          <span class="eyebrow"><span data-i18n="misafirler">Misafirler</span></span>
           <h2 style="font-size:var(--step-3);">
-            <span lang="tr">Bizim değil, onların cümleleri</span>
-            <span lang="en">Their words, not ours</span>
+            <span data-i18n="bizim-degil-onlarin-cumleleri">Bizim değil, onların cümleleri</span>
           </h2>
         </div>
         <p class="score">
           <span class="score__num">4,8</span>
-          <span class="score__of"><span lang="tr">312 Google değerlendirmesi</span><span lang="en">312 Google reviews</span></span>
+          <span class="score__of"><span data-i18n="312-google-degerlendirmesi">312 Google değerlendirmesi</span></span>
         </p>
       </div>
 
       <div class="voices">
         <figure class="voice reveal">
           <blockquote>
-            <span lang="tr">“Gizli ve gerçekten özel bir ortam. Dışardan anlaşılmaz, yaşanır.”</span>
-            <span lang="en">“A hidden, genuinely special room. You can't tell from outside — you have to go in.”</span>
+            <span data-i18n="gizli-ve-gercekten-ozel-bir-ortam-disardan">“Gizli ve gerçekten özel bir ortam. Dışardan anlaşılmaz, yaşanır.”</span>
           </blockquote>
           <figcaption>Google değerlendirmesi</figcaption>
         </figure>
         <figure class="voice reveal">
           <blockquote>
-            <span lang="tr">“Culurgionenin sosu ve iç dolgusu çok güzeldi. Hepsi ortalama üstü lezzetliydi.”</span>
-            <span lang="en">“The sauce and filling of the culurgione were lovely. Everything was above average.”</span>
+            <span data-i18n="culurgionenin-sosu-ve-ic-dolgusu-cok">“Culurgionenin sosu ve iç dolgusu çok güzeldi. Hepsi ortalama üstü lezzetliydi.”</span>
           </blockquote>
           <figcaption>Google değerlendirmesi</figcaption>
         </figure>
         <figure class="voice reveal">
           <blockquote>
-            <span lang="tr">“Başlangıç olarak tadımlık zeytin ve ekşi maya ekmek veriliyor. Yemekler oldukça lezzetliydi.”</span>
-            <span lang="en">“They start you with olives and sourdough bread. The food was really very good.”</span>
+            <span data-i18n="baslangic-olarak-tadimlik-zeytin-ve-eksi">“Başlangıç olarak tadımlık zeytin ve ekşi maya ekmek veriliyor. Yemekler oldukça lezzetliydi.”</span>
           </blockquote>
           <figcaption>Google değerlendirmesi</figcaption>
         </figure>
@@ -559,79 +522,76 @@
     <div class="shell visit">
 
       <div class="reveal">
-        <span class="eyebrow"><span lang="tr">Ziyaret</span><span lang="en">Visit</span></span>
+        <span class="eyebrow"><span data-i18n="ziyaret">Ziyaret</span></span>
         <h2 style="font-size:var(--step-3); margin-bottom:2.5rem;">
-          <span lang="tr">Bulmak biraz dikkat ister</span>
-          <span lang="en">Finding us takes a little care</span>
+          <span data-i18n="bulmak-biraz-dikkat-ister">Bulmak biraz dikkat ister</span>
         </h2>
 
         <ul class="facts">
           <li>
-            <span class="k"><span lang="tr">Adres</span><span lang="en">Address</span></span>
+            <span class="k"><span data-i18n="adres">Adres</span></span>
             <span class="v">
               <span>
                 Alsancak, İzmir
               </span>
-              <small><span lang="tr">Sokak kapısından</span><span lang="en">Through the street door</span></small>
+              <small><span data-i18n="sokak-kapisindan">Sokak kapısından</span></small>
             </span>
           </li>
           <li>
-            <span class="k"><span lang="tr">Saatler</span><span lang="en">Hours</span></span>
+            <span class="k"><span data-i18n="saatler">Saatler</span></span>
             <!-- NOT: Google yalnızca 22:30 kapanışını veriyor; 12:00 açılışı menüdeki
                  "kaseler ve burgerler 12.00-16.00" notundan çıkarıldı. Teyit edilmeli. -->
             <span class="v">
               12:00 – 22:30
-              <small><span lang="tr">Mutfak kapanıştan yarım saat önce son siparişi alır</span><span lang="en">The kitchen takes last orders half an hour before close</span></small>
+              <small><span data-i18n="mutfak-kapanistan-yarim-saat-once-son">Mutfak kapanıştan yarım saat önce son siparişi alır</span></small>
             </span>
           </li>
           <li>
-            <span class="k"><span lang="tr">Telefon</span><span lang="en">Phone</span></span>
+            <span class="k"><span data-i18n="telefon">Telefon</span></span>
             <span class="v"><a href="tel:+905426242468">0542 624 24 68</a></span>
           </li>
           <li>
             <span class="k">WhatsApp</span>
-            <span class="v"><a href="https://wa.me/905426242468" target="_blank" rel="noopener"><span lang="tr">Yazışarak ayırtın</span><span lang="en">Message us</span></a></span>
+            <span class="v"><a href="https://wa.me/905426242468" target="_blank" rel="noopener"><span data-i18n="yazisarak-ayirtin">Yazışarak ayırtın</span></a></span>
           </li>
           <li>
-            <span class="k"><span lang="tr">Servis</span><span lang="en">Service</span></span>
-            <span class="v"><span lang="tr">Salon · paket · adrese teslim</span><span lang="en">Dining room · takeaway · delivery</span></span>
+            <span class="k"><span data-i18n="servis">Servis</span></span>
+            <span class="v"><span data-i18n="salon-paket-adrese-teslim">Salon · paket · adrese teslim</span></span>
           </li>
         </ul>
 
         <p style="font-size:var(--step--1);">
-          <span lang="tr">Salon küçük olduğu için hafta sonları rezervasyonsuz masa bulmak zordur. Sekiz kişiyi aşan gruplar için lütfen telefonla arayın.</span>
-          <span lang="en">The room is small, so weekends are hard without a reservation. For parties over eight, please call.</span>
+          <span data-i18n="salon-kucuk-oldugu-icin-hafta-sonlari">Salon küçük olduğu için hafta sonları rezervasyonsuz masa bulmak zordur. Sekiz kişiyi aşan gruplar için lütfen telefonla arayın.</span>
         </p>
       </div>
 
       <!-- ============ rezervasyon ============ -->
       <div class="book reveal" id="rezervasyon">
-        <span class="eyebrow"><span lang="tr">Masa ayırt</span><span lang="en">Book a table</span></span>
+        <span class="eyebrow"><span data-i18n="masa-ayirt">Masa ayırt</span></span>
         <h2 style="font-size:var(--step-2); margin-bottom:1.8rem;">
-          <span lang="tr">Talebinizi bize iletin</span>
-          <span lang="en">Send us your request</span>
+          <span data-i18n="talebinizi-bize-iletin">Talebinizi bize iletin</span>
         </h2>
 
         <form id="book-form" novalidate>
           <div class="field">
-            <label for="ad"><span lang="tr">Ad soyad</span><span lang="en">Full name</span></label>
+            <label for="ad"><span data-i18n="ad-soyad">Ad soyad</span></label>
             <input id="ad" name="ad" type="text" autocomplete="name" required>
           </div>
 
           <div class="field-row">
             <div class="field">
-              <label for="tarih"><span lang="tr">Tarih</span><span lang="en">Date</span></label>
+              <label for="tarih"><span data-i18n="tarih">Tarih</span></label>
               <input id="tarih" name="tarih" type="date" required>
             </div>
             <div class="field">
-              <label for="saat"><span lang="tr">Saat</span><span lang="en">Time</span></label>
+              <label for="saat"><span data-i18n="saat">Saat</span></label>
               <input id="saat" name="saat" type="time" value="19:30" step="900" required>
             </div>
           </div>
 
           <div class="field-row">
             <div class="field">
-              <label for="kisi"><span lang="tr">Kişi sayısı</span><span lang="en">Guests</span></label>
+              <label for="kisi"><span data-i18n="kisi-sayisi">Kişi sayısı</span></label>
               <select id="kisi" name="kisi">
                 <option>1</option><option>2</option><option selected>3</option>
                 <option>4</option><option>5</option><option>6</option>
@@ -640,30 +600,29 @@
               </select>
             </div>
             <div class="field">
-              <label for="tel"><span lang="tr">Telefonunuz</span><span lang="en">Your phone</span></label>
+              <label for="tel"><span data-i18n="telefonunuz">Telefonunuz</span></label>
               <input id="tel" name="tel" type="tel" autocomplete="tel" required>
             </div>
           </div>
 
           <div class="field">
-            <label for="not"><span lang="tr">Eklemek istedikleriniz</span><span lang="en">Anything we should know</span></label>
+            <label for="not"><span data-i18n="eklemek-istedikleriniz">Eklemek istedikleriniz</span></label>
             <textarea id="not" name="not" rows="3"
-              data-ph-tr="Alerji, doğum günü, avlu masası tercihi…"
-              data-ph-en="Allergies, a birthday, a preference for the courtyard…"></textarea>
+              placeholder="Alerji, doğum günü, avlu masası tercihi…"
+              data-i18n-attr="placeholder:ph-not"></textarea>
           </div>
 
           <div class="book__actions">
             <button class="btn" type="submit">
-              <span lang="tr">WhatsApp'tan gönder</span><span lang="en">Send via WhatsApp</span>
+              <span data-i18n="whatsapp-tan-gonder">WhatsApp'tan gönder</span>
             </button>
             <a class="btn btn--ghost" href="tel:+905426242468">
-              <span lang="tr">Ara</span><span lang="en">Call</span>
+              <span data-i18n="ara">Ara</span>
             </a>
           </div>
 
           <p class="book__alt">
-            <span lang="tr">Yazışmayı sevmiyorsanız <a href="mailto:rezervasyon@ornek.com?subject=Rezervasyon%20talebi">e-posta da gönderebilirsiniz</a>. Rezervasyonunuz, biz dönüş yapana kadar kesinleşmez.</span>
-            <span lang="en">Prefer email? <a href="mailto:rezervasyon@ornek.com?subject=Reservation%20request">Write to us instead</a>. A booking isn't confirmed until we reply.</span>
+            <span data-i18n="yazismayi-sevmiyorsaniz-e-posta-da">Yazışmayı sevmiyorsanız <a href="mailto:rezervasyon@ornek.com?subject=Rezervasyon%20talebi">e-posta da gönderebilirsiniz</a>. Rezervasyonunuz, biz dönüş yapana kadar kesinleşmez.</span>
           </p>
         </form>
       </div>
@@ -678,22 +637,21 @@
     <div class="foot__grid">
       <img src="img/logo-gold.png" alt="Avlu" width="443" height="104" loading="lazy">
       <nav class="foot__links" aria-label="Alt">
-        <a href="menu.html"><span lang="tr">Menü</span><span lang="en">Menu</span></a>
-        <a href="#avlu"><span lang="tr">Mekân</span><span lang="en">The room</span></a>
-        <a href="#ziyaret"><span lang="tr">Ziyaret</span><span lang="en">Visit</span></a>
+        <a href="menu.html"><span data-i18n="menu">Menü</span></a>
+        <a href="#avlu"><span data-i18n="mekan">Mekân</span></a>
+        <a href="#ziyaret"><span data-i18n="ziyaret">Ziyaret</span></a>
         <a href="tel:+905426242468">0542 624 24 68</a>
         <span>
-          <span lang="tr">Yol tarifi</span><span lang="en">Directions</span>
+          <span data-i18n="yol-tarifi">Yol tarifi</span>
         </span>
       </nav>
     </div>
     <p class="foot__fine">
-      <span lang="tr">© <span id="yil">2026</span> Avlu · Alsancak, İzmir, İzmir</span>
-      <span lang="en">© <span>2026</span> Avlu · Alsancak, İzmir, İzmir</span>
+      <span data-i18n="2026-avlu-alsancak-izmir-izmir">© <span id="yil">2026</span> Avlu · Alsancak, İzmir, İzmir</span>
     </p>
   </div>
 </footer>
 
-<script src="app.js?v=12"></script>
+<script src="app.js?v=13"></script>
 </body>
 </html>

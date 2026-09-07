@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr" data-lang="tr">
+<html lang="tr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,27 +10,24 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Archivo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=12">
-<script>document.documentElement.classList.add("js");</script>
+<link rel="stylesheet" href="styles.css?v=13">
+<script src="i18n/i18n.js?v=13"></script>
 
 </head>
 
 <body data-page="menu">
-<a class="skip" href="#main"><span lang="tr">İçeriğe geç</span><span lang="en">Skip to content</span></a>
+<a class="skip" href="#main"><span data-i18n="icerige-gec">İçeriğe geç</span></a>
 
 <header class="masthead" id="masthead">
   <a class="masthead__mark" href="index.html" aria-label="Avlu">
     <img src="img/logo-bone.png" alt="Avlu" width="443" height="104">
   </a>
   <nav class="masthead__nav" aria-label="Ana">
-    <a href="index.html"><span lang="tr">Ana sayfa</span><span lang="en">Home</span></a>
-    <a class="is-optional" href="index.html#avlu"><span lang="tr">Mekân</span><span lang="en">The room</span></a>
-    <a class="is-optional" href="index.html#ziyaret"><span lang="tr">Ziyaret</span><span lang="en">Visit</span></a>
-    <div class="lang" role="group" aria-label="Dil / Language">
-      <button type="button" data-set-lang="tr" aria-pressed="true">TR</button>
-      <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
-    </div>
-    <a class="btn" href="index.html#rezervasyon"><span lang="tr">Masa ayırt</span><span lang="en">Book a table</span></a>
+    <a href="index.html"><span data-i18n="ana-sayfa">Ana sayfa</span></a>
+    <a class="is-optional" href="index.html#avlu"><span data-i18n="mekan">Mekân</span></a>
+    <a class="is-optional" href="index.html#ziyaret"><span data-i18n="ziyaret">Ziyaret</span></a>
+    <div class="lang" role="group" aria-label="Dil / Language" data-i18n-switch></div>
+    <a class="btn" href="index.html#rezervasyon"><span data-i18n="masa-ayirt">Masa ayırt</span></a>
   </nav>
 </header>
 
@@ -39,31 +36,29 @@
   <div class="shell">
     <div class="menu-head">
       <div class="menu-head__disc disc--empty" aria-hidden="true"></div>
-      <span class="eyebrow"><span lang="tr">Menü</span><span lang="en">Menu</span></span>
+      <span class="eyebrow"><span data-i18n="menu">Menü</span></span>
       <h1>
-        <span lang="tr">Ne varsa<br>sofraya gelir</span>
-        <span lang="en">Everything<br>lands in the middle</span>
+        <span data-i18n="ne-varsa-sofraya-gelir">Ne varsa<br>sofraya gelir</span>
       </h1>
       <p class="lede">
-        <span lang="tr">Tabaklar paylaşılmak için tasarlandı. Hamur her gün açılır, ateş ağır yanar, ekmeğin mayası bize ait. Fiyatlar Türk lirasıdır.</span>
-        <span lang="en">These plates are built to be shared. The dough is rolled daily, the fire burns low, the sourdough starter is ours. Prices in Turkish lira.</span>
+        <span data-i18n="tabaklar-paylasilmak-icin-tasarlandi-hamur">Tabaklar paylaşılmak için tasarlandı. Hamur her gün açılır, ateş ağır yanar, ekmeğin mayası bize ait. Fiyatlar Türk lirasıdır.</span>
       </p>
     </div>
   </div>
 
   <nav class="menu-nav" aria-label="Menü bölümleri">
     <ul>
-      <li><a href="#salatalar"><span lang="tr">Salatalar</span><span lang="en">Salads</span></a></li>
-      <li><a href="#kaseler"><span lang="tr">Kaseler</span><span lang="en">Bowls</span></a></li>
-      <li><a href="#baslangiclar"><span lang="tr">Başlangıçlar</span><span lang="en">To begin</span></a></li>
-      <li><a href="#ekmek-ustu"><span lang="tr">Ekmek üstleri</span><span lang="en">On sourdough</span></a></li>
-      <li><a href="#burgerler"><span lang="tr">Burgerler</span><span lang="en">Burgers</span></a></li>
-      <li><a href="#ana-yemekler"><span lang="tr">Ana yemekler</span><span lang="en">Mains</span></a></li>
-      <li><a href="#makarnalar"><span lang="tr">Taze makarnalar</span><span lang="en">Fresh pasta</span></a></li>
-      <li><a href="#tatlilar"><span lang="tr">Tatlılar</span><span lang="en">Dessert</span></a></li>
-      <li><a href="#saraplar"><span lang="tr">Şaraplar</span><span lang="en">Wine</span></a></li>
-      <li><a href="#biralar"><span lang="tr">Biralar</span><span lang="en">Beer</span></a></li>
-      <li><a href="#icecekler"><span lang="tr">İçecekler</span><span lang="en">Drinks</span></a></li>
+      <li><a href="#salatalar"><span data-i18n="salatalar">Salatalar</span></a></li>
+      <li><a href="#kaseler"><span data-i18n="kaseler">Kaseler</span></a></li>
+      <li><a href="#baslangiclar"><span data-i18n="baslangiclar">Başlangıçlar</span></a></li>
+      <li><a href="#ekmek-ustu"><span data-i18n="ekmek-ustleri">Ekmek üstleri</span></a></li>
+      <li><a href="#burgerler"><span data-i18n="burgerler">Burgerler</span></a></li>
+      <li><a href="#ana-yemekler"><span data-i18n="ana-yemekler">Ana yemekler</span></a></li>
+      <li><a href="#makarnalar"><span data-i18n="taze-makarnalar">Taze makarnalar</span></a></li>
+      <li><a href="#tatlilar"><span data-i18n="tatlilar">Tatlılar</span></a></li>
+      <li><a href="#saraplar"><span data-i18n="saraplar">Şaraplar</span></a></li>
+      <li><a href="#biralar"><span data-i18n="biralar">Biralar</span></a></li>
+      <li><a href="#icecekler"><span data-i18n="icecekler">İçecekler</span></a></li>
     </ul>
   </nav>
 
@@ -73,30 +68,30 @@
     <section class="course-block" id="salatalar">
       <div class="course-block__head">
         <div class="course-block__title">
-          <h2><span lang="tr">Salatalar</span><span lang="en">Salads</span></h2>
-          <p class="course-block__intro"><span lang="tr">Yazın ne varsa o gelir; liste mevsime göre değişir.</span><span lang="en">Whatever the season is giving; the list moves with it.</span></p>
+          <h2><span data-i18n="salatalar">Salatalar</span></h2>
+          <p class="course-block__intro"><span data-i18n="yazin-ne-varsa-o-gelir-liste-mevsime-gore">Yazın ne varsa o gelir; liste mevsime göre değişir.</span></p>
         </div>
       </div>
       <div class="dishes">
         <article class="dish">
           <h3 class="dish__name">
-            <span lang="tr">Çilekli Semizotu Salatası</span><span lang="en">Purslane and Strawberry</span>
-            <span class="tag"><span lang="tr">Yeni</span><span lang="en">New</span></span>
+            <span data-i18n="cilekli-semizotu-salatasi">Çilekli Semizotu Salatası</span>
+            <span class="tag"><span data-i18n="yeni">Yeni</span></span>
           </h3>
           <span class="dish__price">530 ₺</span>
-          <p class="dish__note"><span lang="tr">Tulum loru, domates, çilek</span><span lang="en">Tulum curd, tomato, strawberry</span></p>
+          <p class="dish__note"><span data-i18n="tulum-loru-domates-cilek">Tulum loru, domates, çilek</span></p>
         </article>
         <article class="dish">
-          <h3 class="dish__name"><span lang="tr">Roka Salata</span><span lang="en">Rocket Salad</span>
+          <h3 class="dish__name"><span data-i18n="roka-salata">Roka Salata</span>
             <button class="dish__peek" type="button" data-peek="roka" aria-label="Roka Salata fotoğrafı"><picture><source type="image/webp" srcset="img/roka-sq-sm.webp"><img src="img/roka-sq-sm.jpg" alt="" loading="lazy" decoding="async"></picture></button>
           </h3>
           <span class="dish__price">480 ₺</span>
-          <p class="dish__note"><span lang="tr">Roka, domates, kırmızı biber, ceviz, peynir</span><span lang="en">Rocket, tomato, red pepper, walnut, cheese</span></p>
+          <p class="dish__note"><span data-i18n="roka-domates-kirmizi-biber-ceviz-peynir">Roka, domates, kırmızı biber, ceviz, peynir</span></p>
         </article>
         <article class="dish">
-          <h3 class="dish__name"><span lang="tr">Bahar Salatası</span><span lang="en">Spring Salad</span></h3>
+          <h3 class="dish__name"><span data-i18n="bahar-salatasi">Bahar Salatası</span></h3>
           <span class="dish__price">520 ₺</span>
-          <p class="dish__note"><span lang="tr">Roka, armut, kırmızı soğan, chia tohumu, domates</span><span lang="en">Rocket, pear, red onion, chia, tomato</span></p>
+          <p class="dish__note"><span data-i18n="roka-armut-kirmizi-sogan-chia-tohumu-domates">Roka, armut, kırmızı soğan, chia tohumu, domates</span></p>
         </article>
       </div>
     </section>
@@ -105,31 +100,30 @@
     <section class="course-block" id="kaseler">
       <div class="course-block__head">
         <div class="course-block__title">
-          <h2><span lang="tr">Kaseler</span><span lang="en">Bowls</span></h2>
-          <p class="course-block__intro"><span lang="tr">Öğle için tasarlandı: tahıl, yeşillik ve tek bir ana malzeme.</span><span lang="en">Built for lunch: grains, leaves and one thing at the centre.</span></p>
+          <h2><span data-i18n="kaseler">Kaseler</span></h2>
+          <p class="course-block__intro"><span data-i18n="ogle-icin-tasarlandi-tahil-yesillik-ve-tek">Öğle için tasarlandı: tahıl, yeşillik ve tek bir ana malzeme.</span></p>
         </div>
-        <span class="course-block__hours"><span lang="tr">Yalnızca 12:00 – 16:00</span><span lang="en">12:00 – 16:00 only</span></span>
+        <span class="course-block__hours"><span data-i18n="yalnizca-12-00-16-00">Yalnızca 12:00 – 16:00</span></span>
       </div>
       <div class="dishes">
         <article class="dish">
-          <h3 class="dish__name"><span lang="tr">Piliç Kase</span><span lang="en">Chicken Bowl</span></h3>
+          <h3 class="dish__name"><span data-i18n="pilic-kase">Piliç Kase</span></h3>
           <span class="dish__price">660 ₺</span>
-          <p class="dish__note"><span lang="tr">Karışık yeşillik, tahıl karışımı, ızgara tavuk göğsü, chia ve keten tohumu</span><span lang="en">Mixed leaves, grain blend, grilled chicken breast, chia and flax</span></p>
+          <p class="dish__note"><span data-i18n="karisik-yesillik-tahil-karisimi-izgara">Karışık yeşillik, tahıl karışımı, ızgara tavuk göğsü, chia ve keten tohumu</span></p>
         </article>
         <article class="dish">
-          <h3 class="dish__name"><span lang="tr">Tiftik Kaburga Kase</span><span lang="en">Pulled Short Rib Bowl</span></h3>
+          <h3 class="dish__name"><span data-i18n="tiftik-kaburga-kase">Tiftik Kaburga Kase</span></h3>
           <span class="dish__price">700 ₺</span>
-          <p class="dish__note"><span lang="tr">Karışık yeşillik, yeşil soğan, Kars kaşarı, soğan reçeli, tiftilmiş döş eti, tahıl karışımı</span><span lang="en">Mixed leaves, spring onion, Kars kaşar, onion jam, pulled brisket, grain blend</span></p>
+          <p class="dish__note"><span data-i18n="karisik-yesillik-yesil-sogan-kars-kasari">Karışık yeşillik, yeşil soğan, Kars kaşarı, soğan reçeli, tiftilmiş döş eti, tahıl karışımı</span></p>
         </article>
         <article class="dish">
-          <h3 class="dish__name"><span lang="tr">Somon Kase</span><span lang="en">Salmon Bowl</span></h3>
+          <h3 class="dish__name"><span data-i18n="somon-kase">Somon Kase</span></h3>
           <span class="dish__price">780 ₺</span>
-          <p class="dish__note"><span lang="tr">Karışık yeşillik, tahıl karışımı, kapari, kırmızı lahana, glaze somon</span><span lang="en">Mixed leaves, grain blend, capers, red cabbage, glazed salmon</span></p>
+          <p class="dish__note"><span data-i18n="karisik-yesillik-tahil-karisimi-kapari">Karışık yeşillik, tahıl karışımı, kapari, kırmızı lahana, glaze somon</span></p>
         </article>
       </div>
       <p class="dish__note" style="margin-top:1.2rem;">
-        <span lang="tr">Tahıl karışımı: buğday, yeşil mercimek, nohut, börülce, karabuğday, maş fasulyesi.</span>
-        <span lang="en">The grain blend: wheat, green lentil, chickpea, black-eyed pea, buckwheat, mung bean.</span>
+        <span data-i18n="tahil-karisimi-bugday-yesil-mercimek-nohut">Tahıl karışımı: buğday, yeşil mercimek, nohut, börülce, karabuğday, maş fasulyesi.</span>
       </p>
     </section>
 
@@ -137,8 +131,8 @@
     <section class="course-block" id="baslangiclar">
       <div class="course-block__head">
         <div class="course-block__title">
-          <h2><span lang="tr">Başlangıçlar</span><span lang="en">To begin</span></h2>
-          <p class="course-block__intro"><span lang="tr">Ortaya gelir, paylaşılır. İkiye de üçe de yeter.</span><span lang="en">These land in the middle and get shared. Enough for two, or three.</span></p>
+          <h2><span data-i18n="baslangiclar">Başlangıçlar</span></h2>
+          <p class="course-block__intro"><span data-i18n="ortaya-gelir-paylasilir-ikiye-de-uce-de">Ortaya gelir, paylaşılır. İkiye de üçe de yeter.</span></p>
         </div>
         <div class="course-block__disc">
           <picture>
@@ -149,24 +143,24 @@
       </div>
       <div class="dishes">
         <article class="dish">
-          <h3 class="dish__name"><span lang="tr">Tekmil Favalı Ciğer</span><span lang="en">Liver with Fava</span></h3>
+          <h3 class="dish__name"><span data-i18n="tekmil-favali-ciger">Tekmil Favalı Ciğer</span></h3>
           <span class="dish__price">850 ₺</span>
         </article>
         <article class="dish">
-          <h3 class="dish__name"><span lang="tr">Lolipop Kanatlar</span><span lang="en">Lollipop Wings</span>
+          <h3 class="dish__name"><span data-i18n="lolipop-kanatlar">Lolipop Kanatlar</span>
             <button class="dish__peek" type="button" data-peek="kanat" aria-label="Lolipop Kanatlar fotoğrafı"><picture><source type="image/webp" srcset="img/kanat-sq-sm.webp"><img src="img/kanat-sq-sm.jpg" alt="" loading="lazy" decoding="async"></picture></button>
           </h3>
           <span class="dish__price">710 ₺</span>
-          <p class="dish__note"><span lang="tr">Acılı baharat sosuyla harmanlanmış kanatlar, yanında sarımsaklı ekmek dilimleri</span><span lang="en">Wings tossed in hot spiced sauce, with garlic bread</span></p>
+          <p class="dish__note"><span data-i18n="acili-baharat-sosuyla-harmanlanmis-kanatlar-2">Acılı baharat sosuyla harmanlanmış kanatlar, yanında sarımsaklı ekmek dilimleri</span></p>
         </article>
         <article class="dish">
-          <h3 class="dish__name"><span lang="tr">İncirli Sıcak Humus</span><span lang="en">Warm Hummus with Fig</span>
+          <h3 class="dish__name"><span data-i18n="incirli-sicak-humus">İncirli Sıcak Humus</span>
             <button class="dish__peek" type="button" data-peek="humus" aria-label="İncirli Sıcak Humus fotoğrafı"><picture><source type="image/webp" srcset="img/humus-sq-sm.webp"><img src="img/humus-sq-sm.jpg" alt="" loading="lazy" decoding="async"></picture></button>
           </h3>
           <span class="dish__price">610 ₺</span>
         </article>
         <article class="dish">
-          <h3 class="dish__name"><span lang="tr">Tereyağında Baharatlı Patates</span><span lang="en">Spiced Potatoes in Butter</span></h3>
+          <h3 class="dish__name"><span data-i18n="tereyaginda-baharatli-patates">Tereyağında Baharatlı Patates</span></h3>
           <span class="dish__price">520 ₺</span>
         </article>
       </div>
@@ -176,21 +170,21 @@
     <section class="course-block" id="ekmek-ustu">
       <div class="course-block__head">
         <div class="course-block__title">
-          <h2><span lang="tr">Ekşi Maya Ekmek Üstleri</span><span lang="en">On Sourdough</span></h2>
-          <p class="course-block__intro"><span lang="tr">Kendi ekşi mayamızın üstünde, kalın dilimler hâlinde.</span><span lang="en">On our own sourdough, cut thick.</span></p>
+          <h2><span data-i18n="eksi-maya-ekmek-ustleri">Ekşi Maya Ekmek Üstleri</span></h2>
+          <p class="course-block__intro"><span data-i18n="kendi-eksi-mayamizin-ustunde-kalin-dilimler">Kendi ekşi mayamızın üstünde, kalın dilimler hâlinde.</span></p>
         </div>
-        <span class="course-block__hours"><span lang="tr">Porsiyonda üç dilim</span><span lang="en">Three slices per plate</span></span>
+        <span class="course-block__hours"><span data-i18n="porsiyonda-uc-dilim">Porsiyonda üç dilim</span></span>
       </div>
       <div class="dishes">
         <article class="dish">
-          <h3 class="dish__name"><span lang="tr">Rozbif</span><span lang="en">Roast Beef</span></h3>
+          <h3 class="dish__name"><span data-i18n="rozbif">Rozbif</span></h3>
           <span class="dish__price">750 ₺</span>
-          <p class="dish__note"><span lang="tr">Yaprak Kars kaşarı, roka, acı biber reçeli</span><span lang="en">Shaved Kars kaşar, rocket, hot pepper jam</span></p>
+          <p class="dish__note"><span data-i18n="yaprak-kars-kasari-roka-aci-biber-receli">Yaprak Kars kaşarı, roka, acı biber reçeli</span></p>
         </article>
         <article class="dish">
-          <h3 class="dish__name"><span lang="tr">Hatay Sıkma Peynirli</span><span lang="en">Hatay Sıkma Cheese</span></h3>
+          <h3 class="dish__name"><span data-i18n="hatay-sikma-peynirli">Hatay Sıkma Peynirli</span></h3>
           <span class="dish__price">660 ₺</span>
-          <p class="dish__note"><span lang="tr">Tereyağında kızartılmış sıkma peynir, kızarmış patlıcan dilimleri, kırmızı biber reçeli</span><span lang="en">Sıkma cheese fried in butter, roast aubergine, red pepper jam</span></p>
+          <p class="dish__note"><span data-i18n="tereyaginda-kizartilmis-sikma-peynir">Tereyağında kızartılmış sıkma peynir, kızarmış patlıcan dilimleri, kırmızı biber reçeli</span></p>
         </article>
       </div>
     </section>
@@ -199,26 +193,26 @@
     <section class="course-block" id="burgerler">
       <div class="course-block__head">
         <div class="course-block__title">
-          <h2><span lang="tr">Burgerler</span><span lang="en">Burgers</span></h2>
-          <p class="course-block__intro"><span lang="tr">Ekmeği de köftesi de burada yapılıyor.</span><span lang="en">Both the bun and the patty are made here.</span></p>
+          <h2><span data-i18n="burgerler">Burgerler</span></h2>
+          <p class="course-block__intro"><span data-i18n="ekmegi-de-koftesi-de-burada-yapiliyor">Ekmeği de köftesi de burada yapılıyor.</span></p>
         </div>
-        <span class="course-block__hours"><span lang="tr">Yalnızca 12:00 – 16:00</span><span lang="en">12:00 – 16:00 only</span></span>
+        <span class="course-block__hours"><span data-i18n="yalnizca-12-00-16-00">Yalnızca 12:00 – 16:00</span></span>
       </div>
       <div class="dishes">
         <article class="dish">
           <h3 class="dish__name">Avlu Burger</h3>
           <span class="dish__price">690 ₺</span>
-          <p class="dish__note"><span lang="tr">160 gr kaburga köftesi, soğan reçeli, peynir, kendi yaptığımız ekmek; taze otlu sote patates ile</span><span lang="en">160g short-rib patty, onion jam, cheese, our own bun; herbed sautéed potatoes</span></p>
+          <p class="dish__note"><span data-i18n="160-gr-kaburga-koftesi-sogan-receli-peynir">160 gr kaburga köftesi, soğan reçeli, peynir, kendi yaptığımız ekmek; taze otlu sote patates ile</span></p>
         </article>
         <article class="dish">
-          <h3 class="dish__name"><span lang="tr">Balık Burger</span><span lang="en">Fish Burger</span></h3>
+          <h3 class="dish__name"><span data-i18n="balik-burger">Balık Burger</span></h3>
           <span class="dish__price">690 ₺</span>
-          <p class="dish__note"><span lang="tr">160 gr granyöz balık köftesi, kırmızı soğan turşusu, ıspanak, kapari sos, acı biber reçeli</span><span lang="en">160g fish patty, pickled red onion, spinach, caper sauce, hot pepper jam</span></p>
+          <p class="dish__note"><span data-i18n="160-gr-granyoz-balik-koftesi-kirmizi-sogan">160 gr granyöz balık köftesi, kırmızı soğan turşusu, ıspanak, kapari sos, acı biber reçeli</span></p>
         </article>
         <article class="dish">
-          <h3 class="dish__name"><span lang="tr">Bazlama Burger</span><span lang="en">Bazlama Burger</span></h3>
+          <h3 class="dish__name"><span data-i18n="bazlama-burger">Bazlama Burger</span></h3>
           <span class="dish__price">710 ₺</span>
-          <p class="dish__note"><span lang="tr">160 gr kaburga köftesi, sotelenmiş ıspanak, kuru domates, soğan reçeli, göz yumurta, peynir, kendi bazlamamız</span><span lang="en">160g short-rib patty, sautéed spinach, sun-dried tomato, onion jam, fried egg, cheese, our own bazlama flatbread</span></p>
+          <p class="dish__note"><span data-i18n="160-gr-kaburga-koftesi-sotelenmis-ispanak">160 gr kaburga köftesi, sotelenmiş ıspanak, kuru domates, soğan reçeli, göz yumurta, peynir, kendi bazlamamız</span></p>
         </article>
       </div>
     </section>
@@ -227,8 +221,8 @@
     <section class="course-block" id="ana-yemekler">
       <div class="course-block__head">
         <div class="course-block__title">
-          <h2><span lang="tr">Ana Yemekler</span><span lang="en">Mains</span></h2>
-          <p class="course-block__intro"><span lang="tr">Ağır ateşin işi. Acele edilmiyor, saatler sürüyor.</span><span lang="en">Slow fire does the work here. Hours, not minutes.</span></p>
+          <h2><span data-i18n="ana-yemekler-2">Ana Yemekler</span></h2>
+          <p class="course-block__intro"><span data-i18n="agir-atesin-isi-acele-edilmiyor-saatler">Ağır ateşin işi. Acele edilmiyor, saatler sürüyor.</span></p>
         </div>
         <div class="course-block__disc">
           <picture>
@@ -239,38 +233,38 @@
       </div>
       <div class="dishes">
         <article class="dish">
-          <h3 class="dish__name"><span lang="tr">Kuzu Boyun Tandır</span><span lang="en">Slow-fired Lamb Neck</span>
-            <span class="tag tag--pop"><span lang="tr">Popüler</span><span lang="en">Popular</span></span>
+          <h3 class="dish__name"><span data-i18n="kuzu-boyun-tandir">Kuzu Boyun Tandır</span>
+            <span class="tag tag--pop"><span data-i18n="populer">Popüler</span></span>
             <button class="dish__peek" type="button" data-peek="tandir" aria-label="Kuzu Boyun Tandır fotoğrafı"><picture><source type="image/webp" srcset="img/tandir-sq-sm.webp"><img src="img/tandir-sq-sm.jpg" alt="" loading="lazy" decoding="async"></picture></button>
           </h3>
           <span class="dish__price">1350 ₺</span>
-          <p class="dish__note"><span lang="tr">200 gr ağır ateşte pişmiş kuzu, patlıcan püresi ve isli sebzeler ile</span><span lang="en">200g lamb cooked low and slow, aubergine purée, smoked vegetables</span></p>
+          <p class="dish__note"><span data-i18n="200-gr-agir-ateste-pismis-kuzu-patlican">200 gr ağır ateşte pişmiş kuzu, patlıcan püresi ve isli sebzeler ile</span></p>
         </article>
         <article class="dish">
           <h3 class="dish__name">Brisket
             <button class="dish__peek" type="button" data-peek="brisket" aria-label="Brisket fotoğrafı"><picture><source type="image/webp" srcset="img/brisket-sq-sm.webp"><img src="img/brisket-sq-sm.jpg" alt="" loading="lazy" decoding="async"></picture></button>
           </h3>
           <span class="dish__price">1250 ₺</span>
-          <p class="dish__note"><span lang="tr">200 gr, ağır ateşte 12 saat. Pancarlı buğday risotto ve isli sebzeler ile</span><span lang="en">200g, twelve hours over low fire. Beetroot wheat risotto, smoked vegetables</span></p>
+          <p class="dish__note"><span data-i18n="200-gr-agir-ateste-12-saat-pancarli-bugday">200 gr, ağır ateşte 12 saat. Pancarlı buğday risotto ve isli sebzeler ile</span></p>
         </article>
         <article class="dish">
-          <h3 class="dish__name"><span lang="tr">Humus-u Köfte</span><span lang="en">Meatballs over Hummus</span>
+          <h3 class="dish__name"><span data-i18n="humus-u-kofte">Humus-u Köfte</span>
             <button class="dish__peek" type="button" data-peek="kofte" aria-label="Humus-u Köfte fotoğrafı"><picture><source type="image/webp" srcset="img/kofte-sq-sm.webp"><img src="img/kofte-sq-sm.jpg" alt="" loading="lazy" decoding="async"></picture></button>
           </h3>
           <span class="dish__price">830 ₺</span>
-          <p class="dish__note"><span lang="tr">200 gr sıcak humus üzerine domates soslu köfte topları, peynir tüil</span><span lang="en">200g warm hummus, meatballs in tomato sauce, cheese tuile</span></p>
+          <p class="dish__note"><span data-i18n="200-gr-sicak-humus-uzerine-domates-soslu">200 gr sıcak humus üzerine domates soslu köfte topları, peynir tüil</span></p>
         </article>
         <article class="dish">
-          <h3 class="dish__name"><span lang="tr">Glaze Somon</span><span lang="en">Glazed Salmon</span>
+          <h3 class="dish__name"><span data-i18n="glaze-somon">Glaze Somon</span>
             <button class="dish__peek" type="button" data-peek="somon" aria-label="Glaze Somon fotoğrafı"><picture><source type="image/webp" srcset="img/somon-sq-sm.webp"><img src="img/somon-sq-sm.jpg" alt="" loading="lazy" decoding="async"></picture></button>
           </h3>
           <span class="dish__price">1050 ₺</span>
-          <p class="dish__note"><span lang="tr">Sebzeli darı ile</span><span lang="en">With millet and vegetables</span></p>
+          <p class="dish__note"><span data-i18n="sebzeli-dari-ile">Sebzeli darı ile</span></p>
         </article>
         <article class="dish">
-          <h3 class="dish__name"><span lang="tr">Tahinli Susamlı Tavuk</span><span lang="en">Tahini and Sesame Chicken</span></h3>
+          <h3 class="dish__name"><span data-i18n="tahinli-susamli-tavuk">Tahinli Susamlı Tavuk</span></h3>
           <span class="dish__price">800 ₺</span>
-          <p class="dish__note"><span lang="tr">Kuru domatesli ıspanaklı çıtır nohut ile</span><span lang="en">With crisp chickpeas, spinach and sun-dried tomato</span></p>
+          <p class="dish__note"><span data-i18n="kuru-domatesli-ispanakli-citir-nohut-ile">Kuru domatesli ıspanaklı çıtır nohut ile</span></p>
         </article>
       </div>
     </section>
@@ -279,10 +273,10 @@
     <section class="course-block" id="makarnalar">
       <div class="course-block__head">
         <div class="course-block__title">
-          <h2><span lang="tr">Taze Makarnalar</span><span lang="en">Fresh Pasta</span></h2>
-          <p class="course-block__intro"><span lang="tr">Hamur her gün açılıyor, kapalı olanlar tek tek elde kapatılıyor.</span><span lang="en">The dough is rolled daily; the filled ones are pleated by hand.</span></p>
+          <h2><span data-i18n="taze-makarnalar-2">Taze Makarnalar</span></h2>
+          <p class="course-block__intro"><span data-i18n="hamur-her-gun-aciliyor-kapali-olanlar-tek">Hamur her gün açılıyor, kapalı olanlar tek tek elde kapatılıyor.</span></p>
         </div>
-        <span class="course-block__hours"><span lang="tr">Hamur her gün açılır</span><span lang="en">Rolled fresh daily</span></span>
+        <span class="course-block__hours"><span data-i18n="hamur-her-gun-acilir">Hamur her gün açılır</span></span>
         <div class="course-block__disc">
           <picture>
             <source type="image/webp" srcset="img/gnocchi-sq-sm.webp">
@@ -292,41 +286,41 @@
       </div>
       <div class="dishes">
         <article class="dish">
-          <h3 class="dish__name"><span lang="tr">Tandırlı</span><span lang="en">Tandır Tagliatelle</span>
+          <h3 class="dish__name"><span data-i18n="tandirli">Tandırlı</span>
             <button class="dish__peek" type="button" data-peek="tandirli" aria-label="Tandırlı fotoğrafı"><picture><source type="image/webp" srcset="img/tandirli-sq-sm.webp"><img src="img/tandirli-sq-sm.jpg" alt="" loading="lazy" decoding="async"></picture></button>
           </h3>
           <span class="dish__price">850 ₺</span>
-          <p class="dish__note"><span lang="tr">Roka ve 2 yıllık Kars kaşarı ile</span><span lang="en">With rocket and two-year-aged Kars kaşar</span></p>
+          <p class="dish__note"><span data-i18n="roka-ve-2-yillik-kars-kasari-ile">Roka ve 2 yıllık Kars kaşarı ile</span></p>
         </article>
         <article class="dish">
-          <h3 class="dish__name"><span lang="tr">Somonlu</span><span lang="en">Salmon</span>
+          <h3 class="dish__name"><span data-i18n="somonlu">Somonlu</span>
           </h3>
           <span class="dish__price">880 ₺</span>
-          <p class="dish__note"><span lang="tr">Kapari, dereotu, krema soslu</span><span lang="en">Capers, dill, cream sauce</span></p>
+          <p class="dish__note"><span data-i18n="kapari-dereotu-krema-soslu">Kapari, dereotu, krema soslu</span></p>
         </article>
         <article class="dish">
           <h3 class="dish__name">
-            <span lang="tr">Peynir Soslu Tereyağlı Gnocchi</span><span lang="en">Gnocchi in Cheese Sauce</span>
-            <span class="tag tag--pop"><span lang="tr">Popüler</span><span lang="en">Popular</span></span>
-            <span class="tag"><span lang="tr">Yeni</span><span lang="en">New</span></span>
+            <span data-i18n="peynir-soslu-tereyagli-gnocchi">Peynir Soslu Tereyağlı Gnocchi</span>
+            <span class="tag tag--pop"><span data-i18n="populer">Popüler</span></span>
+            <span class="tag"><span data-i18n="yeni">Yeni</span></span>
             <button class="dish__peek" type="button" data-peek="gnocchi" aria-label="Peynir Soslu Tereyağlı Gnocchi fotoğrafı"><picture><source type="image/webp" srcset="img/gnocchi-sq-sm.webp"><img src="img/gnocchi-sq-sm.jpg" alt="" loading="lazy" decoding="async"></picture></button>
           </h3>
           <span class="dish__price">710 ₺</span>
-          <p class="dish__note"><span lang="tr">Kars göğermiş ve eski kaşar peynirleriyle adaçaylı kremalı sos, mantar, tereyağında kızartılmış gnocchi</span><span lang="en">Sage cream of blue and aged Kars cheese, mushrooms, gnocchi crisped in butter</span></p>
+          <p class="dish__note"><span data-i18n="kars-gogermis-ve-eski-kasar-peynirleriyle">Kars göğermiş ve eski kaşar peynirleriyle adaçaylı kremalı sos, mantar, tereyağında kızartılmış gnocchi</span></p>
         </article>
         <article class="dish">
-          <h3 class="dish__name"><span lang="tr">Etli Gnocchi</span><span lang="en">Gnocchi with Beef</span></h3>
+          <h3 class="dish__name"><span data-i18n="etli-gnocchi">Etli Gnocchi</span></h3>
           <span class="dish__price">850 ₺</span>
-          <p class="dish__note"><span lang="tr">2 yıllık Kars kaşarı ile</span><span lang="en">With two-year-aged Kars kaşar</span></p>
+          <p class="dish__note"><span data-i18n="2-yillik-kars-kasari-ile">2 yıllık Kars kaşarı ile</span></p>
         </article>
         <article class="dish">
           <h3 class="dish__name">
             Culurgione
-            <span class="tag"><span lang="tr">Kapalı makarna</span><span lang="en">Filled</span></span>
+            <span class="tag"><span data-i18n="kapali-makarna-2">Kapalı makarna</span></span>
             <button class="dish__peek" type="button" data-peek="culurgione" aria-label="Culurgione fotoğrafı"><picture><source type="image/webp" srcset="img/culurgione-sq-sm.webp"><img src="img/culurgione-sq-sm.jpg" alt="" loading="lazy" decoding="async"></picture></button>
           </h3>
           <span class="dish__price">720 ₺</span>
-          <p class="dish__note"><span lang="tr">Taze peynir, ceviz ve fesleğen dolgulu, elde kapatılır</span><span lang="en">Fresh cheese, walnut and basil, pleated by hand</span></p>
+          <p class="dish__note"><span data-i18n="taze-peynir-ceviz-ve-feslegen-dolgulu-elde">Taze peynir, ceviz ve fesleğen dolgulu, elde kapatılır</span></p>
         </article>
       </div>
     </section>
@@ -335,18 +329,18 @@
     <section class="course-block" id="tatlilar">
       <div class="course-block__head">
         <div class="course-block__title">
-          <h2><span lang="tr">Tatlılar</span><span lang="en">Dessert</span></h2>
-          <p class="course-block__intro"><span lang="tr">İki tane. İkisi de yeterince iyi olduğu için üçüncüsü yok.</span><span lang="en">Two of them. There is no third because these two are enough.</span></p>
+          <h2><span data-i18n="tatlilar">Tatlılar</span></h2>
+          <p class="course-block__intro"><span data-i18n="iki-tane-ikisi-de-yeterince-iyi-oldugu-icin">İki tane. İkisi de yeterince iyi olduğu için üçüncüsü yok.</span></p>
         </div>
       </div>
       <div class="dishes">
         <article class="dish">
-          <h3 class="dish__name"><span lang="tr">Fındık Crunch</span><span lang="en">Hazelnut Crunch</span></h3>
+          <h3 class="dish__name"><span data-i18n="findik-crunch">Fındık Crunch</span></h3>
           <span class="dish__price">520 ₺</span>
-          <p class="dish__note"><span lang="tr">Çıtır baklava yufkası, fındık kreması, karamel sos</span><span lang="en">Crisp baklava pastry, hazelnut cream, caramel</span></p>
+          <p class="dish__note"><span data-i18n="citir-baklava-yufkasi-findik-kremasi">Çıtır baklava yufkası, fındık kreması, karamel sos</span></p>
         </article>
         <article class="dish">
-          <h3 class="dish__name"><span lang="tr">Vişne Ganajlı Çikolatalı Cheesecake</span><span lang="en">Chocolate Cheesecake, Sour Cherry Ganache</span></h3>
+          <h3 class="dish__name"><span data-i18n="visne-ganajli-cikolatali-cheesecake">Vişne Ganajlı Çikolatalı Cheesecake</span></h3>
           <span class="dish__price">520 ₺</span>
         </article>
       </div>
@@ -356,17 +350,17 @@
     <section class="course-block" id="saraplar">
       <div class="course-block__head">
         <div class="course-block__title">
-          <h2><span lang="tr">Şaraplar</span><span lang="en">Wine</span></h2>
-          <p class="course-block__intro"><span lang="tr">Listenin büyük kısmı Türkiye bağlarından. Dördü kadeh kadeh açılıyor.</span><span lang="en">Mostly Turkish vineyards. Four of them are poured by the glass.</span></p>
+          <h2><span data-i18n="saraplar">Şaraplar</span></h2>
+          <p class="course-block__intro"><span data-i18n="listenin-buyuk-kismi-turkiye-baglarindan-2">Listenin büyük kısmı Türkiye bağlarından. Dördü kadeh kadeh açılıyor.</span></p>
         </div>
       </div>
 
-      <h3 class="eyebrow" style="margin-top:1rem;"><span lang="tr">Kırmızı</span><span lang="en">Red</span></h3>
+      <h3 class="eyebrow" style="margin-top:1rem;"><span data-i18n="kirmizi">Kırmızı</span></h3>
       <div class="pours">
         <div class="pours__head">
-          <span><span lang="tr">Şarap</span><span lang="en">Wine</span></span>
-          <span><span lang="tr">Kadeh</span><span lang="en">Glass</span></span>
-          <span><span lang="tr">75 cl</span><span lang="en">75 cl</span></span>
+          <span><span data-i18n="sarap">Şarap</span></span>
+          <span><span data-i18n="kadeh-2">Kadeh</span></span>
+          <span><span data-i18n="75-cl">75 cl</span></span>
         </div>
         <div class="pour">
           <p class="pour__name">Hippokrates <small>Cabernet Sauvignon, Merlot, Cabernet Franc, Shiraz, Petit Verdot</small></p>
@@ -400,12 +394,12 @@
         </div>
       </div>
 
-      <h3 class="eyebrow" style="margin-top:2.5rem;"><span lang="tr">Beyaz</span><span lang="en">White</span></h3>
+      <h3 class="eyebrow" style="margin-top:2.5rem;"><span data-i18n="beyaz">Beyaz</span></h3>
       <div class="pours">
         <div class="pours__head">
-          <span><span lang="tr">Şarap</span><span lang="en">Wine</span></span>
-          <span><span lang="tr">Kadeh</span><span lang="en">Glass</span></span>
-          <span><span lang="tr">75 cl</span><span lang="en">75 cl</span></span>
+          <span><span data-i18n="sarap">Şarap</span></span>
+          <span><span data-i18n="kadeh-2">Kadeh</span></span>
+          <span><span data-i18n="75-cl">75 cl</span></span>
         </div>
         <div class="pour">
           <p class="pour__name">Corvus Karga <small>Çavuş, Vasilaki</small></p>
@@ -437,9 +431,9 @@
       <h3 class="eyebrow" style="margin-top:2.5rem;">Rosé</h3>
       <div class="pours">
         <div class="pours__head">
-          <span><span lang="tr">Şarap</span><span lang="en">Wine</span></span>
-          <span><span lang="tr">Kadeh</span><span lang="en">Glass</span></span>
-          <span><span lang="tr">75 cl</span><span lang="en">75 cl</span></span>
+          <span><span data-i18n="sarap">Şarap</span></span>
+          <span><span data-i18n="kadeh-2">Kadeh</span></span>
+          <span><span data-i18n="75-cl">75 cl</span></span>
         </div>
         <div class="pour">
           <p class="pour__name">Kuzubağ Rosé <small>Çalkarası, Kalecik Karası</small></p>
@@ -457,7 +451,7 @@
     <!-- ---------- biralar ---------- -->
     <section class="course-block" id="biralar">
       <div class="course-block__head">
-        <h2><span lang="tr">Biralar</span><span lang="en">Beer</span></h2>
+        <h2><span data-i18n="biralar">Biralar</span></h2>
       </div>
       <div class="dishes">
         <article class="dish"><h3 class="dish__name">Tuborg Gold</h3><span class="dish__price">300 ₺</span></article>
@@ -472,18 +466,18 @@
     <!-- ---------- içecekler ---------- -->
     <section class="course-block" id="icecekler">
       <div class="course-block__head">
-        <h2><span lang="tr">İçecekler</span><span lang="en">Drinks</span></h2>
+        <h2><span data-i18n="icecekler">İçecekler</span></h2>
       </div>
 
-      <h3 class="eyebrow" style="margin-top:1rem;"><span lang="tr">Sıcak</span><span lang="en">Hot</span></h3>
+      <h3 class="eyebrow" style="margin-top:1rem;"><span data-i18n="sicak">Sıcak</span></h3>
       <div class="dishes">
         <article class="dish">
-          <h3 class="dish__name"><span lang="tr">Bitki Çayı</span><span lang="en">Herbal Tea</span></h3>
+          <h3 class="dish__name"><span data-i18n="bitki-cayi">Bitki Çayı</span></h3>
           <span class="dish__price">150 ₺</span>
-          <p class="dish__note"><span lang="tr">Yeşil çay, ıhlamur, adaçayı, papatya</span><span lang="en">Green tea, linden, sage, camomile</span></p>
+          <p class="dish__note"><span data-i18n="yesil-cay-ihlamur-adacayi-papatya">Yeşil çay, ıhlamur, adaçayı, papatya</span></p>
         </article>
-        <article class="dish"><h3 class="dish__name"><span lang="tr">Türk Kahvesi</span><span lang="en">Turkish Coffee</span></h3><span class="dish__price">150 ₺</span></article>
-        <article class="dish"><h3 class="dish__name"><span lang="tr">Duble Türk Kahvesi</span><span lang="en">Double Turkish Coffee</span></h3><span class="dish__price">300 ₺</span></article>
+        <article class="dish"><h3 class="dish__name"><span data-i18n="turk-kahvesi">Türk Kahvesi</span></h3><span class="dish__price">150 ₺</span></article>
+        <article class="dish"><h3 class="dish__name"><span data-i18n="duble-turk-kahvesi">Duble Türk Kahvesi</span></h3><span class="dish__price">300 ₺</span></article>
         <article class="dish"><h3 class="dish__name">Espresso</h3><span class="dish__price">150 ₺</span></article>
         <article class="dish"><h3 class="dish__name">Double Espresso</h3><span class="dish__price">300 ₺</span></article>
         <article class="dish"><h3 class="dish__name">Americano</h3><span class="dish__price">200 ₺</span></article>
@@ -491,34 +485,33 @@
         <article class="dish"><h3 class="dish__name">Cappuccino</h3><span class="dish__price">220 ₺</span></article>
       </div>
 
-      <h3 class="eyebrow" style="margin-top:2.5rem;"><span lang="tr">Soğuk</span><span lang="en">Cold</span></h3>
+      <h3 class="eyebrow" style="margin-top:2.5rem;"><span data-i18n="soguk">Soğuk</span></h3>
       <div class="dishes">
         <article class="dish">
-          <h3 class="dish__name"><span lang="tr">Ev Yapımı Limonata</span><span lang="en">House Lemonade</span></h3>
+          <h3 class="dish__name"><span data-i18n="ev-yapimi-limonata">Ev Yapımı Limonata</span></h3>
           <span class="dish__price">280 ₺</span>
         </article>
         <article class="dish"><h3 class="dish__name">Ice Latte</h3><span class="dish__price">220 ₺</span></article>
         <article class="dish"><h3 class="dish__name">Ice Americano</h3><span class="dish__price">200 ₺</span></article>
         <article class="dish"><h3 class="dish__name">S. Pellegrino 75 cl</h3><span class="dish__price">300 ₺</span></article>
         <article class="dish"><h3 class="dish__name">Churchill</h3><span class="dish__price">150 ₺</span></article>
-        <article class="dish"><h3 class="dish__name">Schweppes <span lang="tr">Mandalina</span><span lang="en">Mandarin</span></h3><span class="dish__price">140 ₺</span></article>
-        <article class="dish"><h3 class="dish__name"><span lang="tr">Soğuk Çay · Şeftali</span><span lang="en">Iced Tea · Peach</span></h3><span class="dish__price">140 ₺</span></article>
-        <article class="dish"><h3 class="dish__name"><span lang="tr">Soğuk Çay · Cool Lime</span><span lang="en">Iced Tea · Cool Lime</span></h3><span class="dish__price">140 ₺</span></article>
+        <article class="dish"><h3 class="dish__name">Schweppes <span data-i18n="mandalina">Mandalina</span></h3><span class="dish__price">140 ₺</span></article>
+        <article class="dish"><h3 class="dish__name"><span data-i18n="soguk-cay-seftali">Soğuk Çay · Şeftali</span></h3><span class="dish__price">140 ₺</span></article>
+        <article class="dish"><h3 class="dish__name"><span data-i18n="soguk-cay-cool-lime">Soğuk Çay · Cool Lime</span></h3><span class="dish__price">140 ₺</span></article>
         <article class="dish"><h3 class="dish__name">Coca-Cola</h3><span class="dish__price">180 ₺</span></article>
-        <article class="dish"><h3 class="dish__name">Coca-Cola <span lang="tr">Şekersiz</span><span lang="en">Zero</span></h3><span class="dish__price">180 ₺</span></article>
-        <article class="dish"><h3 class="dish__name"><span lang="tr">Uludağ Premium Maden Suyu</span><span lang="en">Uludağ Sparkling Water</span></h3><span class="dish__price">85 ₺</span></article>
-        <article class="dish"><h3 class="dish__name"><span lang="tr">Premium Su · 40 cl</span><span lang="en">Still Water · 40 cl</span></h3><span class="dish__price">65 ₺</span></article>
-        <article class="dish"><h3 class="dish__name"><span lang="tr">Premium Su · 1 lt</span><span lang="en">Still Water · 1 L</span></h3><span class="dish__price">130 ₺</span></article>
+        <article class="dish"><h3 class="dish__name">Coca-Cola <span data-i18n="sekersiz">Şekersiz</span></h3><span class="dish__price">180 ₺</span></article>
+        <article class="dish"><h3 class="dish__name"><span data-i18n="uludag-premium-maden-suyu">Uludağ Premium Maden Suyu</span></h3><span class="dish__price">85 ₺</span></article>
+        <article class="dish"><h3 class="dish__name"><span data-i18n="premium-su-40-cl">Premium Su · 40 cl</span></h3><span class="dish__price">65 ₺</span></article>
+        <article class="dish"><h3 class="dish__name"><span data-i18n="premium-su-1-lt">Premium Su · 1 lt</span></h3><span class="dish__price">130 ₺</span></article>
       </div>
     </section>
 
     <p class="menu-foot-note">
-      <span lang="tr">Menü mevsime ve pazara göre değişir; bir ürün tükenmişse servis ekibimiz size o günün alternatifini söyler. Alerjiniz varsa siparişten önce bize söyleyin — bazı tabakları uyarlayabiliriz. Fiyatlara KDV dahildir.</span>
-      <span lang="en">The menu shifts with the season and the market; if something has run out, the team will tell you what replaced it that day. Tell us about allergies before you order — some plates can be adapted. Prices include VAT.</span>
+      <span data-i18n="menu-mevsime-ve-pazara-gore-degisir-bir">Menü mevsime ve pazara göre değişir; bir ürün tükenmişse servis ekibimiz size o günün alternatifini söyler. Alerjiniz varsa siparişten önce bize söyleyin — bazı tabakları uyarlayabiliriz. Fiyatlara KDV dahildir.</span>
     </p>
 
     <p style="padding-bottom:clamp(3rem,7vw,5rem);">
-      <a class="btn" href="index.html#rezervasyon"><span lang="tr">Masa ayırt</span><span lang="en">Book a table</span></a>
+      <a class="btn" href="index.html#rezervasyon"><span data-i18n="masa-ayirt">Masa ayırt</span></a>
     </p>
 
   </div>
@@ -529,15 +522,14 @@
     <div class="foot__grid">
       <img src="img/logo-gold.png" alt="Avlu" width="443" height="104" loading="lazy">
       <nav class="foot__links" aria-label="Alt">
-        <a href="index.html"><span lang="tr">Ana sayfa</span><span lang="en">Home</span></a>
-        <a href="index.html#avlu"><span lang="tr">Mekân</span><span lang="en">The room</span></a>
-        <a href="index.html#ziyaret"><span lang="tr">Ziyaret</span><span lang="en">Visit</span></a>
+        <a href="index.html"><span data-i18n="ana-sayfa">Ana sayfa</span></a>
+        <a href="index.html#avlu"><span data-i18n="mekan">Mekân</span></a>
+        <a href="index.html#ziyaret"><span data-i18n="ziyaret">Ziyaret</span></a>
         <a href="tel:+905426242468">0542 624 24 68</a>
       </nav>
     </div>
     <p class="foot__fine">
-      <span lang="tr">© <span id="yil">2026</span> Avlu · Alsancak, İzmir, İzmir</span>
-      <span lang="en">© <span>2026</span> Avlu · Alsancak, İzmir, İzmir</span>
+      <span data-i18n="2026-avlu-alsancak-izmir-izmir">© <span id="yil">2026</span> Avlu · Alsancak, İzmir, İzmir</span>
     </p>
   </div>
 </footer>
@@ -560,6 +552,6 @@
   </div>
 </div>
 
-<script src="app.js?v=12"></script>
+<script src="app.js?v=13"></script>
 </body>
 </html>

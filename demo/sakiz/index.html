@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr" data-lang="tr">
+<html lang="tr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,8 +15,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=Karla:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=5">
-<script>document.documentElement.classList.add("js");</script>
+<link rel="stylesheet" href="styles.css?v=6">
+<script src="i18n/i18n.js?v=6"></script>
 
 <script type="application/ld+json">
 {
@@ -38,19 +38,16 @@
 </head>
 
 <body>
-<a class="skip" href="#ana"><span lang="tr">İçeriğe geç</span><span lang="en">Skip to content</span></a>
+<a class="skip" href="#ana"><span data-i18n="icerige-gec">İçeriğe geç</span></a>
 
 <header class="ust-bar" id="ustbar">
   <a class="marka" href="#ana"><span class="marka__ilk">ALSANCAK </span><b>SAKIZ</b></a>
   <nav class="gezinti" aria-label="Ana">
-    <a href="menu.html"><span lang="tr">Menü</span><span lang="en">Menu</span></a>
-    <a class="gizlenir" href="#salon"><span lang="tr">Mekân</span><span lang="en">The room</span></a>
-    <a class="gizlenir" href="#ziyaret"><span lang="tr">Ziyaret</span><span lang="en">Visit</span></a>
-    <div class="dil" role="group" aria-label="Dil / Language">
-      <button type="button" data-dil="tr" aria-pressed="true">TR</button>
-      <button type="button" data-dil="en" aria-pressed="false">EN</button>
-    </div>
-    <a class="dugme" href="#ayirt"><span lang="tr">Masa ayırt</span><span lang="en">Book a table</span></a>
+    <a href="menu.html"><span data-i18n="menu">Menü</span></a>
+    <a class="gizlenir" href="#salon"><span data-i18n="mekan">Mekân</span></a>
+    <a class="gizlenir" href="#ziyaret"><span data-i18n="ziyaret">Ziyaret</span></a>
+    <div class="dil" role="group" aria-label="Dil / Language" data-i18n-switch></div>
+    <a class="dugme" href="#ayirt"><span data-i18n="masa-ayirt">Masa ayırt</span></a>
   </nav>
 </header>
 
@@ -85,10 +82,10 @@
 
     <div class="giris__kilit">
       <h1 class="giris__ad">ALSANCAK<em>Sakız</em></h1>
-      <p class="giris__yer"><span lang="tr">Meyhane · Alsancak</span><span lang="en">Meyhane · Alsancak</span></p>
+      <p class="giris__yer"><span data-i18n="meyhane-alsancak">Meyhane · Alsancak</span></p>
       <div class="giris__eylem">
-        <a class="dugme" href="#ayirt"><span lang="tr">Masa ayırt</span><span lang="en">Book a table</span></a>
-        <a class="dugme dugme--bos" href="menu.html"><span lang="tr">Menüyü gör</span><span lang="en">See the menu</span></a>
+        <a class="dugme" href="#ayirt"><span data-i18n="masa-ayirt">Masa ayırt</span></a>
+        <a class="dugme dugme--bos" href="menu.html"><span data-i18n="menuyu-gor">Menüyü gör</span></a>
       </div>
     </div>
 
@@ -116,18 +113,15 @@
           alt="Beyaz örtülü masalar, ahşap tavan ve düzenli kurulmuş salon."></picture>
       </div>
       <div class="okuma belir">
-        <span class="ust"><span lang="tr">Salon</span><span lang="en">The room</span></span>
+        <span class="ust"><span data-i18n="salon">Salon</span></span>
         <h2 style="font-size:var(--s-3)">
-          <span lang="tr">Sofra akşamdan kurulur, gece üçe kadar sürer.</span>
-          <span lang="en">The table is laid at dusk and holds until three.</span>
+          <span data-i18n="sofra-aksamdan-kurulur-gece-uce-kadar-surer">Sofra akşamdan kurulur, gece üçe kadar sürer.</span>
         </h2>
         <p style="margin-top:1.4rem">
-          <span lang="tr">Alsancak'ta beyaz örtülü masalar, kapıda bir meze dolabı ve akşam ilerledikçe yükselen bir fasıl. Burada yemek bir öğün değil, bir geceye yayılan iş.</span>
-          <span lang="en">White linen on Alsancak, a meze counter by the door, and a fasıl that rises as the evening goes. Dinner here isn't a meal; it's a night.</span>
+          <span data-i18n="alsancak-ta-beyaz-ortulu-masalar-kapida-bir">Alsancak'ta beyaz örtülü masalar, kapıda bir meze dolabı ve akşam ilerledikçe yükselen bir fasıl. Burada yemek bir öğün değil, bir geceye yayılan iş.</span>
         </p>
         <p>
-          <span lang="tr">Meze dolabından ne seçtiğiniz akşamın nasıl geçeceğini belirler — bu yüzden acele ettirmiyoruz.</span>
-          <span lang="en">What you pick from the meze counter sets the tone for the evening, which is why nobody hurries you through it.</span>
+          <span data-i18n="meze-dolabindan-ne-sectiginiz-aksamin-nasil">Meze dolabından ne seçtiğiniz akşamın nasıl geçeceğini belirler — bu yüzden acele ettirmiyoruz.</span>
         </p>
       </div>
     </div>
@@ -139,14 +133,12 @@
   <section class="serit">
     <div class="kabuk">
       <div class="okuma belir">
-        <span class="ust"><span lang="tr">Sofranın sırası</span><span lang="en">How the table runs</span></span>
+        <span class="ust"><span data-i18n="sofranin-sirasi">Sofranın sırası</span></span>
         <h2 style="font-size:var(--s-3)">
-          <span lang="tr">Dört perdelik bir akşam</span>
-          <span lang="en">An evening in four acts</span>
+          <span data-i18n="dort-perdelik-bir-aksam">Dört perdelik bir akşam</span>
         </h2>
         <p style="margin-top:1.4rem">
-          <span lang="tr">Meyhane sofrasının kendi düzeni vardır. Tabaklar ortaya gelir, sıra bozulmaz.</span>
-          <span lang="en">A meyhane table has its own order. Plates land in the middle and the sequence holds.</span>
+          <span data-i18n="meyhane-sofrasinin-kendi-duzeni-vardir">Meyhane sofrasının kendi düzeni vardır. Tabaklar ortaya gelir, sıra bozulmaz.</span>
         </p>
       </div>
 
@@ -154,33 +146,29 @@
         <li class="belir">
           <span class="saat">01</span>
           <div>
-            <h3><span lang="tr">Zeytinyağlı ve ekmek</span><span lang="en">Sakız oil and bread</span></h3>
-            <p><span lang="tr">Oturur oturmaz gelir: zeytinyağlı tabağı ve sıcak ekmek. İstenmez, gelir.</span>
-               <span lang="en">It arrives before you ask: a plate of sakiz-oil dishes and warm bread.</span></p>
+            <h3><span data-i18n="zeytinyagli-ve-ekmek">Zeytinyağlı ve ekmek</span></h3>
+            <p><span data-i18n="oturur-oturmaz-gelir-zeytinyagli-tabagi-ve">Oturur oturmaz gelir: zeytinyağlı tabağı ve sıcak ekmek. İstenmez, gelir.</span></p>
           </div>
         </li>
         <li class="belir">
           <span class="saat">02</span>
           <div>
-            <h3><span lang="tr">Mezeler</span><span lang="en">The mezes</span></h3>
-            <p><span lang="tr">Dolaptan seçilir. Girit mezesi, haydari, deniz börülcesi — masaya kaç kişi varsa o kadar tabak.</span>
-               <span lang="en">Chosen from the counter. Girit meze, haydari, samphire — as many plates as there are people.</span></p>
+            <h3><span data-i18n="mezeler">Mezeler</span></h3>
+            <p><span data-i18n="dolaptan-secilir-girit-mezesi-haydari-deniz">Dolaptan seçilir. Girit mezesi, haydari, deniz börülcesi — masaya kaç kişi varsa o kadar tabak.</span></p>
           </div>
         </li>
         <li class="belir">
           <span class="saat">03</span>
           <div>
-            <h3><span lang="tr">Ara sıcaklar</span><span lang="en">The hot plates</span></h3>
-            <p><span lang="tr">Susamlı çıtır tulum peyniri, ciğer tava, kalamar. Rakı burada devreye girer.</span>
-               <span lang="en">Sesame-crusted tulum cheese, pan-fried liver, calamari. This is where the rakı starts.</span></p>
+            <h3><span data-i18n="ara-sicaklar">Ara sıcaklar</span></h3>
+            <p><span data-i18n="susamli-citir-tulum-peyniri-ciger-tava">Susamlı çıtır tulum peyniri, ciğer tava, kalamar. Rakı burada devreye girer.</span></p>
           </div>
         </li>
         <li class="belir">
           <span class="saat">04</span>
           <div>
-            <h3><span lang="tr">Ana yemek ve tatlı</span><span lang="en">Main and dessert</span></h3>
-            <p><span lang="tr">Izgaradan Adana ya da uykuluk, ardından tatlı. Fasıl bu saatlerde en yüksek yerindedir.</span>
-               <span lang="en">Adana or sweetbreads from the grill, then dessert — by which time the fasıl is at full volume.</span></p>
+            <h3><span data-i18n="ana-yemek-ve-tatli">Ana yemek ve tatlı</span></h3>
+            <p><span data-i18n="izgaradan-adana-ya-da-uykuluk-ardindan">Izgaradan Adana ya da uykuluk, ardından tatlı. Fasıl bu saatlerde en yüksek yerindedir.</span></p>
           </div>
         </li>
       </ol>
@@ -191,10 +179,9 @@
   <section class="serit serit--koyu" id="sofra">
     <div class="kabuk">
       <div class="okuma belir">
-        <span class="ust"><span lang="tr">Sofra</span><span lang="en">The spread</span></span>
+        <span class="ust"><span data-i18n="sofra">Sofra</span></span>
         <h2 style="font-size:var(--s-3)">
-          <span lang="tr">Masanın ortası boş kalmaz</span>
-          <span lang="en">The middle of the table never empties</span>
+          <span data-i18n="masanin-ortasi-bos-kalmaz">Masanın ortası boş kalmaz</span>
         </h2>
       </div>
 
@@ -207,7 +194,7 @@
       </div>
 
       <p style="margin-top:clamp(2rem,5vw,3rem)">
-        <a class="dugme dugme--bos" href="menu.html"><span lang="tr">Menünün tamamı</span><span lang="en">The full menu</span></a>
+        <a class="dugme dugme--bos" href="menu.html"><span data-i18n="menunun-tamami">Menünün tamamı</span></a>
       </p>
     </div>
   </section>
@@ -220,18 +207,15 @@
         alt="Masaya yayılmış meze tabakları."></picture>
       </div>
       <div class="okuma belir">
-        <span class="ust"><span lang="tr">Dolap</span><span lang="en">The counter</span></span>
+        <span class="ust"><span data-i18n="dolap">Dolap</span></span>
         <h2 style="font-size:var(--s-3)">
-          <span lang="tr">Menüye bakmadan önce dolaba bakılır</span>
-          <span lang="en">You read the counter before you read the menu</span>
+          <span data-i18n="menuye-bakmadan-once-dolaba-bakilir">Menüye bakmadan önce dolaba bakılır</span>
         </h2>
         <p style="margin-top:1.4rem">
-          <span lang="tr">Meyhanenin adabı budur: kapıdan girince önce meze dolabına gidilir, gözle seçilir, tabak masaya öyle gelir. Ne varsa camın arkasındadır — anlatmaya gerek kalmaz.</span>
-          <span lang="en">This is the etiquette: you walk to the meze counter first, choose with your eyes, and the plates follow you to the table. Whatever there is, it's behind the glass — no menu needed.</span>
+          <span data-i18n="meyhanenin-adabi-budur-kapidan-girince-once">Meyhanenin adabı budur: kapıdan girince önce meze dolabına gidilir, gözle seçilir, tabak masaya öyle gelir. Ne varsa camın arkasındadır — anlatmaya gerek kalmaz.</span>
         </p>
         <p>
-          <span lang="tr">Dolabın içi mevsime göre değişir, o yüzden aynı iki akşam olmaz.</span>
-          <span lang="en">What's in it changes with the season, so no two evenings are the same.</span>
+          <span data-i18n="dolabin-ici-mevsime-gore-degisir-o-yuzden">Dolabın içi mevsime göre değişir, o yüzden aynı iki akşam olmaz.</span>
         </p>
       </div>
     </div>
@@ -242,37 +226,33 @@
     <div class="kabuk">
       <div class="belir" style="display:flex;flex-wrap:wrap;gap:1.4rem 3rem;align-items:flex-end;justify-content:space-between">
         <div class="okuma" style="flex:1 1 22rem">
-          <span class="ust"><span lang="tr">Misafirler</span><span lang="en">Guests</span></span>
+          <span class="ust"><span data-i18n="misafirler">Misafirler</span></span>
           <h2 style="font-size:var(--s-3)">
-            <span lang="tr">Bizim değil, onların cümleleri</span>
-            <span lang="en">Their words, not ours</span>
+            <span data-i18n="bizim-degil-onlarin-cumleleri">Bizim değil, onların cümleleri</span>
           </h2>
         </div>
         <p class="puan">
           <span class="puan__sayi">4,7</span>
-          <span class="puan__alt"><span lang="tr">708 Google değerlendirmesi</span><span lang="en">708 Google reviews</span></span>
+          <span class="puan__alt"><span data-i18n="708-google-degerlendirmesi">708 Google değerlendirmesi</span></span>
         </p>
       </div>
 
       <div class="sesler">
         <figure class="ses belir">
           <blockquote>
-            <span lang="tr">“Başlangıçta gelen zeytinyağlı tabağa ve ekmeklere bayıldım. Susamlı çıtır tulum peyniri çok iyiydi.”</span>
-            <span lang="en">“I loved the sakiz-oil plate and the bread they start you with. The sesame tulum cheese was excellent.”</span>
+            <span data-i18n="baslangicta-gelen-zeytinyagli-tabaga-ve">“Başlangıçta gelen zeytinyağlı tabağa ve ekmeklere bayıldım. Susamlı çıtır tulum peyniri çok iyiydi.”</span>
           </blockquote>
           <figcaption>Betül H. · Google</figcaption>
         </figure>
         <figure class="ses belir">
           <blockquote>
-            <span lang="tr">“Fix menü tercih ettik, oldukça doyurucu. Girit meze özellikle çok güzel.”</span>
-            <span lang="en">“We went for the set menu — generous. The Girit meze in particular was lovely.”</span>
+            <span data-i18n="fix-menu-tercih-ettik-oldukca-doyurucu">“Fix menü tercih ettik, oldukça doyurucu. Girit meze özellikle çok güzel.”</span>
           </blockquote>
           <figcaption>Osman T. · Google</figcaption>
         </figure>
         <figure class="ses belir">
           <blockquote>
-            <span lang="tr">“Mezeleri, ara sıcakları, ana yemekleri ve hatta tatlısıyla bile ayrı konuşulması gereken bir yer.”</span>
-            <span lang="en">“The mezes, the hot plates, the mains — even the dessert deserves its own conversation.”</span>
+            <span data-i18n="mezeleri-ara-sicaklari-ana-yemekleri-ve">“Mezeleri, ara sıcakları, ana yemekleri ve hatta tatlısıyla bile ayrı konuşulması gereken bir yer.”</span>
           </blockquote>
           <figcaption>Kübra K. · Google</figcaption>
         </figure>
@@ -284,69 +264,66 @@
   <section class="serit serit--koyu" id="ziyaret">
     <div class="kabuk ziyaret">
       <div class="belir">
-        <span class="ust"><span lang="tr">Ziyaret</span><span lang="en">Visit</span></span>
+        <span class="ust"><span data-i18n="ziyaret">Ziyaret</span></span>
         <h2 style="font-size:var(--s-3);margin-bottom:2.2rem">
-          <span lang="tr">Alsancak</span>
-          <span lang="en">Alsancak</span>
+          <span data-i18n="alsancak">Alsancak</span>
         </h2>
 
         <ul class="bilgiler">
           <li>
-            <span class="k"><span lang="tr">Adres</span><span lang="en">Address</span></span>
+            <span class="k"><span data-i18n="adres">Adres</span></span>
             <span class="d">
               <span>Alsancak, İzmir</span>
               <small>35220 Konak / İzmir</small>
             </span>
           </li>
           <li>
-            <span class="k"><span lang="tr">Saatler</span><span lang="en">Hours</span></span>
+            <span class="k"><span data-i18n="saatler">Saatler</span></span>
             <!-- NOT: Google yalnızca 03:00 kapanışını veriyor. Açılış saati teyit edilmeli. -->
             <span class="d">
-              <span lang="tr">Akşam — 03:00</span><span lang="en">Evening — 03:00</span>
-              <small><span lang="tr">Mutfak kapanıştan önce son siparişi alır</span><span lang="en">The kitchen takes last orders before close</span></small>
+              <span data-i18n="aksam-03-00">Akşam — 03:00</span>
+              <small><span data-i18n="mutfak-kapanistan-once-son-siparisi-alir">Mutfak kapanıştan önce son siparişi alır</span></small>
             </span>
           </li>
           <li>
-            <span class="k"><span lang="tr">Müzik</span><span lang="en">Music</span></span>
-            <span class="d"><span lang="tr">Canlı fasıl</span><span lang="en">Live fasıl</span></span>
+            <span class="k"><span data-i18n="muzik">Müzik</span></span>
+            <span class="d"><span data-i18n="canli-fasil">Canlı fasıl</span></span>
           </li>
           <li>
-            <span class="k"><span lang="tr">Servis</span><span lang="en">Service</span></span>
-            <span class="d"><span lang="tr">Salon · fix menü ve alakart</span><span lang="en">Dining room · set menu and à la carte</span></span>
+            <span class="k"><span data-i18n="servis">Servis</span></span>
+            <span class="d"><span data-i18n="salon-fix-menu-ve-alakart">Salon · fix menü ve alakart</span></span>
           </li>
         </ul>
 
         <p style="font-size:var(--s--1)">
-          <span lang="tr">Hafta sonları ve fasıl akşamları için rezervasyon öneririz. Kalabalık gruplar için lütfen önceden yazın.</span>
-          <span lang="en">We recommend booking for weekends and fasıl nights. For larger groups, please write ahead.</span>
+          <span data-i18n="hafta-sonlari-ve-fasil-aksamlari-icin">Hafta sonları ve fasıl akşamları için rezervasyon öneririz. Kalabalık gruplar için lütfen önceden yazın.</span>
         </p>
       </div>
 
       <div class="ayirt belir" id="ayirt">
-        <span class="ust"><span lang="tr">Masa ayırt</span><span lang="en">Book a table</span></span>
+        <span class="ust"><span data-i18n="masa-ayirt">Masa ayırt</span></span>
         <h2 style="font-size:var(--s-2);margin-bottom:1.6rem">
-          <span lang="tr">Talebinizi bize iletin</span>
-          <span lang="en">Send us your request</span>
+          <span data-i18n="talebinizi-bize-iletin">Talebinizi bize iletin</span>
         </h2>
 
         <form id="ayirt-form" novalidate>
           <div class="alan">
-            <label for="ad"><span lang="tr">Ad soyad</span><span lang="en">Full name</span></label>
+            <label for="ad"><span data-i18n="ad-soyad">Ad soyad</span></label>
             <input id="ad" name="ad" type="text" autocomplete="name" required>
           </div>
           <div class="alan-satir">
             <div class="alan">
-              <label for="tarih"><span lang="tr">Tarih</span><span lang="en">Date</span></label>
+              <label for="tarih"><span data-i18n="tarih">Tarih</span></label>
               <input id="tarih" name="tarih" type="date" required>
             </div>
             <div class="alan">
-              <label for="saat"><span lang="tr">Saat</span><span lang="en">Time</span></label>
+              <label for="saat"><span data-i18n="saat">Saat</span></label>
               <input id="saat" name="saat" type="time" value="20:00" step="900" required>
             </div>
           </div>
           <div class="alan-satir">
             <div class="alan">
-              <label for="kisi"><span lang="tr">Kişi sayısı</span><span lang="en">Guests</span></label>
+              <label for="kisi"><span data-i18n="kisi-sayisi">Kişi sayısı</span></label>
               <select id="kisi" name="kisi">
                 <option>2</option><option>3</option><option selected>4</option>
                 <option>5</option><option>6</option><option>7</option><option>8</option>
@@ -354,24 +331,23 @@
               </select>
             </div>
             <div class="alan">
-              <label for="tel"><span lang="tr">Telefonunuz</span><span lang="en">Your phone</span></label>
+              <label for="tel"><span data-i18n="telefonunuz">Telefonunuz</span></label>
               <input id="tel" name="tel" type="tel" autocomplete="tel" required>
             </div>
           </div>
           <div class="alan">
-            <label for="not"><span lang="tr">Eklemek istedikleriniz</span><span lang="en">Anything we should know</span></label>
+            <label for="not"><span data-i18n="eklemek-istedikleriniz">Eklemek istedikleriniz</span></label>
             <textarea id="not" name="not" rows="3"
-              data-yt-tr="Fix menü, doğum günü, fasıl akşamı…"
-              data-yt-en="Set menu, a birthday, a fasıl night…"></textarea>
+              placeholder="Fix menü, doğum günü, fasıl akşamı…"
+              data-i18n-attr="placeholder:ph-not"></textarea>
           </div>
           <div class="ayirt__eylem">
             <button class="dugme" type="submit">
-              <span lang="tr">Talebi gönder</span><span lang="en">Send request</span>
+              <span data-i18n="talebi-gonder">Talebi gönder</span>
             </button>
           </div>
           <p class="ayirt__alt">
-            <span lang="tr">Rezervasyonunuz, biz dönüş yapana kadar kesinleşmez.</span>
-            <span lang="en">A booking isn't confirmed until we reply.</span>
+            <span data-i18n="rezervasyonunuz-biz-donus-yapana-kadar">Rezervasyonunuz, biz dönüş yapana kadar kesinleşmez.</span>
           </p>
         </form>
       </div>
@@ -385,10 +361,10 @@
     <div class="altbilgi__satir">
       <a class="marka" href="#ana"><span class="marka__ilk">ALSANCAK </span><b>SAKIZ</b></a>
       <nav class="altbilgi__linkler" aria-label="Alt">
-        <a href="menu.html"><span lang="tr">Menü</span><span lang="en">Menu</span></a>
-        <a href="#salon"><span lang="tr">Mekân</span><span lang="en">The room</span></a>
-        <a href="#ziyaret"><span lang="tr">Ziyaret</span><span lang="en">Visit</span></a>
-        <span><span lang="tr">Yol tarifi</span><span lang="en">Directions</span></span>
+        <a href="menu.html"><span data-i18n="menu">Menü</span></a>
+        <a href="#salon"><span data-i18n="mekan">Mekân</span></a>
+        <a href="#ziyaret"><span data-i18n="ziyaret">Ziyaret</span></a>
+        <span><span data-i18n="yol-tarifi">Yol tarifi</span></span>
       </nav>
     </div>
     <p class="altbilgi__ince">
@@ -397,6 +373,6 @@
   </div>
 </footer>
 
-<script src="app.js?v=5"></script>
+<script src="app.js?v=6"></script>
 </body>
 </html>

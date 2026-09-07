@@ -78,11 +78,11 @@ a { color: inherit; }
 
 /* ---------- iki dil ---------- */
 
-/* Seçiciler `body` ile başlar: kök elemana da lang yazıldığı için
-   çıplak [lang="en"] <html>'in kendisiyle eşleşir ve sayfayı gizlerdi. */
-body [lang="en"] { display: none; }
-html[data-lang="en"] body [lang="en"] { display: revert; }
-html[data-lang="en"] body [lang="tr"] { display: none; }
+/* Metinler artık data-i18n anahtarlarıyla JS tarafından yazılıyor.
+   Varsayılan dışında bir dil seçiliyken sözlük yüklenene kadar gövde
+   gizlenir; yoksa önce Türkçe görünüp sonra çevrilirdi. Açılış betiği
+   2 sn sonra bu özniteliği her hâlükârda kaldırır. */
+html[data-i18n-bekle] body { visibility: hidden; }
 
 /* ---------- tipografi ---------- */
 
@@ -227,9 +227,10 @@ p:last-child { margin-bottom: 0; }
   overflow: hidden;
 }
 
-.lang button {
+.lang a {
   appearance: none;
   border: 0;
+  text-decoration: none;
   background: transparent;
   color: var(--bone-dim);
   font: inherit;
@@ -243,7 +244,7 @@ p:last-child { margin-bottom: 0; }
   cursor: pointer;
   transition: background 0.25s var(--ease), color 0.25s var(--ease);
 }
-.lang button[aria-pressed="true"] { background: var(--gold); color: var(--ink); }
+.lang a[aria-current="true"] { background: var(--gold); color: var(--ink); }
 
 /* ---------- düğmeler ---------- */
 
